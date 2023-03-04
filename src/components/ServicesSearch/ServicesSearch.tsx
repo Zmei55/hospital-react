@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
-import { useAppSelector } from 'types';
-import { servicesList } from 'Data';
-import { Modal } from 'components/Modal';
+import { useState, useEffect } from "react";
+import { useAppSelector } from "types";
+import { servicesList } from "Data";
+import { Modal } from "components/Modal";
 
 import {
   ModalBtn,
@@ -12,7 +12,31 @@ import {
   ModalTitle,
   CloseBtn,
   IconCross,
-} from './ServicesSearch.styled';
+  ModalBody,
+  ServiceForm,
+  Filter,
+  FilterLabel,
+  FilterInput,
+  FilteredList,
+  FilteredItem,
+  FilteredNameBox,
+  FilteredCodeService,
+  FilteredNameService,
+  AddServiceBtn,
+  IconPlus,
+  AddServiceBtnTitle,
+  SelectedServicesBox,
+  SelectedServicesTitle,
+  SelectedServicesList,
+  SelectedServicesItem,
+  DeleteSelectedServicesBtn,
+  IconTrash,
+  SelectedServicesNameBox,
+  SelectedServicesCode,
+  SelectedServicesName,
+  ResetFormBtn,
+  SaveServicesBtn,
+} from "./ServicesSearch.styled";
 
 type TService = {
   name: string;
@@ -27,13 +51,13 @@ type TServicesSearchEl = {
 
 export const ServicesSearch = ({ setSavedServicesList }: TServicesSearchEl) => {
   const patient = useAppSelector(state => state.app.patient);
-  const [filter, setFilter] = useState<string>('');
+  const [filter, setFilter] = useState<string>("");
   const [visibleServices, setVisibleServices] = useState<TServicesList>([]);
   const [selectedServices, setSelectedServices] = useState<TServicesList>([]);
   const [showModal, setShowModal] = useState<boolean>(false);
 
   useEffect(() => {
-    if (filter !== '') {
+    if (filter !== "") {
       setVisibleServices(
         servicesList.filter(service =>
           service.name.toLowerCase().includes(filter.toLowerCase())
@@ -49,14 +73,14 @@ export const ServicesSearch = ({ setSavedServicesList }: TServicesSearchEl) => {
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = event => {
     event.preventDefault();
     setSavedServicesList(selectedServices);
-    setFilter('');
+    setFilter("");
     setVisibleServices([]);
     setSelectedServices([]);
     toggleModal();
   };
 
   const handleClearForm: React.MouseEventHandler<HTMLButtonElement> = () => {
-    setFilter('');
+    setFilter("");
     setVisibleServices([]);
     setSelectedServices([]);
   };
@@ -79,7 +103,7 @@ export const ServicesSearch = ({ setSavedServicesList }: TServicesSearchEl) => {
 
   const toggleModal = () => {
     setShowModal(!showModal);
-    setFilter('');
+    setFilter("");
     setVisibleServices([]);
   };
 
@@ -88,7 +112,7 @@ export const ServicesSearch = ({ setSavedServicesList }: TServicesSearchEl) => {
       <ModalBtn
         type="button"
         onClick={toggleModal}
-        disabled={patient._id === ''}
+        disabled={patient._id === ""}
       >
         <IconServicesAdd />
         <ModalBtnTitle>Fügen Sie Dienste hinzu</ModalBtnTitle>
@@ -98,50 +122,82 @@ export const ServicesSearch = ({ setSavedServicesList }: TServicesSearchEl) => {
         <Modal onClose={toggleModal}>
           <ModalContainer>
             <ModalHeader>
-              <ModalTitle>Add service</ModalTitle>
+              <ModalTitle>Dienst hinzufügen</ModalTitle>
               <CloseBtn onClick={toggleModal}>
                 <IconCross />
               </CloseBtn>
             </ModalHeader>
 
-            <form onSubmit={handleSubmit}>
-              <div>
-                <label>
-                  <input type="text" value={filter} onChange={handleFilter} />
-                  <button type="button">Finden</button>
-                </label>
-                <ul>
-                  {visibleServices.map(service => (
-                    <li key={service.codeService}>
-                      {service.name}
-                      <button type="button" onClick={() => addService(service)}>
-                        Ergänzen
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h4>Ausgewählte Dienste</h4>
-                <ul>
-                  {selectedServices.map(service => (
-                    <li key={service.codeService}>
-                      <button
-                        type="button"
-                        onClick={() => deleteService(service.codeService)}
-                      >
-                        Löschen
-                      </button>
-                      {service.name}
-                    </li>
-                  ))}
-                </ul>
-                <button type="button" onClick={handleClearForm}>
-                  Stornieren
-                </button>
-                <button type="submit">Speichern und schließen</button>
-              </div>
-            </form>
+            <ModalBody>
+              <ServiceForm onSubmit={handleSubmit}>
+                <Filter>
+                  <FilterLabel>
+                    <FilterInput
+                      type="text"
+                      value={filter}
+                      onChange={handleFilter}
+                      autoFocus
+                      placeholder="Dienstname"
+                    />
+                    {/* <button type="button">Finden</button> */}
+                  </FilterLabel>
+                  <FilteredList>
+                    {visibleServices.map(service => (
+                      <FilteredItem key={service.codeService}>
+                        <FilteredNameBox>
+                          <FilteredCodeService>
+                            {service.codeService}
+                          </FilteredCodeService>
+                          <FilteredNameService>
+                            {service.name}
+                          </FilteredNameService>
+                        </FilteredNameBox>
+
+                        <AddServiceBtn
+                          type="button"
+                          onClick={() => addService(service)}
+                        >
+                          <IconPlus />
+                          <AddServiceBtnTitle>Hinzufügen</AddServiceBtnTitle>
+                        </AddServiceBtn>
+                      </FilteredItem>
+                    ))}
+                  </FilteredList>
+                </Filter>
+
+                <SelectedServicesBox>
+                  <SelectedServicesTitle>
+                    Ausgewählte Dienste
+                  </SelectedServicesTitle>
+                  <SelectedServicesList>
+                    {selectedServices.map(service => (
+                      <SelectedServicesItem key={service.codeService}>
+                        <DeleteSelectedServicesBtn
+                          type="button"
+                          onClick={() => deleteService(service.codeService)}
+                        >
+                          <IconTrash />
+                        </DeleteSelectedServicesBtn>
+                        <SelectedServicesNameBox>
+                          <SelectedServicesCode>
+                            {service.codeService}
+                          </SelectedServicesCode>
+                          <SelectedServicesName>
+                            {service.name}
+                          </SelectedServicesName>
+                        </SelectedServicesNameBox>
+                      </SelectedServicesItem>
+                    ))}
+                  </SelectedServicesList>
+                  <ResetFormBtn type="button" onClick={handleClearForm}>
+                    Stornieren
+                  </ResetFormBtn>
+                  <SaveServicesBtn type="submit">
+                    Speichern und schließen
+                  </SaveServicesBtn>
+                </SelectedServicesBox>
+              </ServiceForm>
+            </ModalBody>
           </ModalContainer>
         </Modal>
       )}

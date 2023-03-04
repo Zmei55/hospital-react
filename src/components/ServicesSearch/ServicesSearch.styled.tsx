@@ -1,6 +1,8 @@
-import styled from '@emotion/styled';
-import { ReactComponent as iconServicesAdd } from 'icons/servicesAdd.svg';
-import { ReactComponent as iconCross } from 'icons/cross.svg';
+import styled from "@emotion/styled";
+import { ReactComponent as iconServicesAdd } from "icons/servicesAdd.svg";
+import { ReactComponent as iconCross } from "icons/cross.svg";
+import { ReactComponent as iconPlus } from "icons/plusBold.svg";
+import { ReactComponent as iconTrash } from "icons/trash.svg";
 
 export const ModalBtn = styled.button`
   display: flex;
@@ -49,8 +51,8 @@ export const ModalBtnTitle = styled.h4`
 `;
 
 export const ModalContainer = styled.div`
-  width: 1392px;
-  height: 752px;
+  width: 1574px;
+  height: 890px;
 `;
 
 export const ModalHeader = styled.div`
@@ -97,4 +99,228 @@ export const IconCross = styled(iconCross)`
   fill: ${props => props.theme.colors.white};
   width: 32px;
   height: 30px;
+`;
+
+export const ModalBody = styled.div`
+  height: 786px;
+  padding: ${props => props.theme.spacing(6)} ${props => props.theme.spacing(8)};
+`;
+
+export const ServiceForm = styled.form`
+  display: flex;
+
+  height: 100%;
+`;
+
+export const Filter = styled.div`
+  width: 842px;
+  margin-right: 66px;
+`;
+
+export const FilterLabel = styled.label`
+  display: block;
+  margin-bottom: ${props => props.theme.spacing(12)};
+`;
+
+export const FilterInput = styled.input`
+  font: inherit;
+  font-size: 32px;
+  line-height: 1.13;
+  color: ${props => props.theme.colors.text.default};
+  width: 100%;
+  height: 72px;
+  border: ${props => props.theme.border};
+  border-radius: ${props => props.theme.borderRadius};
+  outline: none;
+
+  ::placeholder {
+    color: ${props => props.theme.colors.text.placeholder};
+  }
+`;
+
+export const FilteredList = styled.ul``;
+
+export const FilteredItem = styled.li`
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: ${props => props.theme.spacing(4)};
+`;
+
+export const FilteredNameBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+export const FilteredCodeService = styled.span`
+  font-size: 20px;
+  line-height: 1.2;
+  color: ${props => props.theme.colors.text.label};
+`;
+
+export const FilteredNameService = styled.span`
+  font-size: 24px;
+  line-height: 1.17;
+  color: ${props => props.theme.colors.text.default};
+`;
+
+export const AddServiceBtn = styled.button`
+  display: flex;
+
+  padding-top: ${props => props.theme.spacing(5)};
+  padding-right: ${props => props.theme.spacing(11)};
+  padding-bottom: ${props => props.theme.spacing(5)};
+  padding-left: ${props => props.theme.spacing(11)};
+  border: ${props => props.theme.border};
+  border-radius: ${props => props.theme.borderRadius};
+  background-color: transparent;
+`;
+
+export const IconPlus = styled(iconPlus)`
+  fill: ${props => props.theme.colors.primary.default};
+
+  margin-right: ${props => props.theme.spacing(2)};
+
+  :hover,
+  :focus {
+    fill: ${props => props.theme.colors.primary.hover};
+  }
+
+  :active {
+    fill: ${props => props.theme.colors.primary.pressed};
+  }
+`;
+
+export const AddServiceBtnTitle = styled.span`
+  font-size: 24px;
+  line-height: 1.17;
+  color: ${props => props.theme.colors.primary.default};
+
+  :hover,
+  :focus {
+    color: ${props => props.theme.colors.primary.hover};
+  }
+
+  :active {
+    color: ${props => props.theme.colors.primary.pressed};
+  }
+`;
+
+export const Line = styled.div`
+  border: ${props => props.theme.border};
+  margin-right: 50px;
+`;
+
+export const SelectedServicesBox = styled.div`
+  width: 604px;
+  padding-left: 50px;
+  border-left: ${props => props.theme.border};
+`;
+
+export const SelectedServicesTitle = styled.h4`
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.14;
+  color: ${props => props.theme.colors.text.default};
+
+  margin-bottom: ${props => props.theme.spacing(6)};
+`;
+
+export const SelectedServicesList = styled.ul`
+  height: 612px;
+`;
+
+export const SelectedServicesItem = styled.li`
+  display: flex;
+
+  padding: ${props => props.theme.spacing(2)} 0;
+`;
+
+export const SelectedServicesNameBox = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const SelectedServicesCode = styled.span`
+  font-size: 14px;
+  line-height: 1.14;
+  color: ${props => props.theme.colors.text.placeholder};
+
+  margin-bottom: ${props => props.theme.spacing(1)};
+`;
+
+export const SelectedServicesName = styled.span`
+  font-size: 20px;
+  line-height: 1.2;
+  color: ${props => props.theme.colors.text.default};
+`;
+
+export const DeleteSelectedServicesBtn = styled.button`
+  margin-right: ${props => props.theme.spacing(3)};
+  border: none;
+  background-color: transparent;
+`;
+
+export const IconTrash = styled(iconTrash)`
+  fill: ${props => props.theme.colors.error.default};
+
+  width: 36px;
+  height: 36px;
+
+  :hover,
+  :focus {
+    fill: ${props => props.theme.colors.error.hover};
+  }
+
+  :active {
+    fill: ${props => props.theme.colors.error.pressed};
+  }
+`;
+
+export const ResetFormBtn = styled.button`
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.17;
+  color: ${props => props.theme.colors.text.body};
+
+  width: 208px;
+  height: 72px;
+  margin-right: ${props => props.theme.spacing(6)};
+
+  border: none;
+  border-radius: ${props => props.theme.borderRadius};
+  background-color: ${props => props.theme.colors.secondary.default};
+
+  :hover,
+  :focus {
+    background-color: ${props => props.theme.colors.secondary.hover};
+  }
+
+  :active {
+    background-color: ${props => props.theme.colors.secondary.pressed};
+  }
+`;
+
+export const SaveServicesBtn = styled.button`
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.17;
+  color: ${props => props.theme.colors.text.white};
+
+  width: 318px;
+  height: 72px;
+
+  border: none;
+  border-radius: ${props => props.theme.borderRadius};
+  background-color: ${props => props.theme.colors.primary.default};
+
+  :hover,
+  :focus {
+    background-color: ${props => props.theme.colors.primary.hover};
+  }
+
+  :active {
+    background-color: ${props => props.theme.colors.primary.pressed};
+  }
 `;
