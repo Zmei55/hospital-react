@@ -138,7 +138,29 @@ export const FilterInput = styled.input`
   }
 `;
 
-export const FilteredList = styled.ul``;
+export const FilteredList = styled.ul`
+  height: 618px;
+  padding-right: ${props => props.theme.spacing(2)};
+  margin-bottom: ${props => props.theme.spacing(2)};
+
+  overflow: auto;
+  scroll-behavior: smooth;
+
+  ::-webkit-scrollbar {
+    width: ${props => props.theme.spacing(2)};
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    height: 100px;
+    border-radius: 25px;
+    background-color: ${props => props.theme.colors.secondary.default};
+
+    :active {
+      background-color: ${props => props.theme.colors.secondary.pressed};
+    }
+  }
+`;
 
 export const FilteredItem = styled.li`
   display: flex;
@@ -190,6 +212,10 @@ export const IconPlus = styled(iconPlus)`
   :active {
     fill: ${props => props.theme.colors.primary.pressed};
   }
+
+  :disabled {
+    fill: ${props => props.theme.colors.secondary.disabled};
+  }
 `;
 
 export const AddServiceBtnTitle = styled.span`
@@ -204,6 +230,10 @@ export const AddServiceBtnTitle = styled.span`
 
   :active {
     color: ${props => props.theme.colors.primary.pressed};
+  }
+
+  :disabled {
+    color: ${props => props.theme.colors.secondary.disabled};
   }
 `;
 
@@ -228,7 +258,26 @@ export const SelectedServicesTitle = styled.h4`
 `;
 
 export const SelectedServicesList = styled.ul`
-  height: 612px;
+  height: 604px;
+  margin-bottom: ${props => props.theme.spacing(2)};
+
+  overflow: auto;
+  scroll-behavior: smooth;
+
+  ::-webkit-scrollbar {
+    width: ${props => props.theme.spacing(2)};
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    height: 100px;
+    border-radius: 25px;
+    background-color: ${props => props.theme.colors.secondary.default};
+
+    :active {
+      background-color: ${props => props.theme.colors.secondary.pressed};
+    }
+  }
 `;
 
 export const SelectedServicesItem = styled.li`

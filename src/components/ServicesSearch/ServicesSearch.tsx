@@ -139,7 +139,6 @@ export const ServicesSearch = ({ setSavedServicesList }: TServicesSearchEl) => {
                       autoFocus
                       placeholder="Dienstname"
                     />
-                    {/* <button type="button">Finden</button> */}
                   </FilterLabel>
                   <FilteredList>
                     {visibleServices.map(service => (
