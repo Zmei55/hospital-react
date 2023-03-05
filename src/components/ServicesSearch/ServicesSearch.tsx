@@ -4,6 +4,7 @@ import { servicesList } from "Data";
 import { Modal } from "components/Modal";
 
 import {
+  Title,
   ModalBtn,
   IconServicesAdd,
   ModalBtnTitle,
@@ -109,6 +110,8 @@ export const ServicesSearch = ({ setSavedServicesList }: TServicesSearchEl) => {
 
   return (
     <>
+      <Title>Services</Title>
+
       <ModalBtn
         type="button"
         onClick={toggleModal}

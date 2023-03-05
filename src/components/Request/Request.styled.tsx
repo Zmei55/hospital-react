@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
-import { ReactComponent as iconCross } from 'icons/cross.svg';
+import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
+import { ReactComponent as iconCross } from "icons/cross.svg";
 
 export const Container = styled.div`
   width: 1856px;
@@ -68,7 +68,6 @@ export const CloseBtn = styled.button`
 export const Box = styled.div`
   flex: 1;
   display: flex;
-  /* flex-direction: column; */
 `;
 
 export const IconCross = styled(iconCross)`

@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { ServicesInfo } from 'components/ServicesInfo';
-import { ServicesSearch } from 'components/ServicesSearch';
+import { useState } from "react";
+import { ServicesInfo } from "components/ServicesInfo";
+import { ServicesSearch } from "components/ServicesSearch";
 
-import { Container, Title } from './Services.styled';
+import { Container } from "./Services.styled";
 
 type TService = {
   name: string;
@@ -16,10 +16,11 @@ export const Services: React.FC = () => {
 
   return (
     <Container>
-      <Title>Services</Title>
-
       {savedServicesList.length > 0 ? (
-        <ServicesInfo savedServicesList={savedServicesList} />
+        <ServicesInfo
+          savedServicesList={savedServicesList}
+          setSavedServicesList={setSavedServicesList}
+        />
       ) : (
         <ServicesSearch setSavedServicesList={setSavedServicesList} />
       )}

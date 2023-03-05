@@ -4,6 +4,16 @@ import { ReactComponent as iconCross } from "icons/cross.svg";
 import { ReactComponent as iconPlus } from "icons/plusBold.svg";
 import { ReactComponent as iconTrash } from "icons/trash.svg";
 
+export const Title = styled.h3`
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.13;
+  color: ${props => props.theme.colors.text.default};
+
+  margin-bottom: ${props => props.theme.spacing(6)};
+`;
+
+//? Modal
 export const ModalBtn = styled.button`
   display: flex;
   flex-direction: column;
@@ -112,6 +122,7 @@ export const ServiceForm = styled.form`
   height: 100%;
 `;
 
+//? Filter
 export const Filter = styled.div`
   width: 842px;
   margin-right: 66px;
@@ -237,11 +248,7 @@ export const AddServiceBtnTitle = styled.span`
   }
 `;
 
-export const Line = styled.div`
-  border: ${props => props.theme.border};
-  margin-right: 50px;
-`;
-
+//? SelectedServices
 export const SelectedServicesBox = styled.div`
   width: 604px;
   padding-left: 50px;
