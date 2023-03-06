@@ -1,8 +1,8 @@
-import { useAppDispatch } from 'types';
-import { fetchPatient } from 'redux/appSlice';
-import { Patient } from 'components/Patient';
-import { Services } from 'components/Services';
-import { Containers } from 'components/Containers';
+import { useAppDispatch } from "types";
+import { fetchPatient } from "redux/appSlice";
+import { Patient } from "components/Patient";
+import { Services } from "components/Services";
+import { Containers } from "components/Containers";
 
 import {
   Container,
@@ -13,7 +13,7 @@ import {
   CloseBtn,
   Box,
   IconCross,
-} from './Request.styled';
+} from "./Request.styled";
 
 type TPatient = {
   _id: string;
@@ -43,19 +43,19 @@ type TInitialState = {
 const initialPatient: TInitialState = {
   data: {
     result: {
-      _id: '',
-      name: '',
-      birthDate: '',
+      _id: "",
+      name: "",
+      birthDate: "",
       cardNumber: 0,
-      gender: '',
-      phoneNumber: '',
-      email: '',
-      identityDocument: '',
+      gender: "",
+      phoneNumber: "",
+      email: "",
+      identityDocument: "",
       residenceAddress: {
-        street: '',
-        houseNumber: '',
-        city: '',
-        postcode: '',
+        street: "",
+        houseNumber: "",
+        city: "",
+        postcode: "",
       },
       services: [],
       containers: [],

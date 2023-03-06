@@ -68,6 +68,8 @@ export const CloseBtn = styled.button`
 export const Box = styled.div`
   flex: 1;
   display: flex;
+
+  overflow: auto;
 `;
 
 export const IconCross = styled(iconCross)`
