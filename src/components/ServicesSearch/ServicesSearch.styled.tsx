@@ -4,15 +4,6 @@ import { ReactComponent as iconCross } from "icons/cross.svg";
 import { ReactComponent as iconPlus } from "icons/plusBold.svg";
 import { ReactComponent as iconTrash } from "icons/trash.svg";
 
-export const Title = styled.h3`
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 1.13;
-  color: ${props => props.theme.colors.text.default};
-
-  margin-bottom: ${props => props.theme.spacing(6)};
-`;
-
 //? Modal
 export const ModalBtn = styled.button`
   display: flex;

@@ -4,7 +4,6 @@ import { servicesList } from "Data";
 import { Modal } from "components/Modal";
 
 import {
-  Title,
   ModalBtn,
   IconServicesAdd,
   ModalBtnTitle,
@@ -110,15 +109,19 @@ export const ServicesSearch = ({ setSavedServicesList }: TServicesSearchEl) => {
 
   return (
     <>
-      <Title>Services</Title>
-
       <ModalBtn
         type="button"
         onClick={toggleModal}
         disabled={patient._id === ""}
       >
         <IconServicesAdd />
-        <ModalBtnTitle>Fügen Sie Dienste hinzu</ModalBtnTitle>
+        {patient._id === "" ? (
+          <ModalBtnTitle>
+            Dienste können nach Auswahl eines Patienten hinzugefügt werden
+          </ModalBtnTitle>
+        ) : (
+          <ModalBtnTitle>Fügen Sie Dienste hinzu</ModalBtnTitle>
+        )}
       </ModalBtn>
 
       {showModal && (
