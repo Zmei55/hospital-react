@@ -45,7 +45,7 @@ export const IconServicesAdd = styled(iconServicesAdd)`
   margin-bottom: 16px;
 `;
 
-export const ModalBtnTitle = styled.h4`
+export const ModalBtnTitle = styled.span`
   font-weight: 600;
   font-size: 24px;
   line-height: 1.17;

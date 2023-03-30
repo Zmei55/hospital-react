@@ -1,4 +1,4 @@
-import { Link, useOutletContext } from 'react-router-dom';
+import { Link, useOutletContext } from "react-router-dom";
 import {
   SubTitle,
   Container,
@@ -6,7 +6,7 @@ import {
   Input,
   Button,
   IconArrowRight,
-} from './LoginForm.styled';
+} from "./LoginForm.styled";
 
 type TUser = {
   logName: string;
@@ -28,7 +28,7 @@ export function LoginForm() {
   }) => setFormState(prev => ({ ...prev, [name]: value }));
 
   const isEmptyLoginForm =
-    formState.logName === '' || formState.password === '';
+    formState.logName === "" || formState.password === "";
 
   return (
     <>
