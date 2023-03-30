@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/hospital_react_ts/static/css/main.4ab34239.css",
-    "main.js": "/hospital_react_ts/static/js/main.df5e9cb1.js",
+    "main.js": "/hospital_react_ts/static/js/main.a9c1d759.js",
     "static/js/71.90ae906b.chunk.js": "/hospital_react_ts/static/js/71.90ae906b.chunk.js",
     "static/js/408.aa4ba472.chunk.js": "/hospital_react_ts/static/js/408.aa4ba472.chunk.js",
     "static/js/374.83b7604c.chunk.js": "/hospital_react_ts/static/js/374.83b7604c.chunk.js",
@@ -23,7 +23,7 @@
     "static/media/plusBold.svg": "/hospital_react_ts/static/media/plusBold.e15136fa6e5b521d8c43f9fe8dd1e2f0.svg",
     "index.html": "/hospital_react_ts/index.html",
     "main.4ab34239.css.map": "/hospital_react_ts/static/css/main.4ab34239.css.map",
-    "main.df5e9cb1.js.map": "/hospital_react_ts/static/js/main.df5e9cb1.js.map",
+    "main.a9c1d759.js.map": "/hospital_react_ts/static/js/main.a9c1d759.js.map",
     "71.90ae906b.chunk.js.map": "/hospital_react_ts/static/js/71.90ae906b.chunk.js.map",
     "408.aa4ba472.chunk.js.map": "/hospital_react_ts/static/js/408.aa4ba472.chunk.js.map",
     "374.83b7604c.chunk.js.map": "/hospital_react_ts/static/js/374.83b7604c.chunk.js.map",
@@ -31,6 +31,6 @@
   },
   "entrypoints": [
     "static/css/main.4ab34239.css",
-    "static/js/main.df5e9cb1.js"
+    "static/js/main.a9c1d759.js"
   ]
 }
