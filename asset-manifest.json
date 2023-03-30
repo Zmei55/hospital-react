@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/hospital_react/static/css/main.4ab34239.css",
-    "main.js": "/hospital_react/static/js/main.1eb67f14.js",
-    "static/js/71.90ae906b.chunk.js": "/hospital_react/static/js/71.90ae906b.chunk.js",
-    "static/js/408.aa4ba472.chunk.js": "/hospital_react/static/js/408.aa4ba472.chunk.js",
-    "static/js/374.83b7604c.chunk.js": "/hospital_react/static/js/374.83b7604c.chunk.js",
-    "static/js/559.e4725a2a.chunk.js": "/hospital_react/static/js/559.e4725a2a.chunk.js",
+    "main.js": "/hospital_react/static/js/main.8193385d.js",
+    "static/js/71.a276fa55.chunk.js": "/hospital_react/static/js/71.a276fa55.chunk.js",
+    "static/js/408.a618fad8.chunk.js": "/hospital_react/static/js/408.a618fad8.chunk.js",
+    "static/js/374.259e53d5.chunk.js": "/hospital_react/static/js/374.259e53d5.chunk.js",
+    "static/js/559.59655dc0.chunk.js": "/hospital_react/static/js/559.59655dc0.chunk.js",
     "static/media/containerAdd.svg": "/hospital_react/static/media/containerAdd.cd5cfaa533179b7dc527f52dc46b796e.svg",
     "static/media/documents.svg": "/hospital_react/static/media/documents.45c25c006ad9765ffc8233a1e0abe4c9.svg",
     "static/media/mainMenu.svg": "/hospital_react/static/media/mainMenu.626e57fd98a081a4a597e5a1385c2515.svg",
@@ -23,14 +23,14 @@
     "static/media/plusBold.svg": "/hospital_react/static/media/plusBold.e15136fa6e5b521d8c43f9fe8dd1e2f0.svg",
     "index.html": "/hospital_react/index.html",
     "main.4ab34239.css.map": "/hospital_react/static/css/main.4ab34239.css.map",
-    "main.1eb67f14.js.map": "/hospital_react/static/js/main.1eb67f14.js.map",
-    "71.90ae906b.chunk.js.map": "/hospital_react/static/js/71.90ae906b.chunk.js.map",
-    "408.aa4ba472.chunk.js.map": "/hospital_react/static/js/408.aa4ba472.chunk.js.map",
-    "374.83b7604c.chunk.js.map": "/hospital_react/static/js/374.83b7604c.chunk.js.map",
-    "559.e4725a2a.chunk.js.map": "/hospital_react/static/js/559.e4725a2a.chunk.js.map"
+    "main.8193385d.js.map": "/hospital_react/static/js/main.8193385d.js.map",
+    "71.a276fa55.chunk.js.map": "/hospital_react/static/js/71.a276fa55.chunk.js.map",
+    "408.a618fad8.chunk.js.map": "/hospital_react/static/js/408.a618fad8.chunk.js.map",
+    "374.259e53d5.chunk.js.map": "/hospital_react/static/js/374.259e53d5.chunk.js.map",
+    "559.59655dc0.chunk.js.map": "/hospital_react/static/js/559.59655dc0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4ab34239.css",
-    "static/js/main.1eb67f14.js"
+    "static/js/main.8193385d.js"
   ]
 }
