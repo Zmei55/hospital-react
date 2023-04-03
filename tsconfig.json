@@ -18,5 +18,9 @@
     "jsxImportSource": "@emotion/react",
     "baseUrl": "src"
   },
-  "include": ["src", "src/icons/custom.d.ts", "src/constants/emotion.d.ts"]
+  "include": [
+    "src",
+    "src/shared/icons/custom.d.ts",
+    "src/app/constants/emotion.d.ts"
+  ]
 }
