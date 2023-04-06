@@ -1,4 +1,5 @@
 import { Link, useOutletContext } from "react-router-dom";
+import { ILogOutletContext } from "entities/Auth";
 import { Spinner } from "shared";
 
 import {
@@ -12,21 +13,9 @@ import {
   IconArrowLeft,
 } from "./StaffUnit.styled";
 
-type TUser = {
-  logName: string;
-  station: string;
-  password?: string;
-};
-
-type TOutletContext = {
-  formState: TUser;
-  setFormState: (value: React.SetStateAction<TUser>) => void;
-  isLoading: boolean;
-};
-
 export function StaffUnit() {
   const { formState, setFormState, isLoading } =
-    useOutletContext<TOutletContext>();
+    useOutletContext<ILogOutletContext>();
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = ({
     target: { name, value },

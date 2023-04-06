@@ -1,4 +1,5 @@
 import { Link, useOutletContext } from "react-router-dom";
+import { ILogOutletContext } from "entities/Auth";
 
 import {
   SubTitle,
@@ -9,20 +10,8 @@ import {
   IconArrowRight,
 } from "./LoginForm.styled";
 
-type TUser = {
-  logName: string;
-  station: string;
-  password?: string;
-};
-
-type TOutletContext = {
-  formState: TUser;
-  setFormState: (value: React.SetStateAction<TUser>) => void;
-  isLoading: () => void;
-};
-
 export function LoginForm() {
-  const { formState, setFormState } = useOutletContext<TOutletContext>();
+  const { formState, setFormState } = useOutletContext<ILogOutletContext>();
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = ({
     target: { name, value },

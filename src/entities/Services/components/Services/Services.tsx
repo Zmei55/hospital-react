@@ -1,14 +1,7 @@
 import { useState } from "react";
-import { ServicesInfo, ServicesSearch } from "entities/Services";
+import { ServicesInfo, ServicesSearch, TServicesList } from "entities/Services";
 
 import { Container, TitleBox, Title, ResetListBtn } from "./Services.styled";
-
-type TService = {
-  name: string;
-  codeService: string;
-};
-
-type TServicesList = TService[];
 
 export const Services: React.FC = () => {
   const [savedServicesList, setSavedServicesList] = useState<TServicesList>([]);

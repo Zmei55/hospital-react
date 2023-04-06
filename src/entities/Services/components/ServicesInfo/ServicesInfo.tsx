@@ -1,3 +1,5 @@
+import { ISavedServicesList } from "entities/Services";
+
 import {
   SelectedServicesList,
   SelectedServicesItem,
@@ -8,22 +10,10 @@ import {
   SelectedServicesName,
 } from "./ServicesInfo.styled";
 
-type TService = {
-  name: string;
-  codeService: string;
-};
-
-type TServicesList = TService[];
-
-type TSavedServicesList = {
-  savedServicesList: TService[];
-  setSavedServicesList(e: TServicesList): void;
-};
-
 export const ServicesInfo = ({
   savedServicesList,
   setSavedServicesList,
-}: TSavedServicesList) => {
+}: ISavedServicesList) => {
   const deleteService = (codeService: string) => {
     setSavedServicesList(
       savedServicesList.filter(service => service.codeService !== codeService)

@@ -2,15 +2,14 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useLogInMutation, loginSuccess } from "entities/Auth/redux";
 import { Outlet } from "react-router-dom";
+import { IAuthFormState } from "entities/Auth";
 
 import { Section, Form, Title } from "./AuthMenu.styled";
-
-type TFormState = { logName: string; password: string; station: string };
 
 export const AuthMenu: React.FC = () => {
   const dispatch = useDispatch();
   const [login, { isLoading }] = useLogInMutation();
-  const [formState, setFormState] = useState<TFormState>({
+  const [formState, setFormState] = useState<IAuthFormState>({
     logName: "",
     password: "",
     station: "",

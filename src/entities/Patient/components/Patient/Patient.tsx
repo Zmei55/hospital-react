@@ -1,29 +1,10 @@
 import { useState, useEffect } from "react";
 import { useAppSelector } from "shared/types";
-import { PatientInfo, PatientSearch } from "entities/Patient";
+import { PatientInfo, PatientSearch, IPatient } from "entities/Patient";
 
 import { Container } from "./Patient.styled";
 
-type TPatient = {
-  _id: string;
-  name: string;
-  birthDate: string;
-  cardNumber: number;
-  gender: string;
-  phoneNumber: string;
-  email: string;
-  identityDocument: string;
-  residenceAddress: {
-    street: string;
-    houseNumber: string;
-    city: string;
-    postcode: string;
-  };
-  services: never[];
-  containers: never[];
-};
-
-const initialPatient: TPatient = {
+const initialPatient: IPatient = {
   _id: "",
   name: "",
   birthDate: "",

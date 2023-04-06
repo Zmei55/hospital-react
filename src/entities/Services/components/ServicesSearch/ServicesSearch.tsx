@@ -1,7 +1,12 @@
 import { useState, useEffect } from "react";
 import { useAppSelector } from "shared/types";
 import { Modal } from "shared";
-import { servicesList } from "entities/Services";
+import {
+  servicesList,
+  IService,
+  TServicesList,
+  IServicesSearch,
+} from "entities/Services";
 
 import {
   ModalBtn,
@@ -38,18 +43,7 @@ import {
   SaveServicesBtn,
 } from "./ServicesSearch.styled";
 
-type TService = {
-  name: string;
-  codeService: string;
-};
-
-type TServicesList = TService[];
-
-type TServicesSearchEl = {
-  setSavedServicesList(e: TServicesList): void;
-};
-
-export const ServicesSearch = ({ setSavedServicesList }: TServicesSearchEl) => {
+export const ServicesSearch = ({ setSavedServicesList }: IServicesSearch) => {
   const patient = useAppSelector(state => state.app.patient);
   const [filter, setFilter] = useState<string>("");
   const [visibleServices, setVisibleServices] = useState<TServicesList>([]);
@@ -85,7 +79,7 @@ export const ServicesSearch = ({ setSavedServicesList }: TServicesSearchEl) => {
     setSelectedServices([]);
   };
 
-  const addService = (service: TService) => {
+  const addService = (service: IService) => {
     if (
       selectedServices
         .map(item => item.codeService)

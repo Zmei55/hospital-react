@@ -1,29 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-type TPatient = {
-  _id: string;
-  name: string;
-  birthDate: string;
-  cardNumber: number;
-  gender: string;
-  phoneNumber: string;
-  email: string;
-  identityDocument: string;
-  residenceAddress: {
-    street: string;
-    houseNumber: string;
-    city: string;
-    postcode: string;
-  };
-  services: never[];
-  containers: never[];
-};
-
-type TAction = {
-  data: {
-    result: TPatient;
-  };
-};
+import { IAction } from "app/types";
 
 const initialState = {
   patient: {
@@ -54,7 +30,7 @@ const appSlice = createSlice({
     fetchIsActivePatientInfo(state, action: PayloadAction<boolean>) {
       state.isActivePatientInfo = action.payload;
     },
-    fetchPatient(state, action: PayloadAction<TAction>) {
+    fetchPatient(state, action: PayloadAction<IAction>) {
       state.patient = action.payload.data.result;
     },
   },

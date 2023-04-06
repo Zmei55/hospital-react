@@ -64,6 +64,7 @@ const initialPatient: TInitialState = {
 };
 
 export const Request: React.FC = () => {
+  // перенести в пациента (рядом с именем)
   const dispatch = useAppDispatch();
 
   const clearPatient = (): void => {

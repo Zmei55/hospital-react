@@ -1,9 +1,4 @@
-type TService = {
-  name: string;
-  codeService: string;
-};
-
-type TServicesList = TService[];
+import { TServicesList } from "entities/Services";
 
 export const servicesList: TServicesList = [
   {

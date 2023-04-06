@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "shared/types";
 import { fetchIsActivePatientInfo } from "app/redux";
+import { IPatientInfoEl } from "entities/Patient";
 
 import {
   NameBlock,
@@ -15,30 +16,7 @@ import {
   InfoBody,
 } from "./PatientInfo.styled";
 
-type TPatient = {
-  _id: string;
-  name: string;
-  birthDate: string;
-  cardNumber: number;
-  gender: string;
-  phoneNumber: string;
-  email: string;
-  identityDocument: string;
-  residenceAddress: {
-    street: string;
-    houseNumber: string;
-    city: string;
-    postcode: string;
-  };
-  services: never[];
-  containers: never[];
-};
-
-type TPatientInfoEl = {
-  patient: TPatient;
-};
-
-export function PatientInfo({ patient }: TPatientInfoEl) {
+export function PatientInfo({ patient }: IPatientInfoEl) {
   const dispatch = useAppDispatch();
   const [isInfoActive, setIsInfoActive] = useState<boolean>(false);
   const isActive = useAppSelector(state => state.app.isActivePatientInfo);

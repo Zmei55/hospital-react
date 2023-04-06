@@ -1,18 +1,15 @@
-import { useEffect, useCallback, ReactNode } from 'react';
-import { createPortal } from 'react-dom';
-import { Backdrop, Content } from './Modal.styled';
+import { useEffect, useCallback } from "react";
+import { createPortal } from "react-dom";
+import { IModal } from "shared";
 
-const modalRoot = document.querySelector('#modal-root') as HTMLElement;
+import { Backdrop, Content } from "./Modal.styled";
 
-type TModalEl = {
-  children: ReactNode;
-  onClose: () => void;
-};
+const modalRoot = document.querySelector("#modal-root") as HTMLElement;
 
-export function Modal({ children, onClose }: TModalEl) {
+export function Modal({ children, onClose }: IModal) {
   const handleKeyDown = useCallback(
     (event: { code: string }) => {
-      if (event.code === 'Escape') {
+      if (event.code === "Escape") {
         onClose();
       }
     },
@@ -20,9 +17,9 @@ export function Modal({ children, onClose }: TModalEl) {
   );
 
   useEffect(() => {
-    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [handleKeyDown]);
 
