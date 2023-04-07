@@ -6,27 +6,18 @@ import { Loading } from "shared";
 
 import { Container } from "./App.styled";
 
-const AuthPage = loadable(() => import("pages/components/views/AuthView"), {
+const AuthPage = loadable(() => import("pages/views/AuthView"), {
   fallback: <Loading />,
 });
-const DesktopPage = loadable(
-  () => import("pages/components/views/DesktopView"),
-  {
-    fallback: <Loading />,
-  }
-);
-const PatientPage = loadable(
-  () => import("pages/components/views/PatientView"),
-  {
-    fallback: <Loading />,
-  }
-);
-const NotFoundPage = loadable(
-  () => import("pages/components/views/NotFoundView"),
-  {
-    fallback: <Loading />,
-  }
-);
+const DesktopPage = loadable(() => import("pages/views/DesktopView"), {
+  fallback: <Loading />,
+});
+const PatientPage = loadable(() => import("pages/views/PatientView"), {
+  fallback: <Loading />,
+});
+const NotFoundPage = loadable(() => import("pages/views/NotFoundView"), {
+  fallback: <Loading />,
+});
 
 export const App: React.FC = () => {
   return (
