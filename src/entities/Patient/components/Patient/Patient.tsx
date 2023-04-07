@@ -33,7 +33,11 @@ export function Patient() {
 
   return (
     <Container>
-      {patient._id ? <PatientInfo patient={patient} /> : <PatientSearch />}
+      {getPatient._id === "" ? (
+        <PatientSearch />
+      ) : (
+        <PatientInfo patient={patient} />
+      )}
     </Container>
   );
 }
