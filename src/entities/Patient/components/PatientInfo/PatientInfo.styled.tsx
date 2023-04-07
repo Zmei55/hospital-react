@@ -39,6 +39,11 @@ export const PatientName = styled.h3`
   color: ${props => props.theme.colors.text.default};
 `;
 
+export const PatientClearBtn = styled.button`
+  width: 24px;
+  height: 24px;
+`;
+
 export const BasicInformationBox = styled.div`
   display: flex;
   flex-direction: row;

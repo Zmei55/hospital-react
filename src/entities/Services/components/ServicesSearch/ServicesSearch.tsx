@@ -44,7 +44,7 @@ import {
 } from "./ServicesSearch.styled";
 
 export const ServicesSearch = ({ setSavedServicesList }: IServicesSearch) => {
-  const patient = useAppSelector(state => state.app.patient);
+  const patient = useAppSelector(state => state.patient.patient);
   const [filter, setFilter] = useState<string>("");
   const [visibleServices, setVisibleServices] = useState<TServicesList>([]);
   const [selectedServices, setSelectedServices] = useState<TServicesList>([]);

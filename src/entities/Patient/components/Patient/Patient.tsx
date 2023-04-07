@@ -24,7 +24,7 @@ const initialPatient: IPatient = {
 };
 
 export function Patient() {
-  const getPatient = useAppSelector(state => state.app.patient);
+  const getPatient = useAppSelector(state => state.patient.patient);
   const [patient, setPatient] = useState(initialPatient);
 
   useEffect(() => {

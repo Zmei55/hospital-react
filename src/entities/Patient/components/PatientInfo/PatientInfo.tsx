@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "shared/types";
-import { fetchIsActivePatientInfo } from "app/redux";
-import { IPatientInfoEl } from "entities/Patient";
+import {
+  fetchIsActivePatientInfo,
+  fetchPatient,
+  IPatientInfoEl,
+  IClearInitialPatient,
+} from "entities/Patient";
 
 import {
   NameBlock,
@@ -9,6 +13,7 @@ import {
   IconInfoActive,
   IconInfoInactive,
   PatientName,
+  PatientClearBtn,
   BasicInformationBox,
   BackgroundInformationBox,
   InfoBox,
@@ -16,10 +21,33 @@ import {
   InfoBody,
 } from "./PatientInfo.styled";
 
+const clearInitialPatient: IClearInitialPatient = {
+  data: {
+    result: {
+      _id: "",
+      name: "",
+      birthDate: "",
+      cardNumber: 0,
+      gender: "",
+      phoneNumber: "",
+      email: "",
+      identityDocument: "",
+      residenceAddress: {
+        street: "",
+        houseNumber: "",
+        city: "",
+        postcode: "",
+      },
+      services: [],
+      containers: [],
+    },
+  },
+};
+
 export function PatientInfo({ patient }: IPatientInfoEl) {
   const dispatch = useAppDispatch();
   const [isInfoActive, setIsInfoActive] = useState<boolean>(false);
-  const isActive = useAppSelector(state => state.app.isActivePatientInfo);
+  const isActive = useAppSelector(state => state.patient.isActivePatientInfo);
   const {
     name,
     birthDate,
@@ -34,6 +62,10 @@ export function PatientInfo({ patient }: IPatientInfoEl) {
   useEffect(() => {
     dispatch(fetchIsActivePatientInfo(isInfoActive));
   }, [dispatch, isInfoActive]);
+
+  const clearPatient = (): void => {
+    dispatch(fetchPatient(clearInitialPatient));
+  };
 
   const dateOfBirth = `${new Date(birthDate).getDate()}.
             ${new Date(birthDate).getMonth().toString().padStart(2, "0")}.
@@ -57,6 +89,7 @@ export function PatientInfo({ patient }: IPatientInfoEl) {
           {isActive ? <IconInfoInactive /> : <IconInfoActive />}
         </InfoButton>
         <PatientName>{name}</PatientName>
+        <PatientClearBtn type="button" onClick={clearPatient}></PatientClearBtn>
       </NameBlock>
       <BasicInformationBox>
         <InfoBox>

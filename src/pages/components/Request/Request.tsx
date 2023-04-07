@@ -1,5 +1,5 @@
-import { useAppDispatch } from "shared/types";
-import { fetchPatient } from "app/redux";
+// import { useAppDispatch } from "shared/types";
+// import { fetchPatient } from "app/redux";
 import { Patient } from "entities/Patient";
 import { Services } from "entities/Services";
 import { Containers } from "entities/Containers";
@@ -65,18 +65,21 @@ const initialPatient: TInitialState = {
 
 export const Request: React.FC = () => {
   // перенести в пациента (рядом с именем)
-  const dispatch = useAppDispatch();
+  // const dispatch = useAppDispatch();
 
-  const clearPatient = (): void => {
-    dispatch(fetchPatient(initialPatient));
-  };
+  // const clearPatient = (): void => {
+  //   dispatch(fetchPatient(initialPatient));
+  // };
 
   return (
     <Container>
       <Header>
         <HeaderTitle>Neue Bestellung</HeaderTitle>
         <RouterLink to="/desktop">
-          <CloseBtn type="button" onClick={clearPatient}>
+          <CloseBtn
+            type="button"
+            // onClick={clearPatient}
+          >
             <IconCross />
           </CloseBtn>
         </RouterLink>

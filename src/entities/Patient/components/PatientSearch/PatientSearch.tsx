@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import { fetchPatient } from "app/redux";
 import { useAppDispatch, useAppSelector } from "shared/types";
 import {
   useFetchPatientByIdQuery,
   useFetchPatientByNameMutation,
   fetchPatientByName,
+  fetchPatient,
   resetPatientsList,
-} from "entities/Patient/redux";
+} from "entities/Patient";
 import { Modal, SpinnerCenterBox, Spinner } from "shared";
 
 import {

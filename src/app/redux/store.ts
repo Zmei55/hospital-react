@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
-import authReducer from "../../entities/Auth/redux/authSlice";
-import patientsReducer from "../../entities/Patient/redux/patientsSlice";
-import appReducer from "./appSlice";
+import authReducer from "entities/Auth/redux/authSlice";
+import patientReducer from "entities/Patient/redux/patientSlice";
+import patientsListReducer from "entities/Patient/redux/patientsListSlice";
 import { api } from "./api";
 import {
   persistReducer,
@@ -28,8 +28,8 @@ export const store = configureStore({
   reducer: {
     [api.reducerPath]: api.reducer,
     auth: persistedAuthReducer,
-    patients: patientsReducer,
-    app: appReducer,
+    patient: patientReducer,
+    patients: patientsListReducer,
   },
   middleware: getDefaultMiddleware => [
     ...getDefaultMiddleware({
