@@ -1,7 +1,7 @@
-import { ILogUserState } from "./ILogUserState";
+import { IAuthFormState } from "./IAuthFormState";
 
 export interface ILogOutletContext {
-  formState: ILogUserState;
-  setFormState: (value: React.SetStateAction<ILogUserState>) => void;
+  formState: IAuthFormState;
+  setFormState: (value: React.SetStateAction<IAuthFormState>) => void;
   isLoading: boolean;
 }

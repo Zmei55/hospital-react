@@ -1,5 +1,5 @@
-import { Link, useOutletContext } from "react-router-dom";
-import { ILogOutletContext } from "entities/Auth";
+import { Link } from "react-router-dom";
+import { useHandleChange } from "entities/Auth";
 import { Spinner } from "shared";
 
 import {
@@ -14,12 +14,7 @@ import {
 } from "./StaffUnit.styled";
 
 export function StaffUnit() {
-  const { formState, setFormState, isLoading } =
-    useOutletContext<ILogOutletContext>();
-
-  const handleChange: React.ChangeEventHandler<HTMLInputElement> = ({
-    target: { name, value },
-  }) => setFormState(prev => ({ ...prev, [name]: value }));
+  const [formState, handleChange, isLoading] = useHandleChange();
 
   const isEmptyLoginForm = formState.station === "";
 

@@ -1,5 +1,5 @@
-import { Link, useOutletContext } from "react-router-dom";
-import { ILogOutletContext } from "entities/Auth";
+import { Link } from "react-router-dom";
+import { useHandleChange } from "entities/Auth";
 
 import {
   SubTitle,
@@ -11,11 +11,7 @@ import {
 } from "./LoginForm.styled";
 
 export function LoginForm() {
-  const { formState, setFormState } = useOutletContext<ILogOutletContext>();
-
-  const handleChange: React.ChangeEventHandler<HTMLInputElement> = ({
-    target: { name, value },
-  }) => setFormState(prev => ({ ...prev, [name]: value }));
+  const [formState, handleChange] = useHandleChange();
 
   const isEmptyLoginForm =
     formState.logName === "" || formState.password === "";
@@ -29,6 +25,7 @@ export function LoginForm() {
           <Input
             name="logName"
             type="text"
+            value={formState.logName}
             placeholder="Login"
             onChange={handleChange}
             required
@@ -39,6 +36,7 @@ export function LoginForm() {
           <Input
             name="password"
             type="password"
+            value={formState.password}
             placeholder="Password"
             onChange={handleChange}
             required
