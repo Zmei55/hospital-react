@@ -1,5 +1,5 @@
 import { IPatient } from "./IPatient";
 
-export interface IPatientInfoEl {
+export interface IPatientInfo {
   patient: IPatient;
 }

@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "shared/types";
+import { useAppSelector } from "shared/types";
 import {
-  fetchIsActivePatientInfo,
-  fetchPatient,
-  IPatientInfoEl,
-  IClearInitialPatient,
+  useHandleInfoActive,
+  useClearPatient,
+  patientInfo,
+  clearInitialPatient,
+  IPatientInfo,
 } from "entities/Patient";
 
 import {
@@ -21,66 +21,20 @@ import {
   InfoBody,
 } from "./PatientInfo.styled";
 
-const clearInitialPatient: IClearInitialPatient = {
-  data: {
-    result: {
-      _id: "",
-      name: "",
-      birthDate: "",
-      cardNumber: 0,
-      gender: "",
-      phoneNumber: "",
-      email: "",
-      identityDocument: "",
-      residenceAddress: {
-        street: "",
-        houseNumber: "",
-        city: "",
-        postcode: "",
-      },
-      services: [],
-      containers: [],
-    },
-  },
-};
-
-export function PatientInfo({ patient }: IPatientInfoEl) {
-  const dispatch = useAppDispatch();
-  const [isInfoActive, setIsInfoActive] = useState<boolean>(false);
+export function PatientInfo({ patient }: IPatientInfo) {
+  const [clearPatient] = useClearPatient(clearInitialPatient);
+  const [handleInfoActive] = useHandleInfoActive();
   const isActive = useAppSelector(state => state.patient.isActivePatientInfo);
   const {
     name,
-    birthDate,
+    dateOfBirth,
     gender,
     cardNumber,
     phoneNumber,
     email,
     identityDocument,
-    residenceAddress,
-  } = patient;
-
-  useEffect(() => {
-    dispatch(fetchIsActivePatientInfo(isInfoActive));
-  }, [dispatch, isInfoActive]);
-
-  const clearPatient = (): void => {
-    dispatch(fetchPatient(clearInitialPatient));
-  };
-
-  const dateOfBirth = `${new Date(birthDate).getDate()}.
-            ${new Date(birthDate).getMonth().toString().padStart(2, "0")}.
-            ${new Date(birthDate).getFullYear()}
-            `;
-  const residence = `
-            ${residenceAddress.street}, 
-            ${residenceAddress.houseNumber}, 
-            ${residenceAddress.postcode}, 
-            ${residenceAddress.city}
-            `;
-
-  const handleInfoActive: React.MouseEventHandler<HTMLButtonElement> = () => {
-    setIsInfoActive(!isInfoActive);
-  };
+    residence,
+  } = patientInfo(patient);
 
   return (
     <>

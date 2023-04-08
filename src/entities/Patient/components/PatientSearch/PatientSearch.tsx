@@ -1,13 +1,11 @@
-import { useState, useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "shared/types";
-import {
-  useFetchPatientByIdQuery,
-  useFetchPatientByNameMutation,
-  fetchPatientByName,
-  fetchPatient,
-  resetPatientsList,
-} from "entities/Patient";
 import { Modal, SpinnerCenterBox, Spinner } from "shared";
+import {
+  useChoosePatient,
+  usePatientsListFind,
+  useClearPatientsList,
+  useToggleModal,
+  showBirthDate,
+} from "entities/Patient";
 
 import {
   Container,
@@ -42,70 +40,16 @@ import {
 } from "./PatientSearch.styled";
 
 export function PatientSearch() {
-  const dispatch = useAppDispatch();
-  const patientsList = useAppSelector(state => state.patients.patients);
-  const [fetchPatientsList, { isLoading }] = useFetchPatientByNameMutation();
-  const [patientId, setPatientId] = useState<string>("");
-  const { data: patient } = useFetchPatientByIdQuery(patientId, {
-    skip: patientId === "",
-  });
-
-  const [formState, setFormState] = useState({
-    name: "",
-    birthDate: "",
-    cardNumber: "",
-  });
-  const [showModal, setShowModal] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (patient !== undefined) {
-      dispatch(fetchPatient(patient));
-    }
-  }, [dispatch, patient]);
-
-  const handleChange: React.ChangeEventHandler<HTMLInputElement> = ({
-    target: { name, value },
-  }) => setFormState(prev => ({ ...prev, [name]: value }));
-
-  const handlePatientsListFind = async (event: React.SyntheticEvent) => {
-    event.preventDefault();
-
-    try {
-      const patientsList = await fetchPatientsList(formState);
-      dispatch(fetchPatientByName(patientsList));
-    } catch (error) {
-      console.log("ERROR patientsListFormSubmit");
-    }
-  };
-
-  const clearPatientsList = (): void => {
-    dispatch(resetPatientsList([]));
-    setFormState({
-      name: "",
-      birthDate: "",
-      cardNumber: "",
-    });
-  };
-
-  const handleResetPatientsList: React.MouseEventHandler<
-    HTMLButtonElement
-  > = () => {
-    clearPatientsList();
-  };
-
-  const choosePatient = (event: string) => {
-    setPatientId(event);
-    clearPatientsList();
-  };
-
-  const toggleModal = () => {
-    setShowModal(!showModal);
-    clearPatientsList();
-  };
-
-  const showBirthDate = (birthDate: string) => {
-    return birthDate.slice(0, 10).split("-").reverse().join(" ");
-  };
+  const [
+    formState,
+    handleChange,
+    handlePatientsListFind,
+    isLoading,
+    patientsList,
+  ] = usePatientsListFind();
+  const [showModal, toggleModal] = useToggleModal(false);
+  const [clearPatientsList] = useClearPatientsList();
+  const [choosePatient] = useChoosePatient("");
 
   return (
     <Container>
@@ -121,7 +65,7 @@ export function PatientSearch() {
               <ModalTitle>Wählen Sie einen Patient aus</ModalTitle>
 
               <ButtonContainer>
-                <ResetBtn type="button" onClick={handleResetPatientsList}>
+                <ResetBtn type="button" onClick={clearPatientsList}>
                   Reset
                 </ResetBtn>
 

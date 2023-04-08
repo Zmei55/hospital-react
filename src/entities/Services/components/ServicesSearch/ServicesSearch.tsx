@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useAppSelector } from "shared/types";
-import { Modal } from "shared";
+import { Modal, useToggle } from "shared";
 import {
   servicesList,
   IService,
