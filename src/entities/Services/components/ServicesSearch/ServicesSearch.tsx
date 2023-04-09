@@ -7,7 +7,7 @@ import {
   handleClearForm,
   IServicesSearch,
 } from "entities/Services";
-import { Modal, useInput } from "shared";
+import { Modal, CrossRedBtn, useInput } from "shared";
 
 import {
   ModalBtn,
@@ -16,8 +16,6 @@ import {
   ModalContainer,
   ModalHeader,
   ModalTitle,
-  CloseBtn,
-  IconCross,
   ModalBody,
   ServiceForm,
   Filter,
@@ -85,11 +83,10 @@ export const ServicesSearch = ({ setSavedServicesList }: IServicesSearch) => {
           <ModalContainer>
             <ModalHeader>
               <ModalTitle>Dienst hinzufügen</ModalTitle>
-              <CloseBtn
+              <CrossRedBtn
+                style={{ width: "72px", height: "72px" }}
                 onClick={() => toggleModal(setFilter, setVisibleServices)}
-              >
-                <IconCross />
-              </CloseBtn>
+              />
             </ModalHeader>
 
             <ModalBody>

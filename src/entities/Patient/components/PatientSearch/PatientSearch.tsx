@@ -1,5 +1,5 @@
 import { useAppSelector } from "shared/types";
-import { Modal, SpinnerCenterBox, Spinner } from "shared";
+import { Modal, CrossRedBtn, SpinnerCenterBox, Spinner } from "shared";
 import {
   useChoosePatient,
   useHandlePatientChange,
@@ -20,8 +20,6 @@ import {
   ButtonContainer,
   ResetBtn,
   FindBtn,
-  CloseBtn,
-  IconCross,
   Form,
   Label,
   NameInput,
@@ -72,9 +70,10 @@ export function PatientSearch() {
 
                 <FindBtn onClick={handlePatientsListFind}>Find</FindBtn>
 
-                <CloseBtn onClick={toggleModal}>
-                  <IconCross />
-                </CloseBtn>
+                <CrossRedBtn
+                  style={{ width: "72px", height: "72px" }}
+                  onClick={toggleModal}
+                />
               </ButtonContainer>
             </ModalHeader>
 

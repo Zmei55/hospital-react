@@ -1,6 +1,7 @@
 import { Patient } from "entities/Patient";
 import { Services } from "entities/Services";
 import { Containers } from "entities/Containers";
+import { CrossRedBtn } from "shared";
 
 import {
   Container,
@@ -8,9 +9,7 @@ import {
   Body,
   RouterLink,
   HeaderTitle,
-  CloseBtn,
   Box,
-  IconCross,
 } from "./Request.styled";
 
 export const Request: React.FC = () => {
@@ -19,9 +18,7 @@ export const Request: React.FC = () => {
       <Header>
         <HeaderTitle>Neue Bestellung</HeaderTitle>
         <RouterLink to="/desktop">
-          <CloseBtn type="button">
-            <IconCross />
-          </CloseBtn>
+          <CrossRedBtn style={{ width: "72px", height: "72px" }} />
         </RouterLink>
       </Header>
 
