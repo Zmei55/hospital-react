@@ -1,4 +1,4 @@
-import { ISavedServicesList } from "entities/Services";
+import { deleteService, ISavedServicesList } from "entities/Services";
 
 import {
   SelectedServicesList,
@@ -14,12 +14,6 @@ export const ServicesInfo = ({
   savedServicesList,
   setSavedServicesList,
 }: ISavedServicesList) => {
-  const deleteService = (codeService: string) => {
-    setSavedServicesList(
-      savedServicesList.filter(service => service.codeService !== codeService)
-    );
-  };
-
   return (
     <>
       <SelectedServicesList>
@@ -27,7 +21,13 @@ export const ServicesInfo = ({
           <SelectedServicesItem key={service.codeService}>
             <DeleteSelectedServicesBtn
               type="button"
-              onClick={() => deleteService(service.codeService)}
+              onClick={() =>
+                deleteService(
+                  service.codeService,
+                  savedServicesList,
+                  setSavedServicesList
+                )
+              }
             >
               <IconTrash />
             </DeleteSelectedServicesBtn>

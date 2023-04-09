@@ -1,14 +1,14 @@
-import { useState } from "react";
-import { ServicesInfo, ServicesSearch, TServicesList } from "entities/Services";
+import {
+  ServicesInfo,
+  ServicesSearch,
+  useHandleClearServicesList,
+} from "entities/Services";
 
 import { Container, TitleBox, Title, ResetListBtn } from "./Services.styled";
 
 export const Services: React.FC = () => {
-  const [savedServicesList, setSavedServicesList] = useState<TServicesList>([]);
-
-  const handleClearList: React.MouseEventHandler<HTMLButtonElement> = () => {
-    setSavedServicesList([]);
-  };
+  const [savedServicesList, setSavedServicesList, handleClearList] =
+    useHandleClearServicesList([]);
 
   return (
     <Container>

@@ -1,12 +1,13 @@
-import { useState, useEffect } from "react";
-import { useAppSelector } from "shared/types";
-import { Modal, useToggle } from "shared";
+import { useAppSelector } from "shared";
 import {
-  servicesList,
-  IService,
-  TServicesList,
+  useServicesFilter,
+  useAddService,
+  useToggleModal,
+  deleteService,
+  handleClearForm,
   IServicesSearch,
 } from "entities/Services";
+import { Modal, useInput } from "shared";
 
 import {
   ModalBtn,
@@ -45,67 +46,28 @@ import {
 
 export const ServicesSearch = ({ setSavedServicesList }: IServicesSearch) => {
   const patient = useAppSelector(state => state.patient.patient);
-  const [filter, setFilter] = useState<string>("");
-  const [visibleServices, setVisibleServices] = useState<TServicesList>([]);
-  const [selectedServices, setSelectedServices] = useState<TServicesList>([]);
-  const [showModal, setShowModal] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (filter !== "") {
-      setVisibleServices(
-        servicesList.filter(service =>
-          service.name.toLowerCase().includes(filter.toLowerCase())
-        )
-      );
-    }
-  }, [filter]);
-
-  const handleFilter: React.ChangeEventHandler<HTMLInputElement> = event => {
-    setFilter(event.currentTarget.value);
-  };
+  const [filter, setFilter, handleFilter] = useInput("");
+  const { visibleServices, setVisibleServices } = useServicesFilter(filter, []);
+  const { selectedServices, setSelectedServices, addService } = useAddService(
+    []
+  );
+  const { showModal, toggleModal } = useToggleModal(false);
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = event => {
     event.preventDefault();
+
     setSavedServicesList(selectedServices);
     setFilter("");
     setVisibleServices([]);
     setSelectedServices([]);
-    toggleModal();
-  };
-
-  const handleClearForm: React.MouseEventHandler<HTMLButtonElement> = () => {
-    setFilter("");
-    setVisibleServices([]);
-    setSelectedServices([]);
-  };
-
-  const addService = (service: IService) => {
-    if (
-      selectedServices
-        .map(item => item.codeService)
-        .indexOf(service.codeService)
-    ) {
-      setSelectedServices([...selectedServices, service]);
-    }
-  };
-
-  const deleteService = (codeService: string) => {
-    setSelectedServices(
-      selectedServices.filter(service => service.codeService !== codeService)
-    );
-  };
-
-  const toggleModal = () => {
-    setShowModal(!showModal);
-    setFilter("");
-    setVisibleServices([]);
+    toggleModal(setFilter, setVisibleServices);
   };
 
   return (
     <>
       <ModalBtn
         type="button"
-        onClick={toggleModal}
+        onClick={() => toggleModal(setFilter, setVisibleServices)}
         disabled={patient._id === ""}
       >
         <IconServicesAdd />
@@ -119,11 +81,13 @@ export const ServicesSearch = ({ setSavedServicesList }: IServicesSearch) => {
       </ModalBtn>
 
       {showModal && (
-        <Modal onClose={toggleModal}>
+        <Modal onClose={() => toggleModal(setFilter, setVisibleServices)}>
           <ModalContainer>
             <ModalHeader>
               <ModalTitle>Dienst hinzufügen</ModalTitle>
-              <CloseBtn onClick={toggleModal}>
+              <CloseBtn
+                onClick={() => toggleModal(setFilter, setVisibleServices)}
+              >
                 <IconCross />
               </CloseBtn>
             </ModalHeader>
@@ -173,7 +137,13 @@ export const ServicesSearch = ({ setSavedServicesList }: IServicesSearch) => {
                       <SelectedServicesItem key={service.codeService}>
                         <DeleteSelectedServicesBtn
                           type="button"
-                          onClick={() => deleteService(service.codeService)}
+                          onClick={() =>
+                            deleteService(
+                              service.codeService,
+                              selectedServices,
+                              setSelectedServices
+                            )
+                          }
                         >
                           <IconTrash />
                         </DeleteSelectedServicesBtn>
@@ -188,7 +158,16 @@ export const ServicesSearch = ({ setSavedServicesList }: IServicesSearch) => {
                       </SelectedServicesItem>
                     ))}
                   </SelectedServicesList>
-                  <ResetFormBtn type="button" onClick={handleClearForm}>
+                  <ResetFormBtn
+                    type="button"
+                    onClick={() =>
+                      handleClearForm(
+                        setFilter,
+                        setVisibleServices,
+                        setSelectedServices
+                      )
+                    }
+                  >
                     Stornieren
                   </ResetFormBtn>
                   <SaveServicesBtn type="submit">
