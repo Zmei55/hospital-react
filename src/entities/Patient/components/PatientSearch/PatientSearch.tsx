@@ -1,10 +1,13 @@
+import { useAppSelector } from "shared/types";
 import { Modal, SpinnerCenterBox, Spinner } from "shared";
 import {
   useChoosePatient,
+  useHandlePatientChange,
   usePatientsListFind,
   useClearPatientsList,
   useToggleModal,
   showBirthDate,
+  initialSearchPatientState,
 } from "entities/Patient";
 
 import {
@@ -40,13 +43,11 @@ import {
 } from "./PatientSearch.styled";
 
 export function PatientSearch() {
-  const [
-    formState,
-    handleChange,
-    handlePatientsListFind,
-    isLoading,
-    patientsList,
-  ] = usePatientsListFind();
+  const patientsList = useAppSelector(state => state.patients.patients);
+  const { formState, handleChange } = useHandlePatientChange(
+    initialSearchPatientState
+  );
+  const { handlePatientsListFind, isLoading } = usePatientsListFind(formState);
   const [showModal, toggleModal] = useToggleModal(false);
   const [clearPatientsList] = useClearPatientsList();
   const [choosePatient] = useChoosePatient("");

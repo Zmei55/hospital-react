@@ -1,30 +1,14 @@
-import { useState } from "react";
-import { useAppDispatch, useAppSelector } from "shared/types";
+import { useAppDispatch } from "shared/types";
 import {
   useFetchPatientByNameMutation,
   fetchPatientByName,
-  IPatient,
+  ISearchPatientState,
 } from "entities/Patient";
 
-export const usePatientsListFind = (): [
-  { name: string; birthDate: string; cardNumber: string },
-  React.ChangeEventHandler<HTMLInputElement>,
-  (event: React.SyntheticEvent) => Promise<void>,
-  boolean,
-  IPatient[]
-] => {
+export const usePatientsListFind = (formState: ISearchPatientState) => {
   const dispatch = useAppDispatch();
-  const patientsList = useAppSelector(state => state.patients.patients);
-  const [fetchPatientsList, { isLoading }] = useFetchPatientByNameMutation();
-  const [formState, setFormState] = useState({
-    name: "",
-    birthDate: "",
-    cardNumber: "",
-  });
 
-  const handleChange: React.ChangeEventHandler<HTMLInputElement> = ({
-    target: { name, value },
-  }) => setFormState(prev => ({ ...prev, [name]: value }));
+  const [fetchPatientsList, { isLoading }] = useFetchPatientByNameMutation();
 
   const handlePatientsListFind = async (event: React.SyntheticEvent) => {
     event.preventDefault();
@@ -37,11 +21,5 @@ export const usePatientsListFind = (): [
     }
   };
 
-  return [
-    formState,
-    handleChange,
-    handlePatientsListFind,
-    isLoading,
-    patientsList,
-  ];
+  return { handlePatientsListFind, isLoading };
 };
