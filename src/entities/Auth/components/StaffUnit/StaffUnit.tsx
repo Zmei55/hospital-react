@@ -14,7 +14,7 @@ import {
 } from "./StaffUnit.styled";
 
 export function StaffUnit() {
-  const [formState, handleChange, isLoading] = useHandleChange();
+  const { formState, handleChange, isLoading } = useHandleChange();
 
   const isEmptyLoginForm = formState.station === "";
 

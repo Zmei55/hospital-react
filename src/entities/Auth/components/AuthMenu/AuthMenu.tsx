@@ -4,7 +4,7 @@ import { useHandleSubmit, initialFormAuthState } from "entities/Auth";
 import { Section, Form, Title } from "./AuthMenu.styled";
 
 export const AuthMenu: React.FC = () => {
-  const [formState, setFormState, isLoading, handleSubmit] =
+  const { formState, setFormState, isLoading, handleSubmit } =
     useHandleSubmit(initialFormAuthState);
 
   return (
