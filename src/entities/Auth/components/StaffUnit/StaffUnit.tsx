@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useHandleChange } from "entities/Auth";
-import { Spinner } from "shared";
+import { Spinner, AcceptBlueBtn, CancelGrayBtn } from "shared";
 
 import {
   SubTitle,
@@ -8,8 +8,6 @@ import {
   StationListItem,
   RadioBtn,
   BtnContainer,
-  BtnBack,
-  BtnLogIn,
   IconArrowLeft,
 } from "./StaffUnit.styled";
 
@@ -54,14 +52,19 @@ export function StaffUnit() {
 
       <BtnContainer>
         <Link to="/">
-          <BtnBack type="button">
+          <CancelGrayBtn width="172px" height="72px">
             <IconArrowLeft />
             Zurück
-          </BtnBack>
+          </CancelGrayBtn>
         </Link>
-        <BtnLogIn type="submit" disabled={isEmptyLoginForm}>
+        <AcceptBlueBtn
+          type="submit"
+          width="172px"
+          height="72px"
+          disabled={isEmptyLoginForm}
+        >
           {isLoading ? <Spinner /> : "Log In"}
-        </BtnLogIn>
+        </AcceptBlueBtn>
       </BtnContainer>
     </>
   );

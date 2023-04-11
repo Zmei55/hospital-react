@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { useHandleChange } from "entities/Auth";
+import { AcceptBlueBtn } from "shared";
 
 import {
   SubTitle,
   Container,
   Label,
   Input,
-  Button,
   IconArrowRight,
 } from "./LoginForm.styled";
 
@@ -45,10 +45,15 @@ export function LoginForm() {
       </Container>
 
       <Link to="/station">
-        <Button type="button" disabled={isEmptyLoginForm}>
+        <AcceptBlueBtn
+          type="button"
+          width="368px"
+          height="72px"
+          disabled={isEmptyLoginForm}
+        >
           Weiter
           <IconArrowRight />
-        </Button>
+        </AcceptBlueBtn>
       </Link>
     </>
   );

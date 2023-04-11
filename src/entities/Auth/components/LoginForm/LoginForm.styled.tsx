@@ -47,32 +47,6 @@ export const Input = styled.input`
   }
 `;
 
-export const Button = styled.button`
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 1.17;
-  color: ${props => props.theme.colors.text.white};
-
-  width: 368px;
-  height: 72px;
-  background-color: ${props => props.theme.colors.primary.default};
-  border-color: transparent;
-  border-radius: ${props => props.theme.borderRadius};
-
-  :focus,
-  :hover {
-    background-color: ${props => props.theme.colors.primary.hover};
-  }
-
-  :active {
-    background-color: ${props => props.theme.colors.primary.pressed};
-  }
-
-  :disabled {
-    background-color: ${props => props.theme.colors.primary.disabled};
-  }
-`;
-
 export const IconArrowRight = styled(iconArrowRight)`
   fill: ${props => props.theme.colors.text.white};
   margin-left: ${props => props.theme.spacing(7)};
