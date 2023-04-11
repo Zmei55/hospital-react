@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
 import { useHandleChange } from "entities/Auth";
-import { Spinner, AcceptBlueBtn, CancelGrayBtn } from "shared";
+import { useAppNavigate, Spinner, AcceptBlueBtn, CancelGrayBtn } from "shared";
 
 import {
   SubTitle,
@@ -13,6 +12,7 @@ import {
 
 export function StaffUnit() {
   const { formState, handleChange, isLoading } = useHandleChange();
+  const [navigate] = useAppNavigate();
 
   const isEmptyLoginForm = formState.station === "";
 
@@ -51,12 +51,14 @@ export function StaffUnit() {
       </StationsList>
 
       <BtnContainer>
-        <Link to="/">
-          <CancelGrayBtn width="172px" height="72px">
-            <IconArrowLeft />
-            Zurück
-          </CancelGrayBtn>
-        </Link>
+        <CancelGrayBtn
+          width="172px"
+          height="72px"
+          onClick={() => navigate("/")}
+        >
+          <IconArrowLeft />
+          Zurück
+        </CancelGrayBtn>
         <AcceptBlueBtn
           type="submit"
           width="172px"

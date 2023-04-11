@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
 import { useHandleChange } from "entities/Auth";
-import { AcceptBlueBtn } from "shared";
+import { useAppNavigate, AcceptBlueBtn } from "shared";
 
 import {
   SubTitle,
@@ -12,6 +11,7 @@ import {
 
 export function LoginForm() {
   const { formState, handleChange } = useHandleChange();
+  const [navigate] = useAppNavigate();
 
   const isEmptyLoginForm =
     formState.logName === "" || formState.password === "";
@@ -44,17 +44,16 @@ export function LoginForm() {
         </Label>
       </Container>
 
-      <Link to="/station">
-        <AcceptBlueBtn
-          type="button"
-          width="368px"
-          height="72px"
-          disabled={isEmptyLoginForm}
-        >
-          Weiter
-          <IconArrowRight />
-        </AcceptBlueBtn>
-      </Link>
+      <AcceptBlueBtn
+        type="button"
+        width="368px"
+        height="72px"
+        disabled={isEmptyLoginForm}
+        onClick={() => navigate("/station")}
+      >
+        Weiter
+        <IconArrowRight />
+      </AcceptBlueBtn>
     </>
   );
 }

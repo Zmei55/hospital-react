@@ -55,58 +55,6 @@ export const BtnContainer = styled.div`
   width: 368px;
 `;
 
-// export const BtnBack = styled.button`
-//   font-weight: 600;
-//   font-size: 24px;
-//   line-height: 1.17;
-//   color: ${props => props.theme.colors.text.body};
-
-//   width: 172px;
-//   height: 72px;
-//   background-color: ${props => props.theme.colors.secondary.default};
-//   border-color: transparent;
-//   border-radius: ${props => props.theme.borderRadius};
-
-//   :focus,
-//   :hover {
-//     background-color: ${props => props.theme.colors.secondary.hover};
-//   }
-
-//   :active {
-//     background-color: ${props => props.theme.colors.secondary.pressed};
-//   }
-
-//   :disabled {
-//     background-color: ${props => props.theme.colors.secondary.disabled};
-//   }
-// `;
-
-export const BtnLogIn = styled.button`
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 1.17;
-  color: ${props => props.theme.colors.text.white};
-
-  width: 172px;
-  height: 72px;
-  background-color: ${props => props.theme.colors.primary.default};
-  border-color: transparent;
-  border-radius: ${props => props.theme.borderRadius};
-
-  :focus,
-  :hover {
-    background-color: ${props => props.theme.colors.primary.hover};
-  }
-
-  :active {
-    background-color: ${props => props.theme.colors.primary.pressed};
-  }
-
-  :disabled {
-    background-color: ${props => props.theme.colors.primary.disabled};
-  }
-`;
-
 export const IconArrowLeft = styled(iconArrowLeft)`
   fill: ${props => props.theme.colors.text.body};
   margin-right: ${props => props.theme.spacing(7)};
