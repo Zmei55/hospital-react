@@ -51,7 +51,7 @@ export const App: React.FC = () => {
             }
           />
           <Route
-            path="patient"
+            path="request"
             element={
               <PrivateRoute redirectTo="/">
                 <PatientPage />

@@ -1,27 +1,23 @@
 import styled from "@emotion/styled";
-import { Link } from "react-router-dom";
-import { ReactComponent as iconCreateDocument } from "shared/icons/createDocument.svg";
-import { ReactComponent as iconFindDocument } from "shared/icons/findDocument.svg";
-import { ReactComponent as iconFindContainer } from "shared/icons/findContainer.svg";
-import { ReactComponent as iconDocuments } from "shared/icons/documents.svg";
 
 export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
 
-export const LargeContainer = styled.div`
+export const LargeBtn = styled.button`
   position: relative;
 
-  flex-basis: 1852px;
+  width: 1852px;
   height: 440px;
   margin-bottom: ${props => props.theme.spacing(4)};
   background-color: ${props => props.theme.colors.white};
   box-shadow: ${props => props.theme.boxShadow};
   border-radius: ${props => props.theme.borderRadius};
+  border-color: transparent;
 `;
 
-export const MediumContainer = styled.div`
+export const MediumBtn = styled.button`
   position: relative;
 
   flex-basis: 684px;
@@ -30,9 +26,10 @@ export const MediumContainer = styled.div`
   background-color: ${props => props.theme.colors.white};
   box-shadow: ${props => props.theme.boxShadow};
   border-radius: ${props => props.theme.borderRadius};
+  border-color: transparent;
 `;
 
-export const SmallContainer = styled.div`
+export const SmallBtn = styled.button`
   position: relative;
 
   flex-basis: 450px;
@@ -40,14 +37,7 @@ export const SmallContainer = styled.div`
   background-color: ${props => props.theme.colors.white};
   box-shadow: ${props => props.theme.boxShadow};
   border-radius: ${props => props.theme.borderRadius};
-`;
-
-export const DesktopLink = styled(Link)`
-  display: flex;
-  flex-direction: column;
-
-  width: 100%;
-  height: 100%;
+  border-color: transparent;
 `;
 
 export const IconContainer = styled.div`
@@ -64,56 +54,4 @@ export const IconTitle = styled.span`
   font-size: 32px;
   line-height: 1.13;
   color: ${props => props.theme.colors.text.default};
-`;
-
-export const IconNewRequest = styled(iconCreateDocument)`
-  fill: ${props => props.theme.colors.primary.default};
-
-  :focus,
-  :hover {
-    fill: ${props => props.theme.colors.primary.hover};
-  }
-
-  :active {
-    fill: ${props => props.theme.colors.primary.pressed};
-  }
-`;
-
-export const IconFindRequest = styled(iconFindDocument)`
-  fill: ${props => props.theme.colors.primary.default};
-
-  :focus,
-  :hover {
-    fill: ${props => props.theme.colors.primary.hover};
-  }
-
-  :active {
-    fill: ${props => props.theme.colors.primary.pressed};
-  }
-`;
-
-export const IconFindContainer = styled(iconFindContainer)`
-  fill: ${props => props.theme.colors.primary.default};
-
-  :focus,
-  :hover {
-    fill: ${props => props.theme.colors.primary.hover};
-  }
-
-  :active {
-    fill: ${props => props.theme.colors.primary.pressed};
-  }
-`;
-
-export const IconDocuments = styled(iconDocuments)`
-  fill: ${props => props.theme.colors.primary.default};
-
-  :focus,
-  :hover {
-    fill: ${props => props.theme.colors.primary.hover};
-  }
-
-  :active {
-    fill: ${props => props.theme.colors.primary.pressed};
-  }
 `;

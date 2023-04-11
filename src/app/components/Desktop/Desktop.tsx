@@ -1,55 +1,52 @@
+import { useAppNavigate } from "shared";
 import {
-  Container,
-  LargeContainer,
-  MediumContainer,
-  SmallContainer,
-  DesktopLink,
-  IconContainer,
-  IconTitle,
   IconNewRequest,
   IconFindRequest,
   IconFindContainer,
   IconDocuments,
-} from './Desktop.styled';
+} from "app/icons";
+
+import {
+  Container,
+  LargeBtn,
+  MediumBtn,
+  SmallBtn,
+  IconContainer,
+  IconTitle,
+} from "./Desktop.styled";
 
 export const Desktop: React.FC = () => {
+  const [navigate] = useAppNavigate();
+
   return (
     <Container>
-      <LargeContainer>
-        <DesktopLink to="/patient">
-          <IconContainer>
-            <IconNewRequest />
-            <IconTitle>Erstellen Sie eine Bestellung</IconTitle>
-          </IconContainer>
-        </DesktopLink>
-      </LargeContainer>
+      <LargeBtn onClick={() => navigate("/request")}>
+        <IconContainer>
+          <IconNewRequest />
+          <IconTitle>Erstellen Sie eine Bestellung</IconTitle>
+        </IconContainer>
+      </LargeBtn>
 
-      <MediumContainer>
-        <DesktopLink to={''}>
-          <IconContainer>
-            <IconFindRequest />
-            <IconTitle>Finden Sie eine Bestellung</IconTitle>
-          </IconContainer>
-        </DesktopLink>
-      </MediumContainer>
+      <MediumBtn onClick={() => navigate("")}>
+        <IconContainer>
+          <IconFindRequest />
+          <IconTitle>Finden Sie eine Bestellung</IconTitle>
+        </IconContainer>
+      </MediumBtn>
 
-      <MediumContainer>
-        <DesktopLink to={''}>
-          <IconContainer>
-            <IconFindContainer />
-            <IconTitle>Finden Sie eine Behälter</IconTitle>
-          </IconContainer>
-        </DesktopLink>
-      </MediumContainer>
+      <MediumBtn onClick={() => navigate("")}>
+        <IconContainer>
+          <IconFindContainer />
+          <IconTitle>Finden Sie eine Behälter</IconTitle>
+        </IconContainer>
+      </MediumBtn>
 
-      <SmallContainer>
-        <DesktopLink to={''}>
-          <IconContainer>
-            <IconDocuments />
-            <IconTitle>Unterlagen</IconTitle>
-          </IconContainer>
-        </DesktopLink>
-      </SmallContainer>
+      <SmallBtn onClick={() => navigate("")}>
+        <IconContainer>
+          <IconDocuments />
+          <IconTitle>Unterlagen</IconTitle>
+        </IconContainer>
+      </SmallBtn>
     </Container>
   );
 };
