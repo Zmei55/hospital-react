@@ -1,4 +1,4 @@
-import { useAppDispatch } from "shared/types";
+import { useAppDispatch } from "shared";
 import { fetchPatient, IClearInitialPatient } from "entities/Patient";
 
 export const useClearPatient = (initialValue: IClearInitialPatient) => {

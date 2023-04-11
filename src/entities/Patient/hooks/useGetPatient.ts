@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useAppSelector } from "shared/types";
+import { useAppSelector } from "shared";
 import { IPatient } from "entities/Patient";
 
 export const useGetPatient = (initialValue: IPatient) => {

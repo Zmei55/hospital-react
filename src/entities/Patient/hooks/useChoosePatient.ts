@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
-import { useAppDispatch } from "shared/types";
-import { useFetchPatientByIdQuery, fetchPatient } from "entities/Patient";
-import { useClearPatientsList } from "entities/Patient";
+import { useAppDispatch } from "shared";
+import {
+  useFetchPatientByIdQuery,
+  useClearPatientsList,
+  fetchPatient,
+} from "entities/Patient";
 
 export const useChoosePatient = (initialValue: string) => {
   const dispatch = useAppDispatch();

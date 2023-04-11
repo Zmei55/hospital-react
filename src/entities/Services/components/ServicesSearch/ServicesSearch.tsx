@@ -1,4 +1,3 @@
-import { useAppSelector } from "shared";
 import {
   useServicesFilter,
   useAddService,
@@ -7,7 +6,7 @@ import {
   handleClearForm,
   IServicesSearch,
 } from "entities/Services";
-import { Modal, CrossRedBtn, useInput } from "shared";
+import { useAppSelector, Modal, CrossRedBtn, useInput } from "shared";
 
 import {
   ModalBtn,
@@ -84,7 +83,8 @@ export const ServicesSearch = ({ setSavedServicesList }: IServicesSearch) => {
             <ModalHeader>
               <ModalTitle>Dienst hinzufügen</ModalTitle>
               <CrossRedBtn
-                style={{ width: "72px", height: "72px" }}
+                width="72px"
+                height="72px"
                 onClick={() => toggleModal(setFilter, setVisibleServices)}
               />
             </ModalHeader>

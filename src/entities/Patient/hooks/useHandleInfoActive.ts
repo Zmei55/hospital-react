@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useAppDispatch } from "shared/types";
+import { useAppDispatch } from "shared";
 import { fetchIsActivePatientInfo } from "entities/Patient";
 
 export const useHandleInfoActive = () => {

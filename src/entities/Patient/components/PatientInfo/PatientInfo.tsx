@@ -1,4 +1,4 @@
-import { useAppSelector } from "shared/types";
+import { useAppSelector } from "shared";
 import {
   useHandleInfoActive,
   useClearPatient,
