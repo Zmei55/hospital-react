@@ -18,7 +18,7 @@ export const Request: React.FC = () => {
       <Header>
         <HeaderTitle>Neue Bestellung</HeaderTitle>
         <RouterLink to="/desktop">
-          <CrossRedBtn style={{ width: "72px", height: "72px" }} />
+          <CrossRedBtn width="72px" height="72px" />
         </RouterLink>
       </Header>
 
