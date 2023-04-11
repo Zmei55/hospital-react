@@ -1,13 +1,15 @@
+import { IButton } from "shared";
+
 import { Button, IconCross } from "./CrossRedBtn.styled";
 
-interface ICrossRedBtn {
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  style: React.CSSProperties;
-}
-
-export const CrossRedBtn = ({ onClick, style }: ICrossRedBtn) => {
+export const CrossRedBtn: React.FC<IButton> = ({
+  type,
+  width,
+  height,
+  onClick,
+}) => {
   return (
-    <Button type="button" style={style} onClick={onClick}>
+    <Button type={type} style={{ width, height }} onClick={onClick}>
       <IconCross />
     </Button>
   );
