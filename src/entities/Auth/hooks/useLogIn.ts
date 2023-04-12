@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "shared";
 import { useLogInMutation, loginSuccess, IAuthFormState } from "entities/Auth";
 
-export const useHandleSubmit = (initialValue: IAuthFormState) => {
-  const dispatch = useDispatch();
+export const useLogIn = (initialValue: IAuthFormState) => {
+  const dispatch = useAppDispatch();
   const [login, { isLoading }] = useLogInMutation();
   const [formState, setFormState] = useState<IAuthFormState>(initialValue);
 

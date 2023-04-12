@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom";
-import { useHandleSubmit, initialFormAuthState } from "entities/Auth";
+import { useLogIn, initialFormAuthState } from "entities/Auth";
 
 import { Section, Form, Title } from "./AuthMenu.styled";
 
 export const AuthMenu: React.FC = () => {
   const { formState, setFormState, isLoading, handleSubmit } =
-    useHandleSubmit(initialFormAuthState);
+    useLogIn(initialFormAuthState);
 
   return (
     <Section>
