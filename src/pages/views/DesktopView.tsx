@@ -1,4 +1,4 @@
-import { Desktop } from "app/components";
+import { Desktop } from "pages";
 
 const DesktopView: React.FC = () => {
   return <Desktop />;
