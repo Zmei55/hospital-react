@@ -13,10 +13,6 @@ export const Header = styled.header`
   background-color: #fff;
 `;
 
-export const Container = styled.div`
-  display: flex;
-`;
-
 export const Body = styled.section`
   padding: ${props => props.theme.spacing(8)};
 `;
