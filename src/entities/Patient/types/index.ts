@@ -4,3 +4,6 @@ export * from "./IPatientState";
 export * from "./IAction";
 export * from "./IClearInitialPatient";
 export * from "./ISearchPatientState";
+export * from "./IPatientSearchModalHeader";
+export * from "./IPatientSearchModalForm";
+export * from "./IPatientSearchList";
