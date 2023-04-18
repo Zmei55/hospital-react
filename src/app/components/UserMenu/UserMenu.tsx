@@ -1,6 +1,6 @@
 import { useGetUserData } from "entities/User";
 import { useLogOut } from "entities/Auth";
-import { useAppSelector, TransparentBtn, IconGear } from "shared";
+import { useAppSelector, TransparentBtn } from "shared";
 
 import { Container, UserBox, Name, Station } from "./UserMenu.styled";
 
@@ -19,7 +19,7 @@ export const UserMenu: React.FC = () => {
       )}
 
       <TransparentBtn type="button" width="72px" height="72px">
-        <IconGear />
+        {/* <IconGear /> */}
       </TransparentBtn>
 
       {isLoggedIn && (
