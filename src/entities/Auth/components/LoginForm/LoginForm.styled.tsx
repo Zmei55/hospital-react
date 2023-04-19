@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { ReactComponent as iconArrowRight } from "shared/icons/arrowRight.svg";
 
 export const SubTitle = styled.h3`
   font-weight: 500;
@@ -45,9 +44,4 @@ export const Input = styled.input`
   :focus {
     border-color: ${props => props.theme.colors.blue.default};
   }
-`;
-
-export const IconArrowRight = styled(iconArrowRight)`
-  fill: ${props => props.theme.colors.text.white};
-  margin-left: ${props => props.theme.spacing(7)};
 `;

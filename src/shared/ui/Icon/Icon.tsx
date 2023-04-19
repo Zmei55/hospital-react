@@ -2,14 +2,7 @@ import icons from "../../icons/svgSprite.svg";
 
 interface IIcon {
   icon: string;
-  color:
-    | "black"
-    | "white"
-    | "text"
-    | "primary"
-    | "secondary"
-    | "success"
-    | "error";
+  color: "black" | "white" | "text" | "blue" | "grey" | "green" | "red";
   size: number;
 }
 

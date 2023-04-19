@@ -1,13 +1,7 @@
 import { useHandleChange } from "entities/Auth";
-import { useAppNavigate, AcceptBlueBtn } from "shared";
+import { useAppNavigate, Button, Icon } from "shared";
 
-import {
-  SubTitle,
-  Container,
-  Label,
-  Input,
-  IconArrowRight,
-} from "./LoginForm.styled";
+import { SubTitle, Container, Label, Input } from "./LoginForm.styled";
 
 export function LoginForm() {
   const { formState, handleChange } = useHandleChange();
@@ -44,16 +38,16 @@ export function LoginForm() {
         </Label>
       </Container>
 
-      <AcceptBlueBtn
-        type="button"
+      <Button
         width="368px"
         height="72px"
+        backgroundColor="blue"
         disabled={isEmptyLoginForm}
         onClick={() => navigate("/station")}
       >
         Weiter
-        <IconArrowRight />
-      </AcceptBlueBtn>
+        <Icon icon="caret-right-bold" size={24} color="white" />
+      </Button>
     </>
   );
 }
