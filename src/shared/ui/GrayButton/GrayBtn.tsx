@@ -3,14 +3,14 @@ import { IButton } from "shared/types";
 import { Button } from "./GrayBtn.styled";
 
 export const GrayBtn: React.FC<IButton> = ({
-  type = "button",
+  type,
   width,
   height,
   children,
   onClick,
 }) => {
   return (
-    <Button type={type} style={{ width, height }} onClick={onClick}>
+    <Button type="button" style={{ width, height }} onClick={onClick}>
       {children}
     </Button>
   );

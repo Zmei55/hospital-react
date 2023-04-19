@@ -1,17 +1,12 @@
 import styled from "@emotion/styled";
 
-export const Button = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+export const Btn = styled.button`
   font-weight: 600;
   font-size: 24px;
   line-height: 1.17;
   color: ${props => props.theme.colors.text.white};
-  fill: ${props => props.theme.colors.white};
 
-  background-color: ${props => props.theme.colors.};
+  background-color: ${props => props.theme.colors.primary.default};
   border-color: transparent;
   border-radius: ${props => props.theme.borderRadius};
 
@@ -26,9 +21,5 @@ export const Button = styled.button`
 
   :disabled {
     background-color: ${props => props.theme.colors.primary.disabled};
-  }
-
-  :not(:last-child) {
-    margin-right: ${props => props.theme.spacing(6)};
   }
 `;
