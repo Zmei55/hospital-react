@@ -14,7 +14,7 @@ const spin = keyframes`
 export const SpinnerCenterBox = styled.div`
   display: flex;
   justify-content: center;
-  color: ${props => props.theme.colors.primary.default};
+  color: ${props => props.theme.colors.blue.default};
   width: 100%;
   height: 100%;
 `;

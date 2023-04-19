@@ -15,10 +15,10 @@ export const ModalBtn = styled.button`
   font-weight: 600;
   font-size: 24px;
   line-height: 1.17;
-  color: ${props => props.theme.colors.primary.default};
-  fill: ${props => props.theme.colors.primary.default};
+  color: ${props => props.theme.colors.blue.default};
+  fill: ${props => props.theme.colors.blue.default};
 
-  border: 2px solid ${props => props.theme.colors.primary.default};
+  border: 2px solid ${props => props.theme.colors.blue.default};
   box-shadow: 0px 8px 16px rgba(17, 17, 17, 0.06);
   border-radius: ${props => props.theme.borderRadius};
   width: 100%;
@@ -27,15 +27,15 @@ export const ModalBtn = styled.button`
 
   :focus,
   :hover {
-    color: ${props => props.theme.colors.primary.hover};
-    fill: ${props => props.theme.colors.primary.hover};
-    border-color: ${props => props.theme.colors.primary.hover};
+    color: ${props => props.theme.colors.blue.hover};
+    fill: ${props => props.theme.colors.blue.hover};
+    border-color: ${props => props.theme.colors.blue.hover};
   }
 
   :active {
-    color: ${props => props.theme.colors.primary.pressed};
-    fill: ${props => props.theme.colors.primary.pressed};
-    border-color: ${props => props.theme.colors.primary.pressed};
+    color: ${props => props.theme.colors.blue.pressed};
+    fill: ${props => props.theme.colors.blue.pressed};
+    border-color: ${props => props.theme.colors.blue.pressed};
   }
 `;
 

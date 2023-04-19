@@ -24,10 +24,10 @@ export const StationsList = styled.ul`
   ::-webkit-scrollbar-thumb {
     height: 100px;
     border-radius: 25px;
-    background-color: ${props => props.theme.colors.secondary.default};
+    background-color: ${props => props.theme.colors.grey.default};
 
     :active {
-      background-color: ${props => props.theme.colors.secondary.pressed};
+      background-color: ${props => props.theme.colors.grey.pressed};
     }
   }
 `;

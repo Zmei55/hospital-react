@@ -36,15 +36,15 @@ export const ModalBtn = styled.button`
 
   :focus,
   :hover {
-    color: ${props => props.theme.colors.primary.hover};
-    fill: ${props => props.theme.colors.primary.hover};
-    border-color: ${props => props.theme.colors.primary.hover};
+    color: ${props => props.theme.colors.blue.hover};
+    fill: ${props => props.theme.colors.blue.hover};
+    border-color: ${props => props.theme.colors.blue.hover};
   }
 
   :active {
-    color: ${props => props.theme.colors.primary.pressed};
-    fill: ${props => props.theme.colors.primary.pressed};
-    border-color: ${props => props.theme.colors.primary.pressed};
+    color: ${props => props.theme.colors.blue.pressed};
+    fill: ${props => props.theme.colors.blue.pressed};
+    border-color: ${props => props.theme.colors.blue.pressed};
   }
 
   :disabled {

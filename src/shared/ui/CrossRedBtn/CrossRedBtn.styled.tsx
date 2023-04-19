@@ -9,17 +9,17 @@ export const Button = styled.button`
   /* width: 72px;
   height: 72px; */
   padding: 0;
-  background-color: ${props => props.theme.colors.error.default};
+  background-color: ${props => props.theme.colors.red.default};
   border-color: transparent;
   border-radius: ${props => props.theme.borderRadius};
 
   :focus,
   :hover {
-    background-color: ${props => props.theme.colors.error.hover};
+    background-color: ${props => props.theme.colors.red.hover};
   }
 
   :active {
-    background-color: ${props => props.theme.colors.error.pressed};
+    background-color: ${props => props.theme.colors.red.pressed};
   }
 `;
 

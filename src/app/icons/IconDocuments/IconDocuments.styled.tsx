@@ -2,14 +2,14 @@ import styled from "@emotion/styled";
 import { ReactComponent as iconDocuments } from "shared/icons/documents.svg";
 
 export const Icon = styled(iconDocuments)`
-  fill: ${props => props.theme.colors.primary.default};
+  fill: ${props => props.theme.colors.blue.default};
 
   :focus,
   :hover {
-    fill: ${props => props.theme.colors.primary.hover};
+    fill: ${props => props.theme.colors.blue.hover};
   }
 
   :active {
-    fill: ${props => props.theme.colors.primary.pressed};
+    fill: ${props => props.theme.colors.blue.pressed};
   }
 `;

@@ -43,7 +43,7 @@ export const Input = styled.input`
   }
 
   :focus {
-    border-color: ${props => props.theme.colors.primary.default};
+    border-color: ${props => props.theme.colors.blue.default};
   }
 `;
 

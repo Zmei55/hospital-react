@@ -47,10 +47,10 @@ export const ListBody = styled.ul`
   ::-webkit-scrollbar-thumb {
     height: 100px;
     border-radius: 25px;
-    background-color: ${props => props.theme.colors.secondary.default};
+    background-color: ${props => props.theme.colors.grey.default};
 
     :active {
-      background-color: ${props => props.theme.colors.secondary.pressed};
+      background-color: ${props => props.theme.colors.grey.pressed};
     }
   }
 `;
@@ -60,7 +60,7 @@ export const ListItem = styled.li`
   align-items: center;
 
   :nth-of-type(2n - 1) {
-    background-color: ${props => props.theme.colors.secondary.default};
+    background-color: ${props => props.theme.colors.grey.default};
   }
 `;
 
@@ -87,7 +87,7 @@ export const SelectBtn = styled.button`
   font-weight: 400;
   font-size: 24px;
   line-height: 1.17;
-  color: ${props => props.theme.colors.primary.default};
+  color: ${props => props.theme.colors.blue.default};
 
   width: 194px;
   height: ${props => props.theme.spacing(18)};
@@ -98,10 +98,10 @@ export const SelectBtn = styled.button`
 
   :focus,
   :hover {
-    color: ${props => props.theme.colors.primary.hover};
+    color: ${props => props.theme.colors.blue.hover};
   }
 
   :active {
-    color: ${props => props.theme.colors.primary.pressed};
+    color: ${props => props.theme.colors.blue.pressed};
   }
 `;

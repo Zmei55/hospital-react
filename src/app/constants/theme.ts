@@ -8,25 +8,25 @@ export const theme = Object.freeze({
       placeholder: "#9DA0BD",
       white: "#FFFFFF",
     },
-    primary: {
+    blue: {
       pressed: "#0E4CC9",
       hover: "#0F55E3",
       default: "#115FFD",
       disabled: "rgba(17, 95, 253, 0.5)",
     },
-    secondary: {
+    grey: {
       pressed: "#AEB1C2",
       hover: "#C5C9DB",
       default: "#DCE0F5",
       disabled: "rgba(220, 224, 245, 0.5)",
     },
-    success: {
+    green: {
       pressed: "#126641",
       hover: "#168051",
       default: "#1B9962",
       disabled: "rgba(27, 153, 98, 0.5)",
     },
-    error: {
+    red: {
       pressed: "#BA2625",
       hover: "#D42C2A",
       default: "#EC312F",

@@ -17,15 +17,15 @@ export const Button = styled.button`
 
   :focus,
   :hover {
-    background-color: ${props => props.theme.colors.primary.hover};
+    background-color: ${props => props.theme.colors.blue.hover};
   }
 
   :active {
-    background-color: ${props => props.theme.colors.primary.pressed};
+    background-color: ${props => props.theme.colors.blue.pressed};
   }
 
   :disabled {
-    background-color: ${props => props.theme.colors.primary.disabled};
+    background-color: ${props => props.theme.colors.blue.disabled};
   }
 
   :not(:last-child) {

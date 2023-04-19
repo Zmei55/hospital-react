@@ -21,15 +21,15 @@ export const ModalBtn = styled.button`
 
   :focus,
   :hover {
-    color: ${props => props.theme.colors.primary.hover};
-    fill: ${props => props.theme.colors.primary.hover};
-    border-color: ${props => props.theme.colors.primary.hover};
+    color: ${props => props.theme.colors.blue.hover};
+    fill: ${props => props.theme.colors.blue.hover};
+    border-color: ${props => props.theme.colors.blue.hover};
   }
 
   :active {
-    color: ${props => props.theme.colors.primary.pressed};
-    fill: ${props => props.theme.colors.primary.pressed};
-    border-color: ${props => props.theme.colors.primary.pressed};
+    color: ${props => props.theme.colors.blue.pressed};
+    fill: ${props => props.theme.colors.blue.pressed};
+    border-color: ${props => props.theme.colors.blue.pressed};
   }
 
   :disabled {
@@ -127,10 +127,10 @@ export const FilteredList = styled.ul`
   ::-webkit-scrollbar-thumb {
     height: 100px;
     border-radius: 25px;
-    background-color: ${props => props.theme.colors.secondary.default};
+    background-color: ${props => props.theme.colors.grey.default};
 
     :active {
-      background-color: ${props => props.theme.colors.secondary.pressed};
+      background-color: ${props => props.theme.colors.grey.pressed};
     }
   }
 `;
@@ -173,40 +173,40 @@ export const AddServiceBtn = styled.button`
 `;
 
 export const IconPlus = styled(iconPlus)`
-  fill: ${props => props.theme.colors.primary.default};
+  fill: ${props => props.theme.colors.blue.default};
 
   margin-right: ${props => props.theme.spacing(2)};
 
   :hover,
   :focus {
-    fill: ${props => props.theme.colors.primary.hover};
+    fill: ${props => props.theme.colors.blue.hover};
   }
 
   :active {
-    fill: ${props => props.theme.colors.primary.pressed};
+    fill: ${props => props.theme.colors.blue.pressed};
   }
 
   :disabled {
-    fill: ${props => props.theme.colors.secondary.disabled};
+    fill: ${props => props.theme.colors.grey.disabled};
   }
 `;
 
 export const AddServiceBtnTitle = styled.span`
   font-size: 24px;
   line-height: 1.17;
-  color: ${props => props.theme.colors.primary.default};
+  color: ${props => props.theme.colors.blue.default};
 
   :hover,
   :focus {
-    color: ${props => props.theme.colors.primary.hover};
+    color: ${props => props.theme.colors.blue.hover};
   }
 
   :active {
-    color: ${props => props.theme.colors.primary.pressed};
+    color: ${props => props.theme.colors.blue.pressed};
   }
 
   :disabled {
-    color: ${props => props.theme.colors.secondary.disabled};
+    color: ${props => props.theme.colors.grey.disabled};
   }
 `;
 
@@ -241,10 +241,10 @@ export const SelectedServicesList = styled.ul`
   ::-webkit-scrollbar-thumb {
     height: 100px;
     border-radius: 25px;
-    background-color: ${props => props.theme.colors.secondary.default};
+    background-color: ${props => props.theme.colors.grey.default};
 
     :active {
-      background-color: ${props => props.theme.colors.secondary.pressed};
+      background-color: ${props => props.theme.colors.grey.pressed};
     }
   }
 `;
@@ -281,18 +281,18 @@ export const DeleteSelectedServicesBtn = styled.button`
 `;
 
 export const IconTrash = styled(iconTrash)`
-  fill: ${props => props.theme.colors.error.default};
+  fill: ${props => props.theme.colors.red.default};
 
   width: 36px;
   height: 36px;
 
   :hover,
   :focus {
-    fill: ${props => props.theme.colors.error.hover};
+    fill: ${props => props.theme.colors.red.hover};
   }
 
   :active {
-    fill: ${props => props.theme.colors.error.pressed};
+    fill: ${props => props.theme.colors.red.pressed};
   }
 `;
 
@@ -308,15 +308,15 @@ export const ResetFormBtn = styled.button`
 
   border: none;
   border-radius: ${props => props.theme.borderRadius};
-  background-color: ${props => props.theme.colors.secondary.default};
+  background-color: ${props => props.theme.colors.grey.default};
 
   :hover,
   :focus {
-    background-color: ${props => props.theme.colors.secondary.hover};
+    background-color: ${props => props.theme.colors.grey.hover};
   }
 
   :active {
-    background-color: ${props => props.theme.colors.secondary.pressed};
+    background-color: ${props => props.theme.colors.grey.pressed};
   }
 `;
 
@@ -331,14 +331,14 @@ export const SaveServicesBtn = styled.button`
 
   border: none;
   border-radius: ${props => props.theme.borderRadius};
-  background-color: ${props => props.theme.colors.primary.default};
+  background-color: ${props => props.theme.colors.blue.default};
 
   :hover,
   :focus {
-    background-color: ${props => props.theme.colors.primary.hover};
+    background-color: ${props => props.theme.colors.blue.hover};
   }
 
   :active {
-    background-color: ${props => props.theme.colors.primary.pressed};
+    background-color: ${props => props.theme.colors.blue.pressed};
   }
 `;

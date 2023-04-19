@@ -11,25 +11,25 @@ declare module "@emotion/react" {
         placeholder: string;
         white: string;
       };
-      primary: {
+      blue: {
         pressed: string;
         hover: string;
         default: string;
         disabled: string;
       };
-      secondary: {
+      grey: {
         pressed: string;
         hover: string;
         default: string;
         disabled: string;
       };
-      success: {
+      green: {
         pressed: string;
         hover: string;
         default: string;
         disabled: string;
       };
-      error: {
+      red: {
         pressed: string;
         hover: string;
         default: string;

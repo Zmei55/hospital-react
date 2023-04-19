@@ -6,20 +6,20 @@ export const Button = styled.button`
   line-height: 1.17;
   color: ${props => props.theme.colors.text.body};
 
-  background-color: ${props => props.theme.colors.secondary.default};
+  background-color: ${props => props.theme.colors.grey.default};
   border-color: transparent;
   border-radius: ${props => props.theme.borderRadius};
 
   :focus,
   :hover {
-    background-color: ${props => props.theme.colors.secondary.hover};
+    background-color: ${props => props.theme.colors.grey.hover};
   }
 
   :active {
-    background-color: ${props => props.theme.colors.secondary.pressed};
+    background-color: ${props => props.theme.colors.grey.pressed};
   }
 
   :disabled {
-    background-color: ${props => props.theme.colors.secondary.disabled};
+    background-color: ${props => props.theme.colors.grey.disabled};
   }
 `;

@@ -29,7 +29,7 @@ export const InfoHeaderBtn = styled.button`
   padding-bottom: ${props => props.theme.spacing(3)};
   padding-left: ${props => props.theme.spacing(6)};
 
-  background-color: ${props => props.theme.colors.secondary.default};
+  background-color: ${props => props.theme.colors.grey.default};
   border: none;
   border-radius: ${props => props.theme.borderRadius};
 
@@ -50,10 +50,10 @@ export const SelectedServicesList = styled.ul`
   ::-webkit-scrollbar-thumb {
     height: 100px;
     border-radius: 25px;
-    background-color: ${props => props.theme.colors.secondary.default};
+    background-color: ${props => props.theme.colors.grey.default};
 
     :active {
-      background-color: ${props => props.theme.colors.secondary.pressed};
+      background-color: ${props => props.theme.colors.grey.pressed};
     }
   }
 `;
@@ -90,17 +90,17 @@ export const DeleteSelectedServicesBtn = styled.button`
 `;
 
 export const IconTrash = styled(iconTrash)`
-  fill: ${props => props.theme.colors.error.default};
+  fill: ${props => props.theme.colors.red.default};
 
   width: 36px;
   height: 36px;
 
   :hover,
   :focus {
-    fill: ${props => props.theme.colors.error.hover};
+    fill: ${props => props.theme.colors.red.hover};
   }
 
   :active {
-    fill: ${props => props.theme.colors.error.pressed};
+    fill: ${props => props.theme.colors.red.pressed};
   }
 `;

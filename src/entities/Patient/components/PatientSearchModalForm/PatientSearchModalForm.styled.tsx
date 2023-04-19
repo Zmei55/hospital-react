@@ -32,7 +32,7 @@ export const NameInput = styled.input`
 
   :focus,
   :hover {
-    border-color: ${props => props.theme.colors.primary.hover};
+    border-color: ${props => props.theme.colors.blue.hover};
   }
 
   ::placeholder {
@@ -58,7 +58,7 @@ export const BirthDayInput = styled.input`
 
   :focus,
   :hover {
-    border-color: ${props => props.theme.colors.primary.hover};
+    border-color: ${props => props.theme.colors.blue.hover};
   }
 
   ::placeholder {
@@ -84,7 +84,7 @@ export const MedicalCardInput = styled.input`
 
   :focus,
   :hover {
-    border-color: ${props => props.theme.colors.primary.hover};
+    border-color: ${props => props.theme.colors.blue.hover};
   }
 
   ::placeholder {
