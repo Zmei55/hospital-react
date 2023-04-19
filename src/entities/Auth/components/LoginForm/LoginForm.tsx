@@ -41,7 +41,7 @@ export function LoginForm() {
       <Button
         width="368px"
         height="72px"
-        backgroundColor="blue"
+        background="blue"
         disabled={isEmptyLoginForm}
         onClick={() => navigate("/station")}
       >

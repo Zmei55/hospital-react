@@ -1,6 +1,6 @@
 import { useGetUserData } from "entities/User";
 import { useLogOut } from "entities/Auth";
-import { useAppSelector, TransparentBtn } from "shared";
+import { useAppSelector, Button, Icon } from "shared";
 
 import { Container, UserBox, Name, Station } from "./UserMenu.styled";
 
@@ -18,20 +18,32 @@ export const UserMenu: React.FC = () => {
         </UserBox>
       )}
 
-      <TransparentBtn type="button" width="72px" height="72px">
-        {/* <IconGear /> */}
-      </TransparentBtn>
+      <Button width="72px" height="72px" background="transparent">
+        <Icon icon="gear" size={48} color="blue" />
+      </Button>
+      {/* <TransparentBtn type="button" width="72px" height="72px">
+        <IconGear />
+      </TransparentBtn> */}
 
       {isLoggedIn && (
-        <TransparentBtn
-          type="button"
+        <Button
           width="165px"
           height="72px"
-          color="#EC312F"
+          color="red"
+          background="transparent"
           onClick={() => logout()}
         >
           Abmelden
-        </TransparentBtn>
+        </Button>
+        // <TransparentBtn
+        //   type="button"
+        //   width="165px"
+        //   height="72px"
+        //   background="red"
+        //   onClick={() => logout()}
+        // >
+        //   Abmelden
+        // </TransparentBtn>
       )}
     </Container>
   );
