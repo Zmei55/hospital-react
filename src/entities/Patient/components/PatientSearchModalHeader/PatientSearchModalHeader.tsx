@@ -1,14 +1,21 @@
+import { useClearPatientsList } from "entities/Patient";
 import {
-  useClearPatientsList,
-  IPatientSearchModalHeader,
-} from "entities/Patient";
-import { TransparentBtn, AcceptBlueBtn, CrossRedBtn } from "shared";
+  Button as ResetBtn,
+  Button as FindBtn,
+  Button as CloseBtn,
+  Icon,
+} from "shared";
 
 import {
   ModalHeader,
   ModalTitle,
   ButtonContainer,
 } from "./PatientSearchModalHeader.styled";
+
+interface IPatientSearchModalHeader {
+  handlePatientsListFind: React.MouseEventHandler<HTMLButtonElement>;
+  toggleModal: React.MouseEventHandler<HTMLButtonElement>;
+}
 
 export const PatientSearchModalHeader: React.FC<IPatientSearchModalHeader> = ({
   handlePatientsListFind,
@@ -21,31 +28,32 @@ export const PatientSearchModalHeader: React.FC<IPatientSearchModalHeader> = ({
       <ModalTitle>Wählen Sie einen Patient aus</ModalTitle>
 
       <ButtonContainer>
-        <TransparentBtn
-          type="button"
+        <ResetBtn
           width="205px"
           height="72px"
           background="transparent"
           onClick={clearPatientsList}
         >
           Reset
-        </TransparentBtn>
+        </ResetBtn>
 
-        <AcceptBlueBtn
+        <FindBtn
           width="162px"
           height="72px"
           background="blue"
           onClick={handlePatientsListFind}
         >
           Find
-        </AcceptBlueBtn>
+        </FindBtn>
 
-        <CrossRedBtn
+        <CloseBtn
           width="72px"
           height="72px"
           background="red"
           onClick={toggleModal}
-        />
+        >
+          <Icon icon="cross" size={48} color="white" />
+        </CloseBtn>
       </ButtonContainer>
     </ModalHeader>
   );

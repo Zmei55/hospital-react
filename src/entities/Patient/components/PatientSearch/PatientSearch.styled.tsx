@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { ReactComponent as iconSelectPatient } from "shared/icons/selectPatient.svg";
 
 export const Container = styled.div`
   width: 1808px;
@@ -37,10 +36,6 @@ export const ModalBtn = styled.button`
     fill: ${props => props.theme.colors.blue.pressed};
     border-color: ${props => props.theme.colors.blue.pressed};
   }
-`;
-
-export const IconSelectPatient = styled(iconSelectPatient)`
-  margin-bottom: ${props => props.theme.spacing(4)};
 `;
 
 export const ModalContainer = styled.div`

@@ -1,4 +1,4 @@
-import { IPatientSearchList, showBirthDate } from "entities/Patient";
+import { IPatient, showBirthDate } from "entities/Patient";
 import {
   PatientsList,
   ListHeader,
@@ -14,6 +14,11 @@ import {
   BodySelectBtn,
   SelectBtn,
 } from "./PatientSearchList.styled";
+
+interface IPatientSearchList {
+  patientsList: IPatient[];
+  choosePatient: (event: string) => void;
+}
 
 export const PatientSearchList: React.FC<IPatientSearchList> = ({
   patientsList,

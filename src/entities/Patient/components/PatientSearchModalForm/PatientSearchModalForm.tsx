@@ -1,4 +1,4 @@
-import { IPatientSearchModalForm } from "entities/Patient";
+import { ISearchPatientState } from "entities/Patient";
 import {
   Form,
   Label,
@@ -6,6 +6,14 @@ import {
   BirthDayInput,
   MedicalCardInput,
 } from "./PatientSearchModalForm.styled";
+
+interface IPatientSearchModalForm {
+  formState: ISearchPatientState;
+  handleChange: React.ChangeEventHandler<HTMLInputElement>;
+  handlePatientsListFind: (
+    event: React.SyntheticEvent<Element, Event>
+  ) => Promise<void>;
+}
 
 export const PatientSearchModalForm: React.FC<IPatientSearchModalForm> = ({
   formState,

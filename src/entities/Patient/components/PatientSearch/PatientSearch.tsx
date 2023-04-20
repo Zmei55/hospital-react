@@ -1,4 +1,4 @@
-import { useAppSelector, Modal, SpinnerCenterBox, Spinner } from "shared";
+import { useAppSelector, Modal, SpinnerCenterBox, Spinner, Icon } from "shared";
 import {
   PatientSearchModalHeader,
   PatientSearchModalForm,
@@ -10,14 +10,9 @@ import {
   initialSearchPatientState,
 } from "entities/Patient";
 
-import {
-  Container,
-  ModalBtn,
-  IconSelectPatient,
-  ModalContainer,
-} from "./PatientSearch.styled";
+import { Container, ModalBtn, ModalContainer } from "./PatientSearch.styled";
 
-export function PatientSearch() {
+export const PatientSearch: React.FC = () => {
   const patientsList = useAppSelector(state => state.patients.patients);
   const { formState, handleChange } = useHandlePatientChange(
     initialSearchPatientState
@@ -29,7 +24,7 @@ export function PatientSearch() {
   return (
     <Container>
       <ModalBtn type="button" onClick={toggleModal} aria-label="find patient">
-        <IconSelectPatient />
+        <Icon icon="user-plus" size={48} color="blue" />
         Wählen Sie einen Patient aus
       </ModalBtn>
 
@@ -66,4 +61,4 @@ export function PatientSearch() {
       )}
     </Container>
   );
-}
+};

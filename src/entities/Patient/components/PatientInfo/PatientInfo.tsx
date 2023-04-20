@@ -1,27 +1,21 @@
 import { useAppSelector } from "shared";
 import {
+  PatientInfoNameBlock,
+  PatientInfoBox,
   useHandleInfoActive,
   useClearPatient,
   patientInfo,
   clearInitialPatient,
-  IPatientInfo,
+  IPatient,
 } from "entities/Patient";
 
-import {
-  NameBlock,
-  InfoButton,
-  IconInfoActive,
-  IconInfoInactive,
-  PatientName,
-  PatientClearBtn,
-  BasicInformationBox,
-  BackgroundInformationBox,
-  InfoBox,
-  InfoHeader,
-  InfoBody,
-} from "./PatientInfo.styled";
+import {} from "./PatientInfo.styled";
 
-export function PatientInfo({ patient }: IPatientInfo) {
+interface IPatientInfo {
+  patient: IPatient;
+}
+
+export const PatientInfo: React.FC<IPatientInfo> = ({ patient }) => {
   const [clearPatient] = useClearPatient(clearInitialPatient);
   const [handleInfoActive] = useHandleInfoActive();
   const isActive = useAppSelector(state => state.patient.isActivePatientInfo);
@@ -38,47 +32,22 @@ export function PatientInfo({ patient }: IPatientInfo) {
 
   return (
     <>
-      <NameBlock>
-        <InfoButton type="button" onClick={handleInfoActive}>
-          {isActive ? <IconInfoInactive /> : <IconInfoActive />}
-        </InfoButton>
-        <PatientName>{name}</PatientName>
-        <PatientClearBtn type="button" onClick={clearPatient}></PatientClearBtn>
-      </NameBlock>
-      <BasicInformationBox>
-        <InfoBox>
-          <InfoHeader>Geburtsdatum</InfoHeader>
-          <InfoBody>{dateOfBirth}</InfoBody>
-        </InfoBox>
-        <InfoBox>
-          <InfoHeader>Geschlecht</InfoHeader>
-          <InfoBody>{gender}</InfoBody>
-        </InfoBox>
-        <InfoBox>
-          <InfoHeader>Kennnummer</InfoHeader>
-          <InfoBody>{cardNumber}</InfoBody>
-        </InfoBox>
-        <InfoBox>
-          <InfoHeader>Telefonnummer</InfoHeader>
-          <InfoBody>{phoneNumber}</InfoBody>
-        </InfoBox>
-        <InfoBox>
-          <InfoHeader>E-mail</InfoHeader>
-          <InfoBody>{email}</InfoBody>
-        </InfoBox>
-      </BasicInformationBox>
-      {isActive && (
-        <BackgroundInformationBox>
-          <InfoBox>
-            <InfoHeader>Ausweis</InfoHeader>
-            <InfoBody>{identityDocument}</InfoBody>
-          </InfoBox>
-          <InfoBox>
-            <InfoHeader>Wohnort</InfoHeader>
-            <InfoBody>{residence}</InfoBody>
-          </InfoBox>
-        </BackgroundInformationBox>
-      )}
+      <PatientInfoNameBlock
+        patientName={name}
+        handleInfoActive={handleInfoActive}
+        isInfoActive={isActive}
+        clearPatient={clearPatient}
+      />
+      <PatientInfoBox
+        dateOfBirth={dateOfBirth}
+        gender={gender}
+        cardNumber={cardNumber}
+        phoneNumber={phoneNumber}
+        email={email}
+        identityDocument={identityDocument}
+        residence={residence}
+        isInfoActive={isActive}
+      />
     </>
   );
-}
+};
