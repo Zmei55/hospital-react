@@ -1,4 +1,4 @@
-import { useAppNavigate } from "shared";
+import { useAppNavigate, Icon } from "shared";
 import {
   IconNewRequest,
   IconFindRequest,
@@ -22,28 +22,28 @@ export const Desktop: React.FC = () => {
     <Container>
       <LargeBtn onClick={() => navigate("/request")}>
         <IconContainer>
-          <IconNewRequest />
+          <Icon icon="create-document" color="blue" size={140} />
           <IconTitle>Erstellen Sie eine Bestellung</IconTitle>
         </IconContainer>
       </LargeBtn>
 
       <MediumBtn onClick={() => navigate("")}>
         <IconContainer>
-          <IconFindRequest />
+          <Icon icon="find-document" color="blue" size={140} />
           <IconTitle>Finden Sie eine Bestellung</IconTitle>
         </IconContainer>
       </MediumBtn>
 
       <MediumBtn onClick={() => navigate("")}>
         <IconContainer>
-          <IconFindContainer />
+          <Icon icon="find-test-tube" color="blue" size={140} />
           <IconTitle>Finden Sie eine Behälter</IconTitle>
         </IconContainer>
       </MediumBtn>
 
       <SmallBtn onClick={() => navigate("")}>
         <IconContainer>
-          <IconDocuments />
+          <Icon icon="documents" color="blue" size={140} />
           <IconTitle>Unterlagen</IconTitle>
         </IconContainer>
       </SmallBtn>
