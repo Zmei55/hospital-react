@@ -1,4 +1,3 @@
-export * from "./Patient";
 export * from "./PatientInfo";
 export * from "./PatientInfoNameBlock";
 export * from "./PatientInfoBox";

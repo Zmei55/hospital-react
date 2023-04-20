@@ -1,6 +1,6 @@
-import { Patient } from "entities/Patient";
-import { Services } from "entities/Services";
-import { Containers } from "entities/Containers";
+import { Patient } from "features/Patient";
+import { Services } from "features/Services";
+import { Containers } from "features/Containers";
 import { useAppNavigate, Button, Icon } from "shared";
 
 import { Container, Header, Body, HeaderTitle, Box } from "./Request.styled";
