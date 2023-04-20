@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { ReactComponent as iconArrowLeft } from "shared/icons/arrowLeft.svg";
 
 export const SubTitle = styled.h3`
   font-weight: 500;
@@ -53,9 +52,4 @@ export const BtnContainer = styled.div`
   justify-content: space-between;
 
   width: 368px;
-`;
-
-export const IconArrowLeft = styled(iconArrowLeft)`
-  fill: ${props => props.theme.colors.text.body};
-  margin-right: ${props => props.theme.spacing(7)};
 `;
