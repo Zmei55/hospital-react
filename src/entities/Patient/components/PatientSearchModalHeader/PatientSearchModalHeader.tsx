@@ -25,6 +25,7 @@ export const PatientSearchModalHeader: React.FC<IPatientSearchModalHeader> = ({
           type="button"
           width="205px"
           height="72px"
+          background="transparent"
           onClick={clearPatientsList}
         >
           Reset
@@ -33,12 +34,18 @@ export const PatientSearchModalHeader: React.FC<IPatientSearchModalHeader> = ({
         <AcceptBlueBtn
           width="162px"
           height="72px"
+          background="blue"
           onClick={handlePatientsListFind}
         >
           Find
         </AcceptBlueBtn>
 
-        <CrossRedBtn width="72px" height="72px" onClick={toggleModal} />
+        <CrossRedBtn
+          width="72px"
+          height="72px"
+          background="red"
+          onClick={toggleModal}
+        />
       </ButtonContainer>
     </ModalHeader>
   );

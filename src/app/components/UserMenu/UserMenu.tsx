@@ -29,7 +29,7 @@ export const UserMenu: React.FC = () => {
         <Button
           width="165px"
           height="72px"
-          color="red"
+          color="#EC312F"
           background="transparent"
           onClick={() => logout()}
         >

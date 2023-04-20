@@ -85,6 +85,7 @@ export const ServicesSearch = ({ setSavedServicesList }: IServicesSearch) => {
               <CrossRedBtn
                 width="72px"
                 height="72px"
+                background="red"
                 onClick={() => toggleModal(setFilter, setVisibleServices)}
               />
             </ModalHeader>

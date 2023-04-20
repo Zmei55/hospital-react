@@ -1,5 +1,5 @@
 import { useHandleChange } from "entities/Auth";
-import { useAppNavigate, Spinner, AcceptBlueBtn, CancelGrayBtn } from "shared";
+import { useAppNavigate, Spinner, Button, Icon } from "shared";
 
 import {
   SubTitle,
@@ -7,7 +7,6 @@ import {
   StationListItem,
   RadioBtn,
   BtnContainer,
-  IconArrowLeft,
 } from "./StaffUnit.styled";
 
 export function StaffUnit() {
@@ -51,22 +50,25 @@ export function StaffUnit() {
       </StationsList>
 
       <BtnContainer>
-        <CancelGrayBtn
+        <Button
           width="172px"
           height="72px"
+          background="grey"
+          color="#524E6B"
           onClick={() => navigate("/")}
         >
-          <IconArrowLeft />
+          <Icon icon="caret-left-bold" size={24} color="text-body" />
           Zurück
-        </CancelGrayBtn>
-        <AcceptBlueBtn
+        </Button>
+        <Button
           type="submit"
           width="172px"
           height="72px"
+          background="blue"
           disabled={isEmptyLoginForm}
         >
           {isLoading ? <Spinner /> : "Log In"}
-        </AcceptBlueBtn>
+        </Button>
       </BtnContainer>
     </>
   );
