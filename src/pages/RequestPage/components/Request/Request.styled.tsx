@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   width: 1856px;
@@ -20,8 +19,6 @@ export const Header = styled.div`
   padding-left: ${props => props.theme.spacing(6)};
   border-bottom: ${props => props.theme.border};
 `;
-
-export const RouterLink = styled(Link)``;
 
 export const Body = styled.div`
   display: flex;

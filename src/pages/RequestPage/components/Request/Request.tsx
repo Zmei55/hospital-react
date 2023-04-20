@@ -1,25 +1,25 @@
 import { Patient } from "entities/Patient";
 import { Services } from "entities/Services";
 import { Containers } from "entities/Containers";
-import { CrossRedBtn } from "shared";
+import { useAppNavigate, Button, Icon } from "shared";
 
-import {
-  Container,
-  Header,
-  Body,
-  RouterLink,
-  HeaderTitle,
-  Box,
-} from "./Request.styled";
+import { Container, Header, Body, HeaderTitle, Box } from "./Request.styled";
 
 export const Request: React.FC = () => {
+  const [navigate] = useAppNavigate();
+
   return (
     <Container>
       <Header>
         <HeaderTitle>Neue Bestellung</HeaderTitle>
-        <RouterLink to="/desktop">
-          <CrossRedBtn width="72px" height="72px" background="red" />
-        </RouterLink>
+        <Button
+          width="72px"
+          height="72px"
+          background="red"
+          onClick={() => navigate("/desktop")}
+        >
+          <Icon icon="cross" size={48} color="white" />
+        </Button>
       </Header>
 
       <Body>
