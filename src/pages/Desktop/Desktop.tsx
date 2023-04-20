@@ -1,10 +1,4 @@
 import { useAppNavigate, Icon } from "shared";
-import {
-  IconNewRequest,
-  IconFindRequest,
-  IconFindContainer,
-  IconDocuments,
-} from "app/icons";
 
 import {
   Container,
