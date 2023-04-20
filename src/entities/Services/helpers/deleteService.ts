@@ -1,9 +1,9 @@
-import { TServicesList } from "entities/Services";
+import { IService } from "entities/Services";
 
 export const deleteService = (
   id: string,
-  list: TServicesList,
-  setList: (e: TServicesList) => void
+  list: IService[],
+  setList: (e: IService[]) => void
 ) => {
   setList(list.filter(service => service.codeService !== id));
 };

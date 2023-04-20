@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { servicesList, TServicesList } from "entities/Services";
+import { servicesList, IService } from "entities/Services";
 
 export const useServicesFilter = (
   initialFilter: string,
-  initialVisServices: TServicesList
+  initialVisServices: IService[]
 ) => {
   const [visibleServices, setVisibleServices] = useState(initialVisServices);
 

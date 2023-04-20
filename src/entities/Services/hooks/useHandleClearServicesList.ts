@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { TServicesList } from "entities/Services";
+import { IService } from "entities/Services";
 
 export const useHandleClearServicesList = (
-  initialValue: TServicesList
+  initialValue: IService[]
 ): [
-  TServicesList,
-  React.Dispatch<React.SetStateAction<TServicesList>>,
+  IService[],
+  React.Dispatch<React.SetStateAction<IService[]>>,
   React.MouseEventHandler<HTMLButtonElement>
 ] => {
   const [savedServicesList, setSavedServicesList] = useState(initialValue);

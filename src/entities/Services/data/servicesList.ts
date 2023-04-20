@@ -1,6 +1,6 @@
-import { TServicesList } from "entities/Services";
+import { IService } from "entities/Services";
 
-export const servicesList: TServicesList = [
+export const servicesList: IService[] = [
   {
     name: "Immunglobulin A (IgA)",
     codeService: "L18.36.00.0.001",

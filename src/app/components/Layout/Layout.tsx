@@ -9,32 +9,8 @@ export const Layout: React.FC = () => {
     <>
       <Header>
         <WorkingPlace />
+
         <UserMenu />
-        {/* <Container>
-          {isLoggedIn && (
-            <div>
-              <div>{name}</div>
-              <div>{station}</div>
-              <div></div>
-            </div>
-          )}
-
-          <TransparentBtn type="button" width="72px" height="72px">
-            <IconGear />
-          </TransparentBtn>
-
-          {isLoggedIn && (
-            <TransparentBtn
-              type="button"
-              width="165px"
-              height="72px"
-              color="#EC312F"
-              onClick={() => logout()}
-            >
-              Abmelden
-            </TransparentBtn>
-          )}
-        </Container> */}
       </Header>
       <Body>
         <Outlet />

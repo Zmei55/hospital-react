@@ -3,8 +3,9 @@ import {
   ServicesSearch,
   useHandleClearServicesList,
 } from "entities/Services";
+import { Button as ResetBtn } from "shared";
 
-import { Container, TitleBox, Title, ResetListBtn } from "./Services.styled";
+import { Container, TitleBox, Title } from "./Services.styled";
 
 export const Services: React.FC = () => {
   const [savedServicesList, setSavedServicesList, handleClearList] =
@@ -16,9 +17,14 @@ export const Services: React.FC = () => {
         <Title>Services</Title>
 
         {savedServicesList.length > 0 && (
-          <ResetListBtn type="button" onClick={handleClearList}>
+          <ResetBtn
+            width="217px"
+            height="48px"
+            background="grey"
+            onClick={handleClearList}
+          >
             Stornieren
-          </ResetListBtn>
+          </ResetBtn>
         )}
       </TitleBox>
 

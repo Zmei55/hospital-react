@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { IService, TServicesList } from "entities/Services";
+import { IService } from "entities/Services";
 
-export const useAddService = (initialValue: TServicesList) => {
+export const useAddService = (initialValue: IService[]) => {
   const [selectedServices, setSelectedServices] = useState(initialValue);
 
   const addService = (service: IService) => {

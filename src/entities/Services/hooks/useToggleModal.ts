@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { TServicesList } from "entities/Services";
+import { IService } from "entities/Services";
 
 export const useToggleModal = (initialValue: boolean) => {
   const [showModal, setShowModal] = useState(initialValue);
 
   const toggleModal = (
     filter: (value: React.SetStateAction<string>) => void,
-    visServices: (value: React.SetStateAction<TServicesList>) => void
+    visServices: (value: React.SetStateAction<IService[]>) => void
   ) => {
     setShowModal(!showModal);
     filter("");

@@ -1,5 +1,11 @@
 import { useHandleChange } from "entities/Auth";
-import { useAppNavigate, Spinner, Button, Icon } from "shared";
+import {
+  useAppNavigate,
+  Spinner,
+  Button as BackBtn,
+  Button as LoginBtn,
+  Icon,
+} from "shared";
 
 import {
   SubTitle,
@@ -50,7 +56,7 @@ export function StaffUnit() {
       </StationsList>
 
       <BtnContainer>
-        <Button
+        <BackBtn
           width="172px"
           height="72px"
           background="grey"
@@ -59,8 +65,8 @@ export function StaffUnit() {
         >
           <Icon icon="caret-left-bold" size={24} color="text-body" />
           Zurück
-        </Button>
-        <Button
+        </BackBtn>
+        <LoginBtn
           type="submit"
           width="172px"
           height="72px"
@@ -68,7 +74,7 @@ export function StaffUnit() {
           disabled={isEmptyLoginForm}
         >
           {isLoading ? <Spinner /> : "Log In"}
-        </Button>
+        </LoginBtn>
       </BtnContainer>
     </>
   );
