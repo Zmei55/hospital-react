@@ -10,7 +10,7 @@ import {
   initialSearchPatientState,
 } from "entities/Patient";
 
-import { Container, ModalBtn, ModalContainer } from "./PatientSearch.styled";
+import { Container, ModalBtn, ModalBoby } from "./PatientSearch.styled";
 
 export const PatientSearch: React.FC = () => {
   const patientsList = useAppSelector(state => state.patients.patients);
@@ -24,18 +24,18 @@ export const PatientSearch: React.FC = () => {
   return (
     <Container>
       <ModalBtn type="button" onClick={toggleModal} aria-label="find patient">
-        <Icon icon="user-plus" size={48} color="blue" />
+        <Icon icon="user-plus" size={48} />
         Wählen Sie einen Patient aus
       </ModalBtn>
 
       {showModal && (
-        <Modal onClose={toggleModal}>
-          <ModalContainer>
-            <PatientSearchModalHeader
-              handlePatientsListFind={handlePatientsListFind}
-              toggleModal={toggleModal}
-            />
+        <Modal width="1392px" height="752px" onClose={toggleModal}>
+          <PatientSearchModalHeader
+            handlePatientsListFind={handlePatientsListFind}
+            toggleModal={toggleModal}
+          />
 
+          <ModalBoby>
             <PatientSearchModalForm
               formState={formState}
               handleChange={handleChange}
@@ -56,7 +56,7 @@ export const PatientSearch: React.FC = () => {
                 )}
               </>
             )}
-          </ModalContainer>
+          </ModalBoby>
         </Modal>
       )}
     </Container>

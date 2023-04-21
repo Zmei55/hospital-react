@@ -38,6 +38,7 @@ export const PatientInfo: React.FC<IPatientInfo> = ({ patient }) => {
         isInfoActive={isActive}
         clearPatient={clearPatient}
       />
+
       <PatientInfoBox
         dateOfBirth={dateOfBirth}
         gender={gender}

@@ -24,9 +24,9 @@ export const PatientInfoNameBlock: React.FC<IPatientInfoNameBlock> = ({
         onClick={handleInfoActive}
       >
         {isInfoActive ? (
-          <Icon icon="caret-double-up-bold" size={24} color="text-body" />
+          <Icon icon="caret-double-up-bold" size={24} color="grey" />
         ) : (
-          <Icon icon="caret-double-down-bold" size={24} color="text-body" />
+          <Icon icon="caret-double-down-bold" size={24} color="grey" />
         )}
       </InfoBtn>
 

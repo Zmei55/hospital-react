@@ -76,8 +76,9 @@ export const MedicalCardInput = styled.input`
   color: ${props => props.theme.colors.text.default};
 
   width: 206px;
-  height: ${props => props.theme.spacing(18)};
+  height: 72px;
   padding: 22px 24px;
+  margin-right: 186px;
   border: ${props => props.theme.border};
   border-radius: ${props => props.theme.borderRadius};
   outline: none;

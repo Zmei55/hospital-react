@@ -35,6 +35,7 @@ export function StaffUnit() {
           />
           chirurgische Station, Krankenschwester
         </StationListItem>
+
         <StationListItem>
           <RadioBtn
             type="radio"
@@ -44,6 +45,7 @@ export function StaffUnit() {
           />
           neurologische Station, Krankenschwester
         </StationListItem>
+
         <StationListItem>
           <RadioBtn
             type="radio"
@@ -63,9 +65,10 @@ export function StaffUnit() {
           color="#524E6B"
           onClick={() => navigate("/")}
         >
-          <Icon icon="caret-left-bold" size={24} color="text-body" />
+          <Icon icon="caret-left-bold" size={24} color="grey" />
           Zurück
         </BackBtn>
+
         <LoginBtn
           type="submit"
           width="172px"

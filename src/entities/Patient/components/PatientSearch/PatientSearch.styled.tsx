@@ -38,7 +38,7 @@ export const ModalBtn = styled.button`
   }
 `;
 
-export const ModalContainer = styled.div`
-  width: 1392px;
-  height: 752px;
+export const ModalBoby = styled.div`
+  width: 100%;
+  height: 648px;
 `;

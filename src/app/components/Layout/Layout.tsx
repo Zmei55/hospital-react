@@ -12,6 +12,7 @@ export const Layout: React.FC = () => {
 
         <UserMenu />
       </Header>
+
       <Body>
         <Outlet />
       </Body>

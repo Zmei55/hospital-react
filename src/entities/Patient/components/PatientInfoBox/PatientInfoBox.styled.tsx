@@ -14,18 +14,19 @@ export const BackgroundInformationBox = styled.div`
   margin-top: ${props => props.theme.spacing(6)};
 `;
 
-export const InfoBox = styled.div``;
+export const Box = styled.div``;
 
-export const InfoHeader = styled.h4`
+export const Header = styled.h4`
   font-weight: 400;
-  font-size: 20px;
-  line-height: 1.2;
+  font-size: 24px;
+  line-height: 1.17;
   color: ${props => props.theme.colors.text.label};
 
   margin-bottom: ${props => props.theme.spacing(2)};
 `;
 
-export const InfoBody = styled.span`
-  line-height: 1.17;
+export const Body = styled.span`
+  font-size: 28px;
+  line-height: 1.14;
   color: ${props => props.theme.colors.text.default};
 `;

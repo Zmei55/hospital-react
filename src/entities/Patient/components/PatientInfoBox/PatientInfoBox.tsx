@@ -1,9 +1,9 @@
 import {
   BasicInformationBox,
   BackgroundInformationBox,
-  InfoBox,
-  InfoHeader,
-  InfoBody,
+  Box,
+  Header,
+  Body,
 } from "./PatientInfoBox.styled";
 
 interface IPatientInfoBox {
@@ -30,37 +30,43 @@ export const PatientInfoBox: React.FC<IPatientInfoBox> = ({
   return (
     <>
       <BasicInformationBox>
-        <InfoBox>
-          <InfoHeader>Geburtsdatum</InfoHeader>
-          <InfoBody>{dateOfBirth}</InfoBody>
-        </InfoBox>
-        <InfoBox>
-          <InfoHeader>Geschlecht</InfoHeader>
-          <InfoBody>{gender}</InfoBody>
-        </InfoBox>
-        <InfoBox>
-          <InfoHeader>Kennnummer</InfoHeader>
-          <InfoBody>{cardNumber}</InfoBody>
-        </InfoBox>
-        <InfoBox>
-          <InfoHeader>Telefonnummer</InfoHeader>
-          <InfoBody>{phoneNumber}</InfoBody>
-        </InfoBox>
-        <InfoBox>
-          <InfoHeader>E-mail</InfoHeader>
-          <InfoBody>{email}</InfoBody>
-        </InfoBox>
+        <Box>
+          <Header>Geburtsdatum</Header>
+          <Body>{dateOfBirth}</Body>
+        </Box>
+
+        <Box>
+          <Header>Geschlecht</Header>
+          <Body>{gender}</Body>
+        </Box>
+
+        <Box>
+          <Header>Kennnummer</Header>
+          <Body>{cardNumber}</Body>
+        </Box>
+
+        <Box>
+          <Header>Telefonnummer</Header>
+          <Body>{phoneNumber}</Body>
+        </Box>
+
+        <Box>
+          <Header>E-mail</Header>
+          <Body>{email}</Body>
+        </Box>
       </BasicInformationBox>
+
       {isInfoActive && (
         <BackgroundInformationBox>
-          <InfoBox>
-            <InfoHeader>Ausweis</InfoHeader>
-            <InfoBody>{identityDocument}</InfoBody>
-          </InfoBox>
-          <InfoBox>
-            <InfoHeader>Wohnort</InfoHeader>
-            <InfoBody>{residence}</InfoBody>
-          </InfoBox>
+          <Box>
+            <Header>Ausweis</Header>
+            <Body>{identityDocument}</Body>
+          </Box>
+
+          <Box>
+            <Header>Wohnort</Header>
+            <Body>{residence}</Body>
+          </Box>
         </BackgroundInformationBox>
       )}
     </>
