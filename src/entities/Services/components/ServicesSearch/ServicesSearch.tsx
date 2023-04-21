@@ -1,48 +1,30 @@
 import {
+  ServicesSearchModalBtn,
+  ServicesSearchModalHeader,
+  ServicesSearchFilter,
+  ServicesSearchSelectedList,
   useServicesFilter,
   useAddService,
   useToggleModal,
   deleteService,
   handleClearForm,
-  IServicesSearch,
+  IService,
 } from "entities/Services";
-import { useAppSelector, Modal, CrossRedBtn, useInput } from "shared";
+import { Modal, useInput, Button as ResetBtn, Button as SaveBtn } from "shared";
 
 import {
-  ModalBtn,
-  IconServicesAdd,
-  ModalBtnTitle,
-  ModalContainer,
-  ModalHeader,
-  ModalTitle,
   ModalBody,
   ServiceForm,
-  Filter,
-  FilterLabel,
-  FilterInput,
-  FilteredList,
-  FilteredItem,
-  FilteredNameBox,
-  FilteredCodeService,
-  FilteredNameService,
-  AddServiceBtn,
-  IconPlus,
-  AddServiceBtnTitle,
   SelectedServicesBox,
   SelectedServicesTitle,
-  SelectedServicesList,
-  SelectedServicesItem,
-  DeleteSelectedServicesBtn,
-  IconTrash,
-  SelectedServicesNameBox,
-  SelectedServicesCode,
-  SelectedServicesName,
-  ResetFormBtn,
-  SaveServicesBtn,
+  ButtonsBox,
 } from "./ServicesSearch.styled";
 
+interface IServicesSearch {
+  setSavedServicesList(e: IService[]): void;
+}
+
 export const ServicesSearch = ({ setSavedServicesList }: IServicesSearch) => {
-  const patient = useAppSelector(state => state.patient.patient);
   const [filter, setFilter, handleFilter] = useInput("");
   const { visibleServices, setVisibleServices } = useServicesFilter(filter, []);
   const { selectedServices, setSelectedServices, addService } = useAddService(
@@ -62,102 +44,49 @@ export const ServicesSearch = ({ setSavedServicesList }: IServicesSearch) => {
 
   return (
     <>
-      <ModalBtn
-        type="button"
-        onClick={() => toggleModal(setFilter, setVisibleServices)}
-        disabled={patient._id === ""}
-      >
-        <IconServicesAdd />
-        {patient._id === "" ? (
-          <ModalBtnTitle>
-            Dienste können nach Auswahl eines Patienten hinzugefügt werden
-          </ModalBtnTitle>
-        ) : (
-          <ModalBtnTitle>Fügen Sie Dienste hinzu</ModalBtnTitle>
-        )}
-      </ModalBtn>
+      <ServicesSearchModalBtn
+        toggleModal={toggleModal}
+        setFilter={setFilter}
+        setVisibleServices={setVisibleServices}
+      />
 
       {showModal && (
-        <Modal onClose={() => toggleModal(setFilter, setVisibleServices)}>
-          <ModalContainer>
-            <ModalHeader>
-              <ModalTitle>Dienst hinzufügen</ModalTitle>
-              <CrossRedBtn
-                width="72px"
-                height="72px"
-                background="red"
-                onClick={() => toggleModal(setFilter, setVisibleServices)}
+        <Modal
+          width="1574px"
+          height="890px"
+          onClose={() => toggleModal(setFilter, setVisibleServices)}
+        >
+          <ServicesSearchModalHeader
+            toggleModal={toggleModal}
+            setFilter={setFilter}
+            setVisibleServices={setVisibleServices}
+          />
+
+          <ModalBody>
+            <ServiceForm onSubmit={handleSubmit}>
+              <ServicesSearchFilter
+                filter={filter}
+                handleFilter={handleFilter}
+                visibleServices={visibleServices}
+                addService={addService}
               />
-            </ModalHeader>
 
-            <ModalBody>
-              <ServiceForm onSubmit={handleSubmit}>
-                <Filter>
-                  <FilterLabel>
-                    <FilterInput
-                      type="text"
-                      value={filter}
-                      onChange={handleFilter}
-                      autoFocus
-                      placeholder="Dienstname"
-                    />
-                  </FilterLabel>
-                  <FilteredList>
-                    {visibleServices.map(service => (
-                      <FilteredItem key={service.codeService}>
-                        <FilteredNameBox>
-                          <FilteredCodeService>
-                            {service.codeService}
-                          </FilteredCodeService>
-                          <FilteredNameService>
-                            {service.name}
-                          </FilteredNameService>
-                        </FilteredNameBox>
+              <SelectedServicesBox>
+                <SelectedServicesTitle>
+                  Ausgewählte Dienste
+                </SelectedServicesTitle>
 
-                        <AddServiceBtn
-                          type="button"
-                          onClick={() => addService(service)}
-                        >
-                          <IconPlus />
-                          <AddServiceBtnTitle>Hinzufügen</AddServiceBtnTitle>
-                        </AddServiceBtn>
-                      </FilteredItem>
-                    ))}
-                  </FilteredList>
-                </Filter>
+                <ServicesSearchSelectedList
+                  selectedServices={selectedServices}
+                  deleteService={deleteService}
+                  setSelectedServices={setSelectedServices}
+                />
 
-                <SelectedServicesBox>
-                  <SelectedServicesTitle>
-                    Ausgewählte Dienste
-                  </SelectedServicesTitle>
-                  <SelectedServicesList>
-                    {selectedServices.map(service => (
-                      <SelectedServicesItem key={service.codeService}>
-                        <DeleteSelectedServicesBtn
-                          type="button"
-                          onClick={() =>
-                            deleteService(
-                              service.codeService,
-                              selectedServices,
-                              setSelectedServices
-                            )
-                          }
-                        >
-                          <IconTrash />
-                        </DeleteSelectedServicesBtn>
-                        <SelectedServicesNameBox>
-                          <SelectedServicesCode>
-                            {service.codeService}
-                          </SelectedServicesCode>
-                          <SelectedServicesName>
-                            {service.name}
-                          </SelectedServicesName>
-                        </SelectedServicesNameBox>
-                      </SelectedServicesItem>
-                    ))}
-                  </SelectedServicesList>
-                  <ResetFormBtn
-                    type="button"
+                <ButtonsBox>
+                  <ResetBtn
+                    width="208px"
+                    height="72px"
+                    background="grey"
                     onClick={() =>
                       handleClearForm(
                         setFilter,
@@ -167,14 +96,20 @@ export const ServicesSearch = ({ setSavedServicesList }: IServicesSearch) => {
                     }
                   >
                     Stornieren
-                  </ResetFormBtn>
-                  <SaveServicesBtn type="submit">
+                  </ResetBtn>
+
+                  <SaveBtn
+                    type="submit"
+                    width="318px"
+                    height="72px"
+                    background="blue"
+                  >
                     Speichern und schließen
-                  </SaveServicesBtn>
-                </SelectedServicesBox>
-              </ServiceForm>
-            </ModalBody>
-          </ModalContainer>
+                  </SaveBtn>
+                </ButtonsBox>
+              </SelectedServicesBox>
+            </ServiceForm>
+          </ModalBody>
         </Modal>
       )}
     </>
