@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { ReactComponent as iconContainerAdd } from "shared/icons/containerAdd.svg";
 
 export const Container = styled.div`
   display: flex;
@@ -52,8 +51,4 @@ export const ModalBtn = styled.button`
     fill: ${props => props.theme.colors.text.placeholder};
     border-color: ${props => props.theme.colors.text.placeholder};
   }
-`;
-
-export const IconContainerAdd = styled(iconContainerAdd)`
-  margin-bottom: 16px;
 `;
