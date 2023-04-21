@@ -6,7 +6,7 @@ import { Backdrop, Content } from "./Modal.styled";
 
 const modalRoot = document.querySelector("#modal-root") as HTMLElement;
 
-export function Modal({ children, onClose }: IModal) {
+export function Modal({ width, height, children, onClose }: IModal) {
   const handleKeyDown = useCallback(
     (event: { code: string }) => {
       if (event.code === "Escape") {
