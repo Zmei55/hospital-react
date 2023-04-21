@@ -1,6 +1,6 @@
 import { IPatient } from "entities/Patient";
 
-export interface IAction {
+export interface IActionSlice {
   data: {
     result: IPatient;
   };

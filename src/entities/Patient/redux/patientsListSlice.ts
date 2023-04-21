@@ -5,7 +5,7 @@ const initialState: IPatientState = {
   patients: [],
 };
 
-const patientsSlice = createSlice({
+const patientsListSlice = createSlice({
   name: "patients",
   initialState,
   reducers: {
@@ -22,6 +22,6 @@ const patientsSlice = createSlice({
 });
 
 export const { fetchPatientById, fetchPatientByName, resetPatientsList } =
-  patientsSlice.actions;
+  patientsListSlice.actions;
 
-export default patientsSlice.reducer;
+export default patientsListSlice.reducer;

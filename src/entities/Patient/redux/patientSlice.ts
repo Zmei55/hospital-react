@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IAction } from "app/types";
+import { IActionSlice } from "entities/Patient";
 
 const initialState = {
   patient: {
@@ -23,19 +23,19 @@ const initialState = {
   isActivePatientInfo: false,
 };
 
-const appSlice = createSlice({
-  name: "appSlice",
+const patientSlice = createSlice({
+  name: "patient",
   initialState,
   reducers: {
     fetchIsActivePatientInfo(state, action: PayloadAction<boolean>) {
       state.isActivePatientInfo = action.payload;
     },
-    fetchPatient(state, action: PayloadAction<IAction>) {
+    fetchPatient(state, action: PayloadAction<IActionSlice>) {
       state.patient = action.payload.data.result;
     },
   },
 });
 
-export const { fetchIsActivePatientInfo, fetchPatient } = appSlice.actions;
+export const { fetchIsActivePatientInfo, fetchPatient } = patientSlice.actions;
 
-export default appSlice.reducer;
+export default patientSlice.reducer;
