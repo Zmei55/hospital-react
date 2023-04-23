@@ -1,6 +1,6 @@
 import { IPatient } from "./IPatient";
 
-export interface IAction {
+export interface IActionPatientsList {
   data: {
     data: {
       result: IPatient[];

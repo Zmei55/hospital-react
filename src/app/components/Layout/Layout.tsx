@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
-import { WorkingPlace } from "entities/User";
+import { Toaster } from "react-hot-toast";
 import { UserMenu } from "app";
+import { WorkingPlace } from "entities/User";
 
 import { Header, Body } from "./Layout.styled";
 
@@ -16,6 +17,8 @@ export const Layout: React.FC = () => {
       <Body>
         <Outlet />
       </Body>
+
+      <Toaster position="top-right" />
     </>
   );
 };

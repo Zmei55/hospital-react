@@ -3,6 +3,7 @@ import { setupListeners } from "@reduxjs/toolkit/query";
 import authReducer from "entities/Auth/redux/authSlice";
 import patientReducer from "entities/Patient/redux/patientSlice";
 import patientsListReducer from "entities/Patient/redux/patientsListSlice";
+import servicesReducer from "entities/Services/redux/servicesListSlice";
 import { api } from "./api";
 import {
   persistReducer,
@@ -30,6 +31,7 @@ export const store = configureStore({
     auth: persistedAuthReducer,
     patient: patientReducer,
     patients: patientsListReducer,
+    services: servicesReducer,
   },
   middleware: getDefaultMiddleware => [
     ...getDefaultMiddleware({

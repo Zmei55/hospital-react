@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "react-hot-toast";
 import { IService } from "entities/Services";
 
 export const useAddService = (initialValue: IService[]) => {
@@ -8,9 +9,12 @@ export const useAddService = (initialValue: IService[]) => {
     if (
       selectedServices
         .map(item => item.codeService)
-        .indexOf(service.codeService)
+        .indexOf(service.codeService) === -1
     ) {
       setSelectedServices([...selectedServices, service]);
+      toast.success("Dienst hinzugefügt!");
+    } else {
+      toast.error("Der Dienst wurde bereits ausgewählt!");
     }
   };
 

@@ -1,5 +1,5 @@
 import { IPatient } from "./IPatient";
 
-export interface IPatientState {
+export interface IPatientsState {
   patients: IPatient[];
 }
