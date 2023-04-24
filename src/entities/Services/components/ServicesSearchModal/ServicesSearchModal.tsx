@@ -7,6 +7,7 @@ import {
   useAddService,
   useSavedServicesList,
   useServicesFilter,
+  useToggleServicesModal,
 } from "entities/Services";
 import {
   useInput,
@@ -25,12 +26,10 @@ import {
 } from "./ServicesSearchModal.styled";
 
 interface IServicesSearchModal {
-  toggleModal(): void;
+  // toggleModal(): void;
 }
 
-export const ServicesSearchModal: React.FC<IServicesSearchModal> = ({
-  toggleModal,
-}) => {
+export const ServicesSearchModal: React.FC<IServicesSearchModal> = () => {
   // const servicesList = useAppSelector(state => state.services.services);
   const [filter, setFilter, handleFilter] = useInput("");
   const { visibleServices, setVisibleServices } = useServicesFilter(filter, []);
@@ -38,11 +37,14 @@ export const ServicesSearchModal: React.FC<IServicesSearchModal> = ({
     []
   );
   const { setSavedServicesList } = useSavedServicesList([]);
+  const initialToggle = useAppSelector(state => state.services.modal);
+  const { toggleModal } = useToggleServicesModal(initialToggle);
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = event => {
     event.preventDefault();
 
     setSavedServicesList(selectedServices);
+    toggleModal();
   };
 
   return (

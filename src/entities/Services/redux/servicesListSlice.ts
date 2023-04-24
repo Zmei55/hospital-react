@@ -1,12 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IServicesState, IService } from "entities/Services";
 
-// interface IAction {
-//   services: [];
-// }
-
 const initialState: IServicesState = {
   services: [],
+  modal: false,
 };
 
 const servicesSlice = createSlice({
@@ -16,9 +13,12 @@ const servicesSlice = createSlice({
     fetchServices(state, action: PayloadAction<IService[]>) {
       state.services = action.payload;
     },
+    fetchServicesModal(state, action: PayloadAction<boolean>) {
+      state.modal = action.payload;
+    },
   },
 });
 
-export const { fetchServices } = servicesSlice.actions;
+export const { fetchServices, fetchServicesModal } = servicesSlice.actions;
 
 export default servicesSlice.reducer;

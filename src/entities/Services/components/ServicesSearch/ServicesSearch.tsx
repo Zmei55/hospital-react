@@ -1,18 +1,18 @@
 import { ServicesSearchModalBtn, ServicesSearchModal } from "entities/Services";
-import { useToggle } from "shared";
+import { useAppSelector } from "shared";
 
 // import {} from "./ServicesSearch.styled";
 
 interface IServicesSearch {}
 
 export const ServicesSearch: React.FC<IServicesSearch> = () => {
-  const [showModal, toggleModal] = useToggle(false);
+  const showModal = useAppSelector(state => state.services.modal);
 
   return (
     <>
-      <ServicesSearchModalBtn toggleModal={toggleModal} />
+      <ServicesSearchModalBtn />
 
-      {showModal && <ServicesSearchModal toggleModal={toggleModal} />}
+      {showModal && <ServicesSearchModal />}
     </>
   );
 };
