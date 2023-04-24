@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
-import { ReactComponent as iconTrash } from "shared/icons/trash.svg";
 
-export const InfoHeader = styled.div`
+export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,7 +8,7 @@ export const InfoHeader = styled.div`
   margin-bottom: ${props => props.theme.spacing(3)};
 `;
 
-export const InfoTitle = styled.h3`
+export const Title = styled.h3`
   font-weight: 600;
   font-size: 32px;
   line-height: 1.13;
@@ -18,7 +17,7 @@ export const InfoTitle = styled.h3`
 
 export const BtnBox = styled.div``;
 
-export const InfoHeaderBtn = styled.button`
+export const HeaderBtn = styled.button`
   font-weight: 600;
   font-size: 20px;
   line-height: 1.2;
@@ -38,7 +37,7 @@ export const InfoHeaderBtn = styled.button`
   }
 `;
 
-export const SelectedServicesList = styled.ul`
+export const List = styled.ul`
   overflow: auto;
   scroll-behavior: smooth;
 
@@ -58,49 +57,31 @@ export const SelectedServicesList = styled.ul`
   }
 `;
 
-export const SelectedServicesItem = styled.li`
+export const Item = styled.li`
   display: flex;
 
   padding: ${props => props.theme.spacing(2)} 0;
 `;
 
-export const SelectedServicesNameBox = styled.div`
+export const NameBox = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-export const SelectedServicesCode = styled.span`
-  font-size: 14px;
-  line-height: 1.14;
+export const NameBoxHeader = styled.div`
+  display: flex;
+`;
+
+export const Code = styled.span`
+  font-size: 20px;
+  line-height: 1.2;
   color: ${props => props.theme.colors.text.placeholder};
 
   margin-bottom: ${props => props.theme.spacing(1)};
 `;
 
-export const SelectedServicesName = styled.span`
-  font-size: 20px;
-  line-height: 1.2;
+export const Name = styled.span`
+  font-size: 24px;
+  line-height: 1.17;
   color: ${props => props.theme.colors.text.default};
-`;
-
-export const DeleteSelectedServicesBtn = styled.button`
-  margin-right: ${props => props.theme.spacing(3)};
-  border: none;
-  background-color: transparent;
-`;
-
-export const IconTrash = styled(iconTrash)`
-  fill: ${props => props.theme.colors.red.default};
-
-  width: 36px;
-  height: 36px;
-
-  :hover,
-  :focus {
-    fill: ${props => props.theme.colors.red.hover};
-  }
-
-  :active {
-    fill: ${props => props.theme.colors.red.pressed};
-  }
 `;

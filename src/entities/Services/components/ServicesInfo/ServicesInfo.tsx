@@ -1,26 +1,29 @@
-import { deleteService, ISavedServicesList } from "entities/Services";
+import { deleteService, useSavedServicesList } from "entities/Services";
+import { useAppSelector, Button as DeleteBtn, Icon } from "shared";
 
 import {
-  SelectedServicesList,
-  SelectedServicesItem,
-  DeleteSelectedServicesBtn,
-  IconTrash,
-  SelectedServicesNameBox,
-  SelectedServicesCode,
-  SelectedServicesName,
+  List,
+  Item,
+  NameBox,
+  NameBoxHeader,
+  Code,
+  Name,
 } from "./ServicesInfo.styled";
 
-export const ServicesInfo = ({
-  savedServicesList,
-  setSavedServicesList,
-}: ISavedServicesList) => {
+export const ServicesInfo: React.FC = () => {
+  const servicesList = useAppSelector(state => state.services.services);
+  const { savedServicesList, setSavedServicesList } = useSavedServicesList([]);
+
   return (
     <>
-      <SelectedServicesList>
-        {savedServicesList.map(service => (
-          <SelectedServicesItem key={service.codeService}>
-            <DeleteSelectedServicesBtn
-              type="button"
+      <List>
+        {servicesList.map(service => (
+          <Item key={service.codeService}>
+            <DeleteBtn
+              width="52px"
+              height="52px"
+              background="transparent"
+              border="none"
               onClick={() =>
                 deleteService(
                   service.codeService,
@@ -29,15 +32,19 @@ export const ServicesInfo = ({
                 )
               }
             >
-              <IconTrash />
-            </DeleteSelectedServicesBtn>
-            <SelectedServicesNameBox>
-              <SelectedServicesCode>{service.codeService}</SelectedServicesCode>
-              <SelectedServicesName>{service.name}</SelectedServicesName>
-            </SelectedServicesNameBox>
-          </SelectedServicesItem>
+              <Icon icon="trash" size={48} color="red" />
+            </DeleteBtn>
+
+            <NameBox>
+              <NameBoxHeader>
+                <Code>{service.codeService}</Code>
+              </NameBoxHeader>
+
+              <Name>{service.name}</Name>
+            </NameBox>
+          </Item>
         ))}
-      </SelectedServicesList>
+      </List>
     </>
   );
 };
