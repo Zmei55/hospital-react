@@ -14,3 +14,7 @@ export const Title = styled.h3`
   line-height: 1.13;
   color: ${props => props.theme.colors.text.default};
 `;
+
+export const ButtonsBox = styled.div`
+  display: flex;
+`;

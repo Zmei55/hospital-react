@@ -1,30 +1,37 @@
-import { IService } from "entities/Services";
-import { Button as ResetBtn } from "shared";
+import { useAppSelector, Button as AddBtn, Button as LaborBtn } from "shared";
 
-import { TitleBox, Title } from "./ServicesTitleBox.styled";
+import { TitleBox, Title, ButtonsBox } from "./ServicesTitleBox.styled";
 
-interface IServicesTitleBox {
-  savedServicesList: IService[];
-  handleClearList: React.MouseEventHandler<HTMLButtonElement>;
-}
+interface IServicesTitleBox {}
 
-export const ServicesTitleBox: React.FC<IServicesTitleBox> = ({
-  savedServicesList,
-  handleClearList,
-}) => {
+export const ServicesTitleBox: React.FC<IServicesTitleBox> = () => {
+  const servicesList = useAppSelector(state => state.services.services);
+
   return (
     <TitleBox>
       <Title>Services</Title>
 
-      {savedServicesList.length > 0 && (
-        <ResetBtn
-          width="217px"
-          height="48px"
-          background="grey"
-          onClick={handleClearList}
-        >
-          Stornieren
-        </ResetBtn>
+      {servicesList.length > 0 && (
+        <ButtonsBox>
+          <AddBtn
+            width="217px"
+            height="48px"
+            background="grey"
+            // onClick={toggleModal}
+          >
+            Ergänzen
+          </AddBtn>
+
+          {/* Кнопка выбора лаборатории */}
+          {/* <LaborBtn
+            width="217px"
+            height="48px"
+            background="grey"
+            // onClick={handleClearList}
+          >
+            Stornieren
+          </LaborBtn> */}
+        </ButtonsBox>
       )}
     </TitleBox>
   );

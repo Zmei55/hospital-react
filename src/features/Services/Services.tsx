@@ -2,30 +2,19 @@ import {
   ServicesTitleBox,
   ServicesInfo,
   ServicesSearch,
-  useHandleClearServicesList,
 } from "entities/Services";
+import { useAppSelector } from "shared";
 
 import { Container } from "./Services.styled";
 
 export const Services: React.FC = () => {
-  const [savedServicesList, setSavedServicesList, handleClearList] =
-    useHandleClearServicesList([]);
+  const servicesList = useAppSelector(state => state.services.services);
 
   return (
     <Container>
-      <ServicesTitleBox
-        savedServicesList={savedServicesList}
-        handleClearList={handleClearList}
-      />
+      <ServicesTitleBox />
 
-      {savedServicesList.length > 0 ? (
-        <ServicesInfo
-          savedServicesList={savedServicesList}
-          setSavedServicesList={setSavedServicesList}
-        />
-      ) : (
-        <ServicesSearch setSavedServicesList={setSavedServicesList} />
-      )}
+      {servicesList.length > 0 ? <ServicesInfo /> : <ServicesSearch />}
     </Container>
   );
 };
