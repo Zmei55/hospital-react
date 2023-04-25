@@ -1,20 +1,27 @@
-import { Button as InfoBtn, Button as ClearBtn, Icon } from "shared";
+import {
+  useHandleInfoActive,
+  useClearPatient,
+  clearInitialPatient,
+} from "entities/Patient";
+import {
+  useAppSelector,
+  Button as InfoBtn,
+  Button as ClearBtn,
+  Icon,
+} from "shared";
 
 import { NameBlock, Name } from "./PatientInfoNameBlock.styled";
 
-interface IPatientInfoNameBlock {
-  patientName: string;
-  handleInfoActive: React.MouseEventHandler<HTMLButtonElement>;
-  isInfoActive: boolean;
-  clearPatient: () => void;
-}
+interface IPatientInfoNameBlock {}
 
-export const PatientInfoNameBlock: React.FC<IPatientInfoNameBlock> = ({
-  patientName,
-  handleInfoActive,
-  isInfoActive,
-  clearPatient,
-}) => {
+export const PatientInfoNameBlock: React.FC<IPatientInfoNameBlock> = () => {
+  const { name: patientName } = useAppSelector(state => state.patients.patient);
+  const isInfoActive = useAppSelector(
+    state => state.patients.isActivePatientInfo
+  );
+  const { clearPatient } = useClearPatient(clearInitialPatient);
+  const { handleInfoActive } = useHandleInfoActive();
+
   return (
     <NameBlock>
       <InfoBtn

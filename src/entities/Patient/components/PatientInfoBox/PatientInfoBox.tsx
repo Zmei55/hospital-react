@@ -1,3 +1,6 @@
+import { patientInfo } from "entities/Patient";
+import { useAppSelector } from "shared";
+
 import {
   BasicInformationBox,
   BackgroundInformationBox,
@@ -6,27 +9,23 @@ import {
   Body,
 } from "./PatientInfoBox.styled";
 
-interface IPatientInfoBox {
-  dateOfBirth: string;
-  gender: string;
-  cardNumber: number;
-  phoneNumber: string;
-  email: string;
-  identityDocument: string;
-  residence: string;
-  isInfoActive: boolean;
-}
+interface IPatientInfoBox {}
 
-export const PatientInfoBox: React.FC<IPatientInfoBox> = ({
-  dateOfBirth,
-  gender,
-  cardNumber,
-  phoneNumber,
-  email,
-  identityDocument,
-  residence,
-  isInfoActive,
-}) => {
+export const PatientInfoBox: React.FC<IPatientInfoBox> = () => {
+  const patient = useAppSelector(state => state.patients.patient);
+  const isInfoActive = useAppSelector(
+    state => state.patients.isActivePatientInfo
+  );
+  const {
+    dateOfBirth,
+    gender,
+    cardNumber,
+    phoneNumber,
+    email,
+    identityDocument,
+    residence,
+  } = patientInfo(patient);
+
   return (
     <>
       <BasicInformationBox>

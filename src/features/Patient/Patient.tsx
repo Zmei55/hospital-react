@@ -1,22 +1,14 @@
-import {
-  PatientInfo,
-  PatientSearch,
-  useGetPatient,
-  initialPatient,
-} from "entities/Patient";
+import { PatientInfo, PatientSearch } from "entities/Patient";
+import { useAppSelector } from "shared";
 
 import { Container } from "./Patient.styled";
 
 export function Patient() {
-  const { getPatient, patient } = useGetPatient(initialPatient);
+  const patient = useAppSelector(state => state.patients.patient);
 
   return (
     <Container>
-      {getPatient._id === "" ? (
-        <PatientSearch />
-      ) : (
-        <PatientInfo patient={patient} />
-      )}
+      {patient._id === "" ? <PatientSearch /> : <PatientInfo />}
     </Container>
   );
 }

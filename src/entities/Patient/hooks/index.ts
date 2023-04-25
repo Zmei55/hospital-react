@@ -1,4 +1,3 @@
-export * from "./useGetPatient";
 export * from "./useChoosePatient";
 export * from "./usePatientsListFind";
 export * from "./useHandlePatientChange";
