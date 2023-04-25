@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 import { useAppDispatch } from "shared";
-import { useFetchPatientByIdQuery, fetchPatient } from "entities/Patient";
+import {
+  useFetchPatientByIdQuery,
+  fetchPatientsModal,
+  useTogglePatientsModal,
+  fetchPatient,
+} from "entities/Patient";
 
 export const useChoosePatient = (initialValue: string) => {
   const dispatch = useAppDispatch();
@@ -8,6 +13,7 @@ export const useChoosePatient = (initialValue: string) => {
   const { data: patient } = useFetchPatientByIdQuery(patientId, {
     skip: patientId === "",
   });
+  const { showModal } = useTogglePatientsModal();
 
   useEffect(() => {
     if (patient !== undefined) {
@@ -16,6 +22,7 @@ export const useChoosePatient = (initialValue: string) => {
   }, [dispatch, patient]);
 
   const choosePatient = (event: string) => {
+    dispatch(fetchPatientsModal(showModal));
     setPatientId(event);
   };
 

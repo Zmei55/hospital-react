@@ -5,6 +5,7 @@ interface IPatientsState {
   patients: IPatient[];
   patient: IPatient;
   isActivePatientInfo: boolean;
+  modal: boolean;
 }
 
 const initialState: IPatientsState = {
@@ -28,6 +29,7 @@ const initialState: IPatientsState = {
   },
   patients: [],
   isActivePatientInfo: false,
+  modal: false,
 };
 
 const patientsListSlice = createSlice({
@@ -49,6 +51,9 @@ const patientsListSlice = createSlice({
     fetchIsActivePatientInfo(state, action: PayloadAction<boolean>) {
       state.isActivePatientInfo = action.payload;
     },
+    fetchPatientsModal(state, action: PayloadAction<boolean>) {
+      state.modal = action.payload;
+    },
   },
 });
 
@@ -58,6 +63,7 @@ export const {
   fetchPatientByName,
   resetPatientsList,
   fetchIsActivePatientInfo,
+  fetchPatientsModal,
 } = patientsListSlice.actions;
 
 export default patientsListSlice.reducer;
