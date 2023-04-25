@@ -14,5 +14,5 @@ export const useHandleInfoActive = () => {
     setIsInfoActive(!isInfoActive);
   };
 
-  return [handleInfoActive];
+  return { handleInfoActive };
 };

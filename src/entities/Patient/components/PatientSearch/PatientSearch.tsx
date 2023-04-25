@@ -6,7 +6,7 @@ import {
   useChoosePatient,
   useHandlePatientChange,
   usePatientsListFind,
-  useToggleModal,
+  useTogglePatientsModal,
   initialSearchPatientState,
 } from "entities/Patient";
 
@@ -18,8 +18,8 @@ export const PatientSearch: React.FC = () => {
     initialSearchPatientState
   );
   const { handlePatientsListFind, isLoading } = usePatientsListFind(formState);
-  const [showModal, toggleModal] = useToggleModal(false);
-  const [choosePatient] = useChoosePatient("");
+  const { showModal, toggleModal } = useTogglePatientsModal();
+  const { choosePatient } = useChoosePatient("");
 
   return (
     <Container>

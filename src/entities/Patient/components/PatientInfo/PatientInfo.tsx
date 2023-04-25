@@ -16,8 +16,8 @@ interface IPatientInfo {
 }
 
 export const PatientInfo: React.FC<IPatientInfo> = ({ patient }) => {
-  const [clearPatient] = useClearPatient(clearInitialPatient);
-  const [handleInfoActive] = useHandleInfoActive();
+  const { clearPatient } = useClearPatient(clearInitialPatient);
+  const { handleInfoActive } = useHandleInfoActive();
   const isActive = useAppSelector(state => state.patients.isActivePatientInfo);
   const {
     name,

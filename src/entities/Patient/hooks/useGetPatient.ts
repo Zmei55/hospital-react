@@ -10,5 +10,5 @@ export const useGetPatient = (initialValue: IPatient) => {
     if (getPatient._id !== "") setPatient(getPatient);
   }, [getPatient]);
 
-  return [getPatient, patient];
+  return { getPatient, patient };
 };

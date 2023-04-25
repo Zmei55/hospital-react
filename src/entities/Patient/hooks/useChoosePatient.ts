@@ -25,5 +25,5 @@ export const useChoosePatient = (initialValue: string) => {
     clearPatientsList();
   };
 
-  return [choosePatient];
+  return { choosePatient };
 };

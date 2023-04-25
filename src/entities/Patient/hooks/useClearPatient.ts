@@ -8,5 +8,5 @@ export const useClearPatient = (initialValue: IClearInitialPatient) => {
     dispatch(fetchPatient(initialValue));
   };
 
-  return [clearPatient];
+  return { clearPatient };
 };

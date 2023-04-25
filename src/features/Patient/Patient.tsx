@@ -8,7 +8,7 @@ import {
 import { Container } from "./Patient.styled";
 
 export function Patient() {
-  const [getPatient, patient] = useGetPatient(initialPatient);
+  const { getPatient, patient } = useGetPatient(initialPatient);
 
   return (
     <Container>

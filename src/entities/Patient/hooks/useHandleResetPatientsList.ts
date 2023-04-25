@@ -7,5 +7,5 @@ export const useHandleResetPatientsList = () => {
     clearPatientsList();
   };
 
-  return [handleResetPatientsList];
+  return { handleResetPatientsList };
 };
