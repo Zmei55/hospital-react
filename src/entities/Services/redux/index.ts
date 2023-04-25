@@ -1,1 +1,1 @@
-export * from "./servicesListSlice";
+export * from "./servicesSlice";
