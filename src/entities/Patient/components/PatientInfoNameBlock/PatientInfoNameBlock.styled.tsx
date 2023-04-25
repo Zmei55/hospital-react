@@ -7,7 +7,7 @@ export const NameBlock = styled.div`
   margin-bottom: ${props => props.theme.spacing(8)};
 `;
 
-export const PatientName = styled.h3`
+export const Name = styled.h3`
   display: flex;
   align-items: center;
   font-weight: 600;

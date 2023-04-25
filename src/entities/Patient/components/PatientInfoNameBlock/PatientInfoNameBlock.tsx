@@ -1,6 +1,6 @@
-import { Button as InfoBtn, Button as PatientClearBtn, Icon } from "shared";
+import { Button as InfoBtn, Button as ClearBtn, Icon } from "shared";
 
-import { NameBlock, PatientName } from "./PatientInfoNameBlock.styled";
+import { NameBlock, Name } from "./PatientInfoNameBlock.styled";
 
 interface IPatientInfoNameBlock {
   patientName: string;
@@ -30,16 +30,16 @@ export const PatientInfoNameBlock: React.FC<IPatientInfoNameBlock> = ({
         )}
       </InfoBtn>
 
-      <PatientName>{patientName}</PatientName>
+      <Name>{patientName}</Name>
 
-      <PatientClearBtn
+      <ClearBtn
         width="48px"
         height="48px"
         background="transparent"
         onClick={clearPatient}
       >
         <Icon icon="cross-bold" size={24} color="red" />
-      </PatientClearBtn>
+      </ClearBtn>
     </NameBlock>
   );
 };
