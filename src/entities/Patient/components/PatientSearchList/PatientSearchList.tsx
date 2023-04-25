@@ -1,4 +1,4 @@
-import { IPatient, showBirthDate } from "entities/Patient";
+import { useChoosePatient, IPatient, showBirthDate } from "entities/Patient";
 import {
   PatientsList,
   ListHeader,
@@ -17,13 +17,13 @@ import {
 
 interface IPatientSearchList {
   patientsList: IPatient[];
-  choosePatient: (event: string) => void;
 }
 
 export const PatientSearchList: React.FC<IPatientSearchList> = ({
   patientsList,
-  choosePatient,
 }) => {
+  const { choosePatient } = useChoosePatient("");
+
   return (
     <PatientsList>
       <ListHeader>

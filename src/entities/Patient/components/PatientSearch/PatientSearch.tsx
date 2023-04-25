@@ -3,7 +3,6 @@ import {
   PatientSearchModalHeader,
   PatientSearchModalForm,
   PatientSearchList,
-  useChoosePatient,
   useHandlePatientChange,
   usePatientsListFind,
   useTogglePatientsModal,
@@ -19,7 +18,6 @@ export const PatientSearch: React.FC = () => {
   );
   const { handlePatientsListFind, isLoading } = usePatientsListFind(formState);
   const { showModal, toggleModal } = useTogglePatientsModal();
-  const { choosePatient } = useChoosePatient("");
 
   return (
     <Container>
@@ -49,10 +47,7 @@ export const PatientSearch: React.FC = () => {
             ) : (
               <>
                 {patientsList.length > 0 && (
-                  <PatientSearchList
-                    patientsList={patientsList}
-                    choosePatient={choosePatient}
-                  />
+                  <PatientSearchList patientsList={patientsList} />
                 )}
               </>
             )}

@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react";
 import { useAppDispatch } from "shared";
-import {
-  useFetchPatientByIdQuery,
-  useClearPatientsList,
-  fetchPatient,
-} from "entities/Patient";
+import { useFetchPatientByIdQuery, fetchPatient } from "entities/Patient";
 
 export const useChoosePatient = (initialValue: string) => {
   const dispatch = useAppDispatch();
@@ -12,7 +8,6 @@ export const useChoosePatient = (initialValue: string) => {
   const { data: patient } = useFetchPatientByIdQuery(patientId, {
     skip: patientId === "",
   });
-  const { clearPatientsList } = useClearPatientsList();
 
   useEffect(() => {
     if (patient !== undefined) {
@@ -22,7 +17,6 @@ export const useChoosePatient = (initialValue: string) => {
 
   const choosePatient = (event: string) => {
     setPatientId(event);
-    clearPatientsList();
   };
 
   return { choosePatient };
