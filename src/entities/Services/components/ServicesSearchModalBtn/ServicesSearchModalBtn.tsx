@@ -3,14 +3,11 @@ import { useAppSelector, Icon } from "shared";
 
 import { ModalBtn, ModalBtnTitle } from "./ServicesSearchModalBtn.styled";
 
-interface IServicesSearchModalBtn {
-  // toggleModal: () => void;
-}
+interface IServicesSearchModalBtn {}
 
 export const ServicesSearchModalBtn: React.FC<IServicesSearchModalBtn> = () => {
   const patient = useAppSelector(state => state.patients.patient);
-  const initialToggle = useAppSelector(state => state.services.modal);
-  const { toggleModal } = useToggleServicesModal(initialToggle);
+  const { toggleModal } = useToggleServicesModal();
 
   return (
     <ModalBtn
