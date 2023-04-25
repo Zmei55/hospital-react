@@ -36,7 +36,7 @@ export const ServicesSearchModal: React.FC<IServicesSearchModal> = () => {
   const { selectedServices, setSelectedServices, addService } = useAddService(
     []
   );
-  const { setSavedServicesList } = useSavedServicesList([]);
+  const { setSavedServicesList } = useSavedServicesList();
   const initialToggle = useAppSelector(state => state.services.modal);
   const { toggleModal } = useToggleServicesModal(initialToggle);
 

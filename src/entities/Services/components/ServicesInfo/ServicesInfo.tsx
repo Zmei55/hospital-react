@@ -12,8 +12,7 @@ import {
 
 export const ServicesInfo: React.FC = () => {
   const servicesList = useAppSelector(state => state.services.services);
-  const { savedServicesList, setSavedServicesList } =
-    useSavedServicesList(servicesList);
+  const { savedServicesList, setSavedServicesList } = useSavedServicesList();
 
   return (
     <>
