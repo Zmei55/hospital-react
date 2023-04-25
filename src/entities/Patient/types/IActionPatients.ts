@@ -1,9 +1,9 @@
 import { IPatient } from "./IPatient";
 
-export interface IActionPatientsList {
+export interface IActionPatients {
   data: {
     data: {
-      result: IPatient[];
+      result: IPatient;
     };
   };
 }
