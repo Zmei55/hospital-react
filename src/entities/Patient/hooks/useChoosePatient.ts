@@ -12,7 +12,7 @@ export const useChoosePatient = (initialValue: string) => {
   const { data: patient } = useFetchPatientByIdQuery(patientId, {
     skip: patientId === "",
   });
-  const [clearPatientsList] = useClearPatientsList();
+  const { clearPatientsList } = useClearPatientsList();
 
   useEffect(() => {
     if (patient !== undefined) {

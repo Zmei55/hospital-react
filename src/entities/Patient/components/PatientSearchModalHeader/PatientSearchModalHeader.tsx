@@ -21,7 +21,7 @@ export const PatientSearchModalHeader: React.FC<IPatientSearchModalHeader> = ({
   handlePatientsListFind,
   toggleModal,
 }) => {
-  const [clearPatientsList] = useClearPatientsList();
+  const { clearPatientsList } = useClearPatientsList();
 
   return (
     <ModalHeader>

@@ -8,5 +8,5 @@ export const useClearPatientsList = () => {
     dispatch(resetPatientsList([]));
   };
 
-  return [clearPatientsList];
+  return { clearPatientsList };
 };
