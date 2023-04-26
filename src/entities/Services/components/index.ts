@@ -2,7 +2,7 @@ export * from "./TitleBox";
 export * from "./Info";
 export * from "./Search";
 export * from "./SearchAddService";
-export * from "./SearchModal";
+export * from "./ServiceModal";
 export * from "./SearchModalHeader";
 export * from "./SearchFilter";
 export * from "./SearchFilteredList";

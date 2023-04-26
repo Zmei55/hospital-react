@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { IService } from "entities/Services";
+import { useAppSelector } from "shared";
 
-export const useAddService = (initialValue: IService[]) => {
+export const useAddService = () => {
+  const initialValue = useAppSelector(state => state.services.services);
   const [selectedServices, setSelectedServices] = useState(initialValue);
 
   const addService = (service: IService) => {

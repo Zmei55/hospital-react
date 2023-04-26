@@ -17,16 +17,14 @@ import {
   SelectedServicesBox,
   SelectedServicesTitle,
   ButtonsBox,
-} from "./SearchModal.styled";
+} from "./ServiceModal.styled";
 
-interface ISearchModal {}
+interface IServiceModal {}
 
-export const SearchModalEl: React.FC<ISearchModal> = () => {
+export const ServiceModalEl: React.FC<IServiceModal> = () => {
   const [filter, setFilter, handleFilter] = useInput("");
   const { visibleServices, setVisibleServices } = useServicesFilter(filter, []);
-  const { selectedServices, setSelectedServices, addService } = useAddService(
-    []
-  );
+  const { selectedServices, setSelectedServices, addService } = useAddService();
   const { setSavedServicesList } = useSavedServicesList();
   const { toggleModal } = useToggleServicesModal();
 

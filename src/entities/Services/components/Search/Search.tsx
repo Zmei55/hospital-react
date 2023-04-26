@@ -1,4 +1,4 @@
-import { SearchAddServiceEl, SearchModalEl } from "entities/Services";
+import { SearchAddServiceEl, ServiceModalEl } from "entities/Services";
 import { useAppSelector } from "shared";
 
 // import {} from "./Search.styled";
@@ -12,7 +12,7 @@ export const SearchEl: React.FC<ISearch> = () => {
     <>
       <SearchAddServiceEl />
 
-      {showModal && <SearchModalEl />}
+      {showModal && <ServiceModalEl />}
     </>
   );
 };
