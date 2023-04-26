@@ -19,7 +19,7 @@ interface ISearchList {
   patientsList: IPatient[];
 }
 
-export const SearchList: React.FC<ISearchList> = ({ patientsList }) => {
+export const SearchListEl: React.FC<ISearchList> = ({ patientsList }) => {
   const { choosePatient } = useChoosePatient("");
 
   return (

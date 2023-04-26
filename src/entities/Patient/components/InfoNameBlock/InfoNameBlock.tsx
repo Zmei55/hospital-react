@@ -14,7 +14,7 @@ import { NameBlock, Name } from "./InfoNameBlock.styled";
 
 interface IInfoNameBlock {}
 
-export const InfoNameBlock: React.FC<IInfoNameBlock> = () => {
+export const InfoNameBlockEl: React.FC<IInfoNameBlock> = () => {
   const { name: patientName } = useAppSelector(state => state.patients.patient);
   const isInfoActive = useAppSelector(state => state.patients.isActiveInfo);
   const { clearPatient } = useClearPatient(clearInitialPatient);

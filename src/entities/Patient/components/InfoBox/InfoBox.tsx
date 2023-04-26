@@ -11,7 +11,7 @@ import {
 
 interface IInfoBox {}
 
-export const InfoBox: React.FC<IInfoBox> = () => {
+export const InfoBoxEl: React.FC<IInfoBox> = () => {
   const patient = useAppSelector(state => state.patients.patient);
   const isInfoActive = useAppSelector(state => state.patients.isActiveInfo);
   const {

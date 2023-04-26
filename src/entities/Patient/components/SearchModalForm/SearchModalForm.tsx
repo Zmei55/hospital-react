@@ -16,7 +16,7 @@ interface ISearchModalForm {
   ) => Promise<void>;
 }
 
-export const SearchModalForm: React.FC<ISearchModalForm> = ({
+export const SearchModalFormEl: React.FC<ISearchModalForm> = ({
   formState,
   handleChange,
   handlePatientsListFind,

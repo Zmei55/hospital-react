@@ -1,8 +1,8 @@
 import { useAppSelector, Modal, SpinnerCenterBox, Spinner, Icon } from "shared";
 import {
-  SearchModalHeader,
-  SearchModalForm,
-  SearchList,
+  SearchModalHeaderEl,
+  SearchModalFormEl,
+  SearchListEl,
   useHandlePatientChange,
   usePatientsListFind,
   useTogglePatientsModal,
@@ -11,7 +11,7 @@ import {
 
 import { Container, ModalBtn, ModalBoby } from "./Search.styled";
 
-export const Search: React.FC = () => {
+export const SearchEl: React.FC = () => {
   const patientsList = useAppSelector(state => state.patients.patients);
   const { formState, handleChange } = useHandlePatientChange(
     initialSearchPatientState
@@ -28,13 +28,13 @@ export const Search: React.FC = () => {
 
       {showModal && (
         <Modal width="1392px" height="752px" onClose={toggleModal}>
-          <SearchModalHeader
+          <SearchModalHeaderEl
             handlePatientsListFind={handlePatientsListFind}
             toggleModal={toggleModal}
           />
 
           <ModalBoby>
-            <SearchModalForm
+            <SearchModalFormEl
               formState={formState}
               handleChange={handleChange}
               handlePatientsListFind={handlePatientsListFind}
@@ -47,7 +47,7 @@ export const Search: React.FC = () => {
             ) : (
               <>
                 {patientsList.length > 0 && (
-                  <SearchList patientsList={patientsList} />
+                  <SearchListEl patientsList={patientsList} />
                 )}
               </>
             )}

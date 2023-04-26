@@ -1,4 +1,4 @@
-import { Patient } from "features/Patient";
+import { PatientEl } from "features/Patient";
 import { ServicesEl } from "features/Services";
 import { Containers } from "features/Containers";
 import { useAppNavigate, Button as CloseBtn, Icon } from "shared";
@@ -23,7 +23,7 @@ export const Request: React.FC = () => {
       </Header>
 
       <Body>
-        <Patient />
+        <PatientEl />
 
         <Box>
           <ServicesEl />

@@ -17,7 +17,7 @@ interface ISearchModalHeader {
   toggleModal: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-export const SearchModalHeader: React.FC<ISearchModalHeader> = ({
+export const SearchModalHeaderEl: React.FC<ISearchModalHeader> = ({
   handlePatientsListFind,
   toggleModal,
 }) => {

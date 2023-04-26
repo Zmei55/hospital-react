@@ -1,15 +1,15 @@
-import { InfoNameBlock, InfoBox } from "entities/Patient";
+import { InfoNameBlockEl, InfoBoxEl } from "entities/Patient";
 
 import {} from "./Info.styled";
 
 interface IInfo {}
 
-export const Info: React.FC<IInfo> = () => {
+export const InfoEl: React.FC<IInfo> = () => {
   return (
     <>
-      <InfoNameBlock />
+      <InfoNameBlockEl />
 
-      <InfoBox />
+      <InfoBoxEl />
     </>
   );
 };
