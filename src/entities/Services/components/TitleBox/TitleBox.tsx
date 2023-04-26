@@ -1,16 +1,16 @@
-import { ServicesSearchModal, useToggleServicesModal } from "entities/Services";
+import { SearchModalEl, useToggleServicesModal } from "entities/Services";
 import { useAppSelector, Button as AddBtn, Button as LaborBtn } from "shared";
 
-import { TitleBox, Title, ButtonsBox } from "./ServicesTitleBox.styled";
+import { Container, Title, ButtonsBox } from "./TitleBox.styled";
 
-interface IServicesTitleBox {}
+interface ITitleBox {}
 
-export const ServicesTitleBox: React.FC<IServicesTitleBox> = () => {
+export const TitleBoxEl: React.FC<ITitleBox> = () => {
   const servicesList = useAppSelector(state => state.services.services);
   const { showModal, toggleModal } = useToggleServicesModal();
 
   return (
-    <TitleBox>
+    <Container>
       <Title>Services</Title>
 
       {servicesList.length > 0 && (
@@ -36,7 +36,7 @@ export const ServicesTitleBox: React.FC<IServicesTitleBox> = () => {
         </ButtonsBox>
       )}
 
-      {showModal && <ServicesSearchModal />}
-    </TitleBox>
+      {showModal && <SearchModalEl />}
+    </Container>
   );
 };

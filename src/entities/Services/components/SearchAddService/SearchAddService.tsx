@@ -1,11 +1,11 @@
 import { useToggleServicesModal } from "entities/Services";
 import { useAppSelector, Icon } from "shared";
 
-import { ModalBtn, ModalBtnTitle } from "./ServicesSearchModalBtn.styled";
+import { ModalBtn, ModalBtnTitle } from "./SearchAddService.styled";
 
-interface IServicesSearchModalBtn {}
+interface ISearchAddService {}
 
-export const ServicesSearchModalBtn: React.FC<IServicesSearchModalBtn> = () => {
+export const SearchAddServiceEl: React.FC<ISearchAddService> = () => {
   const patient = useAppSelector(state => state.patients.patient);
   const { toggleModal } = useToggleServicesModal();
 

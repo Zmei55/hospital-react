@@ -8,16 +8,17 @@ import {
   FilteredCodeService,
   FilteredNameService,
   AddServiceBtnTitle,
-} from "./ServicesSearchFilteredList.styled";
+} from "./SearchFilteredList.styled";
 
-interface IServicesSearchFilteredList {
+interface ISearchFilteredList {
   visibleServices: IService[];
   addService: (service: IService) => void;
 }
 
-export const ServicesSearchFilteredList: React.FC<
-  IServicesSearchFilteredList
-> = ({ visibleServices, addService }) => {
+export const SearchFilteredListEl: React.FC<ISearchFilteredList> = ({
+  visibleServices,
+  addService,
+}) => {
   return (
     <FilteredList>
       {visibleServices.map(service => (

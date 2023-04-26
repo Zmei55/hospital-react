@@ -1,16 +1,9 @@
 import { deleteService, useSavedServicesList } from "entities/Services";
 import { useAppSelector, Button as DeleteBtn, Icon } from "shared";
 
-import {
-  List,
-  Item,
-  NameBox,
-  NameBoxHeader,
-  Code,
-  Name,
-} from "./ServicesInfo.styled";
+import { List, Item, NameBox, NameBoxHeader, Code, Name } from "./Info.styled";
 
-export const ServicesInfo: React.FC = () => {
+export const InfoEl: React.FC = () => {
   const servicesList = useAppSelector(state => state.services.services);
   const { savedServicesList, setSavedServicesList } = useSavedServicesList();
 

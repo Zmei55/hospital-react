@@ -1,20 +1,16 @@
-import {
-  ServicesTitleBox,
-  ServicesInfo,
-  ServicesSearch,
-} from "entities/Services";
+import { TitleBoxEl, InfoEl, SearchEl } from "entities/Services";
 import { useAppSelector } from "shared";
 
 import { Container } from "./Services.styled";
 
-export const Services: React.FC = () => {
+export const ServicesEl: React.FC = () => {
   const servicesList = useAppSelector(state => state.services.services);
 
   return (
     <Container>
-      <ServicesTitleBox />
+      <TitleBoxEl />
 
-      {servicesList.length > 0 ? <ServicesInfo /> : <ServicesSearch />}
+      {servicesList.length > 0 ? <InfoEl /> : <SearchEl />}
     </Container>
   );
 };

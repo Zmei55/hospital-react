@@ -1,15 +1,15 @@
-import { ServicesSearchFilteredList, IService } from "entities/Services";
+import { SearchFilteredListEl, IService } from "entities/Services";
 
-import { Filter, FilterInput } from "./ServicesSearchFilter.styled";
+import { Filter, FilterInput } from "./SearchFilter.styled";
 
-interface IServicesSearchFilter {
+interface ISearchFilter {
   filter: string;
   handleFilter: React.ChangeEventHandler<HTMLInputElement>;
   visibleServices: IService[];
   addService: (service: IService) => void;
 }
 
-export const ServicesSearchFilter: React.FC<IServicesSearchFilter> = ({
+export const SearchFilterEl: React.FC<ISearchFilter> = ({
   filter,
   handleFilter,
   visibleServices,
@@ -25,7 +25,7 @@ export const ServicesSearchFilter: React.FC<IServicesSearchFilter> = ({
         placeholder="Dienstname"
       />
 
-      <ServicesSearchFilteredList
+      <SearchFilteredListEl
         visibleServices={visibleServices}
         addService={addService}
       />

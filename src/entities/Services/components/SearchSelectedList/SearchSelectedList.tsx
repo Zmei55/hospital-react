@@ -7,9 +7,9 @@ import {
   SelectedServicesNameBox,
   SelectedServicesCode,
   SelectedServicesName,
-} from "./ServicesSearchSelectedList.styled";
+} from "./SearchSelectedList.styled";
 
-interface IServicesSearchSelectedList {
+interface ISearchSelectedList {
   selectedServices: IService[];
   deleteService: (
     id: string,
@@ -19,9 +19,11 @@ interface IServicesSearchSelectedList {
   setSelectedServices: React.Dispatch<React.SetStateAction<IService[]>>;
 }
 
-export const ServicesSearchSelectedList: React.FC<
-  IServicesSearchSelectedList
-> = ({ selectedServices, deleteService, setSelectedServices }) => {
+export const SearchSelectedListEl: React.FC<ISearchSelectedList> = ({
+  selectedServices,
+  deleteService,
+  setSelectedServices,
+}) => {
   return (
     <SelectedServicesList>
       {selectedServices.map(service => (

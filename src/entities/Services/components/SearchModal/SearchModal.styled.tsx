@@ -5,7 +5,7 @@ export const ModalBody = styled.div`
   padding: ${props => props.theme.spacing(6)} ${props => props.theme.spacing(8)};
 `;
 
-export const ServiceForm = styled.form`
+export const Form = styled.form`
   display: flex;
 
   height: 100%;

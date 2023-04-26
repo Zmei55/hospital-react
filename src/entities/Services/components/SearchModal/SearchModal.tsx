@@ -1,7 +1,7 @@
 import {
-  ServicesSearchModalHeader,
-  ServicesSearchFilter,
-  ServicesSearchSelectedList,
+  SearchModalHeaderEl,
+  SearchFilterEl,
+  SearchSelectedListEl,
   deleteService,
   handleClearForm,
   useAddService,
@@ -13,15 +13,15 @@ import { useInput, Modal, Button as ResetBtn, Button as SaveBtn } from "shared";
 
 import {
   ModalBody,
-  ServiceForm,
+  Form,
   SelectedServicesBox,
   SelectedServicesTitle,
   ButtonsBox,
-} from "./ServicesSearchModal.styled";
+} from "./SearchModal.styled";
 
-interface IServicesSearchModal {}
+interface ISearchModal {}
 
-export const ServicesSearchModal: React.FC<IServicesSearchModal> = () => {
+export const SearchModalEl: React.FC<ISearchModal> = () => {
   const [filter, setFilter, handleFilter] = useInput("");
   const { visibleServices, setVisibleServices } = useServicesFilter(filter, []);
   const { selectedServices, setSelectedServices, addService } = useAddService(
@@ -39,11 +39,11 @@ export const ServicesSearchModal: React.FC<IServicesSearchModal> = () => {
 
   return (
     <Modal width="1574px" height="890px" onClose={() => toggleModal()}>
-      <ServicesSearchModalHeader toggleModal={toggleModal} />
+      <SearchModalHeaderEl toggleModal={toggleModal} />
 
       <ModalBody>
-        <ServiceForm onSubmit={handleSubmit}>
-          <ServicesSearchFilter
+        <Form onSubmit={handleSubmit}>
+          <SearchFilterEl
             filter={filter}
             handleFilter={handleFilter}
             visibleServices={visibleServices}
@@ -53,7 +53,7 @@ export const ServicesSearchModal: React.FC<IServicesSearchModal> = () => {
           <SelectedServicesBox>
             <SelectedServicesTitle>Ausgewählte Dienste</SelectedServicesTitle>
 
-            <ServicesSearchSelectedList
+            <SearchSelectedListEl
               selectedServices={selectedServices}
               deleteService={deleteService}
               setSelectedServices={setSelectedServices}
@@ -85,7 +85,7 @@ export const ServicesSearchModal: React.FC<IServicesSearchModal> = () => {
               </SaveBtn>
             </ButtonsBox>
           </SelectedServicesBox>
-        </ServiceForm>
+        </Form>
       </ModalBody>
     </Modal>
   );
