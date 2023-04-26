@@ -1,5 +1,9 @@
 import { ServiceModalEl, useToggleServicesModal } from "entities/Services";
-import { useAppSelector, Button as AddBtn, Button as LaborBtn } from "shared";
+import {
+  useAppSelector,
+  Button as AddBtn,
+  // Button as LaborBtn
+} from "shared";
 
 import { Container, Title, ButtonsBox } from "./TitleBox.styled";
 
