@@ -1,36 +1,24 @@
 {
   "files": {
     "main.css": "/hospital_react_ts/static/css/main.4ab34239.css",
-    "main.js": "/hospital_react_ts/static/js/main.a9c1d759.js",
-    "static/js/71.90ae906b.chunk.js": "/hospital_react_ts/static/js/71.90ae906b.chunk.js",
-    "static/js/408.aa4ba472.chunk.js": "/hospital_react_ts/static/js/408.aa4ba472.chunk.js",
-    "static/js/374.83b7604c.chunk.js": "/hospital_react_ts/static/js/374.83b7604c.chunk.js",
-    "static/js/559.e4725a2a.chunk.js": "/hospital_react_ts/static/js/559.e4725a2a.chunk.js",
-    "static/media/containerAdd.svg": "/hospital_react_ts/static/media/containerAdd.cd5cfaa533179b7dc527f52dc46b796e.svg",
-    "static/media/documents.svg": "/hospital_react_ts/static/media/documents.45c25c006ad9765ffc8233a1e0abe4c9.svg",
-    "static/media/mainMenu.svg": "/hospital_react_ts/static/media/mainMenu.626e57fd98a081a4a597e5a1385c2515.svg",
-    "static/media/findContainer.svg": "/hospital_react_ts/static/media/findContainer.349773b4ea380244b9cfc63a05c6d6ca.svg",
-    "static/media/findDocument.svg": "/hospital_react_ts/static/media/findDocument.9fed48b3fe95e11dc1c8baee500f39bf.svg",
-    "static/media/createDocument.svg": "/hospital_react_ts/static/media/createDocument.8741d0a949806515d8b7858ecb4eb85a.svg",
-    "static/media/selectPatient.svg": "/hospital_react_ts/static/media/selectPatient.21f5c324ae7e854596a686fa71c1965e.svg",
-    "static/media/trash.svg": "/hospital_react_ts/static/media/trash.5245a5518e614769c1332e19d704efde.svg",
-    "static/media/servicesAdd.svg": "/hospital_react_ts/static/media/servicesAdd.878ae23cd08ea700d2c6ed71410fb578.svg",
-    "static/media/caretDoubleUp.svg": "/hospital_react_ts/static/media/caretDoubleUp.9ae3025b63c53e46738a3bfc95e0551a.svg",
-    "static/media/caretDoubleDown.svg": "/hospital_react_ts/static/media/caretDoubleDown.fc3ab5fe4b89ffb5750600fe7b8fdd8c.svg",
-    "static/media/arrowLeft.svg": "/hospital_react_ts/static/media/arrowLeft.0b4aa6f559de47fb5480f175d52cdfbb.svg",
-    "static/media/cross.svg": "/hospital_react_ts/static/media/cross.af20041aa3e266a37437e3881f815e24.svg",
-    "static/media/arrowRight.svg": "/hospital_react_ts/static/media/arrowRight.9dc878449bf6e559b9dd372af162e6d9.svg",
-    "static/media/plusBold.svg": "/hospital_react_ts/static/media/plusBold.e15136fa6e5b521d8c43f9fe8dd1e2f0.svg",
+    "main.js": "/hospital_react_ts/static/js/main.ed28f5a2.js",
+    "static/js/240.a3fffe45.chunk.js": "/hospital_react_ts/static/js/240.a3fffe45.chunk.js",
+    "static/js/467.83df436b.chunk.js": "/hospital_react_ts/static/js/467.83df436b.chunk.js",
+    "static/js/627.0ff3764d.chunk.js": "/hospital_react_ts/static/js/627.0ff3764d.chunk.js",
+    "static/js/560.da061d66.chunk.js": "/hospital_react_ts/static/js/560.da061d66.chunk.js",
+    "static/js/416.2697237e.chunk.js": "/hospital_react_ts/static/js/416.2697237e.chunk.js",
+    "static/media/svgSprite.svg": "/hospital_react_ts/static/media/svgSprite.049f6f4bfd016bfed69441d006383fa5.svg",
     "index.html": "/hospital_react_ts/index.html",
     "main.4ab34239.css.map": "/hospital_react_ts/static/css/main.4ab34239.css.map",
-    "main.a9c1d759.js.map": "/hospital_react_ts/static/js/main.a9c1d759.js.map",
-    "71.90ae906b.chunk.js.map": "/hospital_react_ts/static/js/71.90ae906b.chunk.js.map",
-    "408.aa4ba472.chunk.js.map": "/hospital_react_ts/static/js/408.aa4ba472.chunk.js.map",
-    "374.83b7604c.chunk.js.map": "/hospital_react_ts/static/js/374.83b7604c.chunk.js.map",
-    "559.e4725a2a.chunk.js.map": "/hospital_react_ts/static/js/559.e4725a2a.chunk.js.map"
+    "main.ed28f5a2.js.map": "/hospital_react_ts/static/js/main.ed28f5a2.js.map",
+    "240.a3fffe45.chunk.js.map": "/hospital_react_ts/static/js/240.a3fffe45.chunk.js.map",
+    "467.83df436b.chunk.js.map": "/hospital_react_ts/static/js/467.83df436b.chunk.js.map",
+    "627.0ff3764d.chunk.js.map": "/hospital_react_ts/static/js/627.0ff3764d.chunk.js.map",
+    "560.da061d66.chunk.js.map": "/hospital_react_ts/static/js/560.da061d66.chunk.js.map",
+    "416.2697237e.chunk.js.map": "/hospital_react_ts/static/js/416.2697237e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4ab34239.css",
-    "static/js/main.a9c1d759.js"
+    "static/js/main.ed28f5a2.js"
   ]
 }
