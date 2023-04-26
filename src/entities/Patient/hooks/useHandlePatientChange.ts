@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { ISearchPatientState } from "entities/Patient";
+import { ISearchState } from "entities/Patient";
 
-export const useHandlePatientChange = (initialValue: ISearchPatientState) => {
+export const useHandlePatientChange = (initialValue: ISearchState) => {
   const [formState, setFormState] = useState(initialValue);
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = ({

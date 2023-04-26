@@ -1,6 +1,6 @@
 import { useChoosePatient, IPatient, showBirthDate } from "entities/Patient";
 import {
-  PatientsList,
+  List,
   ListHeader,
   HeadName,
   HeadBirthDay,
@@ -13,19 +13,17 @@ import {
   BodyCardNumber,
   BodySelectBtn,
   SelectBtn,
-} from "./PatientSearchList.styled";
+} from "./SearchList.styled";
 
-interface IPatientSearchList {
+interface ISearchList {
   patientsList: IPatient[];
 }
 
-export const PatientSearchList: React.FC<IPatientSearchList> = ({
-  patientsList,
-}) => {
+export const SearchList: React.FC<ISearchList> = ({ patientsList }) => {
   const { choosePatient } = useChoosePatient("");
 
   return (
-    <PatientsList>
+    <List>
       <ListHeader>
         <HeadName>Vorname und Name</HeadName>
         <HeadBirthDay>Geburtsdatum</HeadBirthDay>
@@ -45,6 +43,6 @@ export const PatientSearchList: React.FC<IPatientSearchList> = ({
           </ListItem>
         ))}
       </ListBody>
-    </PatientsList>
+    </List>
   );
 };

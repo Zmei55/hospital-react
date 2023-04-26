@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const PatientsList = styled.div``;
+export const List = styled.div``;
 
 export const ListHeader = styled.ul`
   display: flex;

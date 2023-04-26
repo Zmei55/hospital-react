@@ -2,10 +2,10 @@ import { useAppDispatch } from "shared";
 import {
   useFetchPatientByNameMutation,
   fetchPatientByName,
-  ISearchPatientState,
+  ISearchState,
 } from "entities/Patient";
 
-export const usePatientsListFind = (formState: ISearchPatientState) => {
+export const usePatientsListFind = (formState: ISearchState) => {
   const dispatch = useAppDispatch();
 
   const [fetchPatientsList, { isLoading }] = useFetchPatientByNameMutation();

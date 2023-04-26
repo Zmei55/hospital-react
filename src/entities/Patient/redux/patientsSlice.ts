@@ -4,7 +4,7 @@ import { IPatient, IActionSlice, IActionPatients } from "entities/Patient";
 interface IPatientsState {
   patients: IPatient[];
   patient: IPatient;
-  isActivePatientInfo: boolean;
+  isActiveInfo: boolean;
   modal: boolean;
 }
 
@@ -28,7 +28,7 @@ const initialState: IPatientsState = {
     containers: [],
   },
   patients: [],
-  isActivePatientInfo: false,
+  isActiveInfo: false,
   modal: false,
 };
 
@@ -48,8 +48,8 @@ const patientsListSlice = createSlice({
     resetPatientsList(state, action: PayloadAction<[]>) {
       state.patients = action.payload;
     },
-    fetchIsActivePatientInfo(state, action: PayloadAction<boolean>) {
-      state.isActivePatientInfo = action.payload;
+    fetchIsActiveInfo(state, action: PayloadAction<boolean>) {
+      state.isActiveInfo = action.payload;
     },
     fetchPatientsModal(state, action: PayloadAction<boolean>) {
       state.modal = action.payload;
@@ -62,7 +62,7 @@ export const {
   fetchPatient,
   fetchPatientByName,
   resetPatientsList,
-  fetchIsActivePatientInfo,
+  fetchIsActiveInfo,
   fetchPatientsModal,
 } = patientsListSlice.actions;
 

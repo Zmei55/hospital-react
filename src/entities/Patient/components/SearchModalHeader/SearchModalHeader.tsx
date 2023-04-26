@@ -10,14 +10,14 @@ import {
   ModalHeader,
   ModalTitle,
   ButtonContainer,
-} from "./PatientSearchModalHeader.styled";
+} from "./SearchModalHeader.styled";
 
-interface IPatientSearchModalHeader {
+interface ISearchModalHeader {
   handlePatientsListFind: React.MouseEventHandler<HTMLButtonElement>;
   toggleModal: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-export const PatientSearchModalHeader: React.FC<IPatientSearchModalHeader> = ({
+export const SearchModalHeader: React.FC<ISearchModalHeader> = ({
   handlePatientsListFind,
   toggleModal,
 }) => {

@@ -10,15 +10,13 @@ import {
   Icon,
 } from "shared";
 
-import { NameBlock, Name } from "./PatientInfoNameBlock.styled";
+import { NameBlock, Name } from "./InfoNameBlock.styled";
 
-interface IPatientInfoNameBlock {}
+interface IInfoNameBlock {}
 
-export const PatientInfoNameBlock: React.FC<IPatientInfoNameBlock> = () => {
+export const InfoNameBlock: React.FC<IInfoNameBlock> = () => {
   const { name: patientName } = useAppSelector(state => state.patients.patient);
-  const isInfoActive = useAppSelector(
-    state => state.patients.isActivePatientInfo
-  );
+  const isInfoActive = useAppSelector(state => state.patients.isActiveInfo);
   const { clearPatient } = useClearPatient(clearInitialPatient);
   const { handleInfoActive } = useHandleInfoActive();
 

@@ -1,6 +1,6 @@
-import { ISearchPatientState } from "entities/Patient";
+import { ISearchState } from "entities/Patient";
 
-export const initialSearchPatientState: ISearchPatientState = {
+export const initialSearchPatientState: ISearchState = {
   name: "",
   birthDate: "",
   cardNumber: "",

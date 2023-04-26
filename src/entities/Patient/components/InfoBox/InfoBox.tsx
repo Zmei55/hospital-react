@@ -7,15 +7,13 @@ import {
   Box,
   Header,
   Body,
-} from "./PatientInfoBox.styled";
+} from "./InfoBox.styled";
 
-interface IPatientInfoBox {}
+interface IInfoBox {}
 
-export const PatientInfoBox: React.FC<IPatientInfoBox> = () => {
+export const InfoBox: React.FC<IInfoBox> = () => {
   const patient = useAppSelector(state => state.patients.patient);
-  const isInfoActive = useAppSelector(
-    state => state.patients.isActivePatientInfo
-  );
+  const isInfoActive = useAppSelector(state => state.patients.isActiveInfo);
   const {
     dateOfBirth,
     gender,
