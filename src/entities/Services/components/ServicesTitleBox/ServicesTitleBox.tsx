@@ -1,3 +1,4 @@
+import { ServicesSearchModal, useToggleServicesModal } from "entities/Services";
 import { useAppSelector, Button as AddBtn, Button as LaborBtn } from "shared";
 
 import { TitleBox, Title, ButtonsBox } from "./ServicesTitleBox.styled";
@@ -6,6 +7,7 @@ interface IServicesTitleBox {}
 
 export const ServicesTitleBox: React.FC<IServicesTitleBox> = () => {
   const servicesList = useAppSelector(state => state.services.services);
+  const { showModal, toggleModal } = useToggleServicesModal();
 
   return (
     <TitleBox>
@@ -17,7 +19,7 @@ export const ServicesTitleBox: React.FC<IServicesTitleBox> = () => {
             width="217px"
             height="48px"
             background="grey"
-            // onClick={toggleModal}
+            onClick={toggleModal}
           >
             Ergänzen
           </AddBtn>
@@ -33,6 +35,8 @@ export const ServicesTitleBox: React.FC<IServicesTitleBox> = () => {
           </LaborBtn> */}
         </ButtonsBox>
       )}
+
+      {showModal && <ServicesSearchModal />}
     </TitleBox>
   );
 };
