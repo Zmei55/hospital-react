@@ -17,9 +17,6 @@ export const BackgroundInformationBox = styled.div`
 export const Box = styled.div``;
 
 export const Header = styled.h4`
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 1.17;
   color: ${props => props.theme.colors.text.label};
 
   margin-bottom: ${props => props.theme.spacing(2)};

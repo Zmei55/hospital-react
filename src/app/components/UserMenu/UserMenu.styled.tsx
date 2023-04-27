@@ -12,8 +12,8 @@ export const UserBox = styled.div`
 
 export const Name = styled.div`
   font-weight: 500;
-  font-size: 24px;
-  line-height: 1.17;
+  font-size: 32px;
+  line-height: 1.13;
 `;
 
 export const Station = styled.div`

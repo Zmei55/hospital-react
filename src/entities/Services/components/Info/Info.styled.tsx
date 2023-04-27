@@ -81,7 +81,5 @@ export const Code = styled.span`
 `;
 
 export const Name = styled.span`
-  font-size: 24px;
-  line-height: 1.17;
   color: ${props => props.theme.colors.text.default};
 `;

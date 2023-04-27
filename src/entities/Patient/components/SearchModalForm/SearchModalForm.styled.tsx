@@ -18,7 +18,6 @@ export const Label = styled.label`
 `;
 
 export const NameInput = styled.input`
-  font-weight: 400;
   font-size: 24px;
   line-height: 1.17;
   color: ${props => props.theme.colors.text.default};
@@ -36,15 +35,11 @@ export const NameInput = styled.input`
   }
 
   ::placeholder {
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 1.17;
     color: ${props => props.theme.colors.text.placeholder};
   }
 `;
 
 export const BirthDayInput = styled.input`
-  font-weight: 400;
   font-size: 24px;
   line-height: 1.17;
   color: ${props => props.theme.colors.text.default};
@@ -62,15 +57,11 @@ export const BirthDayInput = styled.input`
   }
 
   ::placeholder {
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 1.17;
     color: ${props => props.theme.colors.text.placeholder};
   }
 `;
 
 export const MedicalCardInput = styled.input`
-  font-weight: 400;
   font-size: 24px;
   line-height: 1.17;
   color: ${props => props.theme.colors.text.default};
@@ -89,9 +80,6 @@ export const MedicalCardInput = styled.input`
   }
 
   ::placeholder {
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 1.17;
     color: ${props => props.theme.colors.text.placeholder};
   }
 `;

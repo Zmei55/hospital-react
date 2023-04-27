@@ -43,7 +43,5 @@ export const SelectedServicesCode = styled.span`
 `;
 
 export const SelectedServicesName = styled.span`
-  font-size: 24px;
-  line-height: 1.17;
   color: ${props => props.theme.colors.text.default};
 `;

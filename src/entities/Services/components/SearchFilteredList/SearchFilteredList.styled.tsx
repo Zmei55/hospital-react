@@ -44,14 +44,10 @@ export const FilteredCodeService = styled.span`
 `;
 
 export const FilteredNameService = styled.span`
-  font-size: 24px;
-  line-height: 1.17;
   color: ${props => props.theme.colors.text.default};
 `;
 
 export const AddServiceBtnTitle = styled.span`
-  font-size: 24px;
-  line-height: 1.17;
   color: ${props => props.theme.colors.blue.default};
 
   :hover,
