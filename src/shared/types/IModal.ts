@@ -4,5 +4,5 @@ export interface IModal {
   width: string;
   height: string;
   children: ReactNode;
-  onClose: () => void;
+  onClose?: () => void;
 }

@@ -9,7 +9,7 @@ const modalRoot = document.querySelector("#modal-root") as HTMLElement;
 export function Modal({ width, height, children, onClose }: IModal) {
   const handleKeyDown = useCallback(
     (event: { code: string }) => {
-      if (event.code === "Escape") {
+      if (event.code === "Escape" && onClose) {
         onClose();
       }
     },
@@ -27,7 +27,7 @@ export function Modal({ width, height, children, onClose }: IModal) {
   const handleBackdropClick: React.MouseEventHandler<
     HTMLDivElement
   > = event => {
-    if (event.currentTarget === event.target) {
+    if (event.currentTarget === event.target && onClose) {
       onClose();
     }
   };
