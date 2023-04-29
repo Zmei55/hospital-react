@@ -32,6 +32,12 @@ export const Content = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   transform: translate(-50%, -50%);
   background-color: #fff;
   border-radius: ${props => props.theme.borderRadius};

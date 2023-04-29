@@ -5,6 +5,8 @@ export const ModalHeader = styled.div`
   justify-content: space-between;
   align-items: center;
 
+  width: 100%;
+
   padding-top: ${props => props.theme.spacing(4)};
   padding-bottom: ${props => props.theme.spacing(4)};
   padding-right: ${props => props.theme.spacing(6)};

@@ -34,7 +34,7 @@ export function Modal({ width, height, children, onClose }: IModal) {
 
   return createPortal(
     <Backdrop onClick={handleBackdropClick}>
-      <Content>{children}</Content>
+      <Content style={{ width, height }}>{children}</Content>
     </Backdrop>,
     modalRoot
   );
