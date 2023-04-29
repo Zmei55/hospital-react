@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
-import { keyframes } from '@emotion/react';
+import styled from "@emotion/styled";
+import { keyframes } from "@emotion/react";
 
 const openingBackdrop = keyframes`
   from {opacity: 0}  
@@ -33,10 +33,6 @@ export const Content = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 1574px;
-  min-width: 642px;
-  max-height: 890px;
-  min-height: 460px;
   background-color: #fff;
   border-radius: ${props => props.theme.borderRadius};
   box-shadow: 0px 8px 16px rgba(17, 17, 17, 0.06);
