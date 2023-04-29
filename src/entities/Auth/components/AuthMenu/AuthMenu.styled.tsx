@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 
 export const Section = styled.section`
-  padding-top: ${props => props.theme.spacing(42)};
-  padding-bottom: ${props => props.theme.spacing(46)};
+  padding-top: 135px;
+  padding-bottom: 155px;
 `;
 
 export const Form = styled.form`

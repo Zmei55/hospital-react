@@ -5,14 +5,16 @@ export const Header = styled.header`
   justify-content: space-between;
   align-items: center;
 
-  padding-top: ${props => props.theme.spacing(6)};
+  width: 100%;
+  height: 90px;
   padding-right: ${props => props.theme.spacing(8)};
-  padding-bottom: ${props => props.theme.spacing(6)};
   padding-left: ${props => props.theme.spacing(8)};
 
   background-color: #fff;
 `;
 
 export const Body = styled.section`
-  padding: ${props => props.theme.spacing(8)};
+  width: 100%;
+  height: 968px;
+  padding: ${props => props.theme.spacing(4)};
 `;

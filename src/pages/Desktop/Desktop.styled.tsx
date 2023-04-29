@@ -9,7 +9,7 @@ export const LargeBtn = styled.button`
   position: relative;
 
   width: 1852px;
-  height: 440px;
+  height: 460px;
   margin-bottom: ${props => props.theme.spacing(4)};
   background-color: ${props => props.theme.colors.white};
   box-shadow: ${props => props.theme.boxShadow};
@@ -20,8 +20,8 @@ export const LargeBtn = styled.button`
 export const MediumBtn = styled.button`
   position: relative;
 
-  flex-basis: 684px;
-  height: 440px;
+  width: 684px;
+  height: 460px;
   margin-right: ${props => props.theme.spacing(4)};
   background-color: ${props => props.theme.colors.white};
   box-shadow: ${props => props.theme.boxShadow};
@@ -32,8 +32,8 @@ export const MediumBtn = styled.button`
 export const SmallBtn = styled.button`
   position: relative;
 
-  flex-basis: 450px;
-  height: 440px;
+  width: 450px;
+  height: 460px;
   background-color: ${props => props.theme.colors.white};
   box-shadow: ${props => props.theme.boxShadow};
   border-radius: ${props => props.theme.borderRadius};
