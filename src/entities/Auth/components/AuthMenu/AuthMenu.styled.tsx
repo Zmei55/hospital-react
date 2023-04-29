@@ -32,6 +32,10 @@ export const Title = styled.h2`
 
 export const ErrorTitle = styled.p`
   font-weight: 500;
+  text-align: center;
+
+  padding-left: ${props => props.theme.spacing(4)};
+  padding-right: ${props => props.theme.spacing(4)};
 
   margin-bottom: ${props => props.theme.spacing(10)};
 `;
