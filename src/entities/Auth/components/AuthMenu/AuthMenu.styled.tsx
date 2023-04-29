@@ -29,3 +29,9 @@ export const Title = styled.h2`
 
   margin-bottom: ${props => props.theme.spacing(4)};
 `;
+
+export const ErrorTitle = styled.p`
+  font-weight: 500;
+
+  margin-bottom: ${props => props.theme.spacing(10)};
+`;

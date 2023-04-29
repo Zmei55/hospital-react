@@ -1,11 +1,19 @@
 import { useState } from "react";
-import { useAppDispatch } from "shared";
+import { useAppDispatch, useAppNavigate } from "shared";
 import { useLogInMutation, loginSuccess, IAuthFormState } from "entities/Auth";
 
 export const useLogIn = (initialValue: IAuthFormState) => {
   const dispatch = useAppDispatch();
-  const [login, { isLoading }] = useLogInMutation();
+  const [login, { isLoading, isError, reset: resetLoginRequest }] =
+    useLogInMutation();
   const [formState, setFormState] = useState<IAuthFormState>(initialValue);
+  const [navigate] = useAppNavigate();
+
+  const errorModalClose = () => {
+    setFormState(initialValue);
+    navigate("/");
+    resetLoginRequest();
+  };
 
   const handleSubmit = async (event: React.SyntheticEvent) => {
     event.preventDefault();
@@ -19,5 +27,12 @@ export const useLogIn = (initialValue: IAuthFormState) => {
     }
   };
 
-  return { formState, setFormState, isLoading, handleSubmit };
+  return {
+    formState,
+    setFormState,
+    isLoading,
+    isError,
+    handleSubmit,
+    errorModalClose,
+  };
 };
