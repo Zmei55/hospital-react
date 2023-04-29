@@ -16,9 +16,8 @@ interface IInfoNameBlock {}
 
 export const InfoNameBlockEl: React.FC<IInfoNameBlock> = () => {
   const { name: patientName } = useAppSelector(state => state.patients.patient);
-  const isInfoActive = useAppSelector(state => state.patients.isActiveInfo);
   const { clearPatient } = useClearPatient(clearInitialPatient);
-  const { handleInfoActive } = useHandleInfoActive();
+  const { isInfoActive, handleInfoActive } = useHandleInfoActive();
 
   return (
     <NameBlock>
