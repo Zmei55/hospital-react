@@ -23,7 +23,9 @@ export const AuthMenu: React.FC = () => {
 
       {isError && (
         <Modal width="500px" height="400px">
-          <ErrorTitle>Error</ErrorTitle>
+          <ErrorTitle>
+            Login oder Passwort oder Station ist falsch eingegeben
+          </ErrorTitle>
           <AcceptBtn
             width="172px"
             height="72px"
