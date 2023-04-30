@@ -42,3 +42,15 @@ export const ModalBoby = styled.div`
   width: 100%;
   height: 648px;
 `;
+
+export const NotFoundText = styled.p`
+  text-align: center;
+  font-size: 28px;
+  line-height: 1.14;
+`;
+
+export const SearchName = styled.span`
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.125;
+`;
