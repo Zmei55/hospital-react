@@ -15,6 +15,6 @@ export const Header = styled.header`
 
 export const Body = styled.section`
   width: 100%;
-  height: 968px;
+  height: 964px;
   padding: ${props => props.theme.spacing(4)};
 `;
