@@ -34,7 +34,7 @@ export const SearchModalHeaderEl: React.FC<ISearchModalHeader> = ({
           background="transparent"
           onClick={clearPatientsList}
         >
-          Reset
+          Rücksetzen
         </ResetBtn>
 
         <FindBtn
@@ -43,7 +43,7 @@ export const SearchModalHeaderEl: React.FC<ISearchModalHeader> = ({
           background="blue"
           onClick={handlePatientsListFind}
         >
-          Find
+          Finden
         </FindBtn>
 
         <CloseBtn
