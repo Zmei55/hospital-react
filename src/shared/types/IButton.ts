@@ -3,6 +3,7 @@ export interface IButton {
   height: string;
   background: "blue" | "grey" | "green" | "red" | "transparent";
   type?: "button" | "submit" | "reset";
+  name?: string;
   color?: string;
   disabled?: boolean;
   border?: string;

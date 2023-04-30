@@ -12,6 +12,7 @@ export const Button: React.FC<IButton> = ({
   type = "button",
   width,
   height,
+  name,
   color,
   background,
   border,
@@ -24,6 +25,7 @@ export const Button: React.FC<IButton> = ({
       {background === "blue" && (
         <BlueBtn
           type={type}
+          name={name}
           style={{ width, height, color }}
           onClick={onClick}
           disabled={disabled}
@@ -35,6 +37,7 @@ export const Button: React.FC<IButton> = ({
       {background === "red" && (
         <RedBtn
           type={type}
+          name={name}
           style={{ width, height, color }}
           color={color}
           onClick={onClick}
@@ -47,6 +50,7 @@ export const Button: React.FC<IButton> = ({
       {background === "green" && (
         <GreenBtn
           type={type}
+          name={name}
           style={{ width, height, color }}
           onClick={onClick}
           disabled={disabled}
@@ -58,6 +62,7 @@ export const Button: React.FC<IButton> = ({
       {background === "grey" && (
         <GrayBtn
           type={type}
+          name={name}
           style={{ width, height, color }}
           onClick={onClick}
           disabled={disabled}
@@ -69,6 +74,7 @@ export const Button: React.FC<IButton> = ({
       {background === "transparent" && (
         <TransparentBtn
           type={type}
+          name={name}
           style={{ width, height, color, border }}
           onClick={onClick}
           disabled={disabled}
