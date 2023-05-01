@@ -48,9 +48,3 @@ export const NotFoundText = styled.p`
   font-size: 28px;
   line-height: 1.14;
 `;
-
-export const SearchName = styled.span`
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 1.125;
-`;

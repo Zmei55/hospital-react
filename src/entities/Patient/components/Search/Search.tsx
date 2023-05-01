@@ -9,13 +9,7 @@ import {
   initialSearchPatientState,
 } from "entities/Patient";
 
-import {
-  Container,
-  ModalBtn,
-  ModalBoby,
-  NotFoundText,
-  SearchName,
-} from "./Search.styled";
+import { Container, ModalBtn, ModalBoby, NotFoundText } from "./Search.styled";
 
 export const SearchEl: React.FC = () => {
   const patientsList = useAppSelector(state => state.patients.patients);
@@ -57,12 +51,14 @@ export const SearchEl: React.FC = () => {
                   <SearchListEl patientsList={patientsList} />
                 )}
 
-                {patientsList.length === 0 && formState.name !== "" && (
-                  <NotFoundText>
-                    Patient namens <SearchName>{formState.name}</SearchName>{" "}
-                    nicht gefunden
-                  </NotFoundText>
-                )}
+                {patientsList.length === 0 &&
+                  (formState.name !== "" ||
+                    formState.birthDate !== "" ||
+                    formState.cardNumber !== "") && (
+                    <NotFoundText>
+                      Patient mit solchen Daten wurde nicht gefunden
+                    </NotFoundText>
+                  )}
               </>
             )}
           </ModalBoby>
