@@ -14,7 +14,7 @@ import {
 
 interface ISearchModalHeader {
   handlePatientsListFind: React.MouseEventHandler<HTMLButtonElement>;
-  toggleModal: React.MouseEventHandler<HTMLButtonElement>;
+  toggleModal: () => void;
 }
 
 export const SearchModalHeaderEl: React.FC<ISearchModalHeader> = ({
@@ -22,6 +22,11 @@ export const SearchModalHeaderEl: React.FC<ISearchModalHeader> = ({
   toggleModal,
 }) => {
   const { clearPatientsList } = useClearPatientsList();
+
+  const handleCloseBtn = () => {
+    toggleModal();
+    clearPatientsList();
+  };
 
   return (
     <ModalHeader>
@@ -50,7 +55,7 @@ export const SearchModalHeaderEl: React.FC<ISearchModalHeader> = ({
           width="72px"
           height="72px"
           background="red"
-          onClick={toggleModal}
+          onClick={handleCloseBtn}
         >
           <Icon icon="cross" size={48} color="white" />
         </CloseBtn>
