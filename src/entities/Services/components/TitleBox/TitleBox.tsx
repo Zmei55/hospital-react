@@ -11,6 +11,7 @@ interface ITitleBox {}
 
 export const TitleBoxEl: React.FC<ITitleBox> = () => {
   const servicesList = useAppSelector(state => state.services.services);
+  const patient = useAppSelector(state => state.patients.patient);
   const showModal = useAppSelector(state => state.services.modal);
   const { toggleModal } = useToggleServicesModal();
 
@@ -18,7 +19,7 @@ export const TitleBoxEl: React.FC<ITitleBox> = () => {
     <Container>
       <Title>Services</Title>
 
-      {servicesList.length > 0 && (
+      {servicesList.length > 0 && patient._id !== "" && (
         <ButtonsBox>
           <AddBtn
             width="217px"
