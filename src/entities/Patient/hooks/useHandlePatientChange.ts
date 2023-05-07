@@ -8,5 +8,5 @@ export const useHandlePatientChange = (initialValue: ISearchState) => {
     target: { name, value },
   }) => setFormState(prev => ({ ...prev, [name]: value }));
 
-  return { formState, handleChange };
+  return { formState, setFormState, handleChange };
 };

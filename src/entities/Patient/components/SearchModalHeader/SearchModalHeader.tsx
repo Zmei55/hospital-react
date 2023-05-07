@@ -1,4 +1,8 @@
-import { useClearPatientsList } from "entities/Patient";
+import {
+  useClearPatientsList,
+  initialSearchPatientState,
+  ISearchState,
+} from "entities/Patient";
 import {
   Button as ResetBtn,
   Button as FindBtn,
@@ -13,15 +17,22 @@ import {
 } from "./SearchModalHeader.styled";
 
 interface ISearchModalHeader {
+  setFormState: React.Dispatch<React.SetStateAction<ISearchState>>;
   handlePatientsListFind: React.MouseEventHandler<HTMLButtonElement>;
   toggleModal: () => void;
 }
 
 export const SearchModalHeaderEl: React.FC<ISearchModalHeader> = ({
+  setFormState,
   handlePatientsListFind,
   toggleModal,
 }) => {
   const { clearPatientsList } = useClearPatientsList();
+
+  const handleResetBtn = () => {
+    setFormState(initialSearchPatientState);
+    clearPatientsList();
+  };
 
   const handleCloseBtn = () => {
     toggleModal();
@@ -37,7 +48,7 @@ export const SearchModalHeaderEl: React.FC<ISearchModalHeader> = ({
           width="205px"
           height="72px"
           background="transparent"
-          onClick={clearPatientsList}
+          onClick={handleResetBtn}
         >
           Rücksetzen
         </ResetBtn>

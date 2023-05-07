@@ -13,12 +13,12 @@ import { Container, ModalBtn, ModalBoby, NotFoundText } from "./Search.styled";
 
 export const SearchEl: React.FC = () => {
   const patientsList = useAppSelector(state => state.patients.patients);
-  console.log("patientsList:", patientsList);
-  const { formState, handleChange } = useHandlePatientChange(
+  const { formState, setFormState, handleChange } = useHandlePatientChange(
     initialSearchPatientState
   );
   const { handlePatientsListFind, isLoading } = usePatientsListFind(formState);
   const { showModal, toggleModal } = useTogglePatientsModal();
+  console.log(formState);
 
   return (
     <Container>
@@ -30,6 +30,7 @@ export const SearchEl: React.FC = () => {
       {showModal && (
         <Modal width="1392px" height="752px" onClose={toggleModal}>
           <SearchModalHeaderEl
+            setFormState={setFormState}
             handlePatientsListFind={handlePatientsListFind}
             toggleModal={toggleModal}
           />
