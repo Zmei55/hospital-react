@@ -8,7 +8,8 @@ import {
 export const usePatientsListFind = (formState: ISearchState) => {
   const dispatch = useAppDispatch();
 
-  const [fetchPatientsList, { isLoading }] = useFetchPatientByNameMutation();
+  const [fetchPatientsList, { isLoading, isError }] =
+    useFetchPatientByNameMutation();
 
   const handlePatientsListFind = async (event: React.SyntheticEvent) => {
     event.preventDefault();
@@ -21,5 +22,5 @@ export const usePatientsListFind = (formState: ISearchState) => {
     }
   };
 
-  return { handlePatientsListFind, isLoading };
+  return { handlePatientsListFind, isLoading, isError };
 };

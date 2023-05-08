@@ -16,9 +16,9 @@ export const SearchEl: React.FC = () => {
   const { formState, setFormState, handleChange } = useHandlePatientChange(
     initialSearchPatientState
   );
-  const { handlePatientsListFind, isLoading } = usePatientsListFind(formState);
+  const { handlePatientsListFind, isLoading, isError } =
+    usePatientsListFind(formState);
   const { showModal, toggleModal } = useTogglePatientsModal();
-  console.log(formState);
 
   return (
     <Container>
@@ -52,14 +52,11 @@ export const SearchEl: React.FC = () => {
                   <SearchListEl patientsList={patientsList} />
                 )}
 
-                {patientsList.length === 0 &&
-                  (formState.name !== "" ||
-                    formState.birthDate !== "" ||
-                    formState.cardNumber !== "") && (
-                    <NotFoundText>
-                      Patient mit solchen Daten wurde nicht gefunden
-                    </NotFoundText>
-                  )}
+                {isError && (
+                  <NotFoundText>
+                    Patient mit solchen Daten wurde nicht gefunden
+                  </NotFoundText>
+                )}
               </>
             )}
           </ModalBoby>
