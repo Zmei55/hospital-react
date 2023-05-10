@@ -1,8 +1,4 @@
-import {
-  useHandleInfoActive,
-  useClearPatient,
-  clearInitialPatient,
-} from "entities/Patient";
+import { useHandleInfoActive, useClearPatient } from "entities/Patient";
 import {
   useAppSelector,
   Button as InfoBtn,
@@ -16,7 +12,7 @@ interface IInfoNameBlock {}
 
 export const InfoNameBlockEl: React.FC<IInfoNameBlock> = () => {
   const { name: patientName } = useAppSelector(state => state.patients.patient);
-  const { clearPatient } = useClearPatient(clearInitialPatient);
+  const { clearPatient } = useClearPatient();
   const { isInfoActive, handleInfoActive } = useHandleInfoActive();
 
   return (

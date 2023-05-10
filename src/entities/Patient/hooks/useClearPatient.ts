@@ -2,15 +2,15 @@ import { useAppDispatch } from "shared";
 import {
   fetchPatient,
   resetPatientsList,
-  IClearInitialPatient,
+  clearInitialPatient,
 } from "entities/Patient";
 import { fetchServices } from "entities/Services";
 
-export const useClearPatient = (initialValue: IClearInitialPatient) => {
+export const useClearPatient = () => {
   const dispatch = useAppDispatch();
 
   const clearPatient = (): void => {
-    dispatch(fetchPatient(initialValue));
+    dispatch(fetchPatient(clearInitialPatient));
     dispatch(fetchServices([]));
     dispatch(resetPatientsList([]));
   };
