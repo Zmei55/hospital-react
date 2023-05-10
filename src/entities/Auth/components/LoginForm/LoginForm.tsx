@@ -1,7 +1,7 @@
 import { useHandleChange } from "entities/Auth";
-import { useAppNavigate, Button, Icon } from "shared";
+import { useAppNavigate, InputEl, Button as NextBtn, Icon } from "shared";
 
-import { SubTitle, Container, Label, Input } from "./LoginForm.styled";
+import { SubTitle, Container, Label } from "./LoginForm.styled";
 
 export function LoginForm() {
   const { formState, handleChange } = useHandleChange();
@@ -16,9 +16,10 @@ export function LoginForm() {
 
       <Container>
         <Label>
-          <Input
+          <InputEl
             name="logName"
-            type="text"
+            width="368px"
+            height="72px"
             value={formState.logName}
             placeholder="Login"
             onChange={handleChange}
@@ -27,9 +28,11 @@ export function LoginForm() {
         </Label>
 
         <Label>
-          <Input
+          <InputEl
             name="password"
             type="password"
+            width="368px"
+            height="72px"
             value={formState.password}
             placeholder="Password"
             onChange={handleChange}
@@ -38,7 +41,7 @@ export function LoginForm() {
         </Label>
       </Container>
 
-      <Button
+      <NextBtn
         width="368px"
         height="72px"
         background="blue"
@@ -47,7 +50,7 @@ export function LoginForm() {
       >
         Weiter
         <Icon icon="caret-right-bold" size={24} color="white" />
-      </Button>
+      </NextBtn>
     </>
   );
 }

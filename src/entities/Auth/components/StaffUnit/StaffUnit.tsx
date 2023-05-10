@@ -2,6 +2,7 @@ import { useHandleChange } from "entities/Auth";
 import {
   useAppNavigate,
   Spinner,
+  InputEl as RadioBtn,
   Button as BackBtn,
   Button as LoginBtn,
   Icon,
@@ -11,7 +12,6 @@ import {
   SubTitle,
   StationsList,
   StationListItem,
-  RadioBtn,
   BtnContainer,
 } from "./StaffUnit.styled";
 
@@ -28,30 +28,39 @@ export function StaffUnit() {
       <StationsList>
         <StationListItem>
           <RadioBtn
+            width="48px"
+            height="48px"
             type="radio"
             name="station"
             value="chirurgisch"
             onChange={handleChange}
+            marginRight="8px"
           />
           chirurgische Station, Krankenschwester
         </StationListItem>
 
         <StationListItem>
           <RadioBtn
+            width="48px"
+            height="48px"
             type="radio"
             name="station"
             value="neurologisch"
             onChange={handleChange}
+            marginRight="8px"
           />
           neurologische Station, Krankenschwester
         </StationListItem>
 
         <StationListItem>
           <RadioBtn
+            width="48px"
+            height="48px"
             type="radio"
             name="station"
             value="traumatologisch"
             onChange={handleChange}
+            marginRight="8px"
           />
           traumatologische Station, Krankenschwester
         </StationListItem>

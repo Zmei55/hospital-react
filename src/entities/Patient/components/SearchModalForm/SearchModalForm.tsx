@@ -1,12 +1,7 @@
+import { InputEl } from "shared";
 import { ISearchState } from "entities/Patient";
 
-import {
-  Form,
-  Label,
-  NameInput,
-  BirthDayInput,
-  MedicalCardInput,
-} from "./SearchModalForm.styled";
+import { Form, Label } from "./SearchModalForm.styled";
 
 interface ISearchModalForm {
   formState: ISearchState;
@@ -24,7 +19,8 @@ export const SearchModalFormEl: React.FC<ISearchModalForm> = ({
   return (
     <Form onSubmit={handlePatientsListFind}>
       <Label>
-        <NameInput
+        <InputEl
+          width="650px"
           type="text"
           name="name"
           value={formState.name}
@@ -34,7 +30,8 @@ export const SearchModalFormEl: React.FC<ISearchModalForm> = ({
       </Label>
 
       <Label>
-        <BirthDayInput
+        <InputEl
+          width="294px"
           type="date"
           name="birthDate"
           value={formState.birthDate}
@@ -44,7 +41,8 @@ export const SearchModalFormEl: React.FC<ISearchModalForm> = ({
       </Label>
 
       <Label>
-        <MedicalCardInput
+        <InputEl
+          width="206px"
           type="text"
           name="cardNumber"
           value={formState.cardNumber}

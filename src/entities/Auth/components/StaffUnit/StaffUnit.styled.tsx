@@ -39,12 +39,6 @@ export const StationListItem = styled.li`
   margin-bottom: ${props => props.theme.spacing(4)};
 `;
 
-export const RadioBtn = styled.input`
-  width: 48px;
-  height: 48px;
-  margin-right: ${props => props.theme.spacing(2)};
-`;
-
 export const BtnContainer = styled.div`
   display: flex;
   justify-content: space-between;
