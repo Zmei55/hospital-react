@@ -1,5 +1,3 @@
-import { IButton } from "shared";
-
 import {
   BlueBtn,
   RedBtn,
@@ -8,10 +6,25 @@ import {
   TransparentBtn,
 } from "./Button.styled";
 
+interface IButton {
+  width: string;
+  height: string;
+  background: "blue" | "grey" | "green" | "red" | "transparent";
+  type?: "button" | "submit" | "reset";
+  id?: string;
+  name?: string;
+  color?: string;
+  disabled?: boolean;
+  border?: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  children?: React.ReactNode;
+}
+
 export const Button: React.FC<IButton> = ({
   type = "button",
   width,
   height,
+  id,
   name,
   color,
   background,
@@ -25,6 +38,7 @@ export const Button: React.FC<IButton> = ({
       {background === "blue" && (
         <BlueBtn
           type={type}
+          id={id}
           name={name}
           style={{ width, height, color }}
           onClick={onClick}

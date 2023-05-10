@@ -1,5 +1,4 @@
 import icons from "../../icons/svgSprite.svg";
-import { IIcon } from "shared";
 
 import {
   InheritSVG,
@@ -9,6 +8,12 @@ import {
   RedSVG,
   GreenSVG,
 } from "./Icon.styled";
+
+interface IIcon {
+  icon: string;
+  color?: "white" | "grey" | "blue" | "grey" | "green" | "red";
+  size: number;
+}
 
 export const Icon: React.FC<IIcon> = ({ icon, color, size }) => {
   return (
