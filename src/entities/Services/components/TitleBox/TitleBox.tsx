@@ -22,6 +22,7 @@ export const TitleBoxEl: React.FC<ITitleBox> = () => {
       {servicesList.length > 0 && patient._id !== "" && (
         <ButtonsBox>
           <AddBtn
+            id="addToSelectedSerBtn"
             width="217px"
             height="48px"
             background="grey"
@@ -32,6 +33,7 @@ export const TitleBoxEl: React.FC<ITitleBox> = () => {
 
           {/* Кнопка выбора лаборатории */}
           {/* <LaborBtn
+            id="selectLabor"
             width="217px"
             height="48px"
             background="grey"

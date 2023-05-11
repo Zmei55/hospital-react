@@ -14,28 +14,28 @@ export const Desktop: React.FC = () => {
 
   return (
     <Container>
-      <LargeBtn onClick={() => navigate("/request")}>
+      <LargeBtn id="newRequestBtn" onClick={() => navigate("/request")}>
         <IconContainer>
           <Icon icon="create-document" color="blue" size={140} />
           <IconTitle>Erstellen Sie eine Bestellung</IconTitle>
         </IconContainer>
       </LargeBtn>
 
-      <MediumBtn onClick={() => navigate("")}>
+      <MediumBtn id="findRequestBtn" onClick={() => navigate("")}>
         <IconContainer>
           <Icon icon="find-document" color="blue" size={140} />
           <IconTitle>Finden Sie eine Bestellung</IconTitle>
         </IconContainer>
       </MediumBtn>
 
-      <MediumBtn onClick={() => navigate("")}>
+      <MediumBtn id="findContainersBtn" onClick={() => navigate("")}>
         <IconContainer>
           <Icon icon="find-test-tube" color="blue" size={140} />
           <IconTitle>Finden Sie eine Behälter</IconTitle>
         </IconContainer>
       </MediumBtn>
 
-      <SmallBtn onClick={() => navigate("")}>
+      <SmallBtn id="documentsBtn" onClick={() => navigate("")}>
         <IconContainer>
           <Icon icon="documents" color="blue" size={140} />
           <IconTitle>Unterlagen</IconTitle>

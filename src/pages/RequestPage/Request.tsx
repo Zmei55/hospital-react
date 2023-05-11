@@ -20,6 +20,7 @@ export const Request: React.FC = () => {
       <Header>
         <HeaderTitle>Neue Bestellung</HeaderTitle>
         <CloseBtn
+          id="closeNeuRequestBtn"
           width="72px"
           height="72px"
           background="red"

@@ -29,6 +29,7 @@ export const SearchFilteredListEl: React.FC<ISearchFilteredList> = ({
           </FilteredNameBox>
 
           <AddServiceBtn
+            id="addSerBtn"
             width="260px"
             height="88px"
             background="transparent"

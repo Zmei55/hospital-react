@@ -23,12 +23,18 @@ export const UserMenu: React.FC = () => {
         </UserBox>
       )}
 
-      <MenuBtn width="72px" height="72px" background="transparent">
+      <MenuBtn
+        id="appMenuBtn"
+        width="72px"
+        height="72px"
+        background="transparent"
+      >
         <Icon icon="gear" size={48} color="blue" />
       </MenuBtn>
 
       {isLoggedIn && (
         <LogoutBtn
+          id="logoutBtn"
           width="165px"
           height="72px"
           color="#EC312F"

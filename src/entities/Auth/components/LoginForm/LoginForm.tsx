@@ -42,6 +42,7 @@ export function LoginForm() {
       </Container>
 
       <NextBtn
+        id="nextLoginBtn"
         width="368px"
         height="72px"
         background="blue"

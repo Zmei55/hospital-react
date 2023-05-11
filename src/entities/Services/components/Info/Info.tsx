@@ -13,6 +13,7 @@ export const InfoEl: React.FC = () => {
         {servicesList.map(service => (
           <Item key={service.codeService}>
             <DeleteBtn
+              id="delSerInfoBtn"
               width="52px"
               height="52px"
               background="transparent"

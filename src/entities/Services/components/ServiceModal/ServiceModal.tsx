@@ -59,6 +59,7 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
 
             <ButtonsBox>
               <ResetBtn
+                id="resetSelectedSerBtn"
                 width="208px"
                 height="72px"
                 background="grey"
@@ -74,6 +75,7 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
               </ResetBtn>
 
               <SaveBtn
+                id="saveSelectedSerBtn"
                 type="submit"
                 width="318px"
                 height="72px"

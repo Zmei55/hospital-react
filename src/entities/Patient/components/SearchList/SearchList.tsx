@@ -38,7 +38,9 @@ export const SearchListEl: React.FC<ISearchList> = ({ patientsList }) => {
             <BodyBirthDay>{showBirthDate(birthDate)}</BodyBirthDay>
             <BodyCardNumber>{cardNumber}</BodyCardNumber>
             <BodySelectBtn>
-              <SelectBtn onClick={() => choosePatient(_id)}>Wählen</SelectBtn>
+              <SelectBtn id="selectPatLink" onClick={() => choosePatient(_id)}>
+                Wählen
+              </SelectBtn>
             </BodySelectBtn>
           </ListItem>
         ))}

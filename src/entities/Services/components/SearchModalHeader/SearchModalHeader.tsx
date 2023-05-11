@@ -14,6 +14,7 @@ export const SearchModalHeaderEl: React.FC<ISearchModalHeader> = ({
       <ModalTitle>Dienst hinzufügen</ModalTitle>
 
       <CloseBtn
+        id="closeModalSerBtn"
         width="72px"
         height="72px"
         background="red"

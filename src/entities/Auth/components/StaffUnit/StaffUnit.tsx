@@ -68,6 +68,7 @@ export function StaffUnit() {
 
       <BtnContainer>
         <BackBtn
+          id="backToFormBtn"
           width="172px"
           height="72px"
           background="grey"
@@ -79,6 +80,7 @@ export function StaffUnit() {
         </BackBtn>
 
         <LoginBtn
+          id="loginBtn"
           type="submit"
           width="172px"
           height="72px"

@@ -22,7 +22,12 @@ export const SearchEl: React.FC = () => {
 
   return (
     <Container>
-      <ModalBtn type="button" onClick={toggleModal} aria-label="find patient">
+      <ModalBtn
+        id="modalFindPatBtn"
+        type="button"
+        onClick={toggleModal}
+        aria-label="find patient"
+      >
         <Icon icon="user-plus" size={48} />
         Wählen Sie einen Patient aus
       </ModalBtn>

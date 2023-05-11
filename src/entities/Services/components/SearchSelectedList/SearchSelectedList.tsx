@@ -29,6 +29,7 @@ export const SearchSelectedListEl: React.FC<ISearchSelectedList> = ({
       {selectedServices.map(service => (
         <SelectedServicesItem key={service.codeService}>
           <DeleteBtn
+            id="delSelectedSerBtn"
             width="56px"
             height="56px"
             background="transparent"

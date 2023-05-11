@@ -11,6 +11,7 @@ export const SearchAddServiceEl: React.FC<ISearchAddService> = () => {
 
   return (
     <ModalBtn
+      id="modalSerBtn"
       type="button"
       onClick={() => toggleModal()}
       disabled={patient._id === ""}

@@ -18,6 +18,7 @@ export const InfoNameBlockEl: React.FC<IInfoNameBlock> = () => {
   return (
     <NameBlock>
       <InfoBtn
+        id="morePatInfoBtn"
         width="48px"
         height="48px"
         background="transparent"
@@ -34,6 +35,7 @@ export const InfoNameBlockEl: React.FC<IInfoNameBlock> = () => {
       <Name>{patientName}</Name>
 
       <ClearBtn
+        id="clearPatInfo"
         width="48px"
         height="48px"
         background="transparent"
