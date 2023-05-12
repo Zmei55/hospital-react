@@ -12,7 +12,7 @@ const AuthPage = loadable(() => import("pages/views/AuthView"), {
 const DesktopPage = loadable(() => import("pages/views/DesktopView"), {
   fallback: <Loading />,
 });
-const PatientPage = loadable(() => import("pages/views/PatientView"), {
+const RequestView = loadable(() => import("pages/views/RequestView"), {
   fallback: <Loading />,
 });
 const NotFoundPage = loadable(() => import("pages/views/NotFoundView"), {
@@ -54,7 +54,7 @@ export const App: React.FC = () => {
             path="request"
             element={
               <PrivateRoute redirectTo="/">
-                <PatientPage />
+                <RequestView />
               </PrivateRoute>
             }
           />
