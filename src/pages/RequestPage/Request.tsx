@@ -1,7 +1,6 @@
-import { PatientEl } from "features/Patient";
-import { ServicesEl } from "features/Services";
-import { Containers } from "features/Containers";
-import { useClearPatient } from "entities/Patient";
+import { PatientEl, useClearPatient } from "entities/Patient";
+import { ServicesEl } from "entities/Services";
+import { Containers } from "entities/Containers";
 import { useAppNavigate, Button as CloseBtn, Icon } from "shared";
 
 import { Container, Header, Body, HeaderTitle, Box } from "./Request.styled";
