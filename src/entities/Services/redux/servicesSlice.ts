@@ -16,6 +16,9 @@ const servicesSlice = createSlice({
     fetchServicesModal(state, action: PayloadAction<boolean>) {
       state.modal = action.payload;
     },
+    fetchLaborModal(state, action: PayloadAction<boolean>) {
+      state.modal = action.payload;
+    },
   },
 });
 

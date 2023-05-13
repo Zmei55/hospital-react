@@ -36,14 +36,14 @@ const patientsListSlice = createSlice({
   name: "patients",
   initialState,
   reducers: {
-    fetchPatientById(state, action: PayloadAction<IActionPatients>) {
-      state.patient = action.payload.data.data.result;
+    fetchPatientById(state, action: PayloadAction<IPatient>) {
+      state.patient = action.payload;
     },
-    fetchPatient(state, action: PayloadAction<IActionSlice>) {
-      state.patient = action.payload.data.result;
+    fetchPatient(state, action: PayloadAction<IPatient>) {
+      state.patient = action.payload;
     },
     fetchPatientByName(state, action) {
-      state.patients = action.payload.data.data.result;
+      state.patients = action.payload.data;
     },
     resetPatientsList(state, action: PayloadAction<[]>) {
       state.patients = action.payload;
