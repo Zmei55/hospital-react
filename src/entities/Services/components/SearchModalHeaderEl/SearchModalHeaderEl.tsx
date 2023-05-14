@@ -3,11 +3,11 @@ import { Button as CloseBtn, Icon } from "shared";
 import { ModalHeader, ModalTitle } from "./SearchModalHeaderEl.styled";
 
 interface ISearchModalHeader {
-  toggleModal: () => void;
+  toggleServicesModal: () => void;
 }
 
 export const SearchModalHeaderEl: React.FC<ISearchModalHeader> = ({
-  toggleModal,
+  toggleServicesModal,
 }) => {
   return (
     <ModalHeader>
@@ -18,7 +18,7 @@ export const SearchModalHeaderEl: React.FC<ISearchModalHeader> = ({
         width="72px"
         height="72px"
         background="red"
-        onClick={() => toggleModal()}
+        onClick={() => toggleServicesModal()}
       >
         <Icon icon="cross" size={48} color="white" />
       </CloseBtn>

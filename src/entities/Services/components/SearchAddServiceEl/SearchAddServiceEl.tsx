@@ -7,13 +7,13 @@ interface ISearchAddService {}
 
 export const SearchAddServiceEl: React.FC<ISearchAddService> = () => {
   const patient = useAppSelector(state => state.patients.patient);
-  const { toggleModal } = useToggleServicesModal();
+  const { toggleServicesModal } = useToggleServicesModal();
 
   return (
     <ModalBtn
       id="modalSerBtn"
       type="button"
-      onClick={() => toggleModal()}
+      onClick={() => toggleServicesModal()}
       disabled={patient._id === ""}
     >
       <Icon icon="list-plus" size={48} />

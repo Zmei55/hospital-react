@@ -26,18 +26,18 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
   const { visibleServices, setVisibleServices } = useServicesFilter(filter, []);
   const { selectedServices, setSelectedServices, addService } = useAddService();
   const { setSavedServicesList } = useSavedServicesList();
-  const { toggleModal } = useToggleServicesModal();
+  const { toggleServicesModal } = useToggleServicesModal();
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = event => {
     event.preventDefault();
 
     setSavedServicesList(selectedServices);
-    toggleModal();
+    toggleServicesModal();
   };
 
   return (
-    <Modal width="1574px" height="890px" onClose={() => toggleModal()}>
-      <SearchModalHeaderEl toggleModal={toggleModal} />
+    <Modal width="1574px" height="890px" onClose={() => toggleServicesModal()}>
+      <SearchModalHeaderEl toggleServicesModal={toggleServicesModal} />
 
       <ModalBody>
         <Form onSubmit={handleSubmit}>

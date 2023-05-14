@@ -6,7 +6,7 @@ import { useAppSelector } from "shared";
 interface ISearch {}
 
 export const SearchEl: React.FC<ISearch> = () => {
-  const showModal = useAppSelector(state => state.services.modal);
+  const showModal = useAppSelector(state => state.services.modalService);
 
   return (
     <>

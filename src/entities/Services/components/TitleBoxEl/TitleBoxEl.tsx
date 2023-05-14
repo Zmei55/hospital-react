@@ -1,8 +1,11 @@
 import { ServiceModalEl, useToggleServicesModal } from "entities/Services";
+// import { useToggleLaborModal } from "entities/Labor";
+import { LaborModalEl } from "entities/Labor";
 import {
   useAppSelector,
   Button as AddBtn,
-  // Button as LaborBtn
+  Button as LaborBtn,
+  useToggle,
 } from "shared";
 
 import { Container, Title, ButtonsBox } from "./TitleBoxEl.styled";
@@ -12,8 +15,11 @@ interface ITitleBox {}
 export const TitleBoxEl: React.FC<ITitleBox> = () => {
   const servicesList = useAppSelector(state => state.services.services);
   const patient = useAppSelector(state => state.patients.patient);
-  const showModal = useAppSelector(state => state.services.modal);
-  const { toggleModal } = useToggleServicesModal();
+  const showServiceModalState = useAppSelector(
+    state => state.services.modalService
+  );
+  const { toggleServicesModal } = useToggleServicesModal();
+  const [showLaborModal, toggleLaborModal] = useToggle(false);
 
   return (
     <Container>
@@ -26,25 +32,31 @@ export const TitleBoxEl: React.FC<ITitleBox> = () => {
             width="217px"
             height="48px"
             background="grey"
-            onClick={toggleModal}
+            onClick={toggleServicesModal}
           >
             Ergänzen
           </AddBtn>
 
-          {/* Кнопка выбора лаборатории */}
-          {/* <LaborBtn
+          <LaborBtn
             id="selectLabor"
-            width="217px"
+            width="254px"
             height="48px"
             background="grey"
-            // onClick={handleClearList}
+            onClick={toggleLaborModal}
           >
-            Stornieren
-          </LaborBtn> */}
+            Wahl des Labors
+          </LaborBtn>
         </ButtonsBox>
       )}
 
-      {showModal && <ServiceModalEl />}
+      {showServiceModalState && <ServiceModalEl />}
+
+      {showLaborModal && (
+        <LaborModalEl
+          showLaborModal={showLaborModal}
+          toggleLaborModal={toggleLaborModal}
+        />
+      )}
     </Container>
   );
 };
