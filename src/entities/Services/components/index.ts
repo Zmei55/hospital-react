@@ -1,3 +1,4 @@
+export * from "./Services";
 export * from "./TitleBoxEl";
 export * from "./InfoEl";
 export * from "./SearchEl";

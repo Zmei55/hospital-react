@@ -1,3 +1,4 @@
+export * from "./Patient";
 export * from "./InfoEl";
 export * from "./InfoNameBlockEl";
 export * from "./InfoBoxEl";
