@@ -6,7 +6,7 @@ export const Header = styled.header`
   align-items: center;
 
   width: 100%;
-  height: 90px;
+  height: 120px;
   padding-right: ${props => props.theme.spacing(8)};
   padding-left: ${props => props.theme.spacing(8)};
 
@@ -15,6 +15,6 @@ export const Header = styled.header`
 
 export const Body = styled.section`
   width: 100%;
-  height: 964px;
-  padding: ${props => props.theme.spacing(4)};
+  height: 960px;
+  padding: ${props => props.theme.spacing(8)};
 `;

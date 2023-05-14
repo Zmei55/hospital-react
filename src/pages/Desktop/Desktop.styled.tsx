@@ -5,11 +5,10 @@ export const Container = styled.div`
   flex-wrap: wrap;
 `;
 
-export const LargeBtn = styled.button`
+const Button = styled.button`
   position: relative;
 
-  width: 1852px;
-  height: 460px;
+  height: 440px;
   margin-bottom: ${props => props.theme.spacing(4)};
   background-color: ${props => props.theme.colors.white};
   box-shadow: ${props => props.theme.boxShadow};
@@ -17,27 +16,17 @@ export const LargeBtn = styled.button`
   border-color: transparent;
 `;
 
-export const MediumBtn = styled.button`
-  position: relative;
-
-  width: 684px;
-  height: 460px;
-  margin-right: ${props => props.theme.spacing(4)};
-  background-color: ${props => props.theme.colors.white};
-  box-shadow: ${props => props.theme.boxShadow};
-  border-radius: ${props => props.theme.borderRadius};
-  border-color: transparent;
+export const LargeBtn = styled(Button)`
+  width: 100%;
 `;
 
-export const SmallBtn = styled.button`
-  position: relative;
+export const MediumBtn = styled(Button)`
+  width: 684px;
+  margin-right: ${props => props.theme.spacing(4)};
+`;
 
+export const SmallBtn = styled(Button)`
   width: 450px;
-  height: 460px;
-  background-color: ${props => props.theme.colors.white};
-  box-shadow: ${props => props.theme.boxShadow};
-  border-radius: ${props => props.theme.borderRadius};
-  border-color: transparent;
 `;
 
 export const IconContainer = styled.div`
