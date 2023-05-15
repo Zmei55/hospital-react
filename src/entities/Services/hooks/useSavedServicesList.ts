@@ -13,5 +13,24 @@ export const useSavedServicesList = () => {
     dispatch(fetchServices(savedServicesList));
   }, [dispatch, savedServicesList]);
 
-  return { savedServicesList, setSavedServicesList };
+  const handleLaborChange: React.ChangeEventHandler<HTMLInputElement> = ({
+    target: { name, value },
+  }: {
+    target: { name: string; value: string };
+  }) => {
+    setSavedServicesList(
+      savedServicesList.map(service =>
+        service.codeService === name
+          ? {
+              ...service,
+              labor: value,
+            }
+          : {
+              ...service,
+            }
+      )
+    );
+  };
+
+  return { savedServicesList, setSavedServicesList, handleLaborChange };
 };

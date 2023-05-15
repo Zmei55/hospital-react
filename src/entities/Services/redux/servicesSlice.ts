@@ -3,7 +3,8 @@ import { IServicesState, IService } from "entities/Services";
 
 const initialState: IServicesState = {
   services: [],
-  modal: false,
+  modalService: false,
+  modalLabor: false,
 };
 
 const servicesSlice = createSlice({
@@ -14,14 +15,15 @@ const servicesSlice = createSlice({
       state.services = action.payload;
     },
     fetchServicesModal(state, action: PayloadAction<boolean>) {
-      state.modal = action.payload;
+      state.modalService = action.payload;
     },
     fetchLaborModal(state, action: PayloadAction<boolean>) {
-      state.modal = action.payload;
+      state.modalLabor = action.payload;
     },
   },
 });
 
-export const { fetchServices, fetchServicesModal } = servicesSlice.actions;
+export const { fetchServices, fetchServicesModal, fetchLaborModal } =
+  servicesSlice.actions;
 
 export default servicesSlice.reducer;

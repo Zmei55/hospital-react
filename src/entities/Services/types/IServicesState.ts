@@ -2,5 +2,6 @@ import { IService } from "./IService";
 
 export interface IServicesState {
   services: IService[];
-  modal: boolean;
+  modalService: boolean;
+  modalLabor: boolean;
 }

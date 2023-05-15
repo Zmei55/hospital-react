@@ -1,5 +1,4 @@
 import { ServiceModalEl, useToggleServicesModal } from "entities/Services";
-// import { useToggleLaborModal } from "entities/Labor";
 import { LaborModalEl } from "entities/Labor";
 import {
   useAppSelector,
@@ -51,12 +50,7 @@ export const TitleBoxEl: React.FC<ITitleBox> = () => {
 
       {showServiceModalState && <ServiceModalEl />}
 
-      {showLaborModal && (
-        <LaborModalEl
-          showLaborModal={showLaborModal}
-          toggleLaborModal={toggleLaborModal}
-        />
-      )}
+      {showLaborModal && <LaborModalEl toggleLaborModal={toggleLaborModal} />}
     </Container>
   );
 };
