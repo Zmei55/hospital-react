@@ -52,3 +52,5 @@ export const ModalBtn = styled.button`
     border-color: ${props => props.theme.colors.text.placeholder};
   }
 `;
+
+export const ButtonTitle = styled.span``;
