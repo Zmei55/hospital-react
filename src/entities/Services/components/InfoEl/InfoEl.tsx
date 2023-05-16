@@ -4,10 +4,11 @@ import { useAppSelector, Button as DeleteBtn, Icon } from "shared";
 import {
   List,
   Item,
-  NameBox,
-  NameBoxHeader,
+  ServiceNameBox,
+  ServiceNameHeader,
   Code,
-  Name,
+  ServiceName,
+  LaborName,
 } from "./InfoEl.styled";
 
 export const InfoEl: React.FC = () => {
@@ -36,13 +37,15 @@ export const InfoEl: React.FC = () => {
               <Icon icon="trash" size={48} color="red" />
             </DeleteBtn>
 
-            <NameBox>
-              <NameBoxHeader>
+            <ServiceNameBox>
+              <ServiceNameHeader>
                 <Code>{service.codeService}</Code>
-              </NameBoxHeader>
 
-              <Name>{service.name}</Name>
-            </NameBox>
+                <LaborName>{service.labor}</LaborName>
+              </ServiceNameHeader>
+
+              <ServiceName>{service.name}</ServiceName>
+            </ServiceNameBox>
           </Item>
         ))}
       </List>

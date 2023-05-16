@@ -59,27 +59,36 @@ export const List = styled.ul`
 
 export const Item = styled.li`
   display: flex;
+  align-items: center;
 
   padding: ${props => props.theme.spacing(2)} 0;
 `;
 
-export const NameBox = styled.div`
+export const ServiceNameBox = styled.div`
   display: flex;
   flex-direction: column;
+
+  width: 100%;
 `;
 
-export const NameBoxHeader = styled.div`
+export const ServiceNameHeader = styled.div`
   display: flex;
-`;
-
-export const Code = styled.span`
-  font-size: 20px;
-  line-height: 1.2;
-  color: ${props => props.theme.colors.text.placeholder};
 
   margin-bottom: ${props => props.theme.spacing(1)};
 `;
 
-export const Name = styled.span`
+const SecondaryText = styled.span`
+  font-size: 20px;
+  line-height: 1.2;
+  color: ${props => props.theme.colors.text.placeholder};
+`;
+
+export const Code = styled(SecondaryText)``;
+
+export const LaborName = styled(SecondaryText)`
+  margin-left: auto;
+`;
+
+export const ServiceName = styled.span`
   color: ${props => props.theme.colors.text.default};
 `;
