@@ -3,7 +3,7 @@ import { useSavedServicesList } from "entities/Services";
 import {
   Modal,
   Button as CloseBtn,
-  Button as ResetBtn,
+  // Button as ResetBtn,
   Button as SaveBtn,
   Icon,
 } from "shared";
@@ -46,7 +46,8 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
           />
 
           <ButtonsBox>
-            <ResetBtn
+            {/* <ResetBtn
+              type="reset"
               id="resetSelectedSerBtn"
               width="208px"
               height="72px"
@@ -56,7 +57,7 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
               // }
             >
               Abbruch
-            </ResetBtn>
+            </ResetBtn> */}
 
             <SaveBtn
               id="saveSelectedSerBtn"
