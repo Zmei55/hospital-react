@@ -44,7 +44,7 @@ export const InfoEl: React.FC = () => {
                 <LaborName>{service.labor}</LaborName>
               </ServiceNameHeader>
 
-              <ServiceName>{service.name}</ServiceName>
+              <ServiceName>{service.serviceName}</ServiceName>
             </ServiceNameBox>
           </Item>
         ))}

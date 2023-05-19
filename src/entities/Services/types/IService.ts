@@ -1,5 +1,5 @@
 export interface IService {
-  name: string;
+  serviceName: string;
   codeService: string;
   labor: string | null;
   completed: false;

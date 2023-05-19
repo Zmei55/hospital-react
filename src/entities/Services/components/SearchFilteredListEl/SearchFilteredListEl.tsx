@@ -25,7 +25,7 @@ export const SearchFilteredListEl: React.FC<ISearchFilteredList> = ({
         <FilteredItem key={service.codeService}>
           <FilteredNameBox>
             <FilteredCodeService>{service.codeService}</FilteredCodeService>
-            <FilteredNameService>{service.name}</FilteredNameService>
+            <FilteredNameService>{service.serviceName}</FilteredNameService>
           </FilteredNameBox>
 
           <AddServiceBtn

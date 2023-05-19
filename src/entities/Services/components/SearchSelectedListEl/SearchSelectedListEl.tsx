@@ -48,7 +48,7 @@ export const SearchSelectedListEl: React.FC<ISearchSelectedList> = ({
           <SelectedServicesNameBox>
             <SelectedServicesCode>{service.codeService}</SelectedServicesCode>
 
-            <SelectedServicesName>{service.name}</SelectedServicesName>
+            <SelectedServicesName>{service.serviceName}</SelectedServicesName>
           </SelectedServicesNameBox>
         </SelectedServicesItem>
       ))}
