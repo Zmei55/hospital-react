@@ -4,7 +4,7 @@ export * from "./InfoEl";
 export * from "./SearchEl";
 export * from "./SearchAddServiceEl";
 export * from "./ServiceModalEl";
-export * from "./SearchModalHeaderEl";
+export * from "./ServiceModalHeaderEl";
 export * from "./SearchFilterEl";
 export * from "./SearchFilteredListEl";
 export * from "./SearchSelectedListEl";

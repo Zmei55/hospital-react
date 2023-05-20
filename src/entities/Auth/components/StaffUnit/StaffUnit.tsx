@@ -12,6 +12,8 @@ import {
   SubTitle,
   StationsList,
   StationListItem,
+  StationLabel,
+  StationText,
   BtnContainer,
 } from "./StaffUnit.styled";
 
@@ -27,42 +29,50 @@ export function StaffUnit() {
 
       <StationsList>
         <StationListItem>
-          <RadioBtn
-            width="48px"
-            height="48px"
-            type="radio"
-            name="station"
-            value="chirurgisch"
-            onChange={handleChange}
-            marginRight="8px"
-          />
-          chirurgische Station, Krankenschwester
+          <StationLabel>
+            <RadioBtn
+              width="48px"
+              height="48px"
+              type="radio"
+              name="station"
+              value="chirurgisch"
+              onChange={handleChange}
+              marginRight="8px"
+            />
+            <StationText>chirurgische Station, Krankenschwester</StationText>
+          </StationLabel>
         </StationListItem>
 
         <StationListItem>
-          <RadioBtn
-            width="48px"
-            height="48px"
-            type="radio"
-            name="station"
-            value="neurologisch"
-            onChange={handleChange}
-            marginRight="8px"
-          />
-          neurologische Station, Krankenschwester
+          <StationLabel>
+            <RadioBtn
+              width="48px"
+              height="48px"
+              type="radio"
+              name="station"
+              value="neurologisch"
+              onChange={handleChange}
+              marginRight="8px"
+            />
+            <StationText>neurologische Station, Krankenschwester</StationText>
+          </StationLabel>
         </StationListItem>
 
         <StationListItem>
-          <RadioBtn
-            width="48px"
-            height="48px"
-            type="radio"
-            name="station"
-            value="traumatologisch"
-            onChange={handleChange}
-            marginRight="8px"
-          />
-          traumatologische Station, Krankenschwester
+          <StationLabel>
+            <RadioBtn
+              width="48px"
+              height="48px"
+              type="radio"
+              name="station"
+              value="traumatologisch"
+              onChange={handleChange}
+              marginRight="8px"
+            />
+            <StationText>
+              traumatologische Station, Krankenschwester
+            </StationText>
+          </StationLabel>
         </StationListItem>
       </StationsList>
 

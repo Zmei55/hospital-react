@@ -1,5 +1,5 @@
 import {
-  SearchModalHeaderEl,
+  ServiceModalHeaderEl,
   SearchFilterEl,
   SearchSelectedListEl,
   deleteService,
@@ -37,7 +37,7 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
 
   return (
     <Modal width="1574px" height="890px" onClose={() => toggleServicesModal()}>
-      <SearchModalHeaderEl toggleServicesModal={toggleServicesModal} />
+      <ServiceModalHeaderEl toggleServicesModal={toggleServicesModal} />
 
       <ModalBody>
         <Form onSubmit={handleSubmit}>

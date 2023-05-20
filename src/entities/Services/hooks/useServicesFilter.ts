@@ -11,7 +11,9 @@ export const useServicesFilter = (
     if (initialFilter !== "") {
       setVisibleServices(
         servicesList.filter(service =>
-          service.name.toLowerCase().includes(initialFilter.toLowerCase())
+          service.serviceName
+            .toLowerCase()
+            .includes(initialFilter.toLowerCase())
         )
       );
     }

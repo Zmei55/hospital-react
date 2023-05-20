@@ -37,7 +37,7 @@ export const LaborTableEl: React.FC<ILaborTableEl> = ({
           <TRBody key={service.codeService}>
             <ServiceBox>
               <ServiceCode>{service.codeService}</ServiceCode>
-              <ServiceName>{service.name}</ServiceName>
+              <ServiceName>{service.serviceName}</ServiceName>
             </ServiceBox>
             <Radio>
               <input

@@ -18,6 +18,10 @@ interface IButton {
   border?: string;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   children?: React.ReactNode;
+  marginTop?: string;
+  marginRight?: string;
+  marginBottom?: string;
+  marginLeft?: string;
 }
 
 export const Button: React.FC<IButton> = ({
@@ -32,6 +36,10 @@ export const Button: React.FC<IButton> = ({
   disabled,
   children,
   onClick,
+  marginTop,
+  marginRight,
+  marginBottom,
+  marginLeft,
 }) => {
   return (
     <>
@@ -40,7 +48,15 @@ export const Button: React.FC<IButton> = ({
           type={type}
           id={id}
           name={name}
-          style={{ width, height, color }}
+          style={{
+            width,
+            height,
+            color,
+            marginTop,
+            marginRight,
+            marginBottom,
+            marginLeft,
+          }}
           onClick={onClick}
           disabled={disabled}
         >
@@ -53,7 +69,15 @@ export const Button: React.FC<IButton> = ({
           type={type}
           id={id}
           name={name}
-          style={{ width, height, color }}
+          style={{
+            width,
+            height,
+            color,
+            marginTop,
+            marginRight,
+            marginBottom,
+            marginLeft,
+          }}
           color={color}
           onClick={onClick}
           disabled={disabled}
@@ -67,7 +91,15 @@ export const Button: React.FC<IButton> = ({
           type={type}
           id={id}
           name={name}
-          style={{ width, height, color }}
+          style={{
+            width,
+            height,
+            color,
+            marginTop,
+            marginRight,
+            marginBottom,
+            marginLeft,
+          }}
           onClick={onClick}
           disabled={disabled}
         >
@@ -80,7 +112,15 @@ export const Button: React.FC<IButton> = ({
           type={type}
           id={id}
           name={name}
-          style={{ width, height, color }}
+          style={{
+            width,
+            height,
+            color,
+            marginTop,
+            marginRight,
+            marginBottom,
+            marginLeft,
+          }}
           onClick={onClick}
           disabled={disabled}
         >
@@ -93,7 +133,15 @@ export const Button: React.FC<IButton> = ({
           type={type}
           id={id}
           name={name}
-          style={{ width, height, color, border }}
+          style={{
+            width,
+            height,
+            color,
+            marginTop,
+            marginRight,
+            marginBottom,
+            marginLeft,
+          }}
           onClick={onClick}
           disabled={disabled}
         >

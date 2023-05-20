@@ -32,11 +32,16 @@ export const StationsList = styled.ul`
 `;
 
 export const StationListItem = styled.li`
-  display: flex;
-
-  font-weight: 500;
-
   margin-bottom: ${props => props.theme.spacing(4)};
+`;
+
+export const StationLabel = styled.label`
+  display: flex;
+  align-items: center;
+`;
+
+export const StationText = styled.span`
+  font-weight: 500;
 `;
 
 export const BtnContainer = styled.div`

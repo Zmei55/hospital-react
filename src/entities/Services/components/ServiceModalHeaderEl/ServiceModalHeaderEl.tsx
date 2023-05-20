@@ -1,12 +1,12 @@
 import { Button as CloseBtn, Icon } from "shared";
 
-import { ModalHeader, ModalTitle } from "./SearchModalHeaderEl.styled";
+import { ModalHeader, ModalTitle } from "./ServiceModalHeaderEl.styled";
 
 interface ISearchModalHeader {
   toggleServicesModal: () => void;
 }
 
-export const SearchModalHeaderEl: React.FC<ISearchModalHeader> = ({
+export const ServiceModalHeaderEl: React.FC<ISearchModalHeader> = ({
   toggleServicesModal,
 }) => {
   return (
