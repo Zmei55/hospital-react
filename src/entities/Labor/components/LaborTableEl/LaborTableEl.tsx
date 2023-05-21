@@ -34,15 +34,15 @@ export const LaborTableEl: React.FC<ILaborTableEl> = ({
 
       <TBody>
         {savedServicesList.map(service => (
-          <TRBody key={service.codeService}>
+          <TRBody key={service.serviceCode}>
             <ServiceBox>
-              <ServiceCode>{service.codeService}</ServiceCode>
+              <ServiceCode>{service.serviceCode}</ServiceCode>
               <ServiceName>{service.serviceName}</ServiceName>
             </ServiceBox>
             <Radio>
               <input
                 type="radio"
-                name={service.codeService}
+                name={service.serviceCode}
                 value="Internes Labor"
                 onChange={handleLaborChange}
                 checked={service.labor === "Internes Labor"}
@@ -52,7 +52,7 @@ export const LaborTableEl: React.FC<ILaborTableEl> = ({
             <Radio>
               <input
                 type="radio"
-                name={service.codeService}
+                name={service.serviceCode}
                 value="Invitro"
                 onChange={handleLaborChange}
                 checked={service.labor === "Invitro"}
@@ -61,7 +61,7 @@ export const LaborTableEl: React.FC<ILaborTableEl> = ({
             <Radio>
               <input
                 type="radio"
-                name={service.codeService}
+                name={service.serviceCode}
                 value="Helix"
                 onChange={handleLaborChange}
                 checked={service.labor === "Helix"}

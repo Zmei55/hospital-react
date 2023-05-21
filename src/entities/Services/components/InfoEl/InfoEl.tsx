@@ -19,7 +19,7 @@ export const InfoEl: React.FC = () => {
     <>
       <List>
         {servicesList.map(service => (
-          <Item key={service.codeService}>
+          <Item key={service.serviceCode}>
             <DeleteBtn
               id="delSerInfoBtn"
               width="52px"
@@ -28,7 +28,7 @@ export const InfoEl: React.FC = () => {
               border="none"
               onClick={() =>
                 deleteService(
-                  service.codeService,
+                  service.serviceCode,
                   savedServicesList,
                   setSavedServicesList
                 )
@@ -39,7 +39,7 @@ export const InfoEl: React.FC = () => {
 
             <ServiceNameBox>
               <ServiceNameHeader>
-                <Code>{service.codeService}</Code>
+                <Code>{service.serviceCode}</Code>
 
                 <LaborName>{service.labor}</LaborName>
               </ServiceNameHeader>

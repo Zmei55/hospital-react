@@ -27,7 +27,7 @@ export const SearchSelectedListEl: React.FC<ISearchSelectedList> = ({
   return (
     <SelectedServicesList>
       {selectedServices.map(service => (
-        <SelectedServicesItem key={service.codeService}>
+        <SelectedServicesItem key={service.serviceCode}>
           <DeleteBtn
             id="delSelectedSerBtn"
             width="56px"
@@ -36,7 +36,7 @@ export const SearchSelectedListEl: React.FC<ISearchSelectedList> = ({
             border="none"
             onClick={() =>
               deleteService(
-                service.codeService,
+                service.serviceCode,
                 selectedServices,
                 setSelectedServices
               )
@@ -46,7 +46,7 @@ export const SearchSelectedListEl: React.FC<ISearchSelectedList> = ({
           </DeleteBtn>
 
           <SelectedServicesNameBox>
-            <SelectedServicesCode>{service.codeService}</SelectedServicesCode>
+            <SelectedServicesCode>{service.serviceCode}</SelectedServicesCode>
 
             <SelectedServicesName>{service.serviceName}</SelectedServicesName>
           </SelectedServicesNameBox>

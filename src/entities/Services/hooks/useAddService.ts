@@ -10,8 +10,8 @@ export const useAddService = () => {
   const addService = (service: IService) => {
     if (
       selectedServices
-        .map(item => item.codeService)
-        .indexOf(service.codeService) === -1
+        .map(item => item.serviceCode)
+        .indexOf(service.serviceCode) === -1
     ) {
       setSelectedServices([...selectedServices, service]);
       toast.success("Dienst hinzugefügt!");

@@ -8,7 +8,12 @@ import {
   Icon,
 } from "shared";
 
-import { Header, HeaderTitle, Form, ButtonsBox } from "./LaborModalEl.styled";
+import {
+  Header,
+  HeaderTitle,
+  Form,
+  // ButtonsBox
+} from "./LaborModalEl.styled";
 
 interface ILaborModalEl {
   toggleLaborModal: () => void;
@@ -45,8 +50,8 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
             handleLaborChange={handleLaborChange}
           />
 
-          <ButtonsBox>
-            {/* <ResetBtn
+          {/* <ButtonsBox> */}
+          {/* <ResetBtn
               type="reset"
               id="resetSelectedSerBtn"
               width="208px"
@@ -59,16 +64,18 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
               Abbruch
             </ResetBtn> */}
 
-            <SaveBtn
-              id="saveSelectedSerBtn"
-              type="submit"
-              width="318px"
-              height="72px"
-              background="blue"
-            >
-              Speichern und schließen
-            </SaveBtn>
-          </ButtonsBox>
+          <SaveBtn
+            id="saveSelectedSerBtn"
+            type="submit"
+            width="318px"
+            height="72px"
+            background="blue"
+            marginLeft="auto"
+            marginRight="24px"
+          >
+            Speichern und schließen
+          </SaveBtn>
+          {/* </ButtonsBox> */}
         </Form>
       </Modal>
     </>

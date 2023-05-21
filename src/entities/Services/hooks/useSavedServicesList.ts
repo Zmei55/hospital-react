@@ -20,7 +20,7 @@ export const useSavedServicesList = () => {
   }) => {
     setSavedServicesList(
       savedServicesList.map(service =>
-        service.codeService === name
+        service.serviceCode === name
           ? {
               ...service,
               labor: value,

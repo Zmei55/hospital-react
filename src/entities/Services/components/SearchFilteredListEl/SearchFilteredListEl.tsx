@@ -22,9 +22,9 @@ export const SearchFilteredListEl: React.FC<ISearchFilteredList> = ({
   return (
     <FilteredList>
       {visibleServices.map(service => (
-        <FilteredItem key={service.codeService}>
+        <FilteredItem key={service.serviceCode}>
           <FilteredNameBox>
-            <FilteredCodeService>{service.codeService}</FilteredCodeService>
+            <FilteredCodeService>{service.serviceCode}</FilteredCodeService>
             <FilteredNameService>{service.serviceName}</FilteredNameService>
           </FilteredNameBox>
 
