@@ -1,5 +1,5 @@
 import { LaborTableEl } from "entities/Labor";
-import { useSavedServicesList } from "entities/Services";
+import { useSavedServicesList } from "entities/Service";
 import {
   Modal,
   Button as CloseBtn,

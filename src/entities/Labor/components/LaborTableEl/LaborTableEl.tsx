@@ -1,5 +1,5 @@
 import { laborList } from "entities/Labor";
-import { IService } from "entities/Services";
+import { IService } from "entities/Service";
 
 import {
   Table,
@@ -45,7 +45,7 @@ export const LaborTableEl: React.FC<ILaborTableEl> = ({
                 name={service.serviceCode}
                 value="Internes Labor"
                 onChange={handleLaborChange}
-                checked={service.labor === "Internes Labor"}
+                // checked={service.labor === "Internes Labor"}
                 required
               />
             </Radio>
@@ -55,7 +55,7 @@ export const LaborTableEl: React.FC<ILaborTableEl> = ({
                 name={service.serviceCode}
                 value="Invitro"
                 onChange={handleLaborChange}
-                checked={service.labor === "Invitro"}
+                // checked={service.labor === "Invitro"}
               />
             </Radio>
             <Radio>
@@ -64,7 +64,7 @@ export const LaborTableEl: React.FC<ILaborTableEl> = ({
                 name={service.serviceCode}
                 value="Helix"
                 onChange={handleLaborChange}
-                checked={service.labor === "Helix"}
+                // checked={service.labor === "Helix"}
               />
             </Radio>
           </TRBody>
