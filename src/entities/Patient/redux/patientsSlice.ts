@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IPatient, IActionSlice, IActionPatients } from "entities/Patient";
+import { IPatient } from "entities/Patient";
 
 interface IPatientsState {
   patients: IPatient[];

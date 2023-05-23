@@ -4,7 +4,7 @@ import {
   resetPatientsList,
   initialPatient,
 } from "entities/Patient";
-import { fetchServices } from "entities/Services";
+import { fetchServices } from "entities/Service";
 
 export const useClearPatient = () => {
   const dispatch = useAppDispatch();
