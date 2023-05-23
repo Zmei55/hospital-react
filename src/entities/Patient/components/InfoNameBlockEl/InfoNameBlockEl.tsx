@@ -23,6 +23,7 @@ export const InfoNameBlockEl: React.FC<IInfoNameBlock> = () => {
         height="48px"
         background="transparent"
         name={"InfoButton"}
+        marginRight="24px"
         onClick={handleInfoActive}
       >
         {isInfoActive ? (

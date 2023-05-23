@@ -10,10 +10,6 @@ const Button = styled.button`
   line-height: 1.17;
 
   border-radius: ${props => props.theme.borderRadius};
-
-  :not(:last-child) {
-    margin-right: ${props => props.theme.spacing(6)};
-  }
 `;
 
 export const BlueBtn = styled(Button)`

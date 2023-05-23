@@ -49,6 +49,7 @@ export const SearchModalHeaderEl: React.FC<ISearchModalHeader> = ({
           width="205px"
           height="72px"
           background="transparent"
+          marginRight="24px"
           onClick={handleResetBtn}
         >
           Rücksetzen
@@ -59,6 +60,7 @@ export const SearchModalHeaderEl: React.FC<ISearchModalHeader> = ({
           width="162px"
           height="72px"
           background="blue"
+          marginRight="24px"
           onClick={handlePatientsListFind}
         >
           Finden

@@ -28,6 +28,7 @@ export const UserMenu: React.FC = () => {
         width="72px"
         height="72px"
         background="transparent"
+        marginRight="24px"
       >
         <Icon icon="gear" size={48} color="blue" />
       </MenuBtn>
