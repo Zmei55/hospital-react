@@ -1,4 +1,4 @@
-import { Desktop } from "pages";
+import { Desktop } from "entities/Desktop";
 
 const DesktopView: React.FC = () => {
   return <Desktop />;

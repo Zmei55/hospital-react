@@ -1,4 +1,4 @@
-import { Request } from "pages";
+import { Request } from "entities/Request";
 
 const RequestView: React.FC = () => {
   return <Request />;
