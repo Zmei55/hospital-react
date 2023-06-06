@@ -19,8 +19,8 @@ import {
 } from "./Containers.styled";
 
 export const Containers: React.FC = () => {
-  // const servicesList = useAppSelector(state => state.request);
-  const servicesList = [];
+  const servicesList = useAppSelector(state => state.services.services);
+  const detailsList = useAppSelector(state => state.services.details);
   const { showContainersModal, toggleContainersModal } =
     useToggleContainersModal();
 
@@ -29,11 +29,11 @@ export const Containers: React.FC = () => {
       <Title>Containers</Title>
       <ModalBtn
         type="button"
-        disabled={servicesList.length === 0}
+        disabled={servicesList.length !== detailsList.length}
         onClick={toggleContainersModal}
       >
         <Icon icon="test-tube" size={48} />
-        {servicesList.length === 0 ? (
+        {servicesList.length !== detailsList.length ? (
           <ButtonTitle>
             Sie können Container nach dem Hinzufügen von Diensten berechnen
           </ButtonTitle>
