@@ -3,10 +3,8 @@ import {
   SearchModalHeaderEl,
   SearchModalFormEl,
   SearchListEl,
-  useHandlePatientChange,
   usePatientsListFind,
   useTogglePatientsModal,
-  initialSearchPatientState,
 } from "entities/Patient";
 
 import {
@@ -18,19 +16,23 @@ import {
 
 export const SearchEl: React.FC = () => {
   const patientsList = useAppSelector(state => state.patients.patients);
-  const { formState, setFormState, handleChange } = useHandlePatientChange(
-    initialSearchPatientState
-  );
-  const { handlePatientsListFind, isLoading, isError } =
-    usePatientsListFind(formState);
-  const { showModal, toggleModal } = useTogglePatientsModal();
+  const showModal = useAppSelector(state => state.patients.modalPatient);
+  const {
+    formState,
+    handleChange,
+    resetPatients,
+    handlePatientsListFind,
+    isLoading,
+    isError,
+  } = usePatientsListFind();
+  const { togglePatientsModal } = useTogglePatientsModal();
 
   return (
     <Container>
       <ModalBtn
         id="modalFindPatBtn"
         type="button"
-        onClick={toggleModal}
+        onClick={togglePatientsModal}
         aria-label="find patient"
       >
         <Icon icon="user-plus" size={48} />
@@ -38,11 +40,10 @@ export const SearchEl: React.FC = () => {
       </ModalBtn>
 
       {showModal && (
-        <Modal width="1392px" height="752px" onClose={toggleModal}>
+        <Modal width="1392px" height="752px" onClose={togglePatientsModal}>
           <SearchModalHeaderEl
-            setFormState={setFormState}
+            resetPatients={resetPatients}
             handlePatientsListFind={handlePatientsListFind}
-            toggleModal={toggleModal}
           />
 
           <ModalBoby>

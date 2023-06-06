@@ -19,7 +19,8 @@ import {
 } from "./Containers.styled";
 
 export const Containers: React.FC = () => {
-  const servicesList = useAppSelector(state => state.services.services);
+  // const servicesList = useAppSelector(state => state.request);
+  const servicesList = [];
   const { showContainersModal, toggleContainersModal } =
     useToggleContainersModal();
 

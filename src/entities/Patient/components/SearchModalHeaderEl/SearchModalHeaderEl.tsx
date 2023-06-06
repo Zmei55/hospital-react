@@ -1,8 +1,4 @@
-import {
-  useClearPatientsList,
-  initialSearchPatientState,
-  ISearchState,
-} from "entities/Patient";
+import { useTogglePatientsModal } from "entities/Patient";
 import {
   Button as ResetBtn,
   Button as FindBtn,
@@ -17,26 +13,23 @@ import {
 } from "./SearchModalHeaderEl.styled";
 
 interface ISearchModalHeader {
-  setFormState: React.Dispatch<React.SetStateAction<ISearchState>>;
+  resetPatients: () => void;
   handlePatientsListFind: React.MouseEventHandler<HTMLButtonElement>;
-  toggleModal: () => void;
 }
 
 export const SearchModalHeaderEl: React.FC<ISearchModalHeader> = ({
-  setFormState,
+  resetPatients,
   handlePatientsListFind,
-  toggleModal,
 }) => {
-  const { clearPatientsList } = useClearPatientsList();
+  const { togglePatientsModal } = useTogglePatientsModal();
 
   const handleResetBtn = () => {
-    setFormState(initialSearchPatientState);
-    clearPatientsList();
+    resetPatients();
   };
 
   const handleCloseBtn = () => {
-    toggleModal();
-    clearPatientsList();
+    resetPatients();
+    togglePatientsModal();
   };
 
   return (

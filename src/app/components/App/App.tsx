@@ -6,16 +6,16 @@ import { Loading } from "shared";
 
 import { Container } from "./App.styled";
 
-const AuthPage = loadable(() => import("pages/views/AuthView"), {
+const AuthPage = loadable(() => import("pages/AuthView"), {
   fallback: <Loading />,
 });
-const DesktopPage = loadable(() => import("pages/views/DesktopView"), {
+const DesktopPage = loadable(() => import("pages/DesktopView"), {
   fallback: <Loading />,
 });
-const RequestView = loadable(() => import("pages/views/RequestView"), {
+const RequestView = loadable(() => import("pages/RequestView"), {
   fallback: <Loading />,
 });
-const NotFoundPage = loadable(() => import("pages/views/NotFoundView"), {
+const NotFoundPage = loadable(() => import("pages/NotFoundView"), {
   fallback: <Loading />,
 });
 

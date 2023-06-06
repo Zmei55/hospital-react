@@ -20,7 +20,7 @@ interface ISearchList {
 }
 
 export const SearchListEl: React.FC<ISearchList> = ({ patientsList }) => {
-  const { choosePatient } = useChoosePatient("");
+  const { choosePatient } = useChoosePatient();
 
   return (
     <List>
@@ -32,13 +32,16 @@ export const SearchListEl: React.FC<ISearchList> = ({ patientsList }) => {
       </ListHeader>
 
       <ListBody>
-        {patientsList.map(({ _id, name, birthDate, cardNumber }) => (
-          <ListItem key={_id}>
-            <BodyName>{name}</BodyName>
-            <BodyBirthDay>{showBirthDate(birthDate)}</BodyBirthDay>
-            <BodyCardNumber>{cardNumber}</BodyCardNumber>
+        {patientsList.map(patient => (
+          <ListItem key={patient._id}>
+            <BodyName>{patient.name}</BodyName>
+            <BodyBirthDay>{showBirthDate(patient.birthDate)}</BodyBirthDay>
+            <BodyCardNumber>{patient.cardNumber}</BodyCardNumber>
             <BodySelectBtn>
-              <SelectBtn id="selectPatLink" onClick={() => choosePatient(_id)}>
+              <SelectBtn
+                id="selectPatLink"
+                onClick={() => choosePatient(patient)}
+              >
                 Wählen
               </SelectBtn>
             </BodySelectBtn>

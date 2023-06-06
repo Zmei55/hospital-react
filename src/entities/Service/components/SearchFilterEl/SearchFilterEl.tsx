@@ -1,7 +1,7 @@
 import { useServicesFilter } from "entities/Service";
 import { InputEl as FilterInput, useInput, Button as FindBtn } from "shared";
 
-import {} from "./SearchFilterEl.styled";
+import { FilterHeader } from "./SearchFilterEl.styled";
 
 interface ISearchFilter {}
 
@@ -10,7 +10,7 @@ export const SearchFilterEl: React.FC<ISearchFilter> = () => {
   const { handleServicesListFind } = useServicesFilter(filter);
 
   return (
-    <>
+    <FilterHeader>
       <FilterInput
         width="660px"
         type="text"
@@ -31,6 +31,6 @@ export const SearchFilterEl: React.FC<ISearchFilter> = () => {
       >
         Finden
       </FindBtn>
-    </>
+    </FilterHeader>
   );
 };

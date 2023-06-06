@@ -1,24 +1,20 @@
-import { ServiceModalEl, useToggleServicesModal } from "entities/Service";
-import { LaborModalEl } from "entities/Labor";
 import {
-  useAppSelector,
-  Button as AddBtn,
-  Button as LaborBtn,
-  useToggle,
-} from "shared";
+  ServiceModalEl,
+  useToggleServicesModal,
+  LaborModalEl,
+  useToggleLaborModal,
+} from "entities/Service";
+import { useAppSelector, Button as AddBtn, Button as LaborBtn } from "shared";
 
 import { Container, Title, ButtonsBox } from "./TitleBoxEl.styled";
 
 interface ITitleBox {}
 
 export const TitleBoxEl: React.FC<ITitleBox> = () => {
-  const servicesList = useAppSelector(state => state.services.services);
   const patient = useAppSelector(state => state.patients.patient);
-  const showServiceModalState = useAppSelector(
-    state => state.services.modalService
-  );
-  const { toggleServicesModal } = useToggleServicesModal();
-  const [showLaborModal, toggleLaborModal] = useToggle(false);
+  const servicesList = useAppSelector(state => state.services.selectedServices);
+  const { showServiceModal, toggleServicesModal } = useToggleServicesModal();
+  const { showLaborModal, toggleLaborModal } = useToggleLaborModal();
 
   return (
     <Container>
@@ -49,7 +45,7 @@ export const TitleBoxEl: React.FC<ITitleBox> = () => {
         </ButtonsBox>
       )}
 
-      {showServiceModalState && <ServiceModalEl />}
+      {showServiceModal && <ServiceModalEl />}
 
       {showLaborModal && <LaborModalEl toggleLaborModal={toggleLaborModal} />}
     </Container>

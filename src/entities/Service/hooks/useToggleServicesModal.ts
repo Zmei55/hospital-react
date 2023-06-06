@@ -1,17 +1,13 @@
-import { useEffect } from "react";
 import { fetchServicesModal } from "entities/Service";
-import { useAppDispatch, useAppSelector, useToggle } from "shared";
+import { useAppDispatch, useAppSelector } from "shared";
 
 export const useToggleServicesModal = () => {
   const dispatch = useAppDispatch();
-  const initialValue: boolean = useAppSelector(
-    state => state.services.modalService
-  );
-  const [showServicesModal, toggleServicesModal] = useToggle(initialValue);
+  const showServiceModal = useAppSelector(state => state.services.modalService);
 
-  useEffect(() => {
-    dispatch(fetchServicesModal(showServicesModal));
-  }, [dispatch, showServicesModal]);
+  const toggleServicesModal = () => {
+    dispatch(fetchServicesModal(!showServiceModal));
+  };
 
-  return { showServicesModal, toggleServicesModal };
+  return { showServiceModal, toggleServicesModal };
 };

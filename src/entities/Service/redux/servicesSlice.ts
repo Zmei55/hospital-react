@@ -1,35 +1,94 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IService } from "entities/Service";
+import { ILabor, IService, IDetail } from "entities/Service";
 
 interface IServicesState {
   services: IService[];
+  labors: ILabor[];
+  details: IDetail[];
   filteredServices: IService[];
+  selectedServices: IService[];
   modalService: boolean;
+  modalLabor: boolean;
 }
 
 const initialState: IServicesState = {
   services: [],
+  labors: [],
+  details: [],
   filteredServices: [],
+  selectedServices: [],
   modalService: false,
+  modalLabor: false,
 };
 
 const servicesSlice = createSlice({
   name: "services",
   initialState,
   reducers: {
-    fetchServices(state, action) {
-      state.services = action.payload.data;
+    addServices(state, action: PayloadAction<IService[]>) {
+      state.services = action.payload;
     },
-    fetchFilteredServices(state, action) {
-      state.filteredServices = action.payload.data;
+    deleteService(state, action: PayloadAction<string>) {
+      state.services = state.services.filter(
+        service => service._id !== action.payload
+      );
+    },
+    resetServices(state) {
+      state.services = initialState.services;
+    },
+    addSelectedServices(state, action: PayloadAction<IService>) {
+      state.selectedServices.push(action.payload);
+    },
+    deleteSelectedService(state, action: PayloadAction<string>) {
+      state.selectedServices = state.selectedServices.filter(
+        service => service._id !== action.payload
+      );
+    },
+    resetSelectedServices(state) {
+      state.selectedServices = initialState.selectedServices;
+    },
+    fetchFilteredServices(state, action: PayloadAction<IService[]>) {
+      state.filteredServices = action.payload;
+    },
+    resetFilteredServices(state) {
+      state.filteredServices = initialState.filteredServices;
     },
     fetchServicesModal(state, action: PayloadAction<boolean>) {
       state.modalService = action.payload;
     },
+    fetchLabors(state, action: PayloadAction<ILabor[]>) {
+      state.labors = action.payload;
+    },
+    resetLabors(state) {
+      state.labors = initialState.labors;
+    },
+    addDetails(state, action: PayloadAction<IDetail[]>) {
+      state.details = action.payload;
+    },
+    resetDetails(state) {
+      state.details = initialState.details;
+    },
+    fetchLaborModal(state, action: PayloadAction<boolean>) {
+      state.modalLabor = action.payload;
+    },
   },
 });
 
-export const { fetchServices, fetchFilteredServices, fetchServicesModal } =
-  servicesSlice.actions;
+export const {
+  addServices,
+  deleteService,
+  resetServices,
+  addSelectedServices,
+  deleteSelectedService,
+  resetSelectedServices,
+  fetchFilteredServices,
+  resetFilteredServices,
+  fetchServicesModal,
+  fetchLabors,
+  resetLabors,
+  addDetails,
+  resetDetails,
+  fetchLaborModal,
+} = servicesSlice.actions;
 
 export default servicesSlice.reducer;

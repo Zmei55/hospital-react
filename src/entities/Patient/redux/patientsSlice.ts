@@ -5,7 +5,7 @@ interface IPatientsState {
   patients: IPatient[];
   patient: IPatient;
   isActiveInfo: boolean;
-  modal: boolean;
+  modalPatient: boolean;
 }
 
 const initialState: IPatientsState = {
@@ -24,43 +24,41 @@ const initialState: IPatientsState = {
       city: "",
       postcode: "",
     },
-    services: [],
-    containers: [],
   },
   patients: [],
   isActiveInfo: false,
-  modal: false,
+  modalPatient: false,
 };
 
 const patientsListSlice = createSlice({
   name: "patients",
   initialState,
   reducers: {
-    fetchPatientById(state, action: PayloadAction<IPatient>) {
+    addPatient(state, action: PayloadAction<IPatient>) {
       state.patient = action.payload;
     },
-    fetchPatient(state, action: PayloadAction<IPatient>) {
-      state.patient = action.payload;
+    deletePatient(state) {
+      state.patient = initialState.patient;
     },
-    fetchPatientByName(state, action) {
+    addPatientsList(state, action) {
       state.patients = action.payload.data;
     },
-    resetPatientsList(state, action: PayloadAction<[]>) {
-      state.patients = action.payload;
+    resetPatientsList(state) {
+      state.patients = initialState.patients;
     },
     fetchIsActiveInfo(state, action: PayloadAction<boolean>) {
       state.isActiveInfo = action.payload;
     },
     fetchPatientsModal(state, action: PayloadAction<boolean>) {
-      state.modal = action.payload;
+      state.modalPatient = action.payload;
     },
   },
 });
 
 export const {
-  fetchPatientById,
-  fetchPatient,
-  fetchPatientByName,
+  addPatient,
+  deletePatient,
+  addPatientsList,
   resetPatientsList,
   fetchIsActiveInfo,
   fetchPatientsModal,

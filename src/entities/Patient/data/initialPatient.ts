@@ -15,6 +15,4 @@ export const initialPatient: IPatient = {
     city: "",
     postcode: "",
   },
-  services: [],
-  containers: [],
 };

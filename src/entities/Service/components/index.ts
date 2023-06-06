@@ -8,3 +8,5 @@ export * from "./ServiceModalHeaderEl";
 export * from "./SearchFilterEl";
 export * from "./SearchFilteredListEl";
 export * from "./SearchSelectedListEl";
+export * from "./LaborModalEl";
+export * from "./LaborTableEl";

@@ -12,7 +12,7 @@ export const Form = styled.form`
 `;
 
 export const Filter = styled.div`
-  display: flex;
+  /* display: flex; */
 
   /* width: 664px; */
   margin-right: 66px;

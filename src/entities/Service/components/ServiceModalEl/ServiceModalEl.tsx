@@ -4,6 +4,7 @@ import {
   SearchFilteredListEl,
   SearchSelectedListEl,
   useToggleServicesModal,
+  useHandleServicesForm,
 } from "entities/Service";
 import { Modal, Button as ResetBtn, Button as SaveBtn } from "shared";
 
@@ -19,6 +20,7 @@ import {
 interface IServiceModal {}
 
 export const ServiceModalEl: React.FC<IServiceModal> = () => {
+  const { handleServicesForm } = useHandleServicesForm();
   const { toggleServicesModal } = useToggleServicesModal();
 
   return (
@@ -26,9 +28,7 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
       <ServiceModalHeaderEl toggleServicesModal={toggleServicesModal} />
 
       <ModalBody>
-        <Form
-        // onSubmit={handleSubmit}
-        >
+        <Form onSubmit={handleServicesForm}>
           <Filter>
             <SearchFilterEl />
 

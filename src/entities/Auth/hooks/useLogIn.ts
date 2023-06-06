@@ -1,16 +1,22 @@
 import { useState } from "react";
 import { useAppDispatch, useAppNavigate } from "shared";
-import { useLogInMutation, loginSuccess, IAuthFormState } from "entities/Auth";
+import {
+  useLogInMutation,
+  loginSuccess,
+  IAuthFormState,
+  initialFormAuthState,
+} from "entities/Auth";
 
-export const useLogIn = (initialValue: IAuthFormState) => {
+export const useLogIn = () => {
   const dispatch = useAppDispatch();
   const [login, { isLoading, isError, reset: resetLoginRequest }] =
     useLogInMutation();
-  const [formState, setFormState] = useState<IAuthFormState>(initialValue);
+  const [formState, setFormState] =
+    useState<IAuthFormState>(initialFormAuthState);
   const [navigate] = useAppNavigate();
 
   const errorModalClose = () => {
-    setFormState(initialValue);
+    setFormState(initialFormAuthState);
     navigate("/");
     resetLoginRequest();
   };
@@ -21,7 +27,7 @@ export const useLogIn = (initialValue: IAuthFormState) => {
     try {
       const user = await login(formState).unwrap();
       dispatch(loginSuccess(user)); // диспатчим форму через authSlice в api
-      setFormState(initialValue);
+      setFormState(initialFormAuthState);
     } catch (error) {
       console.log("ERROR authFormSubmit");
     }

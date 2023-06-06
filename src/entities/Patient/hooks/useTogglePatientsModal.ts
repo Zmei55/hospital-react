@@ -1,15 +1,15 @@
-import { useEffect } from "react";
 import { fetchPatientsModal } from "entities/Patient";
-import { useAppDispatch, useAppSelector, useToggle } from "shared";
+import { useAppDispatch, useAppSelector } from "shared";
 
 export const useTogglePatientsModal = () => {
   const dispatch = useAppDispatch();
-  const initialValue: boolean = useAppSelector(state => state.patients.modal);
-  const [showModal, toggleModal] = useToggle(initialValue);
+  const showModal: boolean = useAppSelector(
+    state => state.patients.modalPatient
+  );
 
-  useEffect(() => {
-    dispatch(fetchPatientsModal(showModal));
-  }, [dispatch, showModal]);
+  const togglePatientsModal = () => {
+    dispatch(fetchPatientsModal(!showModal));
+  };
 
-  return { showModal, toggleModal };
+  return { togglePatientsModal };
 };

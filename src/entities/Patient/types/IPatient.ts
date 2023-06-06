@@ -13,6 +13,4 @@ export interface IPatient {
     city: string;
     postcode: string;
   };
-  services: never[];
-  containers: never[];
 }

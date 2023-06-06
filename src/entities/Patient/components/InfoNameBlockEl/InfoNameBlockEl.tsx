@@ -11,7 +11,7 @@ import { NameBlock, Name } from "./InfoNameBlockEl.styled";
 interface IInfoNameBlock {}
 
 export const InfoNameBlockEl: React.FC<IInfoNameBlock> = () => {
-  const { name: patientName } = useAppSelector(state => state.patients.patient);
+  const patient = useAppSelector(state => state.patients.patient);
   const { clearPatient } = useClearPatient();
   const { isInfoActive, handleInfoActive } = useHandleInfoActive();
 
@@ -33,7 +33,7 @@ export const InfoNameBlockEl: React.FC<IInfoNameBlock> = () => {
         )}
       </InfoBtn>
 
-      <Name>{patientName}</Name>
+      <Name>{patient.name}</Name>
 
       <ClearBtn
         id="clearPatInfo"

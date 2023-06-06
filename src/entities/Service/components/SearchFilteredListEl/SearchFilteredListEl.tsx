@@ -1,4 +1,4 @@
-// import { useServicesFilter } from "entities/Service";
+import { useAddService } from "entities/Service";
 import {
   useAppSelector,
   Button as AddServiceBtn,
@@ -20,14 +20,15 @@ export const SearchFilteredListEl: React.FC<ISearchFilteredList> = () => {
   const filteredServices = useAppSelector(
     state => state.services.filteredServices
   );
+  const { addService } = useAddService();
 
   return (
     <FilteredList>
       {filteredServices.map(service => (
-        <FilteredItem key={service.serviceCode}>
+        <FilteredItem key={service._id}>
           <FilteredNameBox>
-            <FilteredCodeService>{service.serviceCode}</FilteredCodeService>
-            <FilteredNameService>{service.serviceName}</FilteredNameService>
+            <FilteredCodeService>{service.code}</FilteredCodeService>
+            <FilteredNameService>{service.name}</FilteredNameService>
           </FilteredNameBox>
 
           <AddServiceBtn
@@ -35,7 +36,7 @@ export const SearchFilteredListEl: React.FC<ISearchFilteredList> = () => {
             width="260px"
             height="88px"
             background="transparent"
-            // onClick={() => addService(service)}
+            onClick={() => addService(service)}
           >
             <IconPlus icon="plus-bold" size={24} color="blue" />
             <AddServiceBtnTitle>Hinzufügen</AddServiceBtnTitle>

@@ -1,4 +1,4 @@
-import { IService } from "entities/Service";
+import { useDeleteSelectedService } from "entities/Service";
 import { useAppSelector, Button as DeleteBtn, Icon } from "shared";
 
 import {
@@ -12,10 +12,15 @@ import {
 interface ISearchSelectedList {}
 
 export const SearchSelectedListEl: React.FC<ISearchSelectedList> = () => {
+  const selectedServicesList = useAppSelector(
+    state => state.services.selectedServices
+  );
+  const { removeSelectedService } = useDeleteSelectedService();
+
   return (
     <SelectedServicesList>
-      {/* {selectedServices.map(service => (
-        <SelectedServicesItem key={service.serviceCode}>
+      {selectedServicesList.map(service => (
+        <SelectedServicesItem key={service.code}>
           <DeleteBtn
             id="delSelectedSerBtn"
             width="56px"
@@ -23,24 +28,18 @@ export const SearchSelectedListEl: React.FC<ISearchSelectedList> = () => {
             background="transparent"
             border="none"
             marginRight="24px"
-            onClick={() =>
-              deleteService(
-                service.serviceCode,
-                selectedServices,
-                setSelectedServices
-              )
-            }
+            onClick={() => removeSelectedService(service._id)}
           >
             <Icon icon="trash" size={48} color="red" />
           </DeleteBtn>
 
           <SelectedServicesNameBox>
-            <SelectedServicesCode>{service.serviceCode}</SelectedServicesCode>
+            <SelectedServicesCode>{service.code}</SelectedServicesCode>
 
-            <SelectedServicesName>{service.serviceName}</SelectedServicesName>
+            <SelectedServicesName>{service.name}</SelectedServicesName>
           </SelectedServicesNameBox>
         </SelectedServicesItem>
-      ))} */}
+      ))}
     </SelectedServicesList>
   );
 };

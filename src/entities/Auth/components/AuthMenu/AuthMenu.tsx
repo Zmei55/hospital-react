@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { useLogIn, initialFormAuthState } from "entities/Auth";
+import { useLogIn } from "entities/Auth";
 import { Modal, Button as AcceptBtn } from "shared";
 
 import { Section, Form, Title, ErrorTitle } from "./AuthMenu.styled";
@@ -12,7 +12,7 @@ export const AuthMenu: React.FC = () => {
     isError,
     handleSubmit,
     errorModalClose,
-  } = useLogIn(initialFormAuthState);
+  } = useLogIn();
 
   return (
     <Section>

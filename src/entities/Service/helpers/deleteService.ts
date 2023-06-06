@@ -5,5 +5,5 @@ export const deleteService = (
   list: IService[],
   setList: (e: IService[]) => void
 ) => {
-  setList(list.filter(service => service.serviceCode !== id));
+  setList(list.filter(service => service._id !== id));
 };

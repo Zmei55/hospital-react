@@ -74,6 +74,7 @@ export const ServiceNameBox = styled.div`
 export const ServiceNameHeader = styled.div`
   display: flex;
 
+  margin-right: ${props => props.theme.spacing(2)};
   margin-bottom: ${props => props.theme.spacing(1)};
 `;
 

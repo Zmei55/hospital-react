@@ -4,7 +4,7 @@ import { useAppSelector } from "shared";
 import { Container } from "./ServicesEl.styled";
 
 export const ServicesEl: React.FC = () => {
-  const services = useAppSelector(state => state.services.services);
+  const services = useAppSelector(state => state.services.selectedServices);
   const patient = useAppSelector(state => state.patients.patient);
 
   return (
