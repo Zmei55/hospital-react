@@ -6,11 +6,7 @@ import {
   Icon,
 } from "shared";
 
-import {
-  ModalHeader,
-  ModalTitle,
-  ButtonContainer,
-} from "./SearchModalHeaderEl.styled";
+import { ModalHeader, ModalTitle } from "./SearchModalHeaderEl.styled";
 
 interface ISearchModalHeader {
   resetPatients: () => void;
@@ -36,41 +32,39 @@ export const SearchModalHeaderEl: React.FC<ISearchModalHeader> = ({
     <ModalHeader>
       <ModalTitle>Wählen Sie einen Patient aus</ModalTitle>
 
-      <ButtonContainer>
-        <ResetBtn
-          id="resetSearchPatBtn"
-          height="72px"
-          paddingRight="44px"
-          paddingLeft="44px"
-          background="transparent"
-          marginRight="24px"
-          onClick={handleResetBtn}
-        >
-          Rücksetzen
-        </ResetBtn>
+      <ResetBtn
+        id="resetSearchPatBtn"
+        height="72px"
+        paddingRight="44px"
+        paddingLeft="44px"
+        background="transparent"
+        marginRight="24px"
+        onClick={handleResetBtn}
+      >
+        Rücksetzen
+      </ResetBtn>
 
-        <FindBtn
-          id="findSearchPatBtn"
-          height="72px"
-          paddingRight="44px"
-          paddingLeft="44px"
-          background="blue"
-          marginRight="24px"
-          onClick={handlePatientsListFind}
-        >
-          Finden
-        </FindBtn>
+      <FindBtn
+        id="findSearchPatBtn"
+        height="72px"
+        paddingRight="44px"
+        paddingLeft="44px"
+        background="blue"
+        marginRight="24px"
+        onClick={handlePatientsListFind}
+      >
+        Finden
+      </FindBtn>
 
-        <CloseBtn
-          id="closeSearchPatBtn"
-          width="72px"
-          height="72px"
-          background="red"
-          onClick={handleCloseBtn}
-        >
-          <Icon icon="cross" size={48} color="white" />
-        </CloseBtn>
-      </ButtonContainer>
+      <CloseBtn
+        id="closeSearchPatBtn"
+        width="72px"
+        height="72px"
+        background="red"
+        onClick={handleCloseBtn}
+      >
+        <Icon icon="cross" size={48} color="white" />
+      </CloseBtn>
     </ModalHeader>
   );
 };

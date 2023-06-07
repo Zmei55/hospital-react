@@ -6,7 +6,7 @@ import {
 } from "entities/Service";
 import { useAppSelector, Button as AddBtn, Button as LaborBtn } from "shared";
 
-import { Container, Title, ButtonsBox } from "./TitleBoxEl.styled";
+import { Container, Title } from "./TitleBoxEl.styled";
 
 interface ITitleBox {}
 
@@ -20,7 +20,7 @@ export const TitleBoxEl: React.FC<ITitleBox> = () => {
       <Title>Services</Title>
 
       {services.length > 0 && (
-        <ButtonsBox>
+        <>
           <AddBtn
             id="addToSelectedSerBtn"
             height="48px"
@@ -43,7 +43,7 @@ export const TitleBoxEl: React.FC<ITitleBox> = () => {
           >
             Wahl des Labors
           </LaborBtn>
-        </ButtonsBox>
+        </>
       )}
 
       {showServiceModal && <ServiceModalEl />}
