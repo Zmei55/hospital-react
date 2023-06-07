@@ -5,7 +5,6 @@ export * from "./useDeleteSelectedService";
 export * from "./useGetLaborsList";
 export * from "./useGetServiceById";
 export * from "./useHandleLaborChange";
-export * from "./useHandleLaborFormSubmit";
 export * from "./useHandleServicesForm";
 export * from "./useServicesFilter";
 export * from "./useToggleLaborModal";

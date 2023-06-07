@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { addDetails, IDetail, useToggleLaborModal } from "entities/Service";
+import { addRequestDetails } from "entities/Request";
 import { useAppSelector, useAppDispatch } from "shared";
 
 export const useHandleLaborChange = () => {
@@ -43,6 +44,7 @@ export const useHandleLaborChange = () => {
     event.preventDefault();
 
     dispatch(addDetails(detailsState));
+    dispatch(addRequestDetails(detailsState));
     toggleLaborModal();
   };
 
