@@ -4,14 +4,13 @@ import { useAppSelector } from "shared";
 import { Container } from "./ServicesEl.styled";
 
 export const ServicesEl: React.FC = () => {
-  const services = useAppSelector(state => state.services.selectedServices);
-  const patient = useAppSelector(state => state.patients.patient);
+  const services = useAppSelector(state => state.services.services);
 
   return (
     <Container>
       <TitleBoxEl />
 
-      {services.length > 0 && patient._id !== "" ? <InfoEl /> : <SearchEl />}
+      {services.length > 0 ? <InfoEl /> : <SearchEl />}
     </Container>
   );
 };

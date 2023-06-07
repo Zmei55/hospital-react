@@ -29,17 +29,32 @@ export const Containers: React.FC = () => {
       <Title>Containers</Title>
       <ModalBtn
         type="button"
-        disabled={servicesList.length !== detailsList.length}
+        disabled={detailsList.length === 0}
         onClick={toggleContainersModal}
       >
         <Icon icon="test-tube" size={48} />
-        {servicesList.length !== detailsList.length ? (
+        {servicesList.length === 0 && detailsList.length === 0 && (
+          <ButtonTitle>
+            Sie können Container berechnen, nachdem Sie Dienste hinzugefügt und
+            eine Labore ausgewählt haben
+          </ButtonTitle>
+        )}
+        {servicesList.length !== 0 && detailsList.length === 0 && (
+          <ButtonTitle>
+            Sie können Container berechnen, nachdem Sie eine Labore ausgewählt
+            haben
+          </ButtonTitle>
+        )}
+        {servicesList.length !== 0 && detailsList.length !== 0 && (
+          <ButtonTitle>Sie können Container berechnen</ButtonTitle>
+        )}
+        {/* {servicesList.length !== detailsList.length ? (
           <ButtonTitle>
             Sie können Container nach dem Hinzufügen von Diensten berechnen
           </ButtonTitle>
         ) : (
           <ButtonTitle>Sie können Container berechnen</ButtonTitle>
-        )}
+        )} */}
       </ModalBtn>
 
       {showContainersModal && (

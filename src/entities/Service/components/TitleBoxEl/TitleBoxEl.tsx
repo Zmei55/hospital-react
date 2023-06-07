@@ -11,8 +11,7 @@ import { Container, Title, ButtonsBox } from "./TitleBoxEl.styled";
 interface ITitleBox {}
 
 export const TitleBoxEl: React.FC<ITitleBox> = () => {
-  const patient = useAppSelector(state => state.patients.patient);
-  const servicesList = useAppSelector(state => state.services.selectedServices);
+  const services = useAppSelector(state => state.services.services);
   const { showServiceModal, toggleServicesModal } = useToggleServicesModal();
   const { showLaborModal, toggleLaborModal } = useToggleLaborModal();
 
@@ -20,12 +19,13 @@ export const TitleBoxEl: React.FC<ITitleBox> = () => {
     <Container>
       <Title>Services</Title>
 
-      {servicesList.length > 0 && patient._id !== "" && (
+      {services.length > 0 && (
         <ButtonsBox>
           <AddBtn
             id="addToSelectedSerBtn"
-            width="217px"
             height="48px"
+            paddingRight="24px"
+            paddingLeft="24px"
             background="grey"
             marginRight="24px"
             onClick={toggleServicesModal}
@@ -35,8 +35,9 @@ export const TitleBoxEl: React.FC<ITitleBox> = () => {
 
           <LaborBtn
             id="selectLabor"
-            width="254px"
             height="48px"
+            paddingRight="24px"
+            paddingLeft="24px"
             background="grey"
             onClick={toggleLaborModal}
           >

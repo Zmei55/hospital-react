@@ -50,6 +50,7 @@ export const ModalBtn = styled.button`
     color: ${props => props.theme.colors.text.placeholder};
     fill: ${props => props.theme.colors.text.placeholder};
     border-color: ${props => props.theme.colors.text.placeholder};
+    cursor: not-allowed;
   }
 `;
 

@@ -39,8 +39,9 @@ export const SearchModalHeaderEl: React.FC<ISearchModalHeader> = ({
       <ButtonContainer>
         <ResetBtn
           id="resetSearchPatBtn"
-          width="205px"
           height="72px"
+          paddingRight="44px"
+          paddingLeft="44px"
           background="transparent"
           marginRight="24px"
           onClick={handleResetBtn}
@@ -50,8 +51,9 @@ export const SearchModalHeaderEl: React.FC<ISearchModalHeader> = ({
 
         <FindBtn
           id="findSearchPatBtn"
-          width="162px"
           height="72px"
+          paddingRight="44px"
+          paddingLeft="44px"
           background="blue"
           marginRight="24px"
           onClick={handlePatientsListFind}

@@ -7,8 +7,8 @@ import {
 } from "./Button.styled";
 
 interface IButton {
-  width: string;
-  height: string;
+  width?: string;
+  height?: string;
   background: "blue" | "grey" | "green" | "red" | "transparent";
   type?: "button" | "submit" | "reset";
   id?: string;
@@ -18,6 +18,11 @@ interface IButton {
   border?: string;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   children?: React.ReactNode;
+  padding?: string | number;
+  paddingTop?: string;
+  paddingRight?: string;
+  paddingBottom?: string;
+  paddingLeft?: string;
   marginTop?: string;
   marginRight?: string;
   marginBottom?: string;
@@ -36,6 +41,10 @@ export const Button: React.FC<IButton> = ({
   disabled,
   children,
   onClick,
+  paddingTop,
+  paddingRight,
+  paddingBottom,
+  paddingLeft,
   marginTop,
   marginRight,
   marginBottom,
@@ -52,6 +61,11 @@ export const Button: React.FC<IButton> = ({
             width,
             height,
             color,
+            border,
+            paddingTop,
+            paddingRight,
+            paddingBottom,
+            paddingLeft,
             marginTop,
             marginRight,
             marginBottom,
@@ -73,6 +87,11 @@ export const Button: React.FC<IButton> = ({
             width,
             height,
             color,
+            border,
+            paddingTop,
+            paddingRight,
+            paddingBottom,
+            paddingLeft,
             marginTop,
             marginRight,
             marginBottom,
@@ -95,6 +114,11 @@ export const Button: React.FC<IButton> = ({
             width,
             height,
             color,
+            border,
+            paddingTop,
+            paddingRight,
+            paddingBottom,
+            paddingLeft,
             marginTop,
             marginRight,
             marginBottom,
@@ -116,6 +140,11 @@ export const Button: React.FC<IButton> = ({
             width,
             height,
             color,
+            border,
+            paddingTop,
+            paddingRight,
+            paddingBottom,
+            paddingLeft,
             marginTop,
             marginRight,
             marginBottom,
@@ -137,6 +166,11 @@ export const Button: React.FC<IButton> = ({
             width,
             height,
             color,
+            border,
+            paddingTop,
+            paddingRight,
+            paddingBottom,
+            paddingLeft,
             marginTop,
             marginRight,
             marginBottom,

@@ -26,8 +26,9 @@ export const AuthMenu: React.FC = () => {
           <ErrorTitle>Benutzerdaten wurden falsch eingegeben</ErrorTitle>
           <AcceptBtn
             id="errorLoginBtn"
-            width="172px"
             height="72px"
+            paddingRight="44px"
+            paddingLeft="44px"
             background="blue"
             onClick={errorModalClose}
           >

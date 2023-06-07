@@ -33,8 +33,9 @@ export const SearchFilteredListEl: React.FC<ISearchFilteredList> = () => {
 
           <AddServiceBtn
             id="addSerBtn"
-            width="260px"
             height="88px"
+            paddingRight="44px"
+            paddingLeft="44px"
             background="transparent"
             onClick={() => addService(service)}
           >
