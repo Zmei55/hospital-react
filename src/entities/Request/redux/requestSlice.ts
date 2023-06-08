@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IRequestDetails } from "entities/Request";
-// import { IService } from "entities/Service";
+// import { IRequestDetails } from "entities/Request";
+import { IDetail } from "entities/Service";
 
 interface IRequestSlice {
   requestNumber: number;
   patientId: string;
-  requestDetails: IRequestDetails[];
+  requestDetails: IDetail[];
 }
 
 const initialState: IRequestSlice = {
@@ -24,16 +24,13 @@ const requestSlice = createSlice({
     addRequestPatientID(state, action: PayloadAction<string>) {
       state.patientId = action.payload;
     },
-    fetchRequestDetails(state, action) {
-      state.requestDetails.push(action.payload.data);
+    addRequestDetails(state, action: PayloadAction<IDetail[]>) {
+      state.requestDetails = action.payload;
     },
   },
 });
 
-export const {
-  fetchRequestsDBCount,
-  addRequestPatientID,
-  fetchRequestDetails,
-} = requestSlice.actions;
+export const { fetchRequestsDBCount, addRequestPatientID, addRequestDetails } =
+  requestSlice.actions;
 
 export default requestSlice.reducer;
