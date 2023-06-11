@@ -18,7 +18,7 @@ const initialState: IPatientsState = {
     phoneNumber: "",
     email: "",
     identityDocument: "",
-    residenceAddress: {
+    address: {
       street: "",
       houseNumber: "",
       city: "",

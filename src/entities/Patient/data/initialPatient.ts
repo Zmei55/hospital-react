@@ -9,7 +9,7 @@ export const initialPatient: IPatient = {
   phoneNumber: "",
   email: "",
   identityDocument: "",
-  residenceAddress: {
+  address: {
     street: "",
     houseNumber: "",
     city: "",

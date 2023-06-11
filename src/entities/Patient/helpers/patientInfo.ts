@@ -9,7 +9,7 @@ export const patientInfo = (patient: IPatient) => {
     phoneNumber,
     email,
     identityDocument,
-    residenceAddress,
+    address,
   } = patient;
 
   const dateOfBirth = `${new Date(birthDate).getDate()}.
@@ -17,10 +17,10 @@ export const patientInfo = (patient: IPatient) => {
             ${new Date(birthDate).getFullYear()}
             `;
   const residence = `
-            ${residenceAddress.street}, 
-            ${residenceAddress.houseNumber}, 
-            ${residenceAddress.postcode}, 
-            ${residenceAddress.city}
+            ${address.street}, 
+            ${address.houseNumber}, 
+            ${address.postcode}, 
+            ${address.city}
             `;
 
   return {

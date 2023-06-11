@@ -7,7 +7,7 @@ export interface IPatient {
   phoneNumber: string;
   email: string;
   identityDocument: string;
-  residenceAddress: {
+  address: {
     street: string;
     houseNumber: string;
     city: string;
