@@ -1,5 +1,10 @@
 import { useServicesFilter } from "entities/Service";
-import { InputEl as FilterInput, useInput, Button as FindBtn } from "shared";
+import {
+  InputEl as FilterInput,
+  useInput,
+  Button as FindBtn,
+  Spinner,
+} from "shared";
 
 import { FilterHeader } from "./SearchFilterEl.styled";
 
@@ -7,7 +12,7 @@ interface ISearchFilter {}
 
 export const SearchFilterEl: React.FC<ISearchFilter> = () => {
   const [filter, , handleFilter] = useInput("");
-  const { handleServicesListFind } = useServicesFilter(filter);
+  const { handleServicesListFind, isLoading } = useServicesFilter(filter);
 
   return (
     <FilterHeader>
@@ -29,7 +34,7 @@ export const SearchFilterEl: React.FC<ISearchFilter> = () => {
         marginLeft="24px"
         onClick={handleServicesListFind}
       >
-        Finden
+        {isLoading ? <Spinner /> : <span>Finden</span>}
       </FindBtn>
     </FilterHeader>
   );

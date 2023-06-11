@@ -6,13 +6,14 @@ import {
   Button as SaveBtn,
   Button as CloseBtn,
   Icon,
+  Spinner,
 } from "shared";
 
 import { Header, RequestNumber, HeaderTitle } from "./HeaderEl.styled";
 
 export const HeaderEl: React.FC = () => {
   const [navigate] = useAppNavigate();
-  const { saveNewRequest, saveReqBtnDisabled } = useSaveNewRequest();
+  const { saveNewRequest, saveReqBtnDisabled, isLoading } = useSaveNewRequest();
   const requestNumber = useAppSelector(state => state.request.requestNumber);
   const { clearPatient } = useClearPatient();
 
@@ -24,20 +25,19 @@ export const HeaderEl: React.FC = () => {
   return (
     <Header>
       <HeaderTitle>
-        Neue Bestellung <RequestNumber>№{requestNumber}</RequestNumber>
+        Neuer Antrag <RequestNumber>№{requestNumber}</RequestNumber>
       </HeaderTitle>
 
       <SaveBtn
         id="saveNeuRequestBtn"
         background="blue"
+        width="210px"
         height="72px"
-        paddingRight="44px"
-        paddingLeft="44px"
         marginRight="24px"
         disabled={saveReqBtnDisabled}
         onClick={saveNewRequest}
       >
-        Speichern
+        {isLoading ? <Spinner /> : <span>Speichern</span>}
       </SaveBtn>
 
       <CloseBtn

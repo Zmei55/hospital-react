@@ -1,6 +1,8 @@
+import { useEffect, useState } from "react";
+
 import { useAppDispatch } from "shared";
 import {
-  IPatient,
+  useFetchPatientByIdQuery,
   addPatient,
   fetchPatientsModal,
   usePatientsListFind,
@@ -9,13 +11,23 @@ import { addRequestPatientID } from "entities/Request";
 
 export const useChoosePatient = () => {
   const dispatch = useAppDispatch();
+  const [patientId, setPatientId] = useState("");
+  const { data: patientData } = useFetchPatientByIdQuery(patientId, {
+    skip: patientId === "",
+  });
   const { resetPatients } = usePatientsListFind();
 
-  const choosePatient = (patient: IPatient) => {
-    dispatch(addRequestPatientID(patient._id));
-    dispatch(addPatient(patient));
-    resetPatients();
-    dispatch(fetchPatientsModal(false));
+  useEffect(() => {
+    if (patientData !== undefined) {
+      dispatch(addPatient(patientData));
+      resetPatients();
+      dispatch(fetchPatientsModal(false));
+    }
+  }, [dispatch, patientData, resetPatients]);
+
+  const choosePatient = (id: string) => {
+    setPatientId(id);
+    dispatch(addRequestPatientID(id));
   };
 
   return { choosePatient };

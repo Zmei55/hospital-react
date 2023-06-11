@@ -19,14 +19,14 @@ export const Desktop: React.FC = () => {
       <LargeBtn id="newRequestBtn" onClick={handleNewRequest}>
         <IconContainer>
           <Icon icon="create-document" color="blue" size={140} />
-          <IconTitle>Erstellen Sie eine Bestellung</IconTitle>
+          <IconTitle>Erstellen Sie einen Antrag</IconTitle>
         </IconContainer>
       </LargeBtn>
 
       <MediumBtn id="findRequestBtn" onClick={() => navigate("")}>
         <IconContainer>
           <Icon icon="find-document" color="blue" size={140} />
-          <IconTitle>Finden Sie eine Bestellung</IconTitle>
+          <IconTitle>Finden Sie einen Antrag</IconTitle>
         </IconContainer>
       </MediumBtn>
 

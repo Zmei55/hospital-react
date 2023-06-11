@@ -40,7 +40,7 @@ export const SearchListEl: React.FC<ISearchList> = ({ patientsList }) => {
             <BodySelectBtn>
               <SelectBtn
                 id="selectPatLink"
-                onClick={() => choosePatient(patient)}
+                onClick={() => choosePatient(patient._id)}
               >
                 Wählen
               </SelectBtn>
