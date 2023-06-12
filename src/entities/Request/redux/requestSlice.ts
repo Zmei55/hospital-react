@@ -24,13 +24,24 @@ const requestSlice = createSlice({
     addRequestPatientID(state, action: PayloadAction<string>) {
       state.patientId = action.payload;
     },
+    resetRequestPatientID(state) {
+      state.patientId = initialState.patientId;
+    },
     addRequestDetails(state, action: PayloadAction<IDetail[]>) {
       state.requestDetails = action.payload;
+    },
+    resetRequestDetails(state) {
+      state.requestDetails = initialState.requestDetails;
     },
   },
 });
 
-export const { fetchRequestsDBCount, addRequestPatientID, addRequestDetails } =
-  requestSlice.actions;
+export const {
+  fetchRequestsDBCount,
+  addRequestPatientID,
+  resetRequestPatientID,
+  addRequestDetails,
+  resetRequestDetails,
+} = requestSlice.actions;
 
 export default requestSlice.reducer;

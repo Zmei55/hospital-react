@@ -1,23 +1,12 @@
-import {
-  useFetchRequestCountMutation,
-  fetchRequestsDBCount,
-} from "entities/Request";
-import { useAppDispatch, useAppNavigate } from "shared";
+import { useRequestsCount } from "entities/Request";
+import { useAppNavigate } from "shared";
 
 export const useNewRequest = () => {
-  const dispatch = useAppDispatch();
   const [navigate] = useAppNavigate();
-  const [requestsCount] = useFetchRequestCountMutation();
+  const { getRequestsCount } = useRequestsCount();
 
-  const handleNewRequest: React.MouseEventHandler<
-    HTMLButtonElement
-  > = async () => {
-    try {
-      const count = await requestsCount({}).unwrap();
-      dispatch(fetchRequestsDBCount(count + 1));
-    } catch (error) {
-      console.log("ERROR fetchRequestCount");
-    }
+  const handleNewRequest: React.MouseEventHandler<HTMLButtonElement> = () => {
+    getRequestsCount();
 
     navigate("/request");
   };
