@@ -1,5 +1,7 @@
 export interface IUser {
-  name: string;
+  _id?: string;
+  firstName: string;
+  lastName: string;
   logName: string;
   station: string;
 }

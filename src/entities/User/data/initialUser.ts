@@ -1,7 +1,8 @@
 import { IUser } from "entities/User";
 
 export const initialUser: IUser = {
-  name: "",
+  firstName: "",
+  lastName: "",
   logName: "",
   station: "",
 };

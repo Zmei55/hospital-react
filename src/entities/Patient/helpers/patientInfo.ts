@@ -2,7 +2,8 @@ import { IPatient } from "entities/Patient";
 
 export const patientInfo = (patient: IPatient) => {
   const {
-    name,
+    firstName,
+    lastName,
     birthDate,
     gender,
     cardNumber,
@@ -24,7 +25,8 @@ export const patientInfo = (patient: IPatient) => {
             `;
 
   return {
-    name,
+    firstName,
+    lastName,
     dateOfBirth,
     gender,
     cardNumber,

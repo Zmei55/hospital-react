@@ -33,7 +33,9 @@ export const InfoNameBlockEl: React.FC<IInfoNameBlock> = () => {
         )}
       </InfoBtn>
 
-      <Name>{patient.name}</Name>
+      <Name>
+        {patient.firstName} {patient.lastName}
+      </Name>
 
       <ClearBtn
         id="clearPatInfo"

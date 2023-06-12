@@ -12,13 +12,15 @@ import { Container, UserBox, Name, Station } from "./UserMenu.styled";
 export const UserMenu: React.FC = () => {
   const isLoggedIn = useAppSelector(state => state.auth.isLoggedIn);
   const [logout] = useLogOut();
-  const { name, stationToUpper } = useGetUserData();
+  const { firstName, lastName, stationToUpper } = useGetUserData();
 
   return (
     <Container>
       {isLoggedIn && (
         <UserBox>
-          <Name>{name}</Name>
+          <Name>
+            {firstName} {lastName}
+          </Name>
           <Station>{`${stationToUpper} Station, Krankenschwester`}</Station>
         </UserBox>
       )}

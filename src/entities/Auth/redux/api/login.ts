@@ -1,4 +1,5 @@
 import { api } from "app/redux";
+import { IUser } from "entities/User";
 
 const authApi = api.injectEndpoints({
   endpoints: builder => ({
@@ -9,6 +10,8 @@ const authApi = api.injectEndpoints({
         body: user,
       }),
       invalidatesTags: ["Auth"],
+      transformResponse: (response: { data: { token: string; user: IUser } }) =>
+        response.data,
     }),
   }),
 });

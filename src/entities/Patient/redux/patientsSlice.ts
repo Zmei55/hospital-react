@@ -11,7 +11,8 @@ interface IPatientsState {
 const initialState: IPatientsState = {
   patient: {
     _id: "",
-    name: "",
+    firstName: "",
+    lastName: "",
     birthDate: "",
     cardNumber: 0,
     gender: "",

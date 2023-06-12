@@ -1,10 +1,10 @@
 import { InputEl } from "shared";
-import { ISearchState } from "entities/Patient";
+import { ISearchPatientState } from "entities/Patient";
 
 import { Form, Label } from "./SearchModalFormEl.styled";
 
 interface ISearchModalForm {
-  formState: ISearchState;
+  formState: ISearchPatientState;
   handleChange: React.ChangeEventHandler<HTMLInputElement>;
   handlePatientsListFind: (
     event: React.SyntheticEvent<Element, Event>

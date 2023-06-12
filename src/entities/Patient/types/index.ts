@@ -1,2 +1,3 @@
 export * from "./IPatient";
-export * from "./ISearchState";
+export * from "./ISearchPatientState";
+export * from "./ISearchPatientQuery";

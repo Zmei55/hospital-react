@@ -34,7 +34,9 @@ export const SearchListEl: React.FC<ISearchList> = ({ patientsList }) => {
       <ListBody>
         {patientsList.map(patient => (
           <ListItem key={patient._id}>
-            <BodyName>{patient.name}</BodyName>
+            <BodyName>
+              {patient.firstName} {patient.lastName}
+            </BodyName>
             <BodyBirthDay>{showBirthDate(patient.birthDate)}</BodyBirthDay>
             <BodyCardNumber>{patient.cardNumber}</BodyCardNumber>
             <BodySelectBtn>

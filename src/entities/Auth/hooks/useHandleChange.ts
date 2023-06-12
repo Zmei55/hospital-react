@@ -1,5 +1,11 @@
 import { useOutletContext } from "react-router-dom";
-import { ILogOutletContext } from "entities/Auth";
+import { IAuthFormState } from "entities/Auth";
+
+interface ILogOutletContext {
+  formState: IAuthFormState;
+  setFormState: (value: React.SetStateAction<IAuthFormState>) => void;
+  isLoading: boolean;
+}
 
 export const useHandleChange = () => {
   const { formState, setFormState, isLoading } =

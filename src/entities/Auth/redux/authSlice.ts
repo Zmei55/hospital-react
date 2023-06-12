@@ -1,10 +1,16 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IAction } from "entities/Auth";
-import { IUserState } from "entities/User";
+import { IUser } from "entities/User";
+
+interface IUserState {
+  user: IUser;
+  token: string;
+  isLoggedIn: boolean;
+}
 
 const initialState: IUserState = {
   user: {
-    name: "",
+    firstName: "",
+    lastName: "",
     logName: "",
     station: "",
   },
@@ -16,18 +22,18 @@ const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    loginSuccess: (state, action: PayloadAction<IAction>) => {
-      state.user = action.payload.data.user;
-      state.token = action.payload.data.token;
+    loginSuccess: (state, action) => {
+      state.user = action.payload.user;
+      state.token = action.payload.token;
       state.isLoggedIn = true;
     },
     logoutSuccess: state => {
-      state.user = { name: "", logName: "", station: "" };
+      state.user = initialState.user;
       state.token = "";
       state.isLoggedIn = false;
     },
-    refreshUser: (state, action: PayloadAction<IAction>) => {
-      state.user = action.payload.data.user;
+    refreshUser: (state, action) => {
+      state.user = action.payload.user;
       state.isLoggedIn = true;
     },
   },
