@@ -1,8 +1,8 @@
 export interface ILabor {
   _id: string;
   name: string;
-  laborIsActive: boolean;
-  laborAddress: {
+  isActive: boolean;
+  address?: {
     street: string;
     houseNumber: string;
     city: string;
