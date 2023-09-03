@@ -1,9 +1,9 @@
 import { useAppDispatch } from "shared";
-import { useLogOutMutation, logoutSuccess } from "entities/Auth";
+import { useLazyLogOutQuery, logoutSuccess } from "entities/Auth";
 
 export const useLogOut = () => {
   const dispatch = useAppDispatch();
-  const [logout] = useLogOutMutation();
+  const [logout] = useLazyLogOutQuery();
 
   const onClick = () => {
     logout(null);

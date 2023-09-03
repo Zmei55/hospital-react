@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import loadable from "@loadable/component";
 import { Layout, PrivateRoute, PublicRoute } from "app";
-import { LoginForm, StaffUnit } from "entities/Auth";
 import { Loading } from "shared";
 
 import { Container } from "./App.styled";
@@ -24,24 +23,14 @@ export const App: React.FC = () => {
     <Container>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route element={<AuthPage />}>
-            <Route
-              index
-              element={
-                <PublicRoute restricted redirectTo="/desktop">
-                  <LoginForm />
-                </PublicRoute>
-              }
-            />
-            <Route
-              path="station"
-              element={
-                <PublicRoute restricted redirectTo="/desktop">
-                  <StaffUnit />
-                </PublicRoute>
-              }
-            />
-          </Route>
+          <Route
+            index
+            element={
+              <PublicRoute restricted redirectTo="/desktop">
+                <AuthPage />
+              </PublicRoute>
+            }
+          />
           <Route
             path="desktop"
             element={

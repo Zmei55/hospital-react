@@ -1,1 +1,1 @@
-export * from "./IAuthFormState";
+export * from "./ISingInState";
