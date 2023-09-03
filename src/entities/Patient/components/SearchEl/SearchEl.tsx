@@ -17,8 +17,7 @@ import {
 export const SearchEl: React.FC = () => {
   const patientsList = useAppSelector(state => state.patients.patients);
   const showModal = useAppSelector(state => state.patients.modalPatient);
-  const { resetPatients, handlePatientsListFind, isLoading, isError } =
-    usePatientsListFind();
+  const { handlePatientsListFind, isLoading, isError } = usePatientsListFind();
   const { togglePatientsModal } = useTogglePatientsModal();
 
   return (
