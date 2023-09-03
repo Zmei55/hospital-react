@@ -1,52 +1,47 @@
-import { InputEl } from "shared";
+import { useForm } from "react-hook-form";
+import { SubmitHandler } from "react-hook-form";
 import { ISearchPatientState } from "entities/Patient";
 
-import { Form, Label } from "./SearchModalFormEl.styled";
+import {
+  Form,
+  Label,
+  InputPatientName,
+  InputBirthDay,
+  InputCardNumber,
+} from "./SearchModalFormEl.styled";
 
 interface ISearchModalForm {
-  formState: ISearchPatientState;
-  handleChange: React.ChangeEventHandler<HTMLInputElement>;
-  handlePatientsListFind: (
-    event: React.SyntheticEvent<Element, Event>
-  ) => Promise<void>;
+  handlePatientsListFind: SubmitHandler<ISearchPatientState>;
 }
 
 export const SearchModalFormEl: React.FC<ISearchModalForm> = ({
-  formState,
-  handleChange,
   handlePatientsListFind,
 }) => {
+  const { register, handleSubmit } = useForm<ISearchPatientState>({
+    defaultValues: {
+      name: undefined,
+      birthDate: undefined,
+      cardNumber: undefined,
+    },
+  });
+
   return (
-    <Form onSubmit={handlePatientsListFind}>
+    <Form id="findPatientList" onSubmit={handleSubmit(handlePatientsListFind)}>
       <Label>
-        <InputEl
-          width="650px"
-          type="text"
-          name="name"
-          value={formState.name}
-          onChange={handleChange}
-          placeholder="Name"
-        />
+        <InputPatientName {...register("name")} placeholder="Name" />
       </Label>
 
       <Label>
-        <InputEl
-          width="294px"
+        <InputBirthDay
           type="date"
-          name="birthDate"
-          value={formState.birthDate}
-          onChange={handleChange}
+          {...register("birthDate")}
           placeholder="Date of Birth"
         />
       </Label>
 
       <Label>
-        <InputEl
-          width="206px"
-          type="text"
-          name="cardNumber"
-          value={formState.cardNumber}
-          onChange={handleChange}
+        <InputCardNumber
+          {...register("cardNumber")}
           placeholder="Card number"
         />
       </Label>

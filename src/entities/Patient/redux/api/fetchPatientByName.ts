@@ -1,9 +1,9 @@
 import { api } from "app/redux";
-import { IPatient, ISearchPatientQuery } from "entities/Patient";
+import { IPatient } from "entities/Patient";
 
 export const patientsByNameApi = api.injectEndpoints({
   endpoints: builder => ({
-    fetchPatientByName: builder.mutation<IPatient[], ISearchPatientQuery>({
+    fetchPatientByName: builder.mutation<IPatient[], FormData>({
       query: patient => ({
         url: "/api/patients/",
         method: "POST",

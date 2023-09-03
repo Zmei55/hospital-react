@@ -41,8 +41,8 @@ const patientsListSlice = createSlice({
     deletePatient(state) {
       state.patient = initialState.patient;
     },
-    addPatientsList(state, action) {
-      state.patients = action.payload.data;
+    addPatientsList(state, action: PayloadAction<IPatient[]>) {
+      state.patients = action.payload;
     },
     resetPatientsList(state) {
       state.patients = initialState.patients;

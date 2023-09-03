@@ -17,14 +17,8 @@ import {
 export const SearchEl: React.FC = () => {
   const patientsList = useAppSelector(state => state.patients.patients);
   const showModal = useAppSelector(state => state.patients.modalPatient);
-  const {
-    formState,
-    handleChange,
-    resetPatients,
-    handlePatientsListFind,
-    isLoading,
-    isError,
-  } = usePatientsListFind();
+  const { resetPatients, handlePatientsListFind, isLoading, isError } =
+    usePatientsListFind();
   const { togglePatientsModal } = useTogglePatientsModal();
 
   return (
@@ -41,15 +35,10 @@ export const SearchEl: React.FC = () => {
 
       {showModal && (
         <Modal width="1392px" height="752px" onClose={togglePatientsModal}>
-          <SearchModalHeaderEl
-            resetPatients={resetPatients}
-            handlePatientsListFind={handlePatientsListFind}
-          />
+          <SearchModalHeaderEl />
 
           <ModalBoby>
             <SearchModalFormEl
-              formState={formState}
-              handleChange={handleChange}
               handlePatientsListFind={handlePatientsListFind}
             />
 

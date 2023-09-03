@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { InputEl } from "shared";
 
 export const Form = styled.form`
   display: flex;
@@ -15,4 +16,23 @@ export const Label = styled.label`
   :not(:last-child) {
     margin-right: ${props => props.theme.spacing(4)};
   }
+`;
+
+export const Input = styled(InputEl)`
+  font-size: 24px;
+  line-height: 1.17;
+
+  height: 72px;
+`;
+
+export const InputPatientName = styled(Input)`
+  width: 650px;
+`;
+
+export const InputBirthDay = styled(Input)`
+  width: 294px;
+`;
+
+export const InputCardNumber = styled(Input)`
+  width: 206px;
 `;

@@ -1,9 +1,9 @@
 import { useOutletContext } from "react-router-dom";
-import { IAuthFormState } from "entities/Auth";
+import { ISingInState } from "entities/Auth";
 
 interface ILogOutletContext {
-  formState: IAuthFormState;
-  setFormState: (value: React.SetStateAction<IAuthFormState>) => void;
+  formState: ISingInState;
+  setFormState: (value: React.SetStateAction<ISingInState>) => void;
   isLoading: boolean;
 }
 

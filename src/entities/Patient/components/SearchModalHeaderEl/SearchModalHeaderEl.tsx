@@ -1,4 +1,4 @@
-import { useTogglePatientsModal } from "entities/Patient";
+import { useTogglePatientsModal, usePatientsListFind } from "entities/Patient";
 import {
   Button as ResetBtn,
   Button as FindBtn,
@@ -8,15 +8,8 @@ import {
 
 import { ModalHeader, ModalTitle } from "./SearchModalHeaderEl.styled";
 
-interface ISearchModalHeader {
-  resetPatients: () => void;
-  handlePatientsListFind: React.MouseEventHandler<HTMLButtonElement>;
-}
-
-export const SearchModalHeaderEl: React.FC<ISearchModalHeader> = ({
-  resetPatients,
-  handlePatientsListFind,
-}) => {
+export const SearchModalHeaderEl: React.FC = () => {
+  const { resetPatients } = usePatientsListFind();
   const { togglePatientsModal } = useTogglePatientsModal();
 
   const handleResetBtn = () => {
@@ -46,12 +39,13 @@ export const SearchModalHeaderEl: React.FC<ISearchModalHeader> = ({
 
       <FindBtn
         id="findSearchPatBtn"
+        type="submit"
+        form="findPatientList"
         height="72px"
         paddingRight="44px"
         paddingLeft="44px"
         background="blue"
         marginRight="24px"
-        onClick={handlePatientsListFind}
       >
         Finden
       </FindBtn>

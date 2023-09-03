@@ -12,6 +12,7 @@ interface IButton {
   background: "blue" | "grey" | "green" | "red" | "transparent";
   type?: "button" | "submit" | "reset";
   id?: string;
+  form?: string;
   name?: string;
   color?: string;
   disabled?: boolean;
@@ -34,6 +35,7 @@ export const Button: React.FC<IButton> = ({
   width,
   height,
   id,
+  form,
   name,
   color,
   background,
@@ -56,6 +58,7 @@ export const Button: React.FC<IButton> = ({
         <BlueBtn
           type={type}
           id={id}
+          form={form}
           name={name}
           style={{
             width,
@@ -82,6 +85,7 @@ export const Button: React.FC<IButton> = ({
         <RedBtn
           type={type}
           id={id}
+          form={form}
           name={name}
           style={{
             width,
@@ -109,6 +113,7 @@ export const Button: React.FC<IButton> = ({
         <GreenBtn
           type={type}
           id={id}
+          form={form}
           name={name}
           style={{
             width,
@@ -135,6 +140,7 @@ export const Button: React.FC<IButton> = ({
         <GrayBtn
           type={type}
           id={id}
+          form={form}
           name={name}
           style={{
             width,
@@ -161,6 +167,7 @@ export const Button: React.FC<IButton> = ({
         <TransparentBtn
           type={type}
           id={id}
+          form={form}
           name={name}
           style={{
             width,

@@ -1,44 +1,30 @@
-import { useState, useEffect } from "react";
+import { SubmitHandler } from "react-hook-form";
 import { useAppDispatch } from "shared";
 import {
   useFetchPatientByNameMutation,
   addPatientsList,
   resetPatientsList,
-  initialSearchPatientState,
+  ISearchPatientState,
 } from "entities/Patient";
 
 export const usePatientsListFind = () => {
   const dispatch = useAppDispatch();
   const [fetchPatientsList, { isLoading, isError }] =
     useFetchPatientByNameMutation();
-  const [formState, setFormState] = useState(initialSearchPatientState);
-  const [searchQuery, setSearchQuery] = useState({
-    firstName: "",
-    lastName: "",
-    birthDate: "",
-    cardNumber: "",
-  });
 
-  const handleChange: React.ChangeEventHandler<HTMLInputElement> = ({
-    target: { name, value },
-  }) => setFormState(prev => ({ ...prev, [name]: value }));
-
-  useEffect(() => {
-    const name = formState.name.split(" ");
-    setSearchQuery({
-      firstName: name[0] !== undefined ? name[0] : "",
-      lastName: name[1] !== undefined ? name[1] : "",
-      birthDate: formState.birthDate,
-      cardNumber: formState.cardNumber,
-    });
-  }, [formState]);
-
-  const handlePatientsListFind = async (event: React.SyntheticEvent) => {
-    event.preventDefault();
+  const handlePatientsListFind: SubmitHandler<
+    ISearchPatientState
+  > = async data => {
+    const name = data.name.split(" ");
+    const formData = new FormData();
+    formData.append("firstName", name[0]);
+    formData.append("lastName", name[1]);
+    formData.append("birthDate", data.birthDate);
+    formData.append("cardNumber", data.cardNumber);
 
     try {
-      const patientsList = await fetchPatientsList(searchQuery);
-      dispatch(addPatientsList(patientsList));
+      const patientsListResponse = await fetchPatientsList(formData).unwrap();
+      dispatch(addPatientsList(patientsListResponse));
     } catch (error) {
       console.log("ERROR patientsListFormSubmit");
     }
@@ -49,8 +35,6 @@ export const usePatientsListFind = () => {
   };
 
   return {
-    formState,
-    handleChange,
     resetPatients,
     handlePatientsListFind,
     isLoading,
