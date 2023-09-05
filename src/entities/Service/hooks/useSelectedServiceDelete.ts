@@ -3,7 +3,7 @@ import { toast } from "react-hot-toast";
 import { deleteSelectedService } from "entities/Service";
 import { useAppDispatch } from "shared";
 
-export const useDeleteSelectedService = () => {
+export const useSelectedServiceDelete = () => {
   const dispatch = useAppDispatch();
 
   const removeSelectedService = (id: string) => {

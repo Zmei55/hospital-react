@@ -1,28 +1,42 @@
+import { useState } from "react";
+import { SubmitHandler } from "react-hook-form";
 import {
-  useClearServicesFilterState,
-  useGetLaborsList,
-  useToggleServicesModal,
+  useFetchServicesByNameMutation,
   addServices,
+  IFilter,
+  IService,
 } from "entities/Service";
 import { useAppDispatch, useAppSelector } from "shared";
 
 export const useHandleServicesForm = () => {
   const dispatch = useAppDispatch();
+  const [filteredServicesList, setFilteredServicesList] = useState<IService[]>(
+    []
+  );
   const selectedServices = useAppSelector(
     state => state.services.selectedServices
   );
-  const { fetchLaborsList } = useGetLaborsList();
-  const { toggleServicesModal } = useToggleServicesModal();
-  const { clearServicesFilterState } = useClearServicesFilterState();
+  const [fetchServicesList, { isLoading, isError }] =
+    useFetchServicesByNameMutation();
 
-  const handleServicesForm: React.FormEventHandler<HTMLFormElement> = event => {
-    event.preventDefault();
+  const handleServicesForm: SubmitHandler<IFilter> = async data => {
+    const formData = new FormData();
+    if (data.filter === undefined) {
+      formData.append("filter", "");
+    } else {
+      formData.append("filter", data.filter);
+    }
+
+    try {
+      const filteredServices = await fetchServicesList(formData).unwrap();
+      if (filteredServices.length > 0)
+        setFilteredServicesList(filteredServices);
+    } catch (error) {
+      console.log("ERROR servicesListFilter");
+    }
 
     dispatch(addServices(selectedServices));
-    fetchLaborsList();
-    toggleServicesModal();
-    clearServicesFilterState();
   };
 
-  return { handleServicesForm };
+  return { handleServicesForm, filteredServicesList, isLoading, isError };
 };

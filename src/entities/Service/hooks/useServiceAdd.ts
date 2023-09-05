@@ -3,7 +3,7 @@ import { toast } from "react-hot-toast";
 import { addSelectedServices, IService } from "entities/Service";
 import { useAppSelector, useAppDispatch } from "shared";
 
-export const useAddService = () => {
+export const useServiceAdd = () => {
   const dispatch = useAppDispatch();
   const selectedServices = useAppSelector(
     state => state.services.selectedServices

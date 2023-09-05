@@ -1,68 +1,183 @@
+import { useForm } from "react-hook-form";
 import {
-  ServiceModalHeaderEl,
-  SearchFilterEl,
-  SearchFilteredListEl,
-  SearchSelectedListEl,
   useToggleServicesModal,
   useHandleServicesForm,
+  useServiceAdd,
+  useSelectedServiceDelete,
+  useSelectedServiceListSave,
+  useSelectedServiceListClear,
+  IFilter,
 } from "entities/Service";
-import { Modal, Button as ResetBtn, Button as SaveBtn } from "shared";
+import {
+  Modal,
+  Button as ResetBtn,
+  Button as SaveBtn,
+  Button as FindBtn,
+  Button as AddServiceBtn,
+  Button as DeleteBtn,
+  Button as CloseBtn,
+  Icon as IconPlus,
+  Icon as IconTrash,
+  Icon as IconCross,
+  Spinner,
+  useAppSelector,
+} from "shared";
 
 import {
+  ModalHeader,
+  ModalTitle,
   ModalBody,
-  Form,
+  FormFilter,
   Filter,
+  FilterInput,
   SelectedServicesBox,
   SelectedServicesTitle,
   ButtonsBox,
+  FilteredList,
+  FilteredItem,
+  FilteredNameBox,
+  FilteredCodeService,
+  FilteredNameService,
+  AddServiceBtnTitle,
+  SelectedServicesList,
+  SelectedServicesItem,
+  SelectedServicesNameBox,
+  SelectedServicesCode,
+  SelectedServicesName,
 } from "./ServiceModalEL.styled";
 
 interface IServiceModal {}
 
 export const ServiceModalEl: React.FC<IServiceModal> = () => {
-  const { handleServicesForm } = useHandleServicesForm();
+  const { register, handleSubmit } = useForm<IFilter>({
+    defaultValues: {
+      filter: undefined,
+    },
+  });
+  const { handleServicesForm, filteredServicesList, isLoading } =
+    useHandleServicesForm();
+  const selectedServicesList = useAppSelector(
+    state => state.services.selectedServices
+  );
+  const { addService } = useServiceAdd();
+  const { removeSelectedService } = useSelectedServiceDelete();
+  const { saveSelectedList } = useSelectedServiceListSave();
+  const { clearSelectedList } = useSelectedServiceListClear();
   const { toggleServicesModal } = useToggleServicesModal();
 
   return (
     <Modal width="1574px" height="890px" onClose={() => toggleServicesModal()}>
-      <ServiceModalHeaderEl toggleServicesModal={toggleServicesModal} />
+      <ModalHeader>
+        <ModalTitle>Dienst hinzufügen</ModalTitle>
+
+        <CloseBtn
+          id="closeModalSerBtn"
+          width="72px"
+          height="72px"
+          background="red"
+          onClick={() => toggleServicesModal()}
+        >
+          <IconCross icon="cross" size={48} color="white" />
+        </CloseBtn>
+      </ModalHeader>
 
       <ModalBody>
-        <Form onSubmit={handleServicesForm}>
-          <Filter>
-            <SearchFilterEl />
+        <Filter>
+          <FormFilter onSubmit={handleSubmit(handleServicesForm)}>
+            <FilterInput
+              {...(register("filter"),
+              {
+                autoFocus: true,
+              })}
+              placeholder="Dienstname"
+            />
 
-            <SearchFilteredListEl />
-          </Filter>
+            <FindBtn
+              id="findSearchPatBtn"
+              type="submit"
+              width="162px"
+              height="72px"
+              background="blue"
+              marginLeft="24px"
+            >
+              {isLoading ? <Spinner /> : <span>Finden</span>}
+            </FindBtn>
+          </FormFilter>
 
-          <SelectedServicesBox>
-            <SelectedServicesTitle>Ausgewählte Dienste</SelectedServicesTitle>
+          <FilteredList>
+            {filteredServicesList.map(service => (
+              <FilteredItem key={service._id}>
+                <FilteredNameBox>
+                  <FilteredCodeService>{service.code}</FilteredCodeService>
+                  <FilteredNameService>{service.name}</FilteredNameService>
+                </FilteredNameBox>
 
-            <SearchSelectedListEl />
+                <AddServiceBtn
+                  id="addSerBtn"
+                  height="88px"
+                  paddingRight="44px"
+                  paddingLeft="44px"
+                  background="transparent"
+                  onClick={() => addService(service)}
+                >
+                  <IconPlus icon="plus-bold" size={24} color="blue" />
+                  <AddServiceBtnTitle>Hinzufügen</AddServiceBtnTitle>
+                </AddServiceBtn>
+              </FilteredItem>
+            ))}
+          </FilteredList>
+        </Filter>
 
-            <ButtonsBox>
-              <ResetBtn
-                id="resetSelectedSerBtn"
-                width="208px"
-                height="72px"
-                background="grey"
-                marginRight="24px"
-              >
-                Abbruch
-              </ResetBtn>
+        <SelectedServicesBox>
+          <SelectedServicesTitle>Ausgewählte Dienste</SelectedServicesTitle>
 
-              <SaveBtn
-                id="saveSelectedSerBtn"
-                type="submit"
-                width="318px"
-                height="72px"
-                background="blue"
-              >
-                Speichern und schließen
-              </SaveBtn>
-            </ButtonsBox>
-          </SelectedServicesBox>
-        </Form>
+          <SelectedServicesList>
+            {selectedServicesList.map(service => (
+              <SelectedServicesItem key={service.code}>
+                <DeleteBtn
+                  id="delSelectedSerBtn"
+                  width="56px"
+                  height="56px"
+                  background="transparent"
+                  border="none"
+                  marginRight="24px"
+                  onClick={() => removeSelectedService(service._id)}
+                >
+                  <IconTrash icon="trash" size={48} color="red" />
+                </DeleteBtn>
+
+                <SelectedServicesNameBox>
+                  <SelectedServicesCode>{service.code}</SelectedServicesCode>
+
+                  <SelectedServicesName>{service.name}</SelectedServicesName>
+                </SelectedServicesNameBox>
+              </SelectedServicesItem>
+            ))}
+          </SelectedServicesList>
+
+          <ButtonsBox>
+            <ResetBtn
+              id="resetSelectedSerBtn"
+              width="208px"
+              height="72px"
+              background="grey"
+              marginRight="24px"
+              onClick={clearSelectedList}
+            >
+              Abbruch
+            </ResetBtn>
+
+            <SaveBtn
+              id="saveSelectedSerBtn"
+              width="318px"
+              height="72px"
+              background="blue"
+              onClick={saveSelectedList}
+            >
+              Speichern und schließen
+            </SaveBtn>
+          </ButtonsBox>
+        </SelectedServicesBox>
       </ModalBody>
     </Modal>
   );

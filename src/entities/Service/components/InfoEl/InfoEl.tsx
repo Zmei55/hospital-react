@@ -1,4 +1,4 @@
-import { useDeleteService } from "entities/Service";
+import { useServiceDelete } from "entities/Service";
 import { useAppSelector, Button as DeleteBtn, Icon } from "shared";
 
 import {
@@ -15,7 +15,7 @@ export const InfoEl: React.FC = () => {
   const servicesList = useAppSelector(state => state.services.services);
   const laborList = useAppSelector(state => state.services.labors);
   const detailsList = useAppSelector(state => state.services.details);
-  const { removeService } = useDeleteService();
+  const { removeService } = useServiceDelete();
 
   return (
     <>

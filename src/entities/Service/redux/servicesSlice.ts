@@ -5,7 +5,6 @@ interface IServicesState {
   services: IService[];
   labors: ILabor[];
   details: IDetail[];
-  filteredServices: IService[];
   selectedServices: IService[];
   modalService: boolean;
   modalLabor: boolean;
@@ -15,7 +14,6 @@ const initialState: IServicesState = {
   services: [],
   labors: [],
   details: [],
-  filteredServices: [],
   selectedServices: [],
   modalService: false,
   modalLabor: false,
@@ -47,12 +45,6 @@ const servicesSlice = createSlice({
     resetSelectedServices(state) {
       state.selectedServices = initialState.selectedServices;
     },
-    fetchFilteredServices(state, action: PayloadAction<IService[]>) {
-      state.filteredServices = action.payload;
-    },
-    resetFilteredServices(state) {
-      state.filteredServices = initialState.filteredServices;
-    },
     fetchServicesModal(state, action: PayloadAction<boolean>) {
       state.modalService = action.payload;
     },
@@ -81,8 +73,6 @@ export const {
   addSelectedServices,
   deleteSelectedService,
   resetSelectedServices,
-  fetchFilteredServices,
-  resetFilteredServices,
   fetchServicesModal,
   fetchLabors,
   resetLabors,
