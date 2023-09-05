@@ -1,5 +1,4 @@
-import { useForm } from "react-hook-form";
-import { SubmitHandler } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 import { ISearchPatientState } from "entities/Patient";
 
 import {

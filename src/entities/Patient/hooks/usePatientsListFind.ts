@@ -18,8 +18,12 @@ export const usePatientsListFind = () => {
     const name = data.name.split(" ");
     const formData = new FormData();
     formData.append("firstName", name[0]);
-    formData.append("lastName", name[1]);
-    formData.append("birthDate", data.birthDate);
+    if (name[1] === undefined) {
+      formData.append("lastName", "");
+    } else {
+      formData.append("lastName", name[1]);
+    }
+    formData.append("birthDate", data.birthDate.toString());
     formData.append("cardNumber", data.cardNumber);
 
     try {
