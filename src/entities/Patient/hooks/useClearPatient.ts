@@ -5,7 +5,6 @@ import {
   resetSelectedServices,
   resetLabors,
   resetDetails,
-  resetFilteredServices,
 } from "entities/Service";
 import {
   useRequestsCount,
@@ -25,7 +24,6 @@ export const useClearPatient = () => {
     dispatch(resetPatientsList());
     dispatch(resetLabors());
     dispatch(resetDetails());
-    dispatch(resetFilteredServices());
     dispatch(resetRequestPatientID());
     dispatch(resetRequestDetails());
   };
