@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkhospital_react_ts=self.webpackChunkhospital_react_ts||[]).push([[2],{9002:function(e,t,n){n.r(t);var s=n(3329);t.default=function(){return(0,s.jsx)("h1",{children:"404 Seite nicht gefunden"})}}}]);
+//# sourceMappingURL=2.b951b07b.chunk.js.map

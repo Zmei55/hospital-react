@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/441.fc20bc63.chunk.js","mappings":"0JAMA,UAJ2B,WACzB,OAAOA,EAAAA,EAAAA,KAACC,EAAAA,GAAQ,GAClB,C","sources":["pages/AuthView.tsx"],"sourcesContent":["import { AuthMenu } from \"entities/Auth\";\r\n\r\nconst AuthView: React.FC = () => {\r\n  return <AuthMenu />;\r\n};\r\n\r\nexport default AuthView;\r\n"],"names":["_jsx","AuthMenu"],"sourceRoot":""}
