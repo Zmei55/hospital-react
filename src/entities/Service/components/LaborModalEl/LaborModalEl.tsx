@@ -1,8 +1,11 @@
-import { LaborTableEl, useHandleLaborChange } from "entities/Service";
 import {
+  useHandleLaborChange,
+  useFetchLaborsListQuery,
+} from "entities/Service";
+import {
+  useAppSelector,
   Modal,
   Button as CloseBtn,
-  // Button as ResetBtn,
   Button as SaveBtn,
   Icon,
 } from "shared";
@@ -11,7 +14,17 @@ import {
   Header,
   HeaderTitle,
   Form,
-  // ButtonsBox
+  Table,
+  THead,
+  THService,
+  THLabor,
+  TBody,
+  TRBody,
+  ServiceBox,
+  ServiceCode,
+  ServiceName,
+  Radio,
+  Label,
 } from "./LaborModalEl.styled";
 
 interface ILaborModalEl {
@@ -20,6 +33,9 @@ interface ILaborModalEl {
 
 export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
   const { handleLaborChange, saveDetails } = useHandleLaborChange();
+  const services = useAppSelector(state => state.services.services);
+  const servicesDetails = useAppSelector(state => state.services.details);
+  const { data: labors } = useFetchLaborsListQuery(null);
 
   return (
     <>
@@ -39,21 +55,40 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
         </Header>
 
         <Form onSubmit={saveDetails}>
-          <LaborTableEl handleLaborChange={handleLaborChange} />
+          <Table>
+            <THead>
+              <THService>Dienstleistung</THService>
+              {labors &&
+                labors.map(labor => (
+                  <THLabor key={labor._id}>{labor.name}</THLabor>
+                ))}
+            </THead>
 
-          {/* <ButtonsBox> */}
-          {/* <ResetBtn
-              type="reset"
-              id="resetSelectedSerBtn"
-              width="208px"
-              height="72px"
-              background="grey"
-              // onClick={() =>
-              //   
-              // }
-            >
-              Abbruch
-            </ResetBtn> */}
+            <TBody>
+              {services.map(service => (
+                <TRBody key={service._id}>
+                  <ServiceBox>
+                    <ServiceCode>{service.code}</ServiceCode>
+                    <ServiceName>{service.name}</ServiceName>
+                  </ServiceBox>
+                  {labors &&
+                    labors.map(labor => (
+                      <Radio key={labor._id}>
+                        <Label>
+                          <input
+                            type="radio"
+                            name={service._id}
+                            value={labor._id}
+                            onChange={handleLaborChange}
+                            required
+                          />
+                        </Label>
+                      </Radio>
+                    ))}
+                </TRBody>
+              ))}
+            </TBody>
+          </Table>
 
           <SaveBtn
             id="saveSelectedSerBtn"
@@ -66,7 +101,6 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
           >
             Speichern und schließen
           </SaveBtn>
-          {/* </ButtonsBox> */}
         </Form>
       </Modal>
     </>
