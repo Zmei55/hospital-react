@@ -88,7 +88,7 @@ export const AuthMenu: React.FC = () => {
             <Spinner />
           ) : (
             <>
-              Weiter
+              Einloggen
               <Icon icon="caret-right-bold" size={24} color="white" />
             </>
           )}
