@@ -10,6 +10,10 @@ const Button = styled.button`
   line-height: 1.17;
 
   border-radius: ${props => props.theme.borderRadius};
+
+  :disabled {
+    cursor: default;
+  }
 `;
 
 export const BlueBtn = styled(Button)`
@@ -29,6 +33,7 @@ export const BlueBtn = styled(Button)`
 
   :disabled {
     background-color: ${props => props.theme.colors.blue.disabled};
+    cursor: default;
   }
 `;
 

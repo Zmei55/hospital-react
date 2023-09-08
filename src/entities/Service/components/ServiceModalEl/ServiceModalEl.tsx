@@ -49,7 +49,11 @@ import {
 interface IServiceModal {}
 
 export const ServiceModalEl: React.FC<IServiceModal> = () => {
-  const { register, handleSubmit } = useForm<IFilter>({
+  const {
+    register,
+    handleSubmit,
+    formState: { dirtyFields },
+  } = useForm<IFilter>({
     defaultValues: {
       filter: undefined,
     },
@@ -85,11 +89,10 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
         <Filter>
           <FormFilter onSubmit={handleSubmit(handleServicesForm)}>
             <FilterInput
-              {...(register("filter"),
-              {
-                autoFocus: true,
-              })}
+              {...register("filter")}
               placeholder="Dienstname"
+              autoFocus
+              required
             />
 
             <FindBtn
@@ -99,6 +102,7 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
               height="72px"
               background="blue"
               marginLeft="24px"
+              disabled={!dirtyFields.filter}
             >
               {isLoading ? <Spinner /> : <span>Finden</span>}
             </FindBtn>
@@ -163,6 +167,7 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
               background="grey"
               marginRight="24px"
               onClick={clearSelectedList}
+              disabled={selectedServicesList.length === 0}
             >
               Abbruch
             </ResetBtn>
@@ -173,6 +178,7 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
               height="72px"
               background="blue"
               onClick={saveSelectedList}
+              disabled={selectedServicesList.length === 0}
             >
               Speichern und schließen
             </SaveBtn>

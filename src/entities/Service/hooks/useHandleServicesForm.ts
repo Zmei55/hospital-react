@@ -21,11 +21,8 @@ export const useHandleServicesForm = () => {
 
   const handleServicesForm: SubmitHandler<IFilter> = async data => {
     const formData = new FormData();
-    if (data.filter === undefined) {
-      formData.append("filter", "");
-    } else {
-      formData.append("filter", data.filter);
-    }
+
+    formData.append("filter", data.filter);
 
     try {
       const filteredServices = await fetchServicesList(formData).unwrap();
