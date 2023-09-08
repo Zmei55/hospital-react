@@ -57,6 +57,11 @@ const servicesSlice = createSlice({
     addDetails(state, action: PayloadAction<IDetail[]>) {
       state.details = action.payload;
     },
+    deleteDetail(state, action: PayloadAction<string>) {
+      state.details = state.details.filter(
+        detail => detail.serviceId !== action.payload
+      );
+    },
     resetDetails(state) {
       state.details = initialState.details;
     },
@@ -77,6 +82,7 @@ export const {
   fetchLabors,
   resetLabors,
   addDetails,
+  deleteDetail,
   resetDetails,
   fetchLaborModal,
 } = servicesSlice.actions;

@@ -1,6 +1,10 @@
 import { toast } from "react-hot-toast";
 
-import { deleteService, deleteSelectedService } from "entities/Service";
+import {
+  deleteService,
+  deleteSelectedService,
+  deleteDetail,
+} from "entities/Service";
 import { useAppDispatch } from "shared";
 
 export const useServiceDelete = () => {
@@ -9,6 +13,7 @@ export const useServiceDelete = () => {
   const removeService = (id: string) => {
     dispatch(deleteService(id));
     dispatch(deleteSelectedService(id));
+    dispatch(deleteDetail(id));
     toast.success("Dienst entfernt!");
   };
 
