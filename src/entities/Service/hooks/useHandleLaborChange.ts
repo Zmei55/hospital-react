@@ -48,5 +48,5 @@ export const useHandleLaborChange = () => {
     toggleLaborModal();
   };
 
-  return { handleLaborChange, saveDetails };
+  return { handleLaborChange, saveDetails, detailsState };
 };

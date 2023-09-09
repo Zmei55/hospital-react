@@ -32,10 +32,18 @@ interface ILaborModalEl {
 }
 
 export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
-  const { handleLaborChange, saveDetails } = useHandleLaborChange();
+  const { handleLaborChange, saveDetails, detailsState } =
+    useHandleLaborChange();
   const services = useAppSelector(state => state.services.services);
-  const servicesDetails = useAppSelector(state => state.services.details);
   const { data: labors } = useFetchLaborsListQuery(null);
+
+  const isCheckedDetail = (serviceId: string, laborId: string) => {
+    for (const detail of detailsState) {
+      if (detail.serviceId === serviceId && detail.laborId === laborId) {
+        return true;
+      }
+    }
+  };
 
   return (
     <>
@@ -80,6 +88,7 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
                             name={service._id}
                             value={labor._id}
                             onChange={handleLaborChange}
+                            checked={isCheckedDetail(service._id, labor._id)}
                             required
                           />
                         </Label>
