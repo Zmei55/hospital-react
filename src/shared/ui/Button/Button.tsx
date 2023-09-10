@@ -11,87 +11,27 @@ interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   background: "blue" | "grey" | "green" | "red" | "transparent";
 }
 
-export const Button: React.FC<IButton> = ({
-  type = "button",
-  style,
-  id,
-  form,
-  name,
-  background,
-  disabled,
-  children,
-  onClick,
-}) => {
+export const Button: React.FC<IButton> = props => {
   return (
     <>
-      {background === "blue" && (
-        <BlueBtn
-          type={type}
-          id={id}
-          form={form}
-          name={name}
-          style={style}
-          onClick={onClick}
-          disabled={disabled}
-        >
-          {children}
-        </BlueBtn>
+      {props.background === "blue" && (
+        <BlueBtn {...props}>{props.children}</BlueBtn>
       )}
 
-      {background === "red" && (
-        <RedBtn
-          type={type}
-          id={id}
-          form={form}
-          name={name}
-          style={style}
-          onClick={onClick}
-          disabled={disabled}
-        >
-          {children}
-        </RedBtn>
+      {props.background === "red" && (
+        <RedBtn {...props}>{props.children}</RedBtn>
       )}
 
-      {background === "green" && (
-        <GreenBtn
-          type={type}
-          id={id}
-          form={form}
-          name={name}
-          style={style}
-          onClick={onClick}
-          disabled={disabled}
-        >
-          {children}
-        </GreenBtn>
+      {props.background === "green" && (
+        <GreenBtn {...props}>{props.children}</GreenBtn>
       )}
 
-      {background === "grey" && (
-        <GrayBtn
-          type={type}
-          id={id}
-          form={form}
-          name={name}
-          style={style}
-          onClick={onClick}
-          disabled={disabled}
-        >
-          {children}
-        </GrayBtn>
+      {props.background === "grey" && (
+        <GrayBtn {...props}>{props.children}</GrayBtn>
       )}
 
-      {background === "transparent" && (
-        <TransparentBtn
-          type={type}
-          id={id}
-          form={form}
-          name={name}
-          style={style}
-          onClick={onClick}
-          disabled={disabled}
-        >
-          {children}
-        </TransparentBtn>
+      {props.background === "transparent" && (
+        <TransparentBtn {...props}>{props.children}</TransparentBtn>
       )}
     </>
   );
