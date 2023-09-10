@@ -76,9 +76,11 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
 
         <CloseBtn
           id="closeModalSerBtn"
-          width="72px"
-          height="72px"
           background="red"
+          style={{
+            width: "72px",
+            height: "72px",
+          }}
           onClick={() => toggleServicesModal()}
         >
           <IconCross icon="cross" size={48} color="white" />
@@ -98,10 +100,12 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
             <FindBtn
               id="findSearchPatBtn"
               type="submit"
-              width="162px"
-              height="72px"
               background="blue"
-              marginLeft="24px"
+              style={{
+                width: "162px",
+                height: "72px",
+                marginLeft: "24px",
+              }}
               disabled={!dirtyFields.filter}
             >
               {isLoading ? <Spinner /> : <span>Finden</span>}
@@ -118,10 +122,12 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
 
                 <AddServiceBtn
                   id="addSerBtn"
-                  height="88px"
-                  paddingRight="44px"
-                  paddingLeft="44px"
                   background="transparent"
+                  style={{
+                    height: "88px",
+                    paddingRight: "44px",
+                    paddingLeft: "44px",
+                  }}
                   onClick={() => addService(service)}
                 >
                   <IconPlus icon="plus-bold" size={24} color="blue" />
@@ -140,11 +146,13 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
               <SelectedServicesItem key={service.code}>
                 <DeleteBtn
                   id="delSelectedSerBtn"
-                  width="56px"
-                  height="56px"
                   background="transparent"
-                  border="none"
-                  marginRight="24px"
+                  style={{
+                    width: "56px",
+                    height: "56px",
+                    border: "none",
+                    marginRight: "24px",
+                  }}
                   onClick={() => removeSelectedService(service._id)}
                 >
                   <IconTrash icon="trash" size={48} color="red" />
@@ -162,10 +170,12 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
           <ButtonsBox>
             <ResetBtn
               id="resetSelectedSerBtn"
-              width="208px"
-              height="72px"
               background="grey"
-              marginRight="24px"
+              style={{
+                width: "208px",
+                height: "72px",
+                marginRight: "24px",
+              }}
               onClick={clearSelectedList}
               disabled={selectedServicesList.length === 0}
             >
@@ -174,9 +184,11 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
 
             <SaveBtn
               id="saveSelectedSerBtn"
-              width="318px"
-              height="72px"
               background="blue"
+              style={{
+                width: "318px",
+                height: "72px",
+              }}
               onClick={saveSelectedList}
               disabled={selectedServicesList.length === 0}
             >

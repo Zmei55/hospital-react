@@ -53,9 +53,11 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
 
           <CloseBtn
             id="closeModalSerBtn"
-            width="72px"
-            height="72px"
             background="red"
+            style={{
+              width: "72px",
+              height: "72px",
+            }}
             onClick={() => toggleLaborModal()}
           >
             <Icon icon="cross" size={48} color="white" />
@@ -102,11 +104,13 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
           <SaveBtn
             id="saveSelectedSerBtn"
             type="submit"
-            width="318px"
-            height="72px"
             background="blue"
-            marginLeft="auto"
-            marginRight="24px"
+            style={{
+              width: "318px",
+              height: "72px",
+              marginLeft: "auto",
+              marginRight: "24px",
+            }}
           >
             Speichern und schließen
           </SaveBtn>

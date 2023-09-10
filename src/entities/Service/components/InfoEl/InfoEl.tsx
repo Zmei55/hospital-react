@@ -24,11 +24,13 @@ export const InfoEl: React.FC = () => {
           <Item key={service._id}>
             <DeleteBtn
               id="delSerInfoBtn"
-              width="52px"
-              height="52px"
               background="transparent"
-              border="none"
-              marginRight="24px"
+              style={{
+                width: "52px",
+                height: "52px",
+                border: "none",
+                marginRight: "24px",
+              }}
               onClick={() => removeService(service._id)}
             >
               <Icon icon="trash" size={48} color="red" />

@@ -1,3 +1,4 @@
+import { ButtonHTMLAttributes } from "react";
 import {
   BlueBtn,
   RedBtn,
@@ -6,51 +7,20 @@ import {
   TransparentBtn,
 } from "./Button.styled";
 
-interface IButton {
-  width?: string;
-  height?: string;
+interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   background: "blue" | "grey" | "green" | "red" | "transparent";
-  type?: "button" | "submit" | "reset";
-  id?: string;
-  form?: string;
-  name?: string;
-  color?: string;
-  disabled?: boolean;
-  border?: string;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  children?: React.ReactNode;
-  padding?: string | number;
-  paddingTop?: string;
-  paddingRight?: string;
-  paddingBottom?: string;
-  paddingLeft?: string;
-  marginTop?: string;
-  marginRight?: string;
-  marginBottom?: string;
-  marginLeft?: string;
 }
 
 export const Button: React.FC<IButton> = ({
   type = "button",
-  width,
-  height,
+  style,
   id,
   form,
   name,
-  color,
   background,
-  border,
   disabled,
   children,
   onClick,
-  paddingTop,
-  paddingRight,
-  paddingBottom,
-  paddingLeft,
-  marginTop,
-  marginRight,
-  marginBottom,
-  marginLeft,
 }) => {
   return (
     <>
@@ -60,20 +30,7 @@ export const Button: React.FC<IButton> = ({
           id={id}
           form={form}
           name={name}
-          style={{
-            width,
-            height,
-            color,
-            border,
-            paddingTop,
-            paddingRight,
-            paddingBottom,
-            paddingLeft,
-            marginTop,
-            marginRight,
-            marginBottom,
-            marginLeft,
-          }}
+          style={style}
           onClick={onClick}
           disabled={disabled}
         >
@@ -87,21 +44,7 @@ export const Button: React.FC<IButton> = ({
           id={id}
           form={form}
           name={name}
-          style={{
-            width,
-            height,
-            color,
-            border,
-            paddingTop,
-            paddingRight,
-            paddingBottom,
-            paddingLeft,
-            marginTop,
-            marginRight,
-            marginBottom,
-            marginLeft,
-          }}
-          color={color}
+          style={style}
           onClick={onClick}
           disabled={disabled}
         >
@@ -115,20 +58,7 @@ export const Button: React.FC<IButton> = ({
           id={id}
           form={form}
           name={name}
-          style={{
-            width,
-            height,
-            color,
-            border,
-            paddingTop,
-            paddingRight,
-            paddingBottom,
-            paddingLeft,
-            marginTop,
-            marginRight,
-            marginBottom,
-            marginLeft,
-          }}
+          style={style}
           onClick={onClick}
           disabled={disabled}
         >
@@ -142,20 +72,7 @@ export const Button: React.FC<IButton> = ({
           id={id}
           form={form}
           name={name}
-          style={{
-            width,
-            height,
-            color,
-            border,
-            paddingTop,
-            paddingRight,
-            paddingBottom,
-            paddingLeft,
-            marginTop,
-            marginRight,
-            marginBottom,
-            marginLeft,
-          }}
+          style={style}
           onClick={onClick}
           disabled={disabled}
         >
@@ -169,20 +86,7 @@ export const Button: React.FC<IButton> = ({
           id={id}
           form={form}
           name={name}
-          style={{
-            width,
-            height,
-            color,
-            border,
-            paddingTop,
-            paddingRight,
-            paddingBottom,
-            paddingLeft,
-            marginTop,
-            marginRight,
-            marginBottom,
-            marginLeft,
-          }}
+          style={style}
           onClick={onClick}
           disabled={disabled}
         >

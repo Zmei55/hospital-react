@@ -27,11 +27,13 @@ export const SearchModalHeaderEl: React.FC = () => {
 
       <ResetBtn
         id="resetSearchPatBtn"
-        height="72px"
-        paddingRight="44px"
-        paddingLeft="44px"
+        style={{
+          height: "72px",
+          paddingRight: "44px",
+          paddingLeft: "44px",
+          marginRight: "24px",
+        }}
         background="transparent"
-        marginRight="24px"
         onClick={handleResetBtn}
       >
         Rücksetzen
@@ -41,20 +43,24 @@ export const SearchModalHeaderEl: React.FC = () => {
         id="findSearchPatBtn"
         type="submit"
         form="findPatientList"
-        height="72px"
-        paddingRight="44px"
-        paddingLeft="44px"
+        style={{
+          height: "72px",
+          paddingRight: "44px",
+          paddingLeft: "44px",
+          marginRight: "24px",
+        }}
         background="blue"
-        marginRight="24px"
       >
         Finden
       </FindBtn>
 
       <CloseBtn
         id="closeSearchPatBtn"
-        width="72px"
-        height="72px"
         background="red"
+        style={{
+          width: "72px",
+          height: "72px",
+        }}
         onClick={handleCloseBtn}
       >
         <Icon icon="cross" size={48} color="white" />

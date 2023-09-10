@@ -23,11 +23,13 @@ export const TitleBoxEl: React.FC<ITitleBox> = () => {
         <>
           <AddBtn
             id="addToSelectedSerBtn"
-            height="48px"
-            paddingRight="24px"
-            paddingLeft="24px"
             background="grey"
-            marginRight="24px"
+            style={{
+              height: "48px",
+              paddingRight: "24px",
+              paddingLeft: "24px",
+              marginRight: "24px",
+            }}
             onClick={toggleServicesModal}
           >
             Ergänzen
@@ -35,10 +37,12 @@ export const TitleBoxEl: React.FC<ITitleBox> = () => {
 
           <LaborBtn
             id="selectLabor"
-            height="48px"
-            paddingRight="24px"
-            paddingLeft="24px"
             background="grey"
+            style={{
+              height: "48px",
+              paddingRight: "24px",
+              paddingLeft: "24px",
+            }}
             onClick={toggleLaborModal}
           >
             Wahl des Labors

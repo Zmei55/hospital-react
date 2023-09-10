@@ -19,11 +19,16 @@ export const InfoNameBlockEl: React.FC<IInfoNameBlock> = () => {
     <NameBlock>
       <InfoBtn
         id="morePatInfoBtn"
-        width="48px"
-        height="48px"
+        style={{
+          width: "48px",
+          height: "48px",
+          marginRight: "24px",
+        }}
+        // width="48px"
+        // height="48px"
         background="transparent"
         name={"InfoButton"}
-        marginRight="24px"
+        // marginRight="24px"
         onClick={handleInfoActive}
       >
         {isInfoActive ? (
@@ -39,9 +44,11 @@ export const InfoNameBlockEl: React.FC<IInfoNameBlock> = () => {
 
       <ClearBtn
         id="clearPatInfo"
-        width="48px"
-        height="48px"
         background="transparent"
+        style={{
+          width: "48px",
+          height: "48px",
+        }}
         name="ClearButton"
         onClick={clearPatient}
       >

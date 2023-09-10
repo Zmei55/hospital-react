@@ -79,8 +79,9 @@ export const AuthMenu: React.FC = () => {
         <SignInBtn
           id="signInBtn"
           type="submit"
-          width="368px"
-          height="72px"
+          style={{ width: "368px", height: "72px" }}
+          // width="368px"
+          // height="72px"
           background="blue"
           disabled={isEmptyLoginForm}
         >
@@ -100,10 +101,12 @@ export const AuthMenu: React.FC = () => {
           <ErrorTitle>Benutzerdaten wurden falsch eingegeben</ErrorTitle>
           <AcceptBtn
             id="errorLoginBtn"
-            height="72px"
-            paddingRight="44px"
-            paddingLeft="44px"
             background="blue"
+            style={{
+              height: "72px",
+              paddingRight: "44px",
+              paddingLeft: "44px",
+            }}
             onClick={errorModalClose}
           >
             Ok

@@ -67,11 +67,13 @@ export const Containers: React.FC = () => {
             <ModalTitle>Container berechnen</ModalTitle>
             <CloseBtn
               id="closeModalSerBtn"
-              width="72px"
-              height="72px"
               background="red"
+              style={{
+                width: "72px",
+                height: "72px",
+                marginLeft: "auto",
+              }}
               onClick={() => toggleContainersModal()}
-              marginLeft="auto"
             >
               <CrossIcon icon="cross" size={48} color="white" />
             </CloseBtn>

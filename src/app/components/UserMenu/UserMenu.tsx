@@ -27,8 +27,10 @@ export const UserMenu: React.FC = () => {
 
       <MenuBtn
         id="appMenuBtn"
-        width="72px"
-        height="72px"
+        style={{
+          width: "72px",
+          height: "72px",
+        }}
         background="transparent"
       >
         <Icon icon="gear" size={48} color="blue" />
@@ -37,12 +39,14 @@ export const UserMenu: React.FC = () => {
       {isLoggedIn && (
         <LogoutBtn
           id="logoutBtn"
-          height="72px"
-          paddingRight="44px"
-          paddingLeft="44px"
-          color="#EC312F"
           background="transparent"
-          marginLeft="24px"
+          style={{
+            height: "72px",
+            paddingRight: "44px",
+            paddingLeft: "44px",
+            color: "#EC312F",
+            marginLeft: "24px",
+          }}
           onClick={() => logout()}
         >
           Abmelden

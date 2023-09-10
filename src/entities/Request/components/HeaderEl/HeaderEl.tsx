@@ -31,9 +31,11 @@ export const HeaderEl: React.FC = () => {
       <SaveBtn
         id="saveNeuRequestBtn"
         background="blue"
-        width="210px"
-        height="72px"
-        marginRight="24px"
+        style={{
+          width: "210px",
+          height: "72px",
+          marginRight: "24px",
+        }}
         disabled={saveReqBtnDisabled}
         onClick={saveNewRequest}
       >
@@ -42,9 +44,11 @@ export const HeaderEl: React.FC = () => {
 
       <CloseBtn
         id="closeNeuRequestBtn"
-        width="72px"
-        height="72px"
         background="red"
+        style={{
+          width: "72px",
+          height: "72px",
+        }}
         onClick={handleCloseBtn}
       >
         <Icon icon="cross" size={48} color="white" />
