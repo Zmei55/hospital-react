@@ -30,14 +30,17 @@ export const Desktop: React.FC = () => {
         </IconContainer>
       </MediumBtn>
 
-      <MediumBtn id="findContainersBtn" onClick={() => navigate("")}>
+      <MediumBtn
+        id="findContainersBtn"
+        onClick={() => navigate("/unknown-part")}
+      >
         <IconContainer>
           <Icon icon="find-test-tube" color="blue" size={140} />
           <IconTitle>Finden Sie eine Behälter</IconTitle>
         </IconContainer>
       </MediumBtn>
 
-      <SmallBtn id="documentsBtn" onClick={() => navigate("")}>
+      <SmallBtn id="documentsBtn" onClick={() => navigate("/unknown-part")}>
         <IconContainer>
           <Icon icon="documents" color="blue" size={140} />
           <IconTitle>Unterlagen</IconTitle>

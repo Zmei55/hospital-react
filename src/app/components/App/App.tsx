@@ -17,6 +17,9 @@ const RequestView = loadable(() => import("pages/RequestView"), {
 const FindRequestView = loadable(() => import("pages/FindRequestView"), {
   fallback: <Loading />,
 });
+const UnknownPartView = loadable(() => import("pages/UnknownPartView"), {
+  fallback: <Loading />,
+});
 const NotFoundPage = loadable(() => import("pages/NotFoundView"), {
   fallback: <Loading />,
 });
@@ -55,6 +58,14 @@ export const App: React.FC = () => {
             element={
               <PrivateRoute redirectTo="/">
                 <FindRequestView />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="unknown-part"
+            element={
+              <PrivateRoute redirectTo="/">
+                <UnknownPartView />
               </PrivateRoute>
             }
           />

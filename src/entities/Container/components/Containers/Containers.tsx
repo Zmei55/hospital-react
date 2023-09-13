@@ -48,13 +48,6 @@ export const Containers: React.FC = () => {
         {servicesList.length !== 0 && detailsList.length !== 0 && (
           <ButtonTitle>Sie können Container berechnen</ButtonTitle>
         )}
-        {/* {servicesList.length !== detailsList.length ? (
-          <ButtonTitle>
-            Sie können Container nach dem Hinzufügen von Diensten berechnen
-          </ButtonTitle>
-        ) : (
-          <ButtonTitle>Sie können Container berechnen</ButtonTitle>
-        )} */}
       </ModalBtn>
 
       {showContainersModal && (
