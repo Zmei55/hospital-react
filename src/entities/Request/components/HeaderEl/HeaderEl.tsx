@@ -1,8 +1,6 @@
-import { useSaveNewRequest } from "entities/Request";
-import { useClearPatient } from "entities/Patient";
+import { useSaveNewRequest, useHandleCloseButton } from "entities/Request";
 import {
   useAppSelector,
-  useAppNavigate,
   Button as SaveBtn,
   Button as CloseBtn,
   Icon,
@@ -12,15 +10,9 @@ import {
 import { Header, RequestNumber, HeaderTitle } from "./HeaderEl.styled";
 
 export const HeaderEl: React.FC = () => {
-  const [navigate] = useAppNavigate();
   const { saveNewRequest, saveReqBtnDisabled, isLoading } = useSaveNewRequest();
   const requestNumber = useAppSelector(state => state.request.requestNumber);
-  const { clearPatient } = useClearPatient();
-
-  const handleCloseBtn = () => {
-    clearPatient();
-    navigate("/desktop");
-  };
+  const { handleCloseBtn } = useHandleCloseButton();
 
   return (
     <Header>

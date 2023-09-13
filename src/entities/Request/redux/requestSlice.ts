@@ -1,31 +1,33 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-// import { IRequestDetails } from "entities/Request";
 import { IDetail } from "entities/Service";
 
 interface IRequestSlice {
+  requestId: string;
   requestNumber: number;
-  patientId: string;
   requestDetails: IDetail[];
 }
 
 const initialState: IRequestSlice = {
+  requestId: "",
   requestNumber: 0,
-  patientId: "",
   requestDetails: [],
 };
 
 const requestSlice = createSlice({
-  name: "request",
+  name: "requests",
   initialState,
   reducers: {
-    fetchRequestsDBCount(state, action: PayloadAction<number>) {
+    addRequestId(state, action: PayloadAction<string>) {
+      state.requestId = action.payload;
+    },
+    resetRequestId(state) {
+      state.requestId = initialState.requestId;
+    },
+    addRequestDBCount(state, action: PayloadAction<number>) {
       state.requestNumber = action.payload;
     },
-    addRequestPatientID(state, action: PayloadAction<string>) {
-      state.patientId = action.payload;
-    },
-    resetRequestPatientID(state) {
-      state.patientId = initialState.patientId;
+    resetRequestDBCount(state) {
+      state.requestNumber = initialState.requestNumber;
     },
     addRequestDetails(state, action: PayloadAction<IDetail[]>) {
       state.requestDetails = action.payload;
@@ -37,9 +39,10 @@ const requestSlice = createSlice({
 });
 
 export const {
-  fetchRequestsDBCount,
-  addRequestPatientID,
-  resetRequestPatientID,
+  addRequestId,
+  resetRequestId,
+  addRequestDBCount,
+  resetRequestDBCount,
   addRequestDetails,
   resetRequestDetails,
 } = requestSlice.actions;

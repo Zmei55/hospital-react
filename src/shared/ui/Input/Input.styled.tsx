@@ -7,7 +7,8 @@ export const Input = styled.input`
   color: ${props => props.theme.colors.text.default};
 
   height: 72px;
-  padding: 22px 24px;
+  padding-right: 24px;
+  padding-left: 24px;
   outline: none;
   border: ${props => props.theme.border};
   border-radius: ${props => props.theme.borderRadius};

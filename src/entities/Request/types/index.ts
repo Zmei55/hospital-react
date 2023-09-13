@@ -1,2 +1,3 @@
 export * from "./IRequest";
-export * from "./IRequestDetails";
+export * from "./IRequestResponse";
+export * from "./IRequestFilter";

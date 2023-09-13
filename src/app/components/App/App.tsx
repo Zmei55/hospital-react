@@ -14,6 +14,9 @@ const DesktopPage = loadable(() => import("pages/DesktopView"), {
 const RequestView = loadable(() => import("pages/RequestView"), {
   fallback: <Loading />,
 });
+const FindRequestView = loadable(() => import("pages/FindRequestView"), {
+  fallback: <Loading />,
+});
 const NotFoundPage = loadable(() => import("pages/NotFoundView"), {
   fallback: <Loading />,
 });
@@ -44,6 +47,14 @@ export const App: React.FC = () => {
             element={
               <PrivateRoute redirectTo="/">
                 <RequestView />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="find-request"
+            element={
+              <PrivateRoute redirectTo="/">
+                <FindRequestView />
               </PrivateRoute>
             }
           />

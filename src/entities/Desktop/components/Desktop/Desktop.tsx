@@ -23,7 +23,7 @@ export const Desktop: React.FC = () => {
         </IconContainer>
       </LargeBtn>
 
-      <MediumBtn id="findRequestBtn" onClick={() => navigate("")}>
+      <MediumBtn id="findRequestBtn" onClick={() => navigate("/find-request")}>
         <IconContainer>
           <Icon icon="find-document" color="blue" size={140} />
           <IconTitle>Finden Sie einen Antrag</IconTitle>
