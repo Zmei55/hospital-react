@@ -1,24 +1,12 @@
-import { useState, useEffect } from "react";
-import { useFetchServiceByIdQuery, addServices } from "entities/Service";
-// import { useAppDispatch, useAppSelector } from "shared";
+import { useLazyFetchServiceByIdQuery } from "entities/Service";
 
 export const useGetServiceById = () => {
-  // const dispatch = useAppDispatch();
-  const [serviceId, setServiceId] = useState<string>("");
-  const { data: service } = useFetchServiceByIdQuery(serviceId, {
-    skip: serviceId === "",
-  });
-  // const servicesList = useAppSelector(state => state.services.services);
+  const [fetchServiceById] = useLazyFetchServiceByIdQuery();
 
-  const handleServiceId = (id: string) => {
-    setServiceId(id);
+  const getServiceById = async (id: string) => {
+    const serviceResponse = await fetchServiceById(id).unwrap();
+    return serviceResponse;
   };
 
-  // useEffect(() => {
-  //   if (serviceData !== undefined) {
-  //     dispatch(addServices(serviceData));
-  //   }
-  // }, [dispatch, serviceData]);
-
-  return { service, handleServiceId };
+  return { getServiceById };
 };

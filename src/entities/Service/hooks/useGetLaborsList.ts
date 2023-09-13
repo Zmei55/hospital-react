@@ -1,15 +1,14 @@
-import { useFetchLaborsListQuery, fetchLabors } from "entities/Service";
+import { useLazyFetchLaborsListQuery, addLabors } from "entities/Service";
 import { useAppDispatch } from "shared";
 
 export const useGetLaborsList = () => {
   const dispatch = useAppDispatch();
-  const { data: laborsList } = useFetchLaborsListQuery(null);
+  const [fetchLabors] = useLazyFetchLaborsListQuery();
 
-  const fetchLaborsList = () => {
-    if (laborsList?.length) {
-      dispatch(fetchLabors(laborsList));
-    }
+  const fetchLaborList = async () => {
+    const laborListResponse = await fetchLabors(null).unwrap();
+    dispatch(addLabors(laborListResponse));
   };
 
-  return { fetchLaborsList };
+  return { fetchLaborList };
 };

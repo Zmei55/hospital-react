@@ -1,7 +1,4 @@
-import {
-  useHandleLaborChange,
-  useFetchLaborsListQuery,
-} from "entities/Service";
+import { useHandleLaborChange } from "entities/Service";
 import {
   useAppSelector,
   Modal,
@@ -35,7 +32,7 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
   const { handleLaborChange, saveDetails, detailsState } =
     useHandleLaborChange();
   const services = useAppSelector(state => state.services.services);
-  const { data: labors } = useFetchLaborsListQuery(null);
+  const labors = useAppSelector(state => state.services.labors);
 
   const isCheckedDetail = (serviceId: string, laborId: string) => {
     for (const detail of detailsState) {

@@ -15,4 +15,4 @@ export const serviceByIdApi = api.injectEndpoints({
   }),
 });
 
-export const { useFetchServiceByIdQuery } = serviceByIdApi;
+export const { useLazyFetchServiceByIdQuery } = serviceByIdApi;

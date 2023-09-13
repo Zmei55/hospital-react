@@ -10,12 +10,12 @@ export const useSelectedServiceListSave = () => {
   const selectedServiceList = useAppSelector(
     state => state.services.selectedServices
   );
-  const { fetchLaborsList } = useGetLaborsList();
+  const { fetchLaborList } = useGetLaborsList();
   const { toggleServicesModal } = useToggleServicesModal();
 
   const saveSelectedList = () => {
     dispatch(addServices(selectedServiceList));
-    fetchLaborsList();
+    fetchLaborList();
     toggleServicesModal();
   };
 

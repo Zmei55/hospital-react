@@ -48,7 +48,7 @@ const servicesSlice = createSlice({
     fetchServicesModal(state, action: PayloadAction<boolean>) {
       state.modalService = action.payload;
     },
-    fetchLabors(state, action: PayloadAction<ILabor[]>) {
+    addLabors(state, action: PayloadAction<ILabor[]>) {
       state.labors = action.payload;
     },
     resetLabors(state) {
@@ -79,7 +79,7 @@ export const {
   deleteSelectedService,
   resetSelectedServices,
   fetchServicesModal,
-  fetchLabors,
+  addLabors,
   resetLabors,
   addDetails,
   deleteDetail,

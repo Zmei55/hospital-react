@@ -25,9 +25,9 @@ export const useHandleServicesForm = () => {
     formData.append("filter", data.filter);
 
     try {
-      const filteredServices = await fetchServicesList(formData).unwrap();
-      if (filteredServices.length > 0)
-        setFilteredServicesList(filteredServices);
+      const filteredResponse = await fetchServicesList(formData).unwrap();
+      if (filteredResponse.length > 0)
+        setFilteredServicesList(filteredResponse);
     } catch (error) {
       console.log("ERROR servicesListFilter");
     }

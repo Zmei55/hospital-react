@@ -12,4 +12,4 @@ export const laborsListApi = api.injectEndpoints({
   }),
 });
 
-export const { useFetchLaborsListQuery } = laborsListApi;
+export const { useLazyFetchLaborsListQuery } = laborsListApi;
