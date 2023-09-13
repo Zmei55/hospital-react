@@ -1,16 +1,15 @@
+import { useState } from "react";
 import { SubmitHandler } from "react-hook-form";
-import { useAppDispatch } from "shared";
 import {
-  useFetchPatientByNameMutation,
-  addPatientsList,
-  resetPatientsList,
+  useFetchPatientByFilterMutation,
   ISearchPatientState,
+  IPatient,
 } from "entities/Patient";
 
 export const usePatientsListFind = () => {
-  const dispatch = useAppDispatch();
+  const [patientList, setPatientList] = useState<IPatient[]>([]);
   const [fetchPatientsList, { isLoading, isError }] =
-    useFetchPatientByNameMutation();
+    useFetchPatientByFilterMutation();
 
   const handlePatientsListFind: SubmitHandler<
     ISearchPatientState
@@ -28,20 +27,21 @@ export const usePatientsListFind = () => {
 
     try {
       const patientsListResponse = await fetchPatientsList(formData).unwrap();
-      dispatch(addPatientsList(patientsListResponse));
+      setPatientList(patientsListResponse);
     } catch (error) {
       console.log("ERROR patientsListFormSubmit");
     }
   };
 
   const resetPatients = () => {
-    dispatch(resetPatientsList());
+    setPatientList([]);
   };
 
   return {
-    resetPatients,
+    patientList,
     handlePatientsListFind,
     isLoading,
     isError,
+    resetPatients,
   };
 };

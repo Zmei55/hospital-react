@@ -1,33 +1,21 @@
-import { useEffect, useState } from "react";
-
 import { useAppDispatch } from "shared";
 import {
-  useFetchPatientByIdQuery,
+  useLazyFetchPatientByIdQuery,
   addPatient,
   fetchPatientsModal,
   usePatientsListFind,
 } from "entities/Patient";
-import { addRequestPatientID } from "entities/Request";
 
 export const useChoosePatient = () => {
   const dispatch = useAppDispatch();
-  const [patientId, setPatientId] = useState("");
-  const { data: patientData } = useFetchPatientByIdQuery(patientId, {
-    skip: patientId === "",
-  });
+  const [fetchPatient] = useLazyFetchPatientByIdQuery();
   const { resetPatients } = usePatientsListFind();
 
-  useEffect(() => {
-    if (patientData !== undefined) {
-      dispatch(addPatient(patientData));
-      resetPatients();
-      dispatch(fetchPatientsModal(false));
-    }
-  }, [dispatch, patientData, resetPatients]);
-
-  const choosePatient = (id: string) => {
-    setPatientId(id);
-    dispatch(addRequestPatientID(id));
+  const choosePatient = async (id: string) => {
+    const patientResponse = await fetchPatient(id).unwrap();
+    dispatch(addPatient(patientResponse));
+    resetPatients();
+    dispatch(fetchPatientsModal(false));
   };
 
   return { choosePatient };

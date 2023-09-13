@@ -1,9 +1,9 @@
 import { api } from "app/redux";
 import { IPatient } from "entities/Patient";
 
-export const patientsByNameApi = api.injectEndpoints({
+export const patientsByFilterApi = api.injectEndpoints({
   endpoints: builder => ({
-    fetchPatientByName: builder.mutation<IPatient[], FormData>({
+    fetchPatientByFilter: builder.mutation<IPatient[], FormData>({
       query: patient => ({
         url: "/api/patients/",
         method: "POST",
@@ -16,4 +16,4 @@ export const patientsByNameApi = api.injectEndpoints({
   }),
 });
 
-export const { useFetchPatientByNameMutation } = patientsByNameApi;
+export const { useFetchPatientByFilterMutation } = patientsByFilterApi;

@@ -1,5 +1,48 @@
 import styled from "@emotion/styled";
 
+export const ModalHeader = styled.div`
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  padding-top: ${props => props.theme.spacing(4)};
+  padding-bottom: ${props => props.theme.spacing(4)};
+  padding-right: ${props => props.theme.spacing(6)};
+  padding-left: ${props => props.theme.spacing(6)};
+  border-bottom: ${props => props.theme.border};
+`;
+
+export const ModalTitle = styled.h3`
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.13;
+
+  margin-right: auto;
+`;
+
+export const ModalBody = styled.div`
+  width: 100%;
+  height: 648px;
+`;
+
+export const Form = styled.form`
+  display: flex;
+
+  padding-top: ${props => props.theme.spacing(16)};
+  padding-right: ${props => props.theme.spacing(6)};
+  padding-left: ${props => props.theme.spacing(6)};
+  margin-bottom: ${props => props.theme.spacing(18)};
+`;
+
+export const Label = styled.label`
+  display: block;
+
+  :not(:last-child) {
+    margin-right: ${props => props.theme.spacing(4)};
+  }
+`;
+
 export const List = styled.div``;
 
 export const ListHeader = styled.ul`
@@ -104,4 +147,10 @@ export const SelectBtn = styled.button`
   :active {
     color: ${props => props.theme.colors.blue.pressed};
   }
+`;
+
+export const NotFoundText = styled.p`
+  text-align: center;
+  font-size: 28px;
+  line-height: 1.14;
 `;

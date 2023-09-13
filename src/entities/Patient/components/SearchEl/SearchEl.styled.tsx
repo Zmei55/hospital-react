@@ -37,14 +37,3 @@ export const ModalBtn = styled.button`
     border-color: ${props => props.theme.colors.blue.pressed};
   }
 `;
-
-export const ModalBoby = styled.div`
-  width: 100%;
-  height: 648px;
-`;
-
-export const NotFoundText = styled.p`
-  text-align: center;
-  font-size: 28px;
-  line-height: 1.14;
-`;

@@ -15,4 +15,4 @@ export const patientsByIdApi = api.injectEndpoints({
   }),
 });
 
-export const { useFetchPatientByIdQuery } = patientsByIdApi;
+export const { useLazyFetchPatientByIdQuery } = patientsByIdApi;

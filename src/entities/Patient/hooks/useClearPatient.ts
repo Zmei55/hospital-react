@@ -1,16 +1,12 @@
 import { useAppDispatch } from "shared";
-import { deletePatient, resetPatientsList } from "entities/Patient";
+import { deletePatient } from "entities/Patient";
 import {
   resetServices,
   resetSelectedServices,
   resetLabors,
   resetDetails,
 } from "entities/Service";
-import {
-  useRequestsCount,
-  resetRequestPatientID,
-  resetRequestDetails,
-} from "entities/Request";
+import { useRequestsCount, resetRequestDetails } from "entities/Request";
 
 export const useClearPatient = () => {
   const dispatch = useAppDispatch();
@@ -21,10 +17,8 @@ export const useClearPatient = () => {
     getRequestsCount();
     dispatch(resetSelectedServices());
     dispatch(resetServices());
-    dispatch(resetPatientsList());
     dispatch(resetLabors());
     dispatch(resetDetails());
-    dispatch(resetRequestPatientID());
     dispatch(resetRequestDetails());
   };
 

@@ -1,23 +1,10 @@
-import { useAppSelector, Modal, SpinnerCenterBox, Spinner, Icon } from "shared";
-import {
-  SearchModalHeaderEl,
-  SearchModalFormEl,
-  SearchListEl,
-  usePatientsListFind,
-  useTogglePatientsModal,
-} from "entities/Patient";
+import { useAppSelector, Modal, Icon } from "shared";
+import { SearchModalEl, useTogglePatientsModal } from "entities/Patient";
 
-import {
-  Container,
-  ModalBtn,
-  ModalBoby,
-  NotFoundText,
-} from "./SearchEl.styled";
+import { Container, ModalBtn } from "./SearchEl.styled";
 
 export const SearchEl: React.FC = () => {
-  const patientsList = useAppSelector(state => state.patients.patients);
   const showModal = useAppSelector(state => state.patients.modalPatient);
-  const { handlePatientsListFind, isLoading, isError } = usePatientsListFind();
   const { togglePatientsModal } = useTogglePatientsModal();
 
   return (
@@ -34,31 +21,7 @@ export const SearchEl: React.FC = () => {
 
       {showModal && (
         <Modal width="1392px" height="752px" onClose={togglePatientsModal}>
-          <SearchModalHeaderEl />
-
-          <ModalBoby>
-            <SearchModalFormEl
-              handlePatientsListFind={handlePatientsListFind}
-            />
-
-            {isLoading ? (
-              <SpinnerCenterBox>
-                <Spinner size={80} />
-              </SpinnerCenterBox>
-            ) : (
-              <>
-                {patientsList.length > 0 && (
-                  <SearchListEl patientsList={patientsList} />
-                )}
-
-                {isError && (
-                  <NotFoundText>
-                    Patient mit solchen Daten wurde nicht gefunden
-                  </NotFoundText>
-                )}
-              </>
-            )}
-          </ModalBoby>
+          <SearchModalEl />
         </Modal>
       )}
     </Container>
