@@ -1,10 +1,11 @@
-import { useGetUserData } from "entities/User";
 import { useLogOut } from "entities/Auth";
+import { useGetUserData, useToggleMenuModal, MenuModal } from "entities/User";
 import {
   useAppSelector,
   Button as MenuBtn,
   Button as LogoutBtn,
   Icon,
+  Modal,
 } from "shared";
 
 import { Container, UserBox, Name, Station } from "./UserMenu.styled";
@@ -13,6 +14,8 @@ export const UserMenu: React.FC = () => {
   const isLoggedIn = useAppSelector(state => state.auth.isLoggedIn);
   const [logout] = useLogOut();
   const { firstName, lastName, stationToUpper } = useGetUserData();
+  const showModal = useAppSelector(state => state.user.modalUser);
+  const { toggleMenuModal } = useToggleMenuModal();
 
   return (
     <Container>
@@ -32,6 +35,7 @@ export const UserMenu: React.FC = () => {
           height: "72px",
         }}
         background="transparent"
+        onClick={toggleMenuModal}
       >
         <Icon icon="gear" size={48} color="blue" />
       </MenuBtn>
@@ -51,6 +55,12 @@ export const UserMenu: React.FC = () => {
         >
           Abmelden
         </LogoutBtn>
+      )}
+
+      {showModal && (
+        <Modal width="1392px" height="752px" onClose={toggleMenuModal}>
+          <MenuModal />
+        </Modal>
       )}
     </Container>
   );

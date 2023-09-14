@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import authReducer from "entities/Auth/redux/authSlice";
+import userReducer from "entities/User/redux/userSlice";
 import requestReducer from "entities/Request/redux/requestSlice";
 import patientsReducer from "entities/Patient/redux/patientsSlice";
 import servicesReducer from "entities/Service/redux/servicesSlice";
@@ -29,6 +30,7 @@ export const store = configureStore({
   reducer: {
     [api.reducerPath]: api.reducer,
     auth: persistedAuthReducer,
+    user: userReducer,
     request: requestReducer,
     patients: patientsReducer,
     services: servicesReducer,
