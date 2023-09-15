@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useToggleMenuModal } from "entities/User";
 import {
   useAppSelector,
@@ -17,14 +18,19 @@ import {
 } from "./MenuModal.styled";
 
 export const MenuModal: React.FC = () => {
+  const { t, i18n } = useTranslation();
   const isLoggedIn = useAppSelector(state => state.auth.isLoggedIn);
   const user = useAppSelector(state => state.auth.user);
   const { toggleMenuModal } = useToggleMenuModal();
 
+  const changeLanguage = (language: string) => {
+    i18n.changeLanguage(language);
+  };
+
   return (
     <>
       <Header>
-        <Title>Wählen Sie einen Patient aus</Title>
+        <Title>{t("menuTitle")}</Title>
 
         {/* <FindBtn
           id="findSearchPatBtn"
@@ -56,7 +62,10 @@ export const MenuModal: React.FC = () => {
 
       <Body>
         <OptionalBlock>
-          <h3>Sprache: " "</h3>
+          <h3>Sprache: </h3>
+          <button onClick={() => changeLanguage("de")}>Deutsch</button>
+          <button onClick={() => changeLanguage("en")}>English</button>
+          <button onClick={() => changeLanguage("ru")}>Русский</button>
         </OptionalBlock>
 
         {isLoggedIn && (
