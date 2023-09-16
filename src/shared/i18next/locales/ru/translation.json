@@ -1,4 +1,71 @@
 {
-  "title": "АРМ «Процедурный кабинет»",
-  "menuTitle": "Меню"
+  "layout": {
+    "title": "АРМ «Процедурный кабинет»",
+    "signOutBtn": "Выйти"
+  },
+  "auth": {
+    "title": "Авторизация",
+    "text": "Введите логин и пароль",
+    "loginInput": "Логин",
+    "passwordInput": "Пароль",
+    "signInBtn": "Войти",
+    "authError": "Пользовательские данные были введены неверно"
+  },
+  "desktop": {
+    "addRequest": "Создать заявку",
+    "findRequest": "Найти заявку",
+    "findContainer": "Найти контейнер",
+    "documents": "Документы"
+  },
+  "newRequest": {
+    "title": "Новая заявка",
+    "saveBtn": "Сохранить",
+    "patient": {
+      "selectPatientBtn": "Выбрать пациента",
+      "title": "Выбор пациента",
+      "name": "ФИО",
+      "dateOfBirth": "Дата рождения",
+      "cardNumber": "Номер карты",
+      "selectBtn": "Выбрать",
+      "sex": "Пол",
+      "medicalCard": "Медицинская карта",
+      "phone": "Номер телефона",
+      "email": "Электронная почта",
+      "identityDocument": "Документ удостоверяющий личность",
+      "residenceAddress": "Адрес места жительства",
+      "NotFoundPatientText": "Пациент с такими данными не найден"
+    },
+    "service": {
+      "title": "Услуги",
+      "servicesBtnIsActive": "Добавить услуги",
+      "servicesBtnIsDisabled": "Услуги могут быть добавлены после выбора пациента",
+      "addBtn": "Добавить",
+      "implementer": "Выбрать исполнителя",
+      "modalTitle": "Добавление услуги",
+      "filterTitle": "Код услуги, название услуги",
+      "servicesSelected": "Выбранные услуги",
+      "cancelBtn": "Отменить",
+      "saveBtn": "Сохранить и выйти"
+    },
+    "container": {
+      "title": "Контейнеры",
+      "containerBtnIsActive": "Рассчитать контейнеры",
+      "containerBtnIsDisabled_V1": "Рассчитать контейнеры можно после добавления услуг и выбора лаборатории",
+      "containerBtnIsDisabled_V2": "Рассчитать контейнеры можно после выбора лаборатории"
+    }
+  },
+  "findRequest": {
+    "title": "Найти заявку",
+    "requestNumber": "Номер заявки",
+    "dateOfRequest": "Дата заявки",
+    "selectBtn": "Детали заявки"
+  },
+  "shared": {
+    "findBtn": "Найти",
+    "resetBtn": "Сбросить"
+  },
+  "UnknownPart": {
+    "title": "Неизвестная часть",
+    "text": "К сожалению, я не знаю, как работает этот блок, поэтому прошу понять и простить меня."
+  }
 }

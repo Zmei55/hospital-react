@@ -154,7 +154,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
             {patientList.length > 0 && (
               <List>
                 <ListHeader>
-                  <HeadName>Vorname und Name</HeadName>
+                  <HeadName>Vorname und Nachname</HeadName>
                   <HeadBirthDay>Geburtsdatum</HeadBirthDay>
                   <HeadCardNumber>Kennnummer</HeadCardNumber>
                   <HeadSelectBtn></HeadSelectBtn>

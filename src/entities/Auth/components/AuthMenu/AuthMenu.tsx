@@ -80,8 +80,6 @@ export const AuthMenu: React.FC = () => {
           id="signInBtn"
           type="submit"
           style={{ width: "368px", height: "72px" }}
-          // width="368px"
-          // height="72px"
           background="blue"
           disabled={isEmptyLoginForm}
         >

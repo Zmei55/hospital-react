@@ -35,18 +35,18 @@ export const Containers: React.FC = () => {
         <Icon icon="test-tube" size={48} />
         {servicesList.length === 0 && detailsList.length === 0 && (
           <ButtonTitle>
-            Sie können Container berechnen, nachdem Sie Dienste hinzugefügt und
+            Sie können Behälter berechnen, nachdem Sie Dienste hinzugefügt und
             eine Labore ausgewählt haben
           </ButtonTitle>
         )}
         {servicesList.length !== 0 && detailsList.length === 0 && (
           <ButtonTitle>
-            Sie können Container berechnen, nachdem Sie eine Labore ausgewählt
+            Sie können Behälter berechnen, nachdem Sie eine Labore ausgewählt
             haben
           </ButtonTitle>
         )}
         {servicesList.length !== 0 && detailsList.length !== 0 && (
-          <ButtonTitle>Sie können Container berechnen</ButtonTitle>
+          <ButtonTitle>Sie können Behälter berechnen</ButtonTitle>
         )}
       </ModalBtn>
 
@@ -57,7 +57,7 @@ export const Containers: React.FC = () => {
           onClose={() => toggleContainersModal()}
         >
           <ModalHeader>
-            <ModalTitle>Container berechnen</ModalTitle>
+            <ModalTitle>Behälter berechnen</ModalTitle>
             <CloseBtn
               id="closeModalSerBtn"
               background="red"

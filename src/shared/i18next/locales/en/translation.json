@@ -1,4 +1,71 @@
 {
-  "title": "АРМ «Treatment room»",
-  "menuTitle": "Menu"
+  "layout": {
+    "title": "АРМ «Treatment Room»",
+    "signOutBtn": "Logout"
+  },
+  "auth": {
+    "title": "Authorization",
+    "text": "Enter login and password",
+    "loginInput": "Username",
+    "passwordInput": "Password",
+    "signInBtn": "Login",
+    "authError": "User data was entered incorrectly"
+  },
+  "desktop": {
+    "addRequest": "Create a request",
+    "findRequest": "Find a request",
+    "findContainer": "Find a container",
+    "documents": "Documents"
+  },
+  "newRequest": {
+    "title": "New request",
+    "saveBtn": "Save",
+    "patient": {
+      "selectPatientBtn": "Select a patient",
+      "title": "Select a patient",
+      "name": "First name and last name",
+      "dateOfBirth": "Date of birth",
+      "cardNumber": "Card number",
+      "sex": "Sex",
+      "medicalCard": "Medical card",
+      "phone": "Phone number",
+      "email": "E-mail",
+      "identityDocument": "Identity document",
+      "residenceAddress": "Residence address",
+      "NotFoundPatientText": "Patient with such data was not found"
+    },
+    "service": {
+      "title": "Services",
+      "servicesBtnIsActive": "Add services",
+      "servicesBtnIsDisabled": "Services can be added after selecting a patient",
+      "addBtn": "Add",
+      "implementer": "Choice of the lab",
+      "modalTitle": "Add service",
+      "filterTitle": "Service code, service name",
+      "servicesSelected": "Selected services",
+      "cancelBtn": "Abort",
+      "saveBtn": "Save and close"
+    },
+    "container": {
+      "title": "Containers",
+      "containerBtnIsActive": "You can calculate container",
+      "containerBtnIsDisabled_V1": "You can calculate containers after you have added services and selected a labs",
+      "containerBtnIsDisabled_V2": "You can calculate containers after you have selected a labs"
+    }
+  },
+  "findRequest": {
+    "title": "Find a request",
+    "requestNumber": "Request number",
+    "dateOfRequest": "Request date",
+    "selectBtn": "Request details"
+  },
+  "shared": {
+    "findBtn": "Find",
+    "resetBtn": "Reset",
+    "selectBtn": "Select"
+  },
+  "UnknownPart": {
+    "title": "Unknown part",
+    "text": "Unfortunately, I do not know how this block works, so please understand and forgive me."
+  }
 }
