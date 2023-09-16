@@ -1,7 +1,9 @@
 {
   "layout": {
     "title": "АРМ «Процедурный кабинет»",
-    "signOutBtn": "Выйти"
+    "signOutBtn": "Выйти",
+    "menuTitle": "Меню пользователя",
+    "language": "Язык"
   },
   "auth": {
     "title": "Авторизация",
@@ -24,6 +26,10 @@
       "selectPatientBtn": "Выбрать пациента",
       "title": "Выбор пациента",
       "name": "ФИО",
+      "firstName": "Имя",
+      "lastName": "Фамилия",
+      "patronymic": "Отчество",
+      "station": "Стационар",
       "dateOfBirth": "Дата рождения",
       "cardNumber": "Номер карты",
       "selectBtn": "Выбрать",

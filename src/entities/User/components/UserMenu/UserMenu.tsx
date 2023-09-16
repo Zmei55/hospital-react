@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useLogOut } from "entities/Auth";
 import { useGetUserData, useToggleMenuModal, MenuModal } from "entities/User";
 import {
@@ -16,6 +17,7 @@ export const UserMenu: React.FC = () => {
   const { firstName, lastName, stationToUpper } = useGetUserData();
   const showModal = useAppSelector(state => state.user.modalUser);
   const { toggleMenuModal } = useToggleMenuModal();
+  const { t } = useTranslation();
 
   return (
     <Container>
@@ -53,7 +55,7 @@ export const UserMenu: React.FC = () => {
           }}
           onClick={() => logout()}
         >
-          Abmelden
+          {t("layout.signOutBtn")}
         </LogoutBtn>
       )}
 

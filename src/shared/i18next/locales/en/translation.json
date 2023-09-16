@@ -1,7 +1,9 @@
 {
   "layout": {
     "title": "АРМ «Treatment Room»",
-    "signOutBtn": "Logout"
+    "signOutBtn": "Logout",
+    "menuTitle": "User menu",
+    "language": "Language"
   },
   "auth": {
     "title": "Authorization",
@@ -24,6 +26,10 @@
       "selectPatientBtn": "Select a patient",
       "title": "Select a patient",
       "name": "First name and last name",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "patronymic": null,
+      "station": "Station",
       "dateOfBirth": "Date of birth",
       "cardNumber": "Card number",
       "sex": "Sex",

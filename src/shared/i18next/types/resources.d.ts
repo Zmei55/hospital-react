@@ -2,7 +2,9 @@ interface Resources {
   "translation": {
     "layout": {
       "title": "АРМ «Behandlungsraum»",
-      "signOutBtn": "Abmelden"
+      "signOutBtn": "Abmelden",
+      "menuTitle": "Benutzermenü",
+      "language": "Sprache"
     },
     "auth": {
       "title": "Autorisierung",
@@ -25,6 +27,10 @@ interface Resources {
         "selectPatientBtn": "Wählen Sie einen Patient aus",
         "title": "Wählen Sie einen Patient aus",
         "name": "Vorname und Nachname",
+        "firstName": "Vornamen",
+        "lastName": "Nachname",
+        "patronymic": null,
+        "station": "Abteilung",
         "dateOfBirth": "Geburtsdatum",
         "cardNumber": "Kennnummer",
         "sex": "Geschlecht",

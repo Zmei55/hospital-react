@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useToggleMenuModal } from "entities/User";
 import {
   useAppSelector,
-  Button as FindBtn,
+  // Button as FindBtn,
   Button as CloseBtn,
   Icon,
 } from "shared";
@@ -30,7 +30,7 @@ export const MenuModal: React.FC = () => {
   return (
     <>
       <Header>
-        <Title>{t("menuTitle")}</Title>
+        <Title>{t("layout.menuTitle")}</Title>
 
         {/* <FindBtn
           id="findSearchPatBtn"
@@ -62,7 +62,7 @@ export const MenuModal: React.FC = () => {
 
       <Body>
         <OptionalBlock>
-          <h3>Sprache: </h3>
+          <h3>{t("layout.language")}: </h3>
           <button onClick={() => changeLanguage("de")}>Deutsch</button>
           <button onClick={() => changeLanguage("en")}>English</button>
           <button onClick={() => changeLanguage("ru")}>Русский</button>
@@ -71,17 +71,17 @@ export const MenuModal: React.FC = () => {
         {isLoggedIn && (
           <UserBlock>
             <div>
-              <Key>Vorname: </Key>
+              <Key>{t("newRequest.patient.firstName")}: </Key>
               <Value>{user.firstName}</Value>
             </div>
 
             <div>
-              <Key>Nachname: </Key>
+              <Key>{t("newRequest.patient.lastName")}: </Key>
               <Value>{user.lastName}</Value>
             </div>
 
             <div>
-              <Key>Station: </Key>
+              <Key>{t("newRequest.patient.station")}: </Key>
               <Value>{user.station}</Value>
             </div>
           </UserBlock>
