@@ -63,9 +63,15 @@ export const MenuModal: React.FC = () => {
       <Body>
         <OptionalBlock>
           <h3>{t("layout.language")}: </h3>
-          <button onClick={() => changeLanguage("de")}>Deutsch</button>
+          <select>
+            <option>{t("layout.selectLanguage")}</option>
+            <option onClick={() => changeLanguage("de")}>Deutsch</option>
+            <option onClick={() => changeLanguage("en")}>English</option>
+            <option onClick={() => changeLanguage("ru")}>Русский</option>
+          </select>
+          {/* <button onClick={() => changeLanguage("de")}>Deutsch</button>
           <button onClick={() => changeLanguage("en")}>English</button>
-          <button onClick={() => changeLanguage("ru")}>Русский</button>
+          <button onClick={() => changeLanguage("ru")}>Русский</button> */}
         </OptionalBlock>
 
         {isLoggedIn && (
