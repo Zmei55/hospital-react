@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import {
   useToggleServicesModal,
   useHandleServicesForm,
@@ -68,11 +69,12 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
   const { saveSelectedList } = useSelectedServiceListSave();
   const { clearSelectedList } = useSelectedServiceListClear();
   const { toggleServicesModal } = useToggleServicesModal();
+  const { t } = useTranslation();
 
   return (
     <Modal width="1574px" height="890px" onClose={() => toggleServicesModal()}>
       <ModalHeader>
-        <ModalTitle>Dienst hinzufügen</ModalTitle>
+        <ModalTitle>{t("service.modalTitle")}</ModalTitle>
 
         <CloseBtn
           id="closeModalSerBtn"
@@ -92,7 +94,7 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
           <FormFilter onSubmit={handleSubmit(handleServicesForm)}>
             <FilterInput
               {...register("filter")}
-              placeholder="Dienstname"
+              placeholder={t("service.filterPlaceholder")}
               autoFocus
               required
             />
@@ -108,7 +110,7 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
               }}
               disabled={!dirtyFields.filter}
             >
-              {isLoading ? <Spinner /> : <span>Finden</span>}
+              {isLoading ? <Spinner /> : <span>{t("shared.button.find")}</span>}
             </FindBtn>
           </FormFilter>
 
@@ -131,7 +133,9 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
                   onClick={() => addService(service)}
                 >
                   <IconPlus icon="plus-bold" size={24} color="blue" />
-                  <AddServiceBtnTitle>Hinzufügen</AddServiceBtnTitle>
+                  <AddServiceBtnTitle>
+                    {t("shared.button.add")}
+                  </AddServiceBtnTitle>
                 </AddServiceBtn>
               </FilteredItem>
             ))}
@@ -139,7 +143,9 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
         </Filter>
 
         <SelectedServicesBox>
-          <SelectedServicesTitle>Ausgewählte Dienste</SelectedServicesTitle>
+          <SelectedServicesTitle>
+            {t("service.servicesSelected")}
+          </SelectedServicesTitle>
 
           <SelectedServicesList>
             {selectedServicesList.map(service => (
@@ -179,7 +185,7 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
               onClick={clearSelectedList}
               disabled={selectedServicesList.length === 0}
             >
-              Abbruch
+              {t("shared.button.abort")}
             </ResetBtn>
 
             <SaveBtn
@@ -192,7 +198,7 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
               onClick={saveSelectedList}
               disabled={selectedServicesList.length === 0}
             >
-              Speichern und schließen
+              {t("shared.button.saveAndCancel")}
             </SaveBtn>
           </ButtonsBox>
         </SelectedServicesBox>

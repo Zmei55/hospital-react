@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import {
   ServiceModalEl,
   useToggleServicesModal,
@@ -14,10 +15,11 @@ export const TitleBoxEl: React.FC<ITitleBox> = () => {
   const services = useAppSelector(state => state.services.services);
   const { showServiceModal, toggleServicesModal } = useToggleServicesModal();
   const { showLaborModal, toggleLaborModal } = useToggleLaborModal();
+  const { t } = useTranslation();
 
   return (
     <Container>
-      <Title>Services</Title>
+      <Title>{t("service.title")}</Title>
 
       {services.length > 0 && (
         <>
@@ -32,7 +34,7 @@ export const TitleBoxEl: React.FC<ITitleBox> = () => {
             }}
             onClick={toggleServicesModal}
           >
-            Ergänzen
+            {t("shared.button.add")}
           </AddBtn>
 
           <LaborBtn
@@ -45,7 +47,7 @@ export const TitleBoxEl: React.FC<ITitleBox> = () => {
             }}
             onClick={toggleLaborModal}
           >
-            Wahl des Labors
+            {t("service.implementer")}
           </LaborBtn>
         </>
       )}

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { ServiceModalEl, useToggleServicesModal } from "entities/Service";
 import { useAppSelector, Icon } from "shared";
 
@@ -9,6 +10,7 @@ export const SearchEl: React.FC<ISearch> = () => {
   const showModal = useAppSelector(state => state.services.modalService);
   const patient = useAppSelector(state => state.patients.patient);
   const { toggleServicesModal } = useToggleServicesModal();
+  const { t } = useTranslation();
 
   return (
     <>
@@ -20,11 +22,9 @@ export const SearchEl: React.FC<ISearch> = () => {
       >
         <Icon icon="list-plus" size={48} />
         {patient._id === "" ? (
-          <ModalBtnTitle>
-            Dienste können nach Auswahl eines Patienten hinzugefügt werden
-          </ModalBtnTitle>
+          <ModalBtnTitle>{t("service.servicesBtnIsDisabled")}</ModalBtnTitle>
         ) : (
-          <ModalBtnTitle>Fügen Sie Dienste hinzu</ModalBtnTitle>
+          <ModalBtnTitle>{t("service.servicesBtnIsActive")}</ModalBtnTitle>
         )}
       </ModalBtn>
 

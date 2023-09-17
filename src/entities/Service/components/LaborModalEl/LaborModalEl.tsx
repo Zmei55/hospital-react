@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useHandleLaborChange } from "entities/Service";
 import {
   useAppSelector,
@@ -31,6 +32,7 @@ interface ILaborModalEl {
 export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
   const { handleLaborChange, saveDetails, detailsState } =
     useHandleLaborChange();
+  const { t } = useTranslation();
   const services = useAppSelector(state => state.services.services);
   const labors = useAppSelector(state => state.services.labors);
 
@@ -46,7 +48,7 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
     <>
       <Modal width="1282px" height="712px">
         <Header>
-          <HeaderTitle>Wahl des Auftragsempfänger</HeaderTitle>
+          <HeaderTitle>{t("service.implementer")}</HeaderTitle>
 
           <CloseBtn
             id="closeModalSerBtn"
@@ -64,7 +66,7 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
         <Form onSubmit={saveDetails}>
           <Table>
             <THead>
-              <THService>Dienstleistung</THService>
+              <THService>{t("service.service")}</THService>
               {labors &&
                 labors.map(labor => (
                   <THLabor key={labor._id}>{labor.name}</THLabor>
@@ -109,7 +111,7 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
               marginRight: "24px",
             }}
           >
-            Speichern und schließen
+            {t("shared.button.saveAndCancel")}
           </SaveBtn>
         </Form>
       </Modal>
