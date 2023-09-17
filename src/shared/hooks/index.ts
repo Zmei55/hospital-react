@@ -3,3 +3,4 @@ export * from "./useAppDispatch";
 export * from "./useAppNavigate";
 export * from "./useToggle";
 export * from "./useInput";
+export * from "./useKeyDown";
