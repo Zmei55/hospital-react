@@ -12,7 +12,11 @@ import {
   Title,
   Body,
   OptionalBlock,
+  LangTitle,
+  LangSelect,
+  LangOption,
   UserBlock,
+  UserRow,
   Key,
   Value,
 } from "./MenuModal.styled";
@@ -62,34 +66,34 @@ export const MenuModal: React.FC = () => {
 
       <Body>
         <OptionalBlock>
-          <h3>{t("layout.language")}: </h3>
-          <select>
-            <option>{t("layout.selectLanguage")}</option>
-            <option onClick={() => changeLanguage("de")}>Deutsch</option>
-            <option onClick={() => changeLanguage("en")}>English</option>
-            <option onClick={() => changeLanguage("ru")}>Русский</option>
-          </select>
-          {/* <button onClick={() => changeLanguage("de")}>Deutsch</button>
-          <button onClick={() => changeLanguage("en")}>English</button>
-          <button onClick={() => changeLanguage("ru")}>Русский</button> */}
+          <LangTitle>{t("layout.language")}:</LangTitle>
+          <LangSelect
+            id="lang"
+            onChange={e => changeLanguage(e.target.value)}
+            value={i18n.language}
+          >
+            <LangOption value="de">Deutsch</LangOption>
+            <LangOption value="en">English</LangOption>
+            <LangOption value="ru">Русский</LangOption>
+          </LangSelect>
         </OptionalBlock>
 
         {isLoggedIn && (
           <UserBlock>
-            <div>
+            <UserRow>
               <Key>{t("patient.firstName")}: </Key>
               <Value>{user.firstName}</Value>
-            </div>
+            </UserRow>
 
-            <div>
+            <UserRow>
               <Key>{t("patient.lastName")}: </Key>
               <Value>{user.lastName}</Value>
-            </div>
+            </UserRow>
 
-            <div>
+            <UserRow>
               <Key>{t("patient.station")}: </Key>
               <Value>{user.station}</Value>
-            </div>
+            </UserRow>
           </UserBlock>
         )}
       </Body>
