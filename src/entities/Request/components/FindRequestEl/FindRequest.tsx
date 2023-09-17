@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import {
   useFilterRequest,
   useChooseRequest,
@@ -50,6 +51,7 @@ export const FindRequest: React.FC = () => {
   });
   const { requestList, handleFilterRequests } = useFilterRequest();
   const { chooseRequest } = useChooseRequest();
+  const { t } = useTranslation();
 
   const handleCloseBtn = () => {
     navigate("/desktop");
@@ -58,7 +60,7 @@ export const FindRequest: React.FC = () => {
   return (
     <Container>
       <Header>
-        <Title>Finden Sie einen Antrag</Title>
+        <Title>{t("findRequest.title")}</Title>
 
         <ResetBtn
           id="resetSearchReqBtn"
@@ -71,7 +73,7 @@ export const FindRequest: React.FC = () => {
           background="transparent"
           // onClick={handleResetBtn}
         >
-          Rücksetzen
+          {t("shared.button.reset")}
         </ResetBtn>
 
         <FindBtn
@@ -86,7 +88,7 @@ export const FindRequest: React.FC = () => {
           }}
           background="blue"
         >
-          Finden
+          {t("shared.button.find")}
         </FindBtn>
 
         <CloseBtn
@@ -108,7 +110,7 @@ export const FindRequest: React.FC = () => {
             <InputEl
               {...register("name")}
               style={{ width: "650px" }}
-              placeholder="Name"
+              placeholder={t("patient.name")}
             />
           </Label>
 
@@ -116,7 +118,7 @@ export const FindRequest: React.FC = () => {
             <InputEl
               {...register("cardNumber")}
               style={{ width: "236px" }}
-              placeholder="Kartennummer"
+              placeholder={t("patient.cardNumber")}
             />
           </Label>
 
@@ -124,7 +126,7 @@ export const FindRequest: React.FC = () => {
             <InputEl
               {...register("requestNumber")}
               style={{ width: "236px" }}
-              placeholder="Antragsnummer"
+              placeholder={t("findRequest.requestNumber")}
             />
           </Label>
 
@@ -133,7 +135,7 @@ export const FindRequest: React.FC = () => {
               type="date"
               {...register("requestDate")}
               style={{ width: "256px" }}
-              placeholder="Geburtstag"
+              placeholder={t("findRequest.dateOfRequest")}
             />
           </Label>
         </Form>
@@ -141,10 +143,14 @@ export const FindRequest: React.FC = () => {
         {requestList.length > 0 && (
           <List>
             <ListHeader>
-              <HeadName>Vorname und Name</HeadName>
-              <HeadCardNumber>Kennnummer</HeadCardNumber>
-              <HeadRequestNumber>Kennnummer</HeadRequestNumber>
-              <HeadRequestDate>Antragsdatum</HeadRequestDate>
+              <HeadName>{t("patient.name")}</HeadName>
+              <HeadCardNumber>{t("patient.name")}</HeadCardNumber>
+              <HeadRequestNumber>
+                {t("findRequest.requestNumber")}
+              </HeadRequestNumber>
+              <HeadRequestDate>
+                {t("findRequest.dateOfRequest")}
+              </HeadRequestDate>
               <HeadSelectBtn></HeadSelectBtn>
             </ListHeader>
 
@@ -164,7 +170,7 @@ export const FindRequest: React.FC = () => {
                       id="selectPatLink"
                       onClick={() => chooseRequest(request._id)}
                     >
-                      Wählen
+                      {t("shared.button.select")}
                     </SelectBtn>
                   </BodySelectBtn>
                 </ListItem>

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useSaveNewRequest, useHandleCloseButton } from "entities/Request";
 import {
   useAppSelector,
@@ -13,11 +14,12 @@ export const HeaderEl: React.FC = () => {
   const { saveNewRequest, saveReqBtnDisabled, isLoading } = useSaveNewRequest();
   const requestNumber = useAppSelector(state => state.request.requestNumber);
   const { handleCloseBtn } = useHandleCloseButton();
+  const { t } = useTranslation();
 
   return (
     <Header>
       <HeaderTitle>
-        Neuer Antrag <RequestNumber>№{requestNumber}</RequestNumber>
+        {t("newRequest.title")} <RequestNumber>№{requestNumber}</RequestNumber>
       </HeaderTitle>
 
       <SaveBtn
@@ -31,7 +33,7 @@ export const HeaderEl: React.FC = () => {
         disabled={saveReqBtnDisabled}
         onClick={saveNewRequest}
       >
-        {isLoading ? <Spinner /> : <span>Speichern</span>}
+        {isLoading ? <Spinner /> : <span>{t("shared.button.save")}</span>}
       </SaveBtn>
 
       <CloseBtn
