@@ -37,11 +37,12 @@
   },
   "service": {
     "title": "Услуги",
+    "service": "Услуга",
     "servicesBtnIsActive": "Добавить услуги",
     "servicesBtnIsDisabled": "Услуги могут быть добавлены после выбора пациента",
     "implementer": "Выбрать исполнителя",
     "modalTitle": "Добавление услуги",
-    "filterTitle": "Код услуги, название услуги",
+    "filterPlaceholder": "Код услуги, название услуги",
     "servicesSelected": "Выбранные услуги"
   },
   "container": {

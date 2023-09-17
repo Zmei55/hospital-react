@@ -37,11 +37,12 @@
   },
   "service": {
     "title": "Services",
+    "service": "Service",
     "servicesBtnIsActive": "Add services",
     "servicesBtnIsDisabled": "Services can be added after selecting a patient",
     "implementer": "Choice of the lab",
     "modalTitle": "Add service",
-    "filterTitle": "Service code, service name",
+    "filterPlaceholder": "Service code, service name",
     "servicesSelected": "Selected services"
   },
   "container": {

@@ -37,11 +37,12 @@
   },
   "service": {
     "title": "Services",
+    "service": "Service",
     "servicesBtnIsActive": "Fügen Sie Dienste hinzu",
     "servicesBtnIsDisabled": "Dienste können nach Auswahl eines Patienten hinzugefügt werden",
     "implementer": "Wahl des Labors",
     "modalTitle": "Dienst hinzufügen",
-    "filterTitle": "Dienstleistungscode, Dienstleistungsname",
+    "filterPlaceholder": "Dienstleistungscode, Dienstleistungsname",
     "servicesSelected": "Ausgewählte Dienste"
   },
   "container": {
