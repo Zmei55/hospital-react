@@ -2,7 +2,8 @@
   "layout": {
     "title": "АРМ «Процедурный кабинет»",
     "menuTitle": "Меню пользователя",
-    "language": "Язык"
+    "language": "Язык",
+    "selectLanguage": "Выберите язык"
   },
   "auth": {
     "title": "Авторизация",

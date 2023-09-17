@@ -2,7 +2,8 @@
   "layout": {
     "title": "АРМ «Behandlungsraum»",
     "menuTitle": "Benutzermenü",
-    "language": "Sprache"
+    "language": "Sprache",
+    "selectLanguage": "Wählen Sie eine Sprache"
   },
   "auth": {
     "title": "Autorisierung",

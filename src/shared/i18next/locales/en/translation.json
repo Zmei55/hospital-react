@@ -2,7 +2,8 @@
   "layout": {
     "title": "АРМ «Treatment Room»",
     "menuTitle": "User menu",
-    "language": "Language"
+    "language": "Language",
+    "selectLanguage": "Select language"
   },
   "auth": {
     "title": "Authorization",
