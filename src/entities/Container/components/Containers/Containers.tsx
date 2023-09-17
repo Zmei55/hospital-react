@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useToggleContainersModal } from "entities/Container";
 import {
   useAppSelector,
@@ -23,10 +24,11 @@ export const Containers: React.FC = () => {
   const detailsList = useAppSelector(state => state.services.details);
   const { showContainersModal, toggleContainersModal } =
     useToggleContainersModal();
+  const { t } = useTranslation();
 
   return (
     <Container>
-      <Title>Containers</Title>
+      <Title>{t("container.title")}</Title>
       <ModalBtn
         type="button"
         disabled={detailsList.length === 0}
@@ -34,19 +36,13 @@ export const Containers: React.FC = () => {
       >
         <Icon icon="test-tube" size={48} />
         {servicesList.length === 0 && detailsList.length === 0 && (
-          <ButtonTitle>
-            Sie können Behälter berechnen, nachdem Sie Dienste hinzugefügt und
-            eine Labore ausgewählt haben
-          </ButtonTitle>
+          <ButtonTitle>{t("container.containerBtnIsDisabled_V1")}</ButtonTitle>
         )}
         {servicesList.length !== 0 && detailsList.length === 0 && (
-          <ButtonTitle>
-            Sie können Behälter berechnen, nachdem Sie eine Labore ausgewählt
-            haben
-          </ButtonTitle>
+          <ButtonTitle>{t("container.containerBtnIsDisabled_V2")}</ButtonTitle>
         )}
         {servicesList.length !== 0 && detailsList.length !== 0 && (
-          <ButtonTitle>Sie können Behälter berechnen</ButtonTitle>
+          <ButtonTitle>{t("container.containerBtnIsActive")}</ButtonTitle>
         )}
       </ModalBtn>
 
@@ -57,7 +53,7 @@ export const Containers: React.FC = () => {
           onClose={() => toggleContainersModal()}
         >
           <ModalHeader>
-            <ModalTitle>Behälter berechnen</ModalTitle>
+            <ModalTitle>{t("container.containerBtnIsActive")}</ModalTitle>
             <CloseBtn
               id="closeModalSerBtn"
               background="red"
@@ -73,10 +69,7 @@ export const Containers: React.FC = () => {
           </ModalHeader>
 
           <ModalBody>
-            <ModalText>
-              Leider weiß ich nicht, wie dieser Block funktioniert, daher bitte
-              ich mich zu verstehen und zu verzeihen.
-            </ModalText>
+            <ModalText>{t("UnknownPart.text")}</ModalText>
           </ModalBody>
         </Modal>
       )}
