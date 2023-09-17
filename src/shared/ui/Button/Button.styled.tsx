@@ -10,6 +10,7 @@ const Button = styled.button`
   line-height: 1.17;
 
   border-radius: ${props => props.theme.borderRadius};
+  outline: none;
 
   :disabled {
     cursor: default;

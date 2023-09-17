@@ -121,10 +121,3 @@ export const Label = styled.label`
   width: 100%;
   height: 100%;
 `;
-
-// export const ButtonsBox = styled.div`
-//   display: flex;
-
-//   margin-right: ${props => props.theme.spacing(6)};
-//   margin-left: 707px;
-// `;

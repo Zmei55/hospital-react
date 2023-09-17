@@ -32,6 +32,7 @@ export const ModalBtn = styled.button`
   box-shadow: 0px 8px 16px rgba(17, 17, 17, 0.06);
   border-radius: ${props => props.theme.borderRadius};
   background-color: transparent;
+  outline: none;
 
   :focus,
   :hover {

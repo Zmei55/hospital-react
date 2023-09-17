@@ -23,6 +23,7 @@ export const ModalBtn = styled.button`
   width: 100%;
   height: 100%;
   background-color: transparent;
+  outline: none;
 
   :focus,
   :hover {
