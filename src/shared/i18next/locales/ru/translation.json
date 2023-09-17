@@ -1,7 +1,6 @@
 {
   "layout": {
     "title": "АРМ «Процедурный кабинет»",
-    "signOutBtn": "Выйти",
     "menuTitle": "Меню пользователя",
     "language": "Язык"
   },
@@ -10,7 +9,6 @@
     "text": "Введите логин и пароль",
     "loginInput": "Логин",
     "passwordInput": "Пароль",
-    "signInBtn": "Войти",
     "authError": "Пользовательские данные были введены неверно"
   },
   "desktop": {
@@ -19,56 +17,59 @@
     "findContainer": "Найти контейнер",
     "documents": "Документы"
   },
+  "patient": {
+    "selectPatientBtn": "Выбрать пациента",
+    "title": "Выбор пациента",
+    "name": "ФИО",
+    "firstName": "Имя",
+    "lastName": "Фамилия",
+    "patronymic": "Отчество",
+    "station": "Стационар",
+    "dateOfBirth": "Дата рождения",
+    "cardNumber": "Номер карты",
+    "sex": "Пол",
+    "medicalCard": "Медицинская карта",
+    "phone": "Номер телефона",
+    "email": "Электронная почта",
+    "identityDocument": "Документ удостоверяющий личность",
+    "residenceAddress": "Адрес места жительства",
+    "NotFoundPatientText": "Пациент с такими данными не найден"
+  },
+  "service": {
+    "title": "Услуги",
+    "servicesBtnIsActive": "Добавить услуги",
+    "servicesBtnIsDisabled": "Услуги могут быть добавлены после выбора пациента",
+    "implementer": "Выбрать исполнителя",
+    "modalTitle": "Добавление услуги",
+    "filterTitle": "Код услуги, название услуги",
+    "servicesSelected": "Выбранные услуги"
+  },
+  "container": {
+    "title": "Контейнеры",
+    "containerBtnIsActive": "Рассчитать контейнеры",
+    "containerBtnIsDisabled_V1": "Рассчитать контейнеры можно после добавления услуг и выбора лаборатории",
+    "containerBtnIsDisabled_V2": "Рассчитать контейнеры можно после выбора лаборатории"
+  },
   "newRequest": {
-    "title": "Новая заявка",
-    "saveBtn": "Сохранить",
-    "patient": {
-      "selectPatientBtn": "Выбрать пациента",
-      "title": "Выбор пациента",
-      "name": "ФИО",
-      "firstName": "Имя",
-      "lastName": "Фамилия",
-      "patronymic": "Отчество",
-      "station": "Стационар",
-      "dateOfBirth": "Дата рождения",
-      "cardNumber": "Номер карты",
-      "selectBtn": "Выбрать",
-      "sex": "Пол",
-      "medicalCard": "Медицинская карта",
-      "phone": "Номер телефона",
-      "email": "Электронная почта",
-      "identityDocument": "Документ удостоверяющий личность",
-      "residenceAddress": "Адрес места жительства",
-      "NotFoundPatientText": "Пациент с такими данными не найден"
-    },
-    "service": {
-      "title": "Услуги",
-      "servicesBtnIsActive": "Добавить услуги",
-      "servicesBtnIsDisabled": "Услуги могут быть добавлены после выбора пациента",
-      "addBtn": "Добавить",
-      "implementer": "Выбрать исполнителя",
-      "modalTitle": "Добавление услуги",
-      "filterTitle": "Код услуги, название услуги",
-      "servicesSelected": "Выбранные услуги",
-      "cancelBtn": "Отменить",
-      "saveBtn": "Сохранить и выйти"
-    },
-    "container": {
-      "title": "Контейнеры",
-      "containerBtnIsActive": "Рассчитать контейнеры",
-      "containerBtnIsDisabled_V1": "Рассчитать контейнеры можно после добавления услуг и выбора лаборатории",
-      "containerBtnIsDisabled_V2": "Рассчитать контейнеры можно после выбора лаборатории"
-    }
+    "title": "Новая заявка"
   },
   "findRequest": {
     "title": "Найти заявку",
     "requestNumber": "Номер заявки",
-    "dateOfRequest": "Дата заявки",
-    "selectBtn": "Детали заявки"
+    "dateOfRequest": "Дата заявки"
   },
   "shared": {
-    "findBtn": "Найти",
-    "resetBtn": "Сбросить"
+    "button": {
+      "signIn": "Войти",
+      "signOut": "Выйти",
+      "save": "Сохранить",
+      "add": "Добавить",
+      "find": "Найти",
+      "select": "Выбрать",
+      "reset": "Сбросить",
+      "abort": "Отменить",
+      "saveAndCancel": "Сохранить и выйти"
+    }
   },
   "UnknownPart": {
     "title": "Неизвестная часть",

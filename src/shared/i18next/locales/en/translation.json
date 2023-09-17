@@ -1,7 +1,6 @@
 {
   "layout": {
     "title": "АРМ «Treatment Room»",
-    "signOutBtn": "Logout",
     "menuTitle": "User menu",
     "language": "Language"
   },
@@ -10,7 +9,6 @@
     "text": "Enter login and password",
     "loginInput": "Username",
     "passwordInput": "Password",
-    "signInBtn": "Login",
     "authError": "User data was entered incorrectly"
   },
   "desktop": {
@@ -19,45 +17,41 @@
     "findContainer": "Find a container",
     "documents": "Documents"
   },
+  "patient": {
+    "selectPatientBtn": "Select a patient",
+    "title": "Select a patient",
+    "name": "First name and last name",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "patronymic": null,
+    "station": "Station",
+    "dateOfBirth": "Date of birth",
+    "cardNumber": "Card number",
+    "sex": "Sex",
+    "medicalCard": "Medical card",
+    "phone": "Phone number",
+    "email": "E-mail",
+    "identityDocument": "Identity document",
+    "residenceAddress": "Residence address",
+    "NotFoundPatientText": "Patient with such data was not found"
+  },
+  "service": {
+    "title": "Services",
+    "servicesBtnIsActive": "Add services",
+    "servicesBtnIsDisabled": "Services can be added after selecting a patient",
+    "implementer": "Choice of the lab",
+    "modalTitle": "Add service",
+    "filterTitle": "Service code, service name",
+    "servicesSelected": "Selected services"
+  },
+  "container": {
+    "title": "Containers",
+    "containerBtnIsActive": "You can calculate container",
+    "containerBtnIsDisabled_V1": "You can calculate containers after you have added services and selected a labs",
+    "containerBtnIsDisabled_V2": "You can calculate containers after you have selected a labs"
+  },
   "newRequest": {
-    "title": "New request",
-    "saveBtn": "Save",
-    "patient": {
-      "selectPatientBtn": "Select a patient",
-      "title": "Select a patient",
-      "name": "First name and last name",
-      "firstName": "First name",
-      "lastName": "Last name",
-      "patronymic": null,
-      "station": "Station",
-      "dateOfBirth": "Date of birth",
-      "cardNumber": "Card number",
-      "sex": "Sex",
-      "medicalCard": "Medical card",
-      "phone": "Phone number",
-      "email": "E-mail",
-      "identityDocument": "Identity document",
-      "residenceAddress": "Residence address",
-      "NotFoundPatientText": "Patient with such data was not found"
-    },
-    "service": {
-      "title": "Services",
-      "servicesBtnIsActive": "Add services",
-      "servicesBtnIsDisabled": "Services can be added after selecting a patient",
-      "addBtn": "Add",
-      "implementer": "Choice of the lab",
-      "modalTitle": "Add service",
-      "filterTitle": "Service code, service name",
-      "servicesSelected": "Selected services",
-      "cancelBtn": "Abort",
-      "saveBtn": "Save and close"
-    },
-    "container": {
-      "title": "Containers",
-      "containerBtnIsActive": "You can calculate container",
-      "containerBtnIsDisabled_V1": "You can calculate containers after you have added services and selected a labs",
-      "containerBtnIsDisabled_V2": "You can calculate containers after you have selected a labs"
-    }
+    "title": "New request"
   },
   "findRequest": {
     "title": "Find a request",
@@ -66,9 +60,17 @@
     "selectBtn": "Request details"
   },
   "shared": {
-    "findBtn": "Find",
-    "resetBtn": "Reset",
-    "selectBtn": "Select"
+    "button": {
+      "signIn": "Login",
+      "signOut": "Logout",
+      "save": "Save",
+      "add": "Add",
+      "find": "Find",
+      "select": "Select",
+      "reset": "Reset",
+      "abort": "Abort",
+      "saveAndCancel": "Save and close"
+    }
   },
   "UnknownPart": {
     "title": "Unknown part",
