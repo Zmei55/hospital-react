@@ -144,7 +144,7 @@ export const FindRequest: React.FC = () => {
           <List>
             <ListHeader>
               <HeadName>{t("patient.name")}</HeadName>
-              <HeadCardNumber>{t("patient.name")}</HeadCardNumber>
+              <HeadCardNumber>{t("patient.cardNumber")}</HeadCardNumber>
               <HeadRequestNumber>
                 {t("findRequest.requestNumber")}
               </HeadRequestNumber>
