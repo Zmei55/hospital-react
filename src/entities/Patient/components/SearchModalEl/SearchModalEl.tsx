@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import {
   useTogglePatientsModal,
   usePatientsListFind,
@@ -57,6 +58,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
   });
   const { choosePatient } = useChoosePatient();
   const { togglePatientsModal } = useTogglePatientsModal();
+  const { t } = useTranslation();
 
   const handleResetBtn = () => {
     resetPatients();
@@ -70,7 +72,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
   return (
     <>
       <ModalHeader>
-        <ModalTitle>Wählen Sie einen Patient aus</ModalTitle>
+        <ModalTitle>{t("patient.title")}</ModalTitle>
 
         <ResetBtn
           id="resetSearchPatBtn"
@@ -83,7 +85,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
           background="transparent"
           onClick={handleResetBtn}
         >
-          Rücksetzen
+          {t("shared.button.reset")}
         </ResetBtn>
 
         <FindBtn
@@ -98,7 +100,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
           }}
           background="blue"
         >
-          Finden
+          {t("shared.button.find")}
         </FindBtn>
 
         <CloseBtn
@@ -123,7 +125,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
             <InputEl
               {...register("name")}
               style={{ width: "650px" }}
-              placeholder="Name"
+              placeholder={t("patient.name")}
             />
           </Label>
 
@@ -132,7 +134,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
               type="date"
               {...register("birthDate")}
               style={{ width: "294px" }}
-              placeholder="Date of Birth"
+              placeholder={t("patient.dateOfBirth")}
             />
           </Label>
 
@@ -140,7 +142,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
             <InputEl
               {...register("cardNumber")}
               style={{ width: "206px" }}
-              placeholder="Card number"
+              placeholder={t("patient.cardNumber")}
             />
           </Label>
         </Form>
@@ -154,9 +156,9 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
             {patientList.length > 0 && (
               <List>
                 <ListHeader>
-                  <HeadName>Vorname und Nachname</HeadName>
-                  <HeadBirthDay>Geburtsdatum</HeadBirthDay>
-                  <HeadCardNumber>Kennnummer</HeadCardNumber>
+                  <HeadName>{t("patient.name")}</HeadName>
+                  <HeadBirthDay>{t("patient.dateOfBirth")}</HeadBirthDay>
+                  <HeadCardNumber>{t("patient.cardNumber")}</HeadCardNumber>
                   <HeadSelectBtn></HeadSelectBtn>
                 </ListHeader>
 
@@ -175,7 +177,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
                           id="selectPatLink"
                           onClick={() => choosePatient(patient._id)}
                         >
-                          Wählen
+                          {t("shared.button.select")}
                         </SelectBtn>
                       </BodySelectBtn>
                     </ListItem>
@@ -185,9 +187,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
             )}
 
             {isError && (
-              <NotFoundText>
-                Patient mit solchen Daten wurde nicht gefunden
-              </NotFoundText>
+              <NotFoundText>{t("patient.NotFoundPatientText")}</NotFoundText>
             )}
           </>
         )}

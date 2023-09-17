@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import {
   useHandleInfoActive,
   useClearPatient,
@@ -26,6 +27,7 @@ export const InfoEl: React.FC<IInfo> = () => {
   const patient = useAppSelector(state => state.patients.patient);
   const { clearPatient } = useClearPatient();
   const { isInfoActive, handleInfoActive } = useHandleInfoActive();
+  const { t } = useTranslation();
   const {
     dateOfBirth,
     gender,
@@ -77,27 +79,27 @@ export const InfoEl: React.FC<IInfo> = () => {
 
       <BasicInformationBox>
         <InfoBox>
-          <InfoHeader>Geburtsdatum</InfoHeader>
+          <InfoHeader>{t("patient.dateOfBirth")}</InfoHeader>
           <InfoBody>{dateOfBirth}</InfoBody>
         </InfoBox>
 
         <InfoBox>
-          <InfoHeader>Geschlecht</InfoHeader>
+          <InfoHeader>{t("patient.sex")}</InfoHeader>
           <InfoBody>{gender}</InfoBody>
         </InfoBox>
 
         <InfoBox>
-          <InfoHeader>Kennnummer</InfoHeader>
+          <InfoHeader>{t("patient.cardNumber")}</InfoHeader>
           <InfoBody>{cardNumber}</InfoBody>
         </InfoBox>
 
         <InfoBox>
-          <InfoHeader>Telefonnummer</InfoHeader>
+          <InfoHeader>{t("patient.phone")}</InfoHeader>
           <InfoBody>{phoneNumber}</InfoBody>
         </InfoBox>
 
         <InfoBox>
-          <InfoHeader>E-mail</InfoHeader>
+          <InfoHeader>{t("patient.email")}</InfoHeader>
           <InfoBody>{email}</InfoBody>
         </InfoBox>
       </BasicInformationBox>
@@ -105,12 +107,12 @@ export const InfoEl: React.FC<IInfo> = () => {
       {isInfoActive && (
         <BackgroundInformationBox>
           <InfoBox>
-            <InfoHeader>Ausweis</InfoHeader>
+            <InfoHeader>{t("patient.identityDocument")}</InfoHeader>
             <InfoBody>{identityDocument}</InfoBody>
           </InfoBox>
 
           <InfoBox>
-            <InfoHeader>Wohnort</InfoHeader>
+            <InfoHeader>{t("patient.residenceAddress")}</InfoHeader>
             <InfoBody>{residence}</InfoBody>
           </InfoBox>
         </BackgroundInformationBox>
