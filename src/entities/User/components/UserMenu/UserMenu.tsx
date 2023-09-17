@@ -55,7 +55,7 @@ export const UserMenu: React.FC = () => {
           }}
           onClick={() => logout()}
         >
-          {t("layout.signOutBtn")}
+          {t("shared.button.signOut")}
         </LogoutBtn>
       )}
 

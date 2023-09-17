@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { useLogIn, ISingInState } from "entities/Auth";
 import {
   Modal,
@@ -23,6 +24,7 @@ import React from "react";
 export const AuthMenu: React.FC = () => {
   const { isLoading, isError, handleSignInSubmit, errorModalClose } =
     useLogIn();
+  const { t } = useTranslation();
 
   const {
     register,
@@ -41,9 +43,9 @@ export const AuthMenu: React.FC = () => {
   return (
     <Section>
       <Form onSubmit={handleSubmit(handleSignInSubmit)}>
-        <Title>Autorisierung</Title>
+        <Title>{t("auth.title")}</Title>
 
-        <SubTitle>Geben Sie Login und Password ein</SubTitle>
+        <SubTitle>{t("auth.text")}</SubTitle>
 
         <Container>
           <Label>
@@ -55,7 +57,7 @@ export const AuthMenu: React.FC = () => {
                   message: "Minimum 3 characters",
                 },
               })}
-              placeholder="Username"
+              placeholder={t("auth.loginInput")}
               required
             />
           </Label>
@@ -70,7 +72,7 @@ export const AuthMenu: React.FC = () => {
                   message: "Minimum 6 characters",
                 },
               })}
-              placeholder="Password"
+              placeholder={t("auth.passwordInput")}
               required
             />
           </Label>
@@ -87,7 +89,7 @@ export const AuthMenu: React.FC = () => {
             <Spinner />
           ) : (
             <>
-              Einloggen
+              {t("shared.button.signIn")}
               <Icon icon="caret-right-bold" size={24} color="white" />
             </>
           )}
@@ -96,7 +98,7 @@ export const AuthMenu: React.FC = () => {
 
       {isError && (
         <Modal width="500px" height="400px">
-          <ErrorTitle>Benutzerdaten wurden falsch eingegeben</ErrorTitle>
+          <ErrorTitle>{t("auth.authError")}</ErrorTitle>
           <AcceptBtn
             id="errorLoginBtn"
             background="blue"
