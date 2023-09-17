@@ -1,14 +1,16 @@
+import { useTranslation } from "react-i18next";
 import { useAppNavigate, Button as CloseBtn, Icon } from "shared";
 
 import { Container, Header, Title, Body, Text } from "./UnknownPart.styled";
 
 export const UnknownPart: React.FC = () => {
   const [navigate] = useAppNavigate();
+  const { t } = useTranslation();
 
   return (
     <Container>
       <Header>
-        <Title>UnknownPart</Title>
+        <Title>{t("UnknownPart.title")}</Title>
 
         <CloseBtn
           id="closeNeuRequestBtn"
@@ -24,10 +26,7 @@ export const UnknownPart: React.FC = () => {
       </Header>
 
       <Body>
-        <Text>
-          Leider weiß ich nicht, wie dieser Block funktioniert, daher bitte ich
-          mich zu verstehen und zu verzeihen.
-        </Text>
+        <Text>{t("UnknownPart.text")}</Text>
       </Body>
     </Container>
   );
