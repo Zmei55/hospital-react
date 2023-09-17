@@ -13,7 +13,10 @@ export const patientInfo = (patient: IPatient) => {
     address,
   } = patient;
 
-  const dateOfBirth = `${new Date(birthDate).getDate()}.
+  const dateOfBirth = `${new Date(birthDate)
+    .getDate()
+    .toString()
+    .padStart(2, "0")}.
             ${new Date(birthDate).getMonth().toString().padStart(2, "0")}.
             ${new Date(birthDate).getFullYear()}
             `;
