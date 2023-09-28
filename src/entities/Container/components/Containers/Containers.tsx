@@ -47,11 +47,12 @@ export const Containers: React.FC = () => {
       </ModalBtn>
 
       {showContainersModal && (
-        <Modal
-          width="1050px"
-          height="595px"
-          onClose={() => toggleContainersModal()}
-        >
+        // <Modal
+        //   width="1050px"
+        //   height="595px"
+        //   onClose={() => toggleContainersModal()}
+        // >
+        <Modal onClose={() => toggleContainersModal()}>
           <ModalHeader>
             <ModalTitle>{t("container.containerBtnIsActive")}</ModalTitle>
             <CloseBtn

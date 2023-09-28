@@ -9,7 +9,6 @@ export const ModalBtn = styled.button`
   color: #115ffd;
   fill: #115ffd;
 
-  height: 100%;
   border: 2px solid #115ffd;
   box-shadow: 0px 8px 16px rgba(17, 17, 17, 0.06);
   border-radius: ${props => props.theme.borderRadius};
@@ -34,6 +33,14 @@ export const ModalBtn = styled.button`
     fill: ${props => props.theme.colors.text.placeholder};
     border-color: ${props => props.theme.colors.text.placeholder};
     cursor: not-allowed;
+  }
+
+  @media screen and (max-width: 1279px) {
+    height: 228px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    height: 100%;
   }
 `;
 

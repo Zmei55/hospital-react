@@ -1,9 +1,66 @@
 import styled from "@emotion/styled";
-import { InputEl } from "shared";
 
-export const Section = styled.section`
-  padding-top: 135px;
-  padding-bottom: 155px;
+export const Container = styled.div`
+  margin-right: auto;
+  margin-left: auto;
+
+  border-radius: ${props => props.theme.borderRadius};
+  background-color: #fff;
+  box-shadow: 0px 8px 16px rgba(17, 17, 17, 0.06);
+
+  @media screen and (max-width: 959px) {
+    width: 508px;
+    height: 246px;
+
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+
+  @media screen and (min-width: 960px) {
+    width: 608px;
+    height: 408px;
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+
+  @media screen and (max-width: 1279px) {
+    overflow: auto;
+    scroll-behavior: smooth;
+
+    ::-webkit-scrollbar {
+      width: ${props => props.theme.spacing(2)};
+      background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 25px;
+      background-color: ${props => props.theme.colors.grey.default};
+
+      :active {
+        background-color: ${props => props.theme.colors.grey.pressed};
+      }
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 608px;
+    height: 508px;
+    padding-top: 46px;
+    padding-bottom: 46px;
+  }
+
+  @media screen and (min-width: 1600px) {
+    width: 608px;
+    height: 608px;
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+`;
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const Title = styled.h2`
@@ -11,7 +68,13 @@ export const Title = styled.h2`
   font-size: 32px;
   line-height: 1.125;
 
-  margin-bottom: ${props => props.theme.spacing(4)};
+  @media screen and (max-width: 1279px) {
+    margin-bottom: ${props => props.theme.spacing(2)};
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-bottom: ${props => props.theme.spacing(4)};
+  }
 `;
 
 export const SubTitle = styled.h3`
@@ -19,31 +82,34 @@ export const SubTitle = styled.h3`
   font-size: 24px;
   line-height: 1.17;
 
-  margin-bottom: ${props => props.theme.spacing(10)};
+  @media screen and (max-width: 959px) {
+    margin-bottom: ${props => props.theme.spacing(2)};
+  }
+
+  @media screen and (min-width: 960px) {
+    margin-bottom: ${props => props.theme.spacing(4)};
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-bottom: ${props => props.theme.spacing(10)};
+  }
 `;
 
-export const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  width: 608px;
-  height: 608px;
-  padding-top: 96px;
-  padding-bottom: 96px;
-  margin-right: auto;
-  margin-left: auto;
-
-  border-radius: ${props => props.theme.borderRadius};
-  background-color: #fff;
-  box-shadow: 0px 8px 16px rgba(17, 17, 17, 0.06);
-`;
-
-export const Container = styled.div`
+export const InputsContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  margin-bottom: ${props => props.theme.spacing(16)};
+  @media screen and (max-width: 959px) {
+    margin-bottom: ${props => props.theme.spacing(4)};
+  }
+
+  @media screen and (min-width: 960px) {
+    margin-bottom: ${props => props.theme.spacing(8)};
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-bottom: ${props => props.theme.spacing(16)};
+  }
 `;
 
 export const Label = styled.label`
@@ -52,20 +118,13 @@ export const Label = styled.label`
   }
 `;
 
-export const Input = styled(InputEl)`
-  font-size: 24px;
-  line-height: 1.17;
-
-  width: 368px;
-  height: 72px;
-`;
-
 export const ErrorTitle = styled.p`
   font-weight: 500;
   text-align: center;
 
-  padding-left: ${props => props.theme.spacing(4)};
-  padding-right: ${props => props.theme.spacing(4)};
+  margin-left: ${props => props.theme.spacing(6)};
+  margin-right: ${props => props.theme.spacing(6)};
 
-  margin-bottom: ${props => props.theme.spacing(10)};
+  margin-top: ${props => props.theme.spacing(14)};
+  margin-bottom: ${props => props.theme.spacing(14)};
 `;

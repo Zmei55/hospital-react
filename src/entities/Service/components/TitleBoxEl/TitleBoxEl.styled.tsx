@@ -5,6 +5,10 @@ export const Container = styled.div`
   align-items: center;
 
   margin-bottom: ${props => props.theme.spacing(6)};
+
+  @media screen and (min-width: 1280px) and (max-width: 1599px) {
+    margin-bottom: ${props => props.theme.spacing(4)};
+  }
 `;
 
 export const Title = styled.h3`

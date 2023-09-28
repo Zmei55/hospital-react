@@ -18,6 +18,7 @@ import {
 } from "shared";
 
 import {
+  ModalContainer,
   ModalHeader,
   ModalTitle,
   ModalBody,
@@ -70,7 +71,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
   };
 
   return (
-    <>
+    <ModalContainer>
       <ModalHeader>
         <ModalTitle>{t("patient.title")}</ModalTitle>
 
@@ -124,7 +125,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
           <Label>
             <InputEl
               {...register("name")}
-              style={{ width: "650px" }}
+              style={{ width: "100%" }}
               placeholder={t("patient.name")}
             />
           </Label>
@@ -133,7 +134,8 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
             <InputEl
               type="date"
               {...register("birthDate")}
-              style={{ width: "294px" }}
+              // style={{ width: "294px" }}
+              style={{ width: "100%" }}
               placeholder={t("patient.dateOfBirth")}
             />
           </Label>
@@ -141,7 +143,8 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
           <Label>
             <InputEl
               {...register("cardNumber")}
-              style={{ width: "206px" }}
+              // style={{ width: "206px" }}
+              style={{ width: "100%" }}
               placeholder={t("patient.cardNumber")}
             />
           </Label>
@@ -192,6 +195,6 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
           </>
         )}
       </ModalBody>
-    </>
+    </ModalContainer>
   );
 };

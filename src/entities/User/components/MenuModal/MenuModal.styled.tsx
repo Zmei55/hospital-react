@@ -6,11 +6,31 @@ export const Header = styled.div`
 
   width: 100%;
 
-  padding-top: ${props => props.theme.spacing(4)};
-  padding-bottom: ${props => props.theme.spacing(4)};
-  padding-right: ${props => props.theme.spacing(6)};
-  padding-left: ${props => props.theme.spacing(6)};
   border-bottom: ${props => props.theme.border};
+
+  @media screen and (max-width: 959px) {
+    padding-top: ${props => props.theme.spacing(3)};
+    padding-bottom: ${props => props.theme.spacing(3)};
+    padding-right: ${props => props.theme.spacing(3)};
+    padding-left: ${props => props.theme.spacing(3)};
+  }
+
+  @media screen and (min-width: 960px) {
+    padding-top: ${props => props.theme.spacing(4)};
+    padding-bottom: ${props => props.theme.spacing(4)};
+    padding-right: ${props => props.theme.spacing(4)};
+    padding-left: ${props => props.theme.spacing(4)};
+  }
+
+  @media screen and (min-width: 1600px) {
+    padding-right: ${props => props.theme.spacing(5)};
+    padding-left: ${props => props.theme.spacing(5)};
+  }
+
+  @media screen and (min-width: 1920px) {
+    padding-right: ${props => props.theme.spacing(6)};
+    padding-left: ${props => props.theme.spacing(6)};
+  }
 `;
 
 export const Title = styled.h3`
@@ -22,10 +42,50 @@ export const Title = styled.h3`
 `;
 
 export const Body = styled.div`
-  width: 100%;
-  height: 648px;
-  padding-right: ${props => props.theme.spacing(6)};
-  padding-left: ${props => props.theme.spacing(6)};
+  overflow: auto;
+  scroll-behavior: smooth;
+
+  ::-webkit-scrollbar {
+    width: ${props => props.theme.spacing(2)};
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 25px;
+    background-color: ${props => props.theme.colors.grey.default};
+
+    :active {
+      background-color: ${props => props.theme.colors.grey.pressed};
+    }
+  }
+
+  @media screen and (max-width: 959px) {
+    width: 628px;
+    height: 234px;
+    padding-right: ${props => props.theme.spacing(3)};
+    padding-left: ${props => props.theme.spacing(3)};
+  }
+
+  @media screen and (min-width: 960px) {
+    width: 828px;
+    height: 398px;
+    padding-right: ${props => props.theme.spacing(4)};
+    padding-left: ${props => props.theme.spacing(4)};
+  }
+
+  @media screen and (min-width: 1600px) {
+    width: 828px;
+    height: 528px;
+    padding-right: ${props => props.theme.spacing(5)};
+    padding-left: ${props => props.theme.spacing(5)};
+  }
+
+  @media screen and (min-width: 1920px) {
+    /* width: 100%; */
+    height: 648px;
+    padding-right: ${props => props.theme.spacing(6)};
+    padding-left: ${props => props.theme.spacing(6)};
+  }
 `;
 
 export const OptionalBlock = styled.div`

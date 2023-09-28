@@ -2,14 +2,23 @@ import styled from "@emotion/styled";
 
 export const Header = styled.div`
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
 
-  padding-top: ${props => props.theme.spacing(4)};
-  padding-right: ${props => props.theme.spacing(6)};
-  padding-bottom: ${props => props.theme.spacing(4)};
-  padding-left: ${props => props.theme.spacing(6)};
   border-bottom: ${props => props.theme.border};
+
+  @media screen and (max-width: 1599px) {
+    padding-top: ${props => props.theme.spacing(3)};
+    padding-right: ${props => props.theme.spacing(3)};
+    padding-bottom: ${props => props.theme.spacing(3)};
+    padding-left: ${props => props.theme.spacing(3)};
+  }
+
+  @media screen and (min-width: 1600px) {
+    padding-top: ${props => props.theme.spacing(5)};
+    padding-right: ${props => props.theme.spacing(5)};
+    padding-bottom: ${props => props.theme.spacing(5)};
+    padding-left: ${props => props.theme.spacing(5)};
+  }
 `;
 
 export const RequestNumber = styled.span`

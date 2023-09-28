@@ -3,7 +3,15 @@ import styled from "@emotion/styled";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 1;
+  height: 100%;
+
+  @media screen and (min-width: 640px) and (max-width: 1279px) {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 1280px) {
+    flex: 1;
+  }
 `;
 
 export const Title = styled.h3`
@@ -13,6 +21,10 @@ export const Title = styled.h3`
   color: ${props => props.theme.colors.text.default};
 
   margin-bottom: ${props => props.theme.spacing(6)};
+
+  @media screen and (min-width: 1280px) and (max-width: 1599px) {
+    margin-bottom: ${props => props.theme.spacing(4)};
+  }
 `;
 
 export const ModalBtn = styled.button`
@@ -27,7 +39,6 @@ export const ModalBtn = styled.button`
   color: #115ffd;
   fill: #115ffd;
 
-  height: 100%;
   border: 2px solid #115ffd;
   box-shadow: 0px 8px 16px rgba(17, 17, 17, 0.06);
   border-radius: ${props => props.theme.borderRadius};
@@ -52,6 +63,14 @@ export const ModalBtn = styled.button`
     fill: ${props => props.theme.colors.text.placeholder};
     border-color: ${props => props.theme.colors.text.placeholder};
     cursor: not-allowed;
+  }
+
+  @media screen and (max-width: 1279px) {
+    height: 228px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    height: 100%;
   }
 `;
 
@@ -82,10 +101,17 @@ export const ModalBody = styled.div`
   justify-content: center;
   align-items: center;
 
-  width: 100%;
-  height: 489px;
+  width: 628px;
   padding-left: ${props => props.theme.spacing(4)};
   padding-right: ${props => props.theme.spacing(4)};
+
+  @media screen and (max-width: 959px) {
+    height: 236px;
+  }
+
+  @media screen and (min-width: 960px) {
+    height: 336px;
+  }
 `;
 
 export const ModalText = styled.span`

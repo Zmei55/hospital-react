@@ -30,7 +30,6 @@ export const Backdrop = styled.div`
 
 export const Content = styled.div`
   position: absolute;
-  top: 50%;
   left: 50%;
 
   display: flex;
@@ -38,7 +37,6 @@ export const Content = styled.div`
   justify-content: center;
   align-items: center;
 
-  transform: translate(-50%, -50%);
   background-color: #fff;
   border-radius: ${props => props.theme.borderRadius};
   box-shadow: 0px 8px 16px rgba(17, 17, 17, 0.06);
@@ -46,4 +44,28 @@ export const Content = styled.div`
   animation: ${openingModal} 250ms cubic-bezier(0.25, 0.1, 0.25, 1);
 
   overflow: hidden;
+
+  @media screen and (max-width: 959px) {
+    top: ${props => props.theme.spacing(2)};
+
+    transform: translate(-50%, 0);
+  }
+
+  @media screen and (min-width: 960px) and (max-width: 1279px) {
+    top: ${props => props.theme.spacing(4)};
+
+    transform: translate(-50%, 0);
+  }
+
+  @media screen and (min-width: 1280px) {
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+  }
+
+  @media screen and (min-width: 1600px) {
+  }
+
+  @media screen and (min-width: 1920px) {
+  }
 `;

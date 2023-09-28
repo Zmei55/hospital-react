@@ -6,20 +6,54 @@ export const Header = styled.div`
   align-items: center;
 
   width: 100%;
-  height: 104px;
-  padding-right: ${props => props.theme.spacing(6)};
-  padding-left: ${props => props.theme.spacing(6)};
 
   border-bottom: 2px solid #e6e6e6;
+
+  @media screen and (max-width: 959px) {
+    padding-top: ${props => props.theme.spacing(3)};
+    padding-right: ${props => props.theme.spacing(3)};
+    padding-bottom: ${props => props.theme.spacing(3)};
+    padding-left: ${props => props.theme.spacing(3)};
+  }
+
+  @media screen and (min-width: 960px) {
+    padding-top: ${props => props.theme.spacing(4)};
+    padding-right: ${props => props.theme.spacing(4)};
+    padding-bottom: ${props => props.theme.spacing(4)};
+    padding-left: ${props => props.theme.spacing(4)};
+  }
+
+  @media screen and (min-width: 1600px) {
+    padding-top: ${props => props.theme.spacing(6)};
+    padding-right: ${props => props.theme.spacing(6)};
+    padding-bottom: ${props => props.theme.spacing(6)};
+    padding-left: ${props => props.theme.spacing(6)};
+  }
 `;
 
 export const HeaderTitle = styled.h3``;
 
 export const Form = styled.form`
   width: 100%;
-  height: 608px;
-  padding-top: ${props => props.theme.spacing(8)};
-  padding-bottom: ${props => props.theme.spacing(8)};
+
+  @media screen and (max-width: 959px) {
+    height: calc(100vh - 116px);
+    max-height: 278px;
+  }
+
+  @media screen and (min-width: 960px) {
+    height: calc(100vh - 152px);
+    max-height: 402px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    height: calc(100vh - 152px);
+    max-height: 508px;
+  }
+
+  @media screen and (min-width: 1600px) {
+    max-height: 568px;
+  }
 `;
 
 export const Table = styled.div`
@@ -56,9 +90,8 @@ export const THLabor = styled(TH)`
 
 export const TBody = styled.ul`
   width: 100%;
-  height: 390px;
+
   border-radius: ${props => props.theme.border};
-  margin-bottom: ${props => props.theme.spacing(8)};
 
   overflow: auto;
   scroll-behavior: smooth;
@@ -77,6 +110,30 @@ export const TBody = styled.ul`
       background-color: ${props => props.theme.colors.grey.pressed};
     }
   }
+
+  @media screen and (max-width: 959px) {
+    height: 120px;
+    margin-bottom: ${props => props.theme.spacing(4)};
+  }
+
+  @media screen and (min-width: 960px) {
+    height: 238px;
+    margin-bottom: ${props => props.theme.spacing(5)};
+  }
+
+  @media screen and (min-width: 1280px) {
+    height: 340px;
+    margin-bottom: ${props => props.theme.spacing(6)};
+  }
+
+  @media screen and (min-width: 1600px) {
+    height: 390px;
+    margin-bottom: ${props => props.theme.spacing(7)};
+  }
+
+  @media screen and (min-width: 1920px) {
+    margin-bottom: ${props => props.theme.spacing(8)};
+  }
 `;
 
 export const TRBody = styled.li`
@@ -90,12 +147,33 @@ export const TRBody = styled.li`
 export const ServiceBox = styled.div`
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
 
-  padding-top: ${props => props.theme.spacing(4)};
-  padding-right: ${props => props.theme.spacing(6)};
-  padding-bottom: ${props => props.theme.spacing(4)};
-  padding-left: ${props => props.theme.spacing(6)};
+  @media screen and (max-width: 959px) {
+    width: 218px;
+
+    padding-top: ${props => props.theme.spacing(3)};
+    padding-right: ${props => props.theme.spacing(3)};
+    padding-bottom: ${props => props.theme.spacing(3)};
+    padding-left: ${props => props.theme.spacing(3)};
+  }
+
+  @media screen and (min-width: 960px) {
+    width: 348px;
+
+    padding-top: ${props => props.theme.spacing(4)};
+    padding-right: ${props => props.theme.spacing(4)};
+    padding-bottom: ${props => props.theme.spacing(4)};
+    padding-left: ${props => props.theme.spacing(4)};
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 548px;
+
+    padding-top: ${props => props.theme.spacing(4)};
+    padding-right: ${props => props.theme.spacing(4)};
+    padding-bottom: ${props => props.theme.spacing(4)};
+    padding-left: ${props => props.theme.spacing(4)};
+  }
 `;
 
 export const ServiceCode = styled.span`

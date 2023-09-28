@@ -60,7 +60,8 @@ export const UserMenu: React.FC = () => {
       )}
 
       {showModal && (
-        <Modal width="1392px" height="752px" onClose={toggleMenuModal}>
+        // <Modal width="1392px" height="752px" onClose={toggleMenuModal}>
+        <Modal onClose={toggleMenuModal}>
           <MenuModal />
         </Modal>
       )}

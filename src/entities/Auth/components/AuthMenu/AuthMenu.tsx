@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useLogIn, ISingInState } from "entities/Auth";
 import {
   Modal,
+  InputEl,
   Button as AcceptBtn,
   Button as SignInBtn,
   Icon,
@@ -10,13 +11,12 @@ import {
 } from "shared";
 
 import {
-  Section,
+  Container,
   Title,
   SubTitle,
   Form,
-  Container,
+  InputsContainer,
   Label,
-  Input,
   ErrorTitle,
 } from "./AuthMenu.styled";
 import React from "react";
@@ -41,15 +41,15 @@ export const AuthMenu: React.FC = () => {
     dirtyFields.username === undefined || dirtyFields.password === undefined;
 
   return (
-    <Section>
+    <Container>
       <Form onSubmit={handleSubmit(handleSignInSubmit)}>
         <Title>{t("auth.title")}</Title>
 
         <SubTitle>{t("auth.text")}</SubTitle>
 
-        <Container>
+        <InputsContainer>
           <Label>
-            <Input
+            <InputEl
               {...register("username", {
                 required: "You did not enter a username",
                 minLength: {
@@ -57,13 +57,14 @@ export const AuthMenu: React.FC = () => {
                   message: "Minimum 3 characters",
                 },
               })}
+              style={{ width: "368px" }}
               placeholder={t("auth.loginInput")}
               required
             />
           </Label>
 
           <Label>
-            <Input
+            <InputEl
               type="password"
               {...register("password", {
                 required: "You did not enter a password",
@@ -72,11 +73,12 @@ export const AuthMenu: React.FC = () => {
                   message: "Minimum 6 characters",
                 },
               })}
+              style={{ width: "368px" }}
               placeholder={t("auth.passwordInput")}
               required
             />
           </Label>
-        </Container>
+        </InputsContainer>
 
         <SignInBtn
           id="signInBtn"
@@ -97,7 +99,8 @@ export const AuthMenu: React.FC = () => {
       </Form>
 
       {isError && (
-        <Modal width="500px" height="400px" onClose={errorModalClose}>
+        // <Modal width="500px" height="400px" onClose={errorModalClose}>
+        <Modal onClose={errorModalClose}>
           <ErrorTitle>{t("auth.authError")}</ErrorTitle>
           <AcceptBtn
             id="errorLoginBtn"
@@ -106,6 +109,7 @@ export const AuthMenu: React.FC = () => {
               height: "72px",
               paddingRight: "44px",
               paddingLeft: "44px",
+              marginBottom: "56px",
             }}
             onClick={errorModalClose}
           >
@@ -113,6 +117,6 @@ export const AuthMenu: React.FC = () => {
           </AcceptBtn>
         </Modal>
       )}
-    </Section>
+    </Container>
   );
 };

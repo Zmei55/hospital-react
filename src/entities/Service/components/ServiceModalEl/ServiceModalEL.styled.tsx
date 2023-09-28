@@ -7,11 +7,23 @@ export const ModalHeader = styled.div`
 
   width: 100%;
 
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-right: 24px;
-  padding-left: 24px;
   border-bottom: 2px solid #e6e6e6;
+
+  @media screen and (max-width: 959px) {
+    padding-top: ${props => props.theme.spacing(3)};
+    padding-bottom: ${props => props.theme.spacing(3)};
+    padding-right: ${props => props.theme.spacing(3)};
+    padding-left: ${props => props.theme.spacing(3)};
+    margin-bottom: ${props => props.theme.spacing(2)};
+  }
+
+  @media screen and (min-width: 1920px) {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 24px;
+    padding-left: 24px;
+    margin-bottom: ${props => props.theme.spacing(6)};
+  }
 `;
 
 export const ModalTitle = styled.h3`
@@ -23,35 +35,97 @@ export const ModalTitle = styled.h3`
 `;
 
 export const ModalBody = styled.div`
-  display: flex;
-  width: 100%;
-  height: 786px;
-  padding: ${props => props.theme.spacing(6)} ${props => props.theme.spacing(8)};
-`;
+  @media screen and (max-width: 959px) {
+    height: calc(100vh - 120px);
+    max-height: 446px;
+    padding-right: ${props => props.theme.spacing(4)};
+    padding-left: ${props => props.theme.spacing(4)};
+    padding-bottom: ${props => props.theme.spacing(4)};
 
-export const FormFilter = styled.form`
-  display: flex;
+    overflow: auto;
+    scroll-behavior: smooth;
+
+    ::-webkit-scrollbar {
+      width: ${props => props.theme.spacing(2)};
+      background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      height: 100px;
+      border-radius: 25px;
+      background-color: ${props => props.theme.colors.grey.default};
+
+      :active {
+        background-color: ${props => props.theme.colors.grey.pressed};
+      }
+    }
+  }
+
+  @media screen and (min-width: 960px) {
+    padding-right: ${props => props.theme.spacing(8)};
+    padding-left: ${props => props.theme.spacing(8)};
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding-right: ${props => props.theme.spacing(8)};
+    padding-left: ${props => props.theme.spacing(8)};
+  }
+
+  @media screen and (min-width: 1600px) {
+    display: flex;
+    width: 100%;
+    height: 786px;
+    padding-right: ${props => props.theme.spacing(8)};
+    padding-left: ${props => props.theme.spacing(8)};
+    padding-bottom: ${props => props.theme.spacing(6)};
+  }
 `;
 
 export const Filter = styled.div`
-  display: flex;
-  flex-direction: column;
+  @media screen and (max-width: 959px) {
+    margin-bottom: ${props => props.theme.spacing(8)};
+  }
 
-  height: 100%;
-  margin-right: 66px;
+  @media screen and (min-width: 1600px) {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    margin-right: 66px;
+  }
 `;
 
-export const FilterInput = styled(InputEl)`
-  font-size: 24px;
-  line-height: 1.17;
+export const Form = styled.form`
+  @media screen and (max-width: 959px) {
+    display: flex;
+    margin-bottom: ${props => props.theme.spacing(4)};
+  }
 
-  width: 660px;
-  height: 72px;
-  margin-bottom: 48px;
+  @media screen and (min-width: 1600px) {
+    display: flex;
+  }
+`;
+
+export const Input = styled(InputEl)`
+  @media screen and (max-width: 959px) {
+    width: 408px;
+  }
+
+  @media screen and (min-width: 960px) {
+    margin-bottom: ${props => props.theme.spacing(4)};
+  }
+
+  @media screen and (min-width: 1600px) {
+    font-size: 24px;
+    line-height: 1.17;
+
+    width: 660px;
+    height: 72px;
+    margin-bottom: 48px;
+  }
 `;
 
 export const FilteredList = styled.ul`
-  height: 618px;
   padding-right: ${props => props.theme.spacing(2)};
   margin-bottom: ${props => props.theme.spacing(2)};
 
@@ -72,19 +146,32 @@ export const FilteredList = styled.ul`
       background-color: ${props => props.theme.colors.grey.pressed};
     }
   }
+
+  @media screen and (max-width: 959px) {
+    min-height: 100px;
+    max-height: 400px;
+  }
+
+  @media screen and (min-width: 1600px) {
+    height: 618px;
+  }
 `;
 
 export const FilteredItem = styled.li`
-  display: flex;
-  justify-content: space-between;
+  @media screen and (min-width: 1600px) {
+    display: flex;
+    justify-content: space-between;
 
-  margin-bottom: ${props => props.theme.spacing(4)};
+    margin-bottom: ${props => props.theme.spacing(4)};
+  }
 `;
 
 export const FilteredNameBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  @media screen and (min-width: 1600px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 export const FilteredCodeService = styled.span`
@@ -115,9 +202,11 @@ export const AddServiceBtnTitle = styled.span`
 `;
 
 export const SelectedServicesBox = styled.div`
-  width: 604px;
-  padding-left: 50px;
-  border-left: ${props => props.theme.border};
+  @media screen and (min-width: 1600px) {
+    width: 604px;
+    padding-left: 50px;
+    border-left: ${props => props.theme.border};
+  }
 `;
 
 export const SelectedServicesTitle = styled.h4`
@@ -126,13 +215,12 @@ export const SelectedServicesTitle = styled.h4`
   line-height: 1.14;
   color: ${props => props.theme.colors.text.default};
 
-  margin-bottom: ${props => props.theme.spacing(6)};
+  @media screen and (min-width: 1600px) {
+    margin-bottom: ${props => props.theme.spacing(6)};
+  }
 `;
 
 export const SelectedServicesList = styled.ul`
-  height: 604px;
-  margin-bottom: ${props => props.theme.spacing(2)};
-
   overflow: auto;
   scroll-behavior: smooth;
 
@@ -150,17 +238,32 @@ export const SelectedServicesList = styled.ul`
       background-color: ${props => props.theme.colors.grey.pressed};
     }
   }
+
+  @media screen and (max-width: 959px) {
+    min-height: 100px;
+    max-height: 400px;
+    margin-bottom: ${props => props.theme.spacing(8)};
+  }
+
+  @media screen and (min-width: 1600px) {
+    height: 604px;
+    margin-bottom: ${props => props.theme.spacing(2)};
+  }
 `;
 
 export const SelectedServicesItem = styled.li`
-  display: flex;
+  @media screen and (min-width: 1600px) {
+    display: flex;
 
-  padding: ${props => props.theme.spacing(2)} 0;
+    padding: ${props => props.theme.spacing(2)} 0;
+  }
 `;
 
 export const SelectedServicesNameBox = styled.div`
-  display: flex;
-  flex-direction: column;
+  @media screen and (min-width: 1600px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const SelectedServicesCode = styled.span`
@@ -168,7 +271,9 @@ export const SelectedServicesCode = styled.span`
   line-height: 1.2;
   color: ${props => props.theme.colors.text.placeholder};
 
-  margin-bottom: ${props => props.theme.spacing(1)};
+  @media screen and (min-width: 1600px) {
+    margin-bottom: ${props => props.theme.spacing(1)};
+  }
 `;
 
 export const SelectedServicesName = styled.span`
@@ -176,5 +281,12 @@ export const SelectedServicesName = styled.span`
 `;
 
 export const ButtonsBox = styled.div`
-  display: flex;
+  @media screen and (max-width: 959px) {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  @media screen and (min-width: 1600px) {
+    display: flex;
+  }
 `;

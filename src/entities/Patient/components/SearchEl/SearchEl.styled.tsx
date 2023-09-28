@@ -1,8 +1,16 @@
 import styled from "@emotion/styled";
 
 export const Container = styled.div`
-  width: 1808px;
-  height: 228px;
+  width: 100%;
+  min-height: 228px;
+
+  @media screen and (min-width: 1280px) and (max-width: 1599px) {
+    min-height: 178px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    flex: 1;
+  }
 `;
 
 export const ModalBtn = styled.button`
@@ -21,7 +29,7 @@ export const ModalBtn = styled.button`
   box-shadow: 0px 8px 16px rgba(17, 17, 17, 0.06);
   border-radius: ${props => props.theme.borderRadius};
   width: 100%;
-  height: 100%;
+  height: 228px;
   background-color: transparent;
   outline: none;
 
@@ -36,5 +44,9 @@ export const ModalBtn = styled.button`
     color: ${props => props.theme.colors.blue.pressed};
     fill: ${props => props.theme.colors.blue.pressed};
     border-color: ${props => props.theme.colors.blue.pressed};
+  }
+
+  @media screen and (min-width: 1280px) and (max-width: 1599px) {
+    height: 178px;
   }
 `;

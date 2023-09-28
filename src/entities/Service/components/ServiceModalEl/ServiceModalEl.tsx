@@ -28,9 +28,9 @@ import {
   ModalHeader,
   ModalTitle,
   ModalBody,
-  FormFilter,
   Filter,
-  FilterInput,
+  Form,
+  Input,
   SelectedServicesBox,
   SelectedServicesTitle,
   ButtonsBox,
@@ -72,7 +72,8 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
   const { t } = useTranslation();
 
   return (
-    <Modal width="1574px" height="890px" onClose={() => toggleServicesModal()}>
+    // <Modal width="1574px" height="890px" onClose={() => toggleServicesModal()}>
+    <Modal onClose={() => toggleServicesModal()}>
       <ModalHeader>
         <ModalTitle>{t("service.modalTitle")}</ModalTitle>
 
@@ -91,8 +92,8 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
 
       <ModalBody>
         <Filter>
-          <FormFilter onSubmit={handleSubmit(handleServicesForm)}>
-            <FilterInput
+          <Form onSubmit={handleSubmit(handleServicesForm)}>
+            <Input
               {...register("filter")}
               placeholder={t("service.filterPlaceholder")}
               autoFocus
@@ -112,7 +113,7 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
             >
               {isLoading ? <Spinner /> : <span>{t("shared.button.find")}</span>}
             </FindBtn>
-          </FormFilter>
+          </Form>
 
           <FilteredList>
             {filteredServicesList.map(service => (

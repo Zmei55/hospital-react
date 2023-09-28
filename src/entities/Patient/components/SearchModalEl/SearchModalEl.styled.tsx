@@ -1,16 +1,35 @@
 import styled from "@emotion/styled";
 
+export const ModalContainer = styled.div``;
+
 export const ModalHeader = styled.div`
   display: flex;
   align-items: center;
 
   width: 100%;
 
-  padding-top: ${props => props.theme.spacing(4)};
-  padding-bottom: ${props => props.theme.spacing(4)};
-  padding-right: ${props => props.theme.spacing(6)};
-  padding-left: ${props => props.theme.spacing(6)};
   border-bottom: ${props => props.theme.border};
+
+  @media screen and (max-width: 959px) {
+    padding-top: ${props => props.theme.spacing(4)};
+    padding-bottom: ${props => props.theme.spacing(4)};
+    padding-right: ${props => props.theme.spacing(4)};
+    padding-left: ${props => props.theme.spacing(4)};
+  }
+
+  @media screen and (min-width: 960px) {
+    padding-top: ${props => props.theme.spacing(4)};
+    padding-bottom: ${props => props.theme.spacing(4)};
+    padding-right: ${props => props.theme.spacing(5)};
+    padding-left: ${props => props.theme.spacing(5)};
+  }
+
+  @media screen and (min-width: 1600px) {
+    padding-top: ${props => props.theme.spacing(4)};
+    padding-bottom: ${props => props.theme.spacing(4)};
+    padding-right: ${props => props.theme.spacing(6)};
+    padding-left: ${props => props.theme.spacing(6)};
+  }
 `;
 
 export const ModalTitle = styled.h3`
@@ -19,111 +38,336 @@ export const ModalTitle = styled.h3`
   line-height: 1.13;
 
   margin-right: auto;
+
+  @media screen and (max-width: 959px) {
+    width: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  @media screen and (min-width: 960px) and (max-width: 1279px) {
+    width: 360px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 `;
 
 export const ModalBody = styled.div`
   width: 100%;
-  height: 648px;
+
+  @media screen and (max-width: 959px) {
+    min-height: calc(100vh - 146px);
+    margin-top: ${props => props.theme.spacing(4)};
+
+    overflow: auto;
+    scroll-behavior: smooth;
+
+    ::-webkit-scrollbar {
+      width: ${props => props.theme.spacing(2)};
+      background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      height: 100px;
+      border-radius: 25px;
+      background-color: ${props => props.theme.colors.grey.default};
+
+      :active {
+        background-color: ${props => props.theme.colors.grey.pressed};
+      }
+    }
+  }
+
+  @media screen and (min-width: 960px) and (max-width: 1599px) {
+    min-height: calc(100vh - 184px);
+    margin-top: ${props => props.theme.spacing(10)};
+  }
+
+  @media screen and (min-width: 1600px) {
+    height: 648px;
+    margin-top: ${props => props.theme.spacing(16)};
+  }
+
+  @media screen and (min-width: 1920px) {
+    margin-top: ${props => props.theme.spacing(16)};
+  }
 `;
 
 export const Form = styled.form`
   display: flex;
 
-  padding-top: ${props => props.theme.spacing(16)};
-  padding-right: ${props => props.theme.spacing(6)};
-  padding-left: ${props => props.theme.spacing(6)};
-  margin-bottom: ${props => props.theme.spacing(18)};
+  @media screen and (max-width: 959px) {
+    width: 594px;
+
+    margin-right: ${props => props.theme.spacing(4)};
+    margin-left: ${props => props.theme.spacing(4)};
+    margin-bottom: ${props => props.theme.spacing(4)};
+  }
+
+  @media screen and (min-width: 960px) {
+    width: 878px;
+
+    margin-right: ${props => props.theme.spacing(5)};
+    margin-left: ${props => props.theme.spacing(5)};
+    margin-bottom: ${props => props.theme.spacing(10)};
+  }
+
+  @media screen and (max-width: 1599px) {
+    flex-wrap: wrap;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 1140px;
+  }
+
+  @media screen and (min-width: 1600px) {
+    width: 1352px;
+
+    margin-right: ${props => props.theme.spacing(6)};
+    margin-left: ${props => props.theme.spacing(6)};
+    margin-bottom: ${props => props.theme.spacing(16)};
+  }
 `;
 
 export const Label = styled.label`
   display: block;
 
-  :not(:last-child) {
-    margin-right: ${props => props.theme.spacing(4)};
+  @media screen and (max-width: 959px) {
+    :nth-of-type(1) {
+      width: 594px;
+      margin-bottom: ${props => props.theme.spacing(4)};
+    }
+  }
+
+  @media screen and (max-width: 1599px) {
+    :nth-of-type(2) {
+      flex: 1.05;
+      margin-right: ${props => props.theme.spacing(4)};
+    }
+
+    :nth-of-type(3) {
+      flex: 0.95;
+    }
+  }
+
+  @media screen and (min-width: 960px) and (max-width: 1279px) {
+    :nth-of-type(1) {
+      width: 878px;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    :nth-of-type(1) {
+      width: 1140px;
+    }
+  }
+
+  @media screen and (min-width: 960px) and (max-width: 1599px) {
+    :nth-of-type(1) {
+      margin-bottom: ${props => props.theme.spacing(5)};
+    }
+  }
+
+  @media screen and (min-width: 1600px) {
+    :nth-of-type(1) {
+      width: 650px;
+      margin-right: ${props => props.theme.spacing(4)};
+    }
+
+    :nth-of-type(2) {
+      width: 294px;
+      margin-right: ${props => props.theme.spacing(4)};
+    }
+
+    :nth-of-type(3) {
+      width: 206px;
+    }
   }
 `;
 
-export const List = styled.div``;
+export const List = styled.div`
+  @media screen and (max-width: 959px) {
+    position: relative;
+
+    width: 628px;
+  }
+
+  @media screen and (min-width: 960px) {
+    width: 918px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 1180px;
+  }
+
+  @media screen and (min-width: 1600px) {
+    width: 1400px;
+  }
+`;
 
 export const ListHeader = styled.ul`
-  display: flex;
-  font-size: 18px;
-  line-height: 1.33;
-  color: ${props => props.theme.colors.text.label};
+  @media screen and (max-width: 959px) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
+  @media screen and (min-width: 960px) {
+    display: flex;
+    font-size: 18px;
+    line-height: 1.33;
+    color: ${props => props.theme.colors.text.label};
+  }
 `;
 
 export const HeadName = styled.li`
-  text-align: start;
+  @media screen and (max-width: 959px) {
+  }
 
-  padding-left: ${props => props.theme.spacing(6)};
-  width: 674px;
+  @media screen and (min-width: 960px) {
+    flex-grow: 2.6;
+    padding-left: ${props => props.theme.spacing(4)};
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding-left: ${props => props.theme.spacing(6)};
+  }
 `;
 
 export const HeadBirthDay = styled.li`
-  text-align: center;
-  width: 301px;
+  @media screen and (min-width: 960px) {
+    flex-grow: 1.05;
+  }
 `;
 
 export const HeadCardNumber = styled.li`
-  text-align: center;
-  width: 223px;
+  @media screen and (min-width: 960px) {
+    flex-grow: 0.95;
+  }
 `;
 
 export const HeadSelectBtn = styled.li`
-  width: 194px;
+  @media screen and (min-width: 1280px) {
+    width: 194px;
+  }
 `;
 
 export const ListBody = styled.ul`
   font-weight: 400;
 
-  height: 415px;
   border-radius: ${props => props.theme.border};
 
-  overflow: auto;
-  scroll-behavior: smooth;
-
-  ::-webkit-scrollbar {
-    width: ${props => props.theme.spacing(2)};
-    background-color: transparent;
+  @media screen and (max-width: 959px) {
+    height: calc(100vh - 316px);
   }
 
-  ::-webkit-scrollbar-thumb {
-    height: 100px;
-    border-radius: 25px;
-    background-color: ${props => props.theme.colors.grey.default};
+  @media screen and (min-width: 960px) {
+    height: calc(100vh - 400px);
 
-    :active {
-      background-color: ${props => props.theme.colors.grey.pressed};
+    overflow: auto;
+    scroll-behavior: smooth;
+
+    ::-webkit-scrollbar {
+      width: ${props => props.theme.spacing(2)};
+      background-color: transparent;
     }
+
+    ::-webkit-scrollbar-thumb {
+      height: 100px;
+      border-radius: 25px;
+      background-color: ${props => props.theme.colors.grey.default};
+
+      :active {
+        background-color: ${props => props.theme.colors.grey.pressed};
+      }
+    }
+  }
+
+  @media screen and (min-width: 1600px) {
+    height: 488px;
   }
 `;
 
 export const ListItem = styled.li`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+
+  width: 100%;
+  padding-right: ${props => props.theme.spacing(4)};
+  padding-left: ${props => props.theme.spacing(4)};
 
   :nth-of-type(2n - 1) {
     background-color: ${props => props.theme.colors.grey.default};
   }
+
+  @media screen and (max-width: 959px) {
+    padding-top: ${props => props.theme.spacing(4)};
+  }
+
+  @media screen and (min-width: 960px) and (max-width: 1279px) {
+    padding-top: ${props => props.theme.spacing(4)};
+  }
 `;
 
 export const BodyName = styled.p`
-  width: 674px;
-  padding-left: ${props => props.theme.spacing(6)};
+  @media screen and (max-width: 959px) {
+    text-align: center;
+
+    width: 100%;
+    padding-bottom: ${props => props.theme.spacing(4)};
+  }
+
+  @media screen and (min-width: 960px) {
+    flex: 2.75;
+  }
 `;
 
 export const BodyBirthDay = styled.p`
-  text-align: center;
-  width: 301px;
+  @media screen and (max-width: 959px) {
+    flex: 1.1;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 960px) {
+    flex: 1.1;
+  }
 `;
 
 export const BodyCardNumber = styled.p`
-  text-align: center;
-  width: 223px;
+  @media screen and (max-width: 959px) {
+    flex: 0.9;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 960px) {
+    flex: 0.9;
+  }
 `;
 
 export const BodySelectBtn = styled.p`
-  width: 194px;
+  @media screen and (max-width: 959px) {
+    text-align: center;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 960px) and (max-width: 1279px) {
+    text-align: center;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 194px;
+  }
 `;
 
 export const SelectBtn = styled.button`

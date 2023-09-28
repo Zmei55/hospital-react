@@ -46,7 +46,8 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
 
   return (
     <>
-      <Modal width="1282px" height="712px" onClose={() => toggleLaborModal()}>
+      {/* <Modal width="1282px" height="712px" onClose={() => toggleLaborModal()}> */}
+      <Modal onClose={() => toggleLaborModal()}>
         <Header>
           <HeaderTitle>{t("service.implementer")}</HeaderTitle>
 
@@ -63,7 +64,7 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
           </CloseBtn>
         </Header>
 
-        <Form onSubmit={saveDetails}>
+        <Form onSubmit={saveDetails} id="labors">
           <Table>
             <THead>
               <THService>{t("service.service")}</THService>
@@ -98,21 +99,22 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
                 </TRBody>
               ))}
             </TBody>
-          </Table>
 
-          <SaveBtn
-            id="saveSelectedSerBtn"
-            type="submit"
-            background="blue"
-            style={{
-              width: "318px",
-              height: "72px",
-              marginLeft: "auto",
-              marginRight: "24px",
-            }}
-          >
-            {t("shared.button.saveAndCancel")}
-          </SaveBtn>
+            <SaveBtn
+              id="saveSelectedSerBtn"
+              type="submit"
+              form="labors"
+              background="blue"
+              style={{
+                width: "318px",
+                height: "72px",
+                marginLeft: "auto",
+                marginRight: "24px",
+              }}
+            >
+              {t("shared.button.saveAndCancel")}
+            </SaveBtn>
+          </Table>
         </Form>
       </Modal>
     </>
