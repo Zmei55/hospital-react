@@ -1,8 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Container = styled.div`
-  width: 1856px;
-  height: 896px;
+  width: 100%;
   background-color: ${props => props.theme.colors.white};
   box-shadow: ${props => props.theme.boxShadow};
   border-radius: ${props => props.theme.borderRadius};
@@ -10,6 +9,7 @@ export const Container = styled.div`
 
 export const Header = styled.div`
   display: flex;
+  justify-content: space-between;
   align-items: center;
 
   padding-top: ${props => props.theme.spacing(4)};
@@ -24,20 +24,35 @@ export const Title = styled.h2`
   font-size: 32px;
   line-height: 1.13;
   color: ${props => props.theme.colors.text.default};
-
-  margin-right: auto;
 `;
 
 export const Body = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
 
-  height: 790px;
+  padding-left: ${props => props.theme.spacing(4)};
+  padding-right: ${props => props.theme.spacing(4)};
 
-  padding-top: ${props => props.theme.spacing(8)};
-  padding-right: ${props => props.theme.spacing(6)};
-  padding-bottom: ${props => props.theme.spacing(8)};
-  padding-left: ${props => props.theme.spacing(6)};
+  @media screen and (max-width: 959px) {
+    height: 136px;
+  }
+
+  @media screen and (min-width: 960px) {
+    height: 300px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    height: 468px;
+  }
+
+  @media screen and (min-width: 1600px) {
+    height: 628px;
+  }
+
+  @media screen and (min-width: 1920px) {
+    height: 788px;
+  }
 `;
 
 export const Text = styled.span`
