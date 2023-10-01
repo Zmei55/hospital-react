@@ -72,7 +72,6 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
   const { t } = useTranslation();
 
   return (
-    // <Modal width="1574px" height="890px" onClose={() => toggleServicesModal()}>
     <Modal onClose={() => toggleServicesModal()}>
       <ModalHeader>
         <ModalTitle>{t("service.modalTitle")}</ModalTitle>

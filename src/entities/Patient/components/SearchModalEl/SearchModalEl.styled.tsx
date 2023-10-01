@@ -41,13 +41,19 @@ export const ModalTitle = styled.h3`
 
   @media screen and (max-width: 959px) {
     width: 80px;
-    white-space: nowrap;
+    /* white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; */
   }
 
   @media screen and (min-width: 960px) and (max-width: 1279px) {
     width: 360px;
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+  }
+
+  @media screen and (max-width: 1279px) {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -310,11 +316,7 @@ export const ListItem = styled.li`
     background-color: ${props => props.theme.colors.grey.default};
   }
 
-  @media screen and (max-width: 959px) {
-    padding-top: ${props => props.theme.spacing(4)};
-  }
-
-  @media screen and (min-width: 960px) and (max-width: 1279px) {
+  @media screen and (max-width: 1279px) {
     padding-top: ${props => props.theme.spacing(4)};
   }
 `;

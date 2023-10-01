@@ -109,7 +109,7 @@ export const FindRequest: React.FC = () => {
           <Label>
             <InputEl
               {...register("name")}
-              style={{ width: "650px" }}
+              style={{ width: "100%" }}
               placeholder={t("patient.name")}
             />
           </Label>
@@ -117,7 +117,7 @@ export const FindRequest: React.FC = () => {
           <Label>
             <InputEl
               {...register("cardNumber")}
-              style={{ width: "236px" }}
+              style={{ width: "100%" }}
               placeholder={t("patient.cardNumber")}
             />
           </Label>
@@ -125,7 +125,7 @@ export const FindRequest: React.FC = () => {
           <Label>
             <InputEl
               {...register("requestNumber")}
-              style={{ width: "236px" }}
+              style={{ width: "100%" }}
               placeholder={t("findRequest.requestNumber")}
             />
           </Label>
@@ -134,7 +134,7 @@ export const FindRequest: React.FC = () => {
             <InputEl
               type="date"
               {...register("requestDate")}
-              style={{ width: "256px" }}
+              style={{ width: "100%" }}
               placeholder={t("findRequest.dateOfRequest")}
             />
           </Label>

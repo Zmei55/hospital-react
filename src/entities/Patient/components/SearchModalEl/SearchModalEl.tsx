@@ -134,7 +134,6 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
             <InputEl
               type="date"
               {...register("birthDate")}
-              // style={{ width: "294px" }}
               style={{ width: "100%" }}
               placeholder={t("patient.dateOfBirth")}
             />
@@ -143,7 +142,6 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
           <Label>
             <InputEl
               {...register("cardNumber")}
-              // style={{ width: "206px" }}
               style={{ width: "100%" }}
               placeholder={t("patient.cardNumber")}
             />

@@ -4,6 +4,8 @@ export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+
+  gap: ${props => props.theme.spacing(4)};
 `;
 
 const Button = styled.button`
@@ -15,7 +17,7 @@ const Button = styled.button`
   border-color: transparent;
 
   @media screen and (max-width: 1279px) {
-    height: 200px;
+    height: 196px;
   }
 
   @media screen and (min-width: 1280px) {
@@ -33,22 +35,18 @@ const Button = styled.button`
 
 export const LargeBtn = styled(Button)`
   width: 100%;
-  margin-bottom: ${props => props.theme.spacing(4)};
 `;
 
 export const MediumBtn = styled(Button)`
   @media screen and (max-width: 959px) {
     width: 100%;
-    margin-bottom: ${props => props.theme.spacing(4)};
   }
 
   @media screen and (min-width: 960px) {
     flex-grow: 4;
-    margin-right: ${props => props.theme.spacing(2)};
   }
 
   @media screen and (min-width: 1280px) {
-    margin-right: ${props => props.theme.spacing(4)};
   }
 `;
 
