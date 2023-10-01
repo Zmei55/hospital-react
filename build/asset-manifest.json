@@ -1,29 +1,29 @@
 {
   "files": {
     "main.css": "/hospital_react_ts/static/css/main.abea5fc9.css",
-    "main.js": "/hospital_react_ts/static/js/main.2b3203b8.js",
+    "main.js": "/hospital_react_ts/static/js/main.86577450.js",
     "static/js/441.fc20bc63.chunk.js": "/hospital_react_ts/static/js/441.fc20bc63.chunk.js",
-    "static/js/279.e0bd6d4c.chunk.js": "/hospital_react_ts/static/js/279.e0bd6d4c.chunk.js",
-    "static/js/609.16d54fe1.chunk.js": "/hospital_react_ts/static/js/609.16d54fe1.chunk.js",
-    "static/js/147.9238f61f.chunk.js": "/hospital_react_ts/static/js/147.9238f61f.chunk.js",
-    "static/js/217.e23cc130.chunk.js": "/hospital_react_ts/static/js/217.e23cc130.chunk.js",
+    "static/js/279.ed743f66.chunk.js": "/hospital_react_ts/static/js/279.ed743f66.chunk.js",
+    "static/js/609.41f6e40e.chunk.js": "/hospital_react_ts/static/js/609.41f6e40e.chunk.js",
+    "static/js/147.b4ba196b.chunk.js": "/hospital_react_ts/static/js/147.b4ba196b.chunk.js",
+    "static/js/217.a444a7ed.chunk.js": "/hospital_react_ts/static/js/217.a444a7ed.chunk.js",
     "static/js/2.b951b07b.chunk.js": "/hospital_react_ts/static/js/2.b951b07b.chunk.js",
-    "static/js/93.6986faff.chunk.js": "/hospital_react_ts/static/js/93.6986faff.chunk.js",
+    "static/js/554.7d1e8bd8.chunk.js": "/hospital_react_ts/static/js/554.7d1e8bd8.chunk.js",
     "static/media/svgSprite.svg": "/hospital_react_ts/static/media/svgSprite.049f6f4bfd016bfed69441d006383fa5.svg",
     "index.html": "/hospital_react_ts/index.html",
     "static/media/getFetch.cjs": "/hospital_react_ts/static/media/getFetch.40f37ddea2378391108f.cjs",
     "main.abea5fc9.css.map": "/hospital_react_ts/static/css/main.abea5fc9.css.map",
-    "main.2b3203b8.js.map": "/hospital_react_ts/static/js/main.2b3203b8.js.map",
+    "main.86577450.js.map": "/hospital_react_ts/static/js/main.86577450.js.map",
     "441.fc20bc63.chunk.js.map": "/hospital_react_ts/static/js/441.fc20bc63.chunk.js.map",
-    "279.e0bd6d4c.chunk.js.map": "/hospital_react_ts/static/js/279.e0bd6d4c.chunk.js.map",
-    "609.16d54fe1.chunk.js.map": "/hospital_react_ts/static/js/609.16d54fe1.chunk.js.map",
-    "147.9238f61f.chunk.js.map": "/hospital_react_ts/static/js/147.9238f61f.chunk.js.map",
-    "217.e23cc130.chunk.js.map": "/hospital_react_ts/static/js/217.e23cc130.chunk.js.map",
+    "279.ed743f66.chunk.js.map": "/hospital_react_ts/static/js/279.ed743f66.chunk.js.map",
+    "609.41f6e40e.chunk.js.map": "/hospital_react_ts/static/js/609.41f6e40e.chunk.js.map",
+    "147.b4ba196b.chunk.js.map": "/hospital_react_ts/static/js/147.b4ba196b.chunk.js.map",
+    "217.a444a7ed.chunk.js.map": "/hospital_react_ts/static/js/217.a444a7ed.chunk.js.map",
     "2.b951b07b.chunk.js.map": "/hospital_react_ts/static/js/2.b951b07b.chunk.js.map",
-    "93.6986faff.chunk.js.map": "/hospital_react_ts/static/js/93.6986faff.chunk.js.map"
+    "554.7d1e8bd8.chunk.js.map": "/hospital_react_ts/static/js/554.7d1e8bd8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.abea5fc9.css",
-    "static/js/main.2b3203b8.js"
+    "static/js/main.86577450.js"
   ]
 }
