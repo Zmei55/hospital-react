@@ -41,16 +41,10 @@ export const ModalTitle = styled.h3`
 
   @media screen and (max-width: 959px) {
     width: 80px;
-    /* white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; */
   }
 
   @media screen and (min-width: 960px) and (max-width: 1279px) {
     width: 360px;
-    /* white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; */
   }
 
   @media screen and (max-width: 1279px) {

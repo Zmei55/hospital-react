@@ -99,7 +99,6 @@ export const AuthMenu: React.FC = () => {
       </Form>
 
       {isError && (
-        // <Modal width="500px" height="400px" onClose={errorModalClose}>
         <Modal onClose={errorModalClose}>
           <ErrorTitle>{t("auth.authError")}</ErrorTitle>
           <AcceptBtn

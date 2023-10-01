@@ -81,7 +81,6 @@ export const Body = styled.div`
   }
 
   @media screen and (min-width: 1920px) {
-    /* width: 100%; */
     height: 648px;
     padding-right: ${props => props.theme.spacing(6)};
     padding-left: ${props => props.theme.spacing(6)};

@@ -71,7 +71,6 @@ export const FindRequest: React.FC = () => {
             marginRight: "24px",
           }}
           background="transparent"
-          // onClick={handleResetBtn}
         >
           {t("shared.button.reset")}
         </ResetBtn>

@@ -46,7 +46,6 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
 
   return (
     <>
-      {/* <Modal width="1282px" height="712px" onClose={() => toggleLaborModal()}> */}
       <Modal onClose={() => toggleLaborModal()}>
         <Header>
           <HeaderTitle>{t("service.implementer")}</HeaderTitle>

@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   height: 100%;
 
-  @media screen and (min-width: 640px) and (max-width: 1279px) {
+  @media screen and (max-width: 1279px) {
     width: 100%;
   }
 
@@ -83,11 +83,11 @@ export const ModalHeader = styled.div`
 
   width: 100%;
 
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-right: 24px;
-  padding-left: 24px;
-  border-bottom: 2px solid #e6e6e6;
+  padding-top: ${props => props.theme.spacing(4)};
+  padding-bottom: ${props => props.theme.spacing(4)};
+  padding-right: ${props => props.theme.spacing(6)};
+  padding-left: ${props => props.theme.spacing(6)};
+  border-bottom: ${props => props.theme.border};
 `;
 
 export const ModalTitle = styled.h3`

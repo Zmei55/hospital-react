@@ -22,7 +22,6 @@ export const SearchEl: React.FC = () => {
       </ModalBtn>
 
       {showModal && (
-        // <Modal width="1392px" height="752px" onClose={togglePatientsModal}>
         <Modal onClose={togglePatientsModal}>
           <SearchModalEl />
         </Modal>

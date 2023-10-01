@@ -2,8 +2,6 @@ import { api } from "app/redux";
 import { IUser } from "entities/User";
 
 interface ILoginResponse {
-  // status: string;
-  // code: number;
   data: {
     user: IUser;
     token: string;

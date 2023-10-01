@@ -1,11 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { useToggleMenuModal } from "entities/User";
-import {
-  useAppSelector,
-  // Button as FindBtn,
-  Button as CloseBtn,
-  Icon,
-} from "shared";
+import { useAppSelector, Button as CloseBtn, Icon } from "shared";
 
 import {
   Header,
@@ -35,21 +30,6 @@ export const MenuModal: React.FC = () => {
     <>
       <Header>
         <Title>{t("layout.menuTitle")}</Title>
-
-        {/* <FindBtn
-          id="findSearchPatBtn"
-          type="submit"
-          form="findPatientList"
-          style={{
-            height: "72px",
-            paddingRight: "44px",
-            paddingLeft: "44px",
-            marginRight: "24px",
-          }}
-          background="blue"
-        >
-          Sparen
-        </FindBtn> */}
 
         <CloseBtn
           id="closeSearchPatBtn"
