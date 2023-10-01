@@ -95,7 +95,6 @@ export const Body = styled.div`
 
   @media screen and (min-width: 1600px) {
     height: 588px;
-    margin-top: ${props => props.theme.spacing(10)};
   }
 
   @media screen and (min-width: 1920px) {
@@ -134,20 +133,6 @@ export const Form = styled.form`
 `;
 
 export const Label = styled.label`
-  @media screen and (max-width: 959px) {
-    /* :nth-of-type(2),
-    :nth-of-type(3) {
-      flex: 1;
-    } */
-  }
-
-  @media screen and (min-width: 960px) {
-    /* :nth-of-type(2),
-    :nth-of-type(3) {
-      flex: 1;
-    } */
-  }
-
   @media screen and (max-width: 1279px) {
     :nth-of-type(4) {
       width: 100%;
@@ -236,58 +221,33 @@ export const ListHeader = styled.div`
 `;
 
 export const HeadName = styled.div`
-  /* text-align: start; */
-
   @media screen and (min-width: 960px) {
     flex: 3.8;
   }
-
-  /* @media screen and (min-width: 1920px) {
-    width: 674px;
-    padding-left: ${props => props.theme.spacing(6)};
-  } */
 `;
 
 export const HeadCardNumber = styled.div`
   @media screen and (min-width: 960px) {
     flex: 1.4;
   }
-  /* text-align: center; */
-
-  /* @media screen and (min-width: 1920px) {
-    width: 223px;
-  } */
 `;
 
 export const HeadRequestNumber = styled.div`
   @media screen and (min-width: 960px) {
     flex: 1.4;
   }
-  /* text-align: center;
-
-  @media screen and (min-width: 1920px) {
-    width: 283px;
-  } */
 `;
 
 export const HeadRequestDate = styled.div`
   @media screen and (min-width: 960px) {
     flex: 0.95;
   }
-  /* text-align: center;
-
-  @media screen and (min-width: 1920px) {
-    width: 266px;
-  } */
 `;
 
 export const HeadSelectBtn = styled.div`
   @media screen and (min-width: 1280px) {
     flex: 1.23;
   }
-  /* @media screen and (min-width: 1920px) {
-    width: 194px;
-  } */
 `;
 
 export const ListBody = styled.ul`
@@ -355,20 +315,9 @@ export const BodyName = styled.p`
   @media screen and (min-width: 960px) {
     flex: 3.75;
   }
-
-  /* @media screen and (min-width: 1920px) {
-    width: 674px;
-    padding-left: ${props => props.theme.spacing(6)};
-  } */
 `;
 
 export const BodyCardNumber = styled.p`
-  /* text-align: center;
-
-  @media screen and (min-width: 1920px) {
-    width: 223px;
-  } */
-
   @media screen and (max-width: 959px) {
     flex: 1;
     text-align: center;
@@ -388,12 +337,6 @@ export const BodyRequestNumber = styled.p`
   @media screen and (min-width: 960px) {
     flex: 1.4;
   }
-
-  /* text-align: center;
-
-  @media screen and (min-width: 1920px) {
-    width: 283px;
-  } */
 `;
 
 export const BodyRequestDate = styled.p`
@@ -405,11 +348,6 @@ export const BodyRequestDate = styled.p`
   @media screen and (min-width: 960px) {
     flex: 0.9;
   }
-  /* text-align: center;
-
-  @media screen and (min-width: 1920px) {
-    width: 266px;
-  } */
 `;
 
 export const BodySelectBtn = styled.p`
