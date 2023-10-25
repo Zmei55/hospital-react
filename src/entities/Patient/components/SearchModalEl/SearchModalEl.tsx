@@ -166,9 +166,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
                 <ListBody>
                   {patientList.map(patient => (
                     <ListItem key={patient._id}>
-                      <BodyName>
-                        {patient.firstName} {patient.lastName}
-                      </BodyName>
+                      <BodyName>{patient.name}</BodyName>
                       <BodyBirthDay>
                         {showBirthDate(patient.birthDate)}
                       </BodyBirthDay>

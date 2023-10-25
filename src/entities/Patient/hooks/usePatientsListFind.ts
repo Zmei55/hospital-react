@@ -14,19 +14,8 @@ export const usePatientsListFind = () => {
   const handlePatientsListFind: SubmitHandler<
     ISearchPatientState
   > = async data => {
-    const name = data.name.split(" ");
-    const formData = new FormData();
-    formData.append("firstName", name[0]);
-    if (name[1] === undefined) {
-      formData.append("lastName", "");
-    } else {
-      formData.append("lastName", name[1]);
-    }
-    formData.append("birthDate", data.birthDate.toString());
-    formData.append("cardNumber", data.cardNumber);
-
     try {
-      const patientsListResponse = await fetchPatientsList(formData).unwrap();
+      const patientsListResponse = await fetchPatientsList(data).unwrap();
       setPatientList(patientsListResponse);
     } catch (error) {
       console.log("ERROR patientsListFormSubmit");

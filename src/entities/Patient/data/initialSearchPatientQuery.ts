@@ -1,8 +1,7 @@
 import { ISearchPatientQuery } from "entities/Patient";
 
 export const initialSearchPatientQuery: ISearchPatientQuery = {
-  firstName: "",
-  lastName: "",
+  name: "",
   birthDate: "",
   cardNumber: "",
 };

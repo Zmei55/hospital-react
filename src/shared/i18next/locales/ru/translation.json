@@ -21,11 +21,8 @@
   "patient": {
     "selectPatientBtn": "Выбрать пациента",
     "title": "Выбор пациента",
-    "name": "ФИО",
-    "firstName": "Имя",
-    "lastName": "Фамилия",
-    "patronymic": "Отчество",
-    "station": "Стационар",
+    "name": "Фамилия Имя Отчество",
+    "workplace": "Стационар",
     "dateOfBirth": "Дата рождения",
     "cardNumber": "Номер карты",
     "sex": "Пол",

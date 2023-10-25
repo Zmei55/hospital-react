@@ -12,13 +12,9 @@ export const useFilterRequest = () => {
   const [requestList, setRequestList] = useState<IRequestResponse[]>([]);
 
   const handleFilterRequests: SubmitHandler<IRequestFilter> = async data => {
-    const name = data.name.split(" ");
     const formData = new FormData();
 
-    formData.append("firstName", name[0]);
-    name[1] !== undefined
-      ? formData.append("lastName", name[1])
-      : formData.append("lastName", "");
+    formData.append("name", data.name);
     formData.append("cardNumber", data.cardNumber.toString());
     formData.append("requestNumber", data.requestNumber.toString());
     formData.append("requestDate", data.requestDate.toString());

@@ -1,7 +1,6 @@
 export interface IPatient {
   _id: string;
-  firstName: string;
-  lastName: string;
+  name: string;
   birthDate: string;
   cardNumber: number;
   gender: string;

@@ -9,10 +9,9 @@ interface IUserState {
 
 const initialState: IUserState = {
   user: {
-    firstName: "",
-    lastName: "",
-    logName: "",
-    station: "",
+    name: "",
+    username: "",
+    workplace: "",
   },
   token: "",
   isLoggedIn: false,

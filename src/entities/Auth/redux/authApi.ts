@@ -17,6 +17,7 @@ const authApi = api.injectEndpoints({
         body: user,
       }),
       invalidatesTags: ["Auth"],
+      // transformResponse: (response: { data: ILoginResponse }) => response.data,
       transformResponse: (response: { data: ILoginResponse }) => response.data,
     }),
     logOut: builder.query({

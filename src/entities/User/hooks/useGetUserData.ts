@@ -2,15 +2,13 @@ import { useState } from "react";
 import { useAppSelector } from "shared";
 
 export const useGetUserData = () => {
-  const [stationToUpper, setStationToUpper] = useState("");
-  const { firstName, lastName, station } = useAppSelector(
-    state => state.auth.user
-  );
+  const [workplaceToUpper, setWorkplaceToUpper] = useState("");
+  const { name, workplace } = useAppSelector(state => state.auth.user);
 
-  if (station && stationToUpper === "") {
-    const fullStation = station[0].toUpperCase() + station.slice(1);
-    setStationToUpper(fullStation);
+  if (workplace && workplaceToUpper === "") {
+    const fullWorkplace = workplace[0].toUpperCase() + workplace.slice(1);
+    setWorkplaceToUpper(fullWorkplace);
   }
 
-  return { firstName, lastName, stationToUpper };
+  return { name, workplaceToUpper };
 };

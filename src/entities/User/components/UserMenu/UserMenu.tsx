@@ -9,12 +9,12 @@ import {
   Modal,
 } from "shared";
 
-import { Container, UserBox, Name, Station } from "./UserMenu.styled";
+import { Container, UserBox, Name, Workplace } from "./UserMenu.styled";
 
 export const UserMenu: React.FC = () => {
   const isLoggedIn = useAppSelector(state => state.auth.isLoggedIn);
   const [logout] = useLogOut();
-  const { firstName, lastName, stationToUpper } = useGetUserData();
+  const { name, workplaceToUpper } = useGetUserData();
   const showModal = useAppSelector(state => state.user.modalUser);
   const { toggleMenuModal } = useToggleMenuModal();
   const { t } = useTranslation();
@@ -23,10 +23,8 @@ export const UserMenu: React.FC = () => {
     <Container>
       {isLoggedIn && (
         <UserBox>
-          <Name>
-            {firstName} {lastName}
-          </Name>
-          <Station>{`${stationToUpper} Station, Krankenschwester`}</Station>
+          <Name>{name}</Name>
+          <Workplace>{`${workplaceToUpper} Station, Krankenschwester`}</Workplace>
         </UserBox>
       )}
 

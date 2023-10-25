@@ -59,9 +59,7 @@ export const InfoEl: React.FC<IInfo> = () => {
           )}
         </InfoBtn>
 
-        <Name>
-          {patient.firstName} {patient.lastName}
-        </Name>
+        <Name>{patient.name}</Name>
 
         <ClearBtn
           id="clearPatInfo"

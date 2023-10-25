@@ -18,6 +18,7 @@ export const useLogIn = () => {
 
     try {
       const loginResponse = await login(formData).unwrap();
+      console.log("useLogIn ~ loginResponse:", loginResponse);
       dispatch(loginSuccess(loginResponse));
       resetLoginRequest();
     } catch (error) {

@@ -5,7 +5,7 @@ const requestDetailsApi = api.injectEndpoints({
   endpoints: builder => ({
     sendRequestDetail: builder.mutation<string, IDetail>({
       query: requestDetail => ({
-        url: "/api/requestDetails/add",
+        url: "/api/request-details/add",
         method: "POST",
         body: requestDetail,
       }),

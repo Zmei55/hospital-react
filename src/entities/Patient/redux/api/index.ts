@@ -1,2 +1,2 @@
 export * from "./fetchPatientById";
-export * from "./fetchPatientByName";
+export * from "./fetchPatientByFilter";
