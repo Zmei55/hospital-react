@@ -20,12 +20,8 @@ export const useHandleServicesForm = () => {
     useFetchServicesByNameMutation();
 
   const handleServicesForm: SubmitHandler<IFilter> = async data => {
-    const formData = new FormData();
-
-    formData.append("filter", data.filter);
-
     try {
-      const filteredResponse = await fetchServicesList(formData).unwrap();
+      const filteredResponse = await fetchServicesList(data).unwrap();
       if (filteredResponse.length > 0)
         setFilteredServicesList(filteredResponse);
     } catch (error) {
