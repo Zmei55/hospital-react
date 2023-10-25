@@ -2,11 +2,10 @@ import { api } from "app/redux";
 
 export const requestCountApi = api.injectEndpoints({
   endpoints: builder => ({
-    fetchRequestCount: builder.mutation({
-      query: builder => ({
+    fetchRequestCount: builder.mutation<number, null>({
+      query: () => ({
         url: "/api/requests/count",
         method: "POST",
-        body: builder,
       }),
       invalidatesTags: ["Request"],
       transformResponse: (response: { data: { result: number } }) =>
