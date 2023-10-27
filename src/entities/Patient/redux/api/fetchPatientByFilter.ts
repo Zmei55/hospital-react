@@ -10,8 +10,7 @@ export const patientsByFilterApi = api.injectEndpoints({
         body: filter,
       }),
       invalidatesTags: ["Patients"],
-      transformResponse: (response: { data: { result: IPatient[] } }) =>
-        response.data.result,
+      transformResponse: (response: { data: IPatient[] }) => response.data,
     }),
   }),
 });

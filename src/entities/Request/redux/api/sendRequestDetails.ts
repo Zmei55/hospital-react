@@ -10,8 +10,8 @@ const requestDetailsApi = api.injectEndpoints({
         body: requestDetail,
       }),
       invalidatesTags: ["Request"],
-      transformResponse: (response: { data: { result: { _id: string } } }) =>
-        response.data.result._id,
+      transformResponse: (response: { data: { _id: string } }) =>
+        response.data._id,
     }),
   }),
 });

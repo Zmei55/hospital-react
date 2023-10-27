@@ -10,8 +10,7 @@ export const servicesByNameApi = api.injectEndpoints({
         body: filter,
       }),
       invalidatesTags: ["Services"],
-      transformResponse: (response: { data: { result: IService[] } }) =>
-        response.data.result,
+      transformResponse: (response: { data: IService[] }) => response.data,
     }),
   }),
 });

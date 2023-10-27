@@ -9,8 +9,7 @@ export const serviceByIdApi = api.injectEndpoints({
         method: "GET",
       }),
       providesTags: ["Services"],
-      transformResponse: (response: { data: { result: IService } }) =>
-        response.data.result,
+      transformResponse: (response: { data: IService }) => response.data,
     }),
   }),
 });

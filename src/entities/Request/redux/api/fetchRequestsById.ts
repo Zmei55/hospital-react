@@ -9,8 +9,8 @@ export const requestsByIdApi = api.injectEndpoints({
         method: "GET",
       }),
       providesTags: ["Request"],
-      transformResponse: (response: { data: { result: IRequestResponse } }) =>
-        response.data.result,
+      transformResponse: (response: { data: IRequestResponse }) =>
+        response.data,
     }),
   }),
 });

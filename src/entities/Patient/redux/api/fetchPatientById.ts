@@ -9,8 +9,7 @@ export const patientsByIdApi = api.injectEndpoints({
         method: "GET",
       }),
       providesTags: ["Patients"],
-      transformResponse: (response: { data: { result: IPatient } }) =>
-        response.data.result,
+      transformResponse: (response: { data: IPatient }) => response.data,
     }),
   }),
 });

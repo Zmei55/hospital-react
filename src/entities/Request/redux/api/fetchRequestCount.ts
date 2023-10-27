@@ -8,8 +8,7 @@ export const requestCountApi = api.injectEndpoints({
         method: "POST",
       }),
       invalidatesTags: ["Request"],
-      transformResponse: (response: { data: { result: number } }) =>
-        response.data.result,
+      transformResponse: (response: { data: number }) => response.data,
     }),
   }),
 });

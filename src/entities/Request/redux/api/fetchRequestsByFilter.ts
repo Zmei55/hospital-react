@@ -11,9 +11,8 @@ export const requestsByFilterApi = api.injectEndpoints({
           body: filter,
         }),
         invalidatesTags: ["Request"],
-        transformResponse: (response: {
-          data: { result: IRequestResponse[] };
-        }) => response.data.result,
+        transformResponse: (response: { data: IRequestResponse[] }) =>
+          response.data,
       }
     ),
   }),
