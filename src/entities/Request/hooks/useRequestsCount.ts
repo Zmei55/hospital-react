@@ -11,7 +11,6 @@ export const useRequestsCount = () => {
   const getRequestsCount = async () => {
     try {
       const count = await requestsCount(null).unwrap();
-      console.log("getRequestsCount ~ count:", count);
       dispatch(addRequestDBCount(count + 1));
     } catch (error) {
       console.log("ERROR fetchRequestCount");
