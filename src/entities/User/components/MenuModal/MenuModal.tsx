@@ -61,18 +61,13 @@ export const MenuModal: React.FC = () => {
         {isLoggedIn && (
           <UserBlock>
             <UserRow>
-              <Key>{t("patient.firstName")}: </Key>
-              <Value>{user.firstName}</Value>
+              <Key>{t("patient.name")}: </Key>
+              <Value>{user.name}</Value>
             </UserRow>
 
             <UserRow>
-              <Key>{t("patient.lastName")}: </Key>
-              <Value>{user.lastName}</Value>
-            </UserRow>
-
-            <UserRow>
-              <Key>{t("patient.station")}: </Key>
-              <Value>{user.station}</Value>
+              <Key>{t("patient.workplace")}: </Key>
+              <Value>{user.workplace}</Value>
             </UserRow>
           </UserBlock>
         )}

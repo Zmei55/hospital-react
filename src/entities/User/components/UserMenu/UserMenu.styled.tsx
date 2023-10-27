@@ -48,7 +48,7 @@ export const Name = styled.div`
   }
 `;
 
-export const Station = styled.div`
+export const Workplace = styled.div`
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;

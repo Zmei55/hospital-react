@@ -2,8 +2,7 @@ import { IPatient } from "entities/Patient";
 
 export const initialPatient: IPatient = {
   _id: "",
-  firstName: "",
-  lastName: "",
+  name: "",
   birthDate: "",
   cardNumber: 0,
   gender: "",

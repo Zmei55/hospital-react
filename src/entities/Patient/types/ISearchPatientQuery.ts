@@ -1,6 +1,5 @@
 export interface ISearchPatientQuery {
-  firstName: string;
-  lastName: string;
+  name: string;
   birthDate: string;
   cardNumber: string;
 }

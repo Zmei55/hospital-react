@@ -156,9 +156,7 @@ export const FindRequest: React.FC = () => {
             <ListBody>
               {requestList.map(request => (
                 <ListItem key={request._id}>
-                  <BodyName>
-                    {request.firstName} {request.lastName}
-                  </BodyName>
+                  <BodyName>{request.name}</BodyName>
                   <BodyCardNumber>{request.cardNumber}</BodyCardNumber>
                   <BodyRequestNumber>{request.requestNumber}</BodyRequestNumber>
                   <BodyRequestDate>

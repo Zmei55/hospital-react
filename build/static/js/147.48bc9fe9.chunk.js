@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkhospital_react_ts=self.webpackChunkhospital_react_ts||[]).push([[147],{7147:function(t,s,e){e.r(s);var a=e(9198),n=e(3329);s.default=function(){return(0,n.jsx)(a.ny,{})}}}]);
+//# sourceMappingURL=147.48bc9fe9.chunk.js.map

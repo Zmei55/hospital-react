@@ -5,13 +5,13 @@ const requestDetailsApi = api.injectEndpoints({
   endpoints: builder => ({
     sendRequestDetail: builder.mutation<string, IDetail>({
       query: requestDetail => ({
-        url: "/api/requestDetails/add",
+        url: "/api/request-details/add",
         method: "POST",
         body: requestDetail,
       }),
       invalidatesTags: ["Request"],
-      transformResponse: (response: { data: { result: { _id: string } } }) =>
-        response.data.result._id,
+      transformResponse: (response: { data: { _id: string } }) =>
+        response.data._id,
     }),
   }),
 });

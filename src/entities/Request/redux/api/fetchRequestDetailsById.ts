@@ -5,12 +5,11 @@ export const requestDetailsByIdApi = api.injectEndpoints({
   endpoints: builder => ({
     fetchRequestDetailsById: builder.query<IDetail, string>({
       query: id => ({
-        url: `api/requestDetails/${id}`,
+        url: `api/request-details/${id}`,
         method: "GET",
       }),
       providesTags: ["Request"],
-      transformResponse: (response: { data: { result: IDetail } }) =>
-        response.data.result,
+      transformResponse: (response: { data: IDetail }) => response.data,
     }),
   }),
 });

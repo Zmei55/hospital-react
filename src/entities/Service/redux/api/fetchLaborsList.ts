@@ -6,8 +6,7 @@ export const laborsListApi = api.injectEndpoints({
     fetchLaborsList: builder.query<ILabor[], null>({
       query: () => ({ url: "/api/labors/" }),
       providesTags: ["Labors"],
-      transformResponse: (response: { data: { result: ILabor[] } }) =>
-        response.data.result,
+      transformResponse: (response: { data: ILabor[] }) => response.data,
     }),
   }),
 });
