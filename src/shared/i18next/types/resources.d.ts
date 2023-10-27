@@ -27,6 +27,9 @@ interface Resources {
       dateOfBirth: string;
       cardNumber: string;
       sex: string;
+      MALE: string;
+      FEMALE: string;
+      DIVERSE: string;
       medicalCard: string;
       phone: string;
       email: string;
