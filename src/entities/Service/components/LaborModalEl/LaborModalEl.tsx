@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { useHandleLaborChange } from "entities/Service";
+import { useHandleLaborChange, isCheckedDetail } from "entities/Service";
 import {
   useAppSelector,
   Modal,
@@ -36,13 +36,16 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
   const services = useAppSelector(state => state.services.services);
   const labors = useAppSelector(state => state.services.labors);
 
-  const isCheckedDetail = (serviceId: string, laborId: string) => {
-    for (const detail of detailsState) {
-      if (detail.serviceId === serviceId && detail.laborId === laborId) {
-        return true;
-      }
-    }
-  };
+  // const isCheckedDetail = (
+  //   serviceId: string | number,
+  //   laborId: string | number
+  // ) => {
+  //   for (const detail of detailsState) {
+  //     if (detail.serviceId === serviceId && detail.laborId === laborId) {
+  //       return true;
+  //     }
+  //   }
+  // };
 
   return (
     <>
@@ -86,10 +89,14 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
                         <Label>
                           <input
                             type="radio"
-                            name={service._id}
+                            name={service._id.toString()}
                             value={labor._id}
                             onChange={handleLaborChange}
-                            checked={isCheckedDetail(service._id, labor._id)}
+                            checked={isCheckedDetail(
+                              service._id,
+                              labor._id,
+                              detailsState
+                            )}
                             required
                           />
                         </Label>

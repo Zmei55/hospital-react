@@ -11,7 +11,7 @@ export const useChoosePatient = () => {
   const [fetchPatient] = useLazyFetchPatientByIdQuery();
   const { resetPatients } = usePatientsListFind();
 
-  const choosePatient = async (id: string) => {
+  const choosePatient = async (id: string | number) => {
     const patientResponse = await fetchPatient(id).unwrap();
     dispatch(addPatient(patientResponse));
     resetPatients();

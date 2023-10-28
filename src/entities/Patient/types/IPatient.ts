@@ -1,5 +1,5 @@
 export interface IPatient {
-  _id: string;
+  _id: string | number;
   name: string;
   birthDate: string;
   cardNumber: number;

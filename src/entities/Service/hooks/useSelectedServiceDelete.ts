@@ -6,7 +6,7 @@ import { useAppDispatch } from "shared";
 export const useSelectedServiceDelete = () => {
   const dispatch = useAppDispatch();
 
-  const removeSelectedService = (id: string) => {
+  const removeSelectedService = (id: string | number) => {
     dispatch(deleteSelectedService(id));
     toast.success("Dienst entfernt!");
   };

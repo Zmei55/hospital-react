@@ -3,7 +3,7 @@ import { IPatient } from "entities/Patient";
 
 export const patientsByIdApi = api.injectEndpoints({
   endpoints: builder => ({
-    fetchPatientById: builder.query<IPatient, string>({
+    fetchPatientById: builder.query<IPatient, string | number>({
       query: _id => ({
         url: `/api/patients/${_id}`,
         method: "GET",
