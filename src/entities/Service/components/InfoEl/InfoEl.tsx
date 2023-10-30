@@ -42,10 +42,10 @@ export const InfoEl: React.FC = () => {
 
                 {detailsList.map(
                   detail =>
-                    detail.serviceId === service._id &&
+                    detail.serviceId === service._id.toString() &&
                     laborList.map(
                       labor =>
-                        labor._id === detail.laborId && (
+                        labor._id.toString() === detail.laborId && (
                           <LaborName key={labor._id}>{labor.name}</LaborName>
                         )
                     )

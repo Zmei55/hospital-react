@@ -36,17 +36,6 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
   const services = useAppSelector(state => state.services.services);
   const labors = useAppSelector(state => state.services.labors);
 
-  // const isCheckedDetail = (
-  //   serviceId: string | number,
-  //   laborId: string | number
-  // ) => {
-  //   for (const detail of detailsState) {
-  //     if (detail.serviceId === serviceId && detail.laborId === laborId) {
-  //       return true;
-  //     }
-  //   }
-  // };
-
   return (
     <>
       <Modal onClose={() => toggleLaborModal()}>

@@ -125,6 +125,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
           <Label>
             <InputEl
               {...register("name")}
+              autoFocus
               style={{ width: "100%" }}
               placeholder={t("patient.name")}
             />
