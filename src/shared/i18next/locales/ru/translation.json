@@ -59,7 +59,7 @@
     "title": "Найти заявку",
     "requestNumber": "Номер заявки",
     "dateOfRequest": "Дата заявки",
-    "notFoundException": "Запрос не найден"
+    "notFoundException": "Запрос с такими данными не найден"
   },
   "shared": {
     "button": {
