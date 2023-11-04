@@ -1,12 +1,15 @@
+import { useTranslation } from "react-i18next";
 import { Spinner } from "shared";
 
 import { LoadContainer, Title } from "./Loading.styled";
 
 export const Loading: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <LoadContainer>
-        <Title>Einen Moment Geduld bitte...</Title>;
+        <Title>{t("shared.loader")}</Title>
         <Spinner />
       </LoadContainer>
     </>

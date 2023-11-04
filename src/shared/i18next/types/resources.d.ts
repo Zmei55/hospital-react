@@ -74,6 +74,7 @@ interface Resources {
         abort: string;
         saveAndCancel: string;
       };
+      loader: string;
     };
     UnknownPart: {
       title: string;

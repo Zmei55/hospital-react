@@ -72,7 +72,8 @@
       "reset": "Reset",
       "abort": "Abort",
       "saveAndCancel": "Save and close"
-    }
+    },
+    "loader": "One moment please..."
   },
   "UnknownPart": {
     "title": "Unknown part",

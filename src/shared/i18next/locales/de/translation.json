@@ -72,7 +72,8 @@
       "reset": "Rücksetzen",
       "abort": "Abbruch",
       "saveAndCancel": "Speichern und schließen"
-    }
+    },
+    "loader": "Einen Moment Geduld bitte..."
   },
   "UnknownPart": {
     "title": "Unbekanntes Teil",
