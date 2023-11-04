@@ -60,7 +60,7 @@ interface Resources {
       title: string;
       requestNumber: string;
       dateOfRequest: string;
-      selectBtn: string;
+      notFoundException: string;
     };
     shared: {
       button: {

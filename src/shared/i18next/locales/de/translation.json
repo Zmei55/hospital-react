@@ -59,7 +59,7 @@
     "title": "Finden Sie einen Antrag",
     "requestNumber": "Antragsnummer",
     "dateOfRequest": "Antragsdatum",
-    "selectBtn": "Antragsdetails"
+    "notFoundException": "Antrag nicht gefunden"
   },
   "shared": {
     "button": {

@@ -15,6 +15,7 @@ import {
   SpinnerCenterBox,
   Spinner,
   showBirthDate,
+  NotFound,
 } from "shared";
 
 import {
@@ -37,7 +38,6 @@ import {
   BodyCardNumber,
   BodySelectBtn,
   SelectBtn,
-  NotFoundText,
 } from "./SearchModalEl.styled";
 
 interface ISearchModalForm {}
@@ -186,9 +186,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
               </List>
             )}
 
-            {isError && (
-              <NotFoundText>{t("patient.NotFoundPatientText")}</NotFoundText>
-            )}
+            {isError && <NotFound>{t("patient.NotFoundPatientText")}</NotFound>}
           </>
         )}
       </ModalBody>

@@ -1,5 +1,5 @@
 export interface IRequestFilter {
-  name: string;
+  patientName: string;
   cardNumber: number;
   requestNumber: number;
   requestDate: Date;

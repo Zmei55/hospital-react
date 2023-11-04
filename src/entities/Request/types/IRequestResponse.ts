@@ -4,7 +4,7 @@ export interface IRequestResponse {
   _id: string;
   requestNumber: number;
   patientId: string;
-  name: string;
+  patientName: string;
   cardNumber: number;
   createdAt: Date;
   requestDetails: IDetail[];

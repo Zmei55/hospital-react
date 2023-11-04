@@ -59,7 +59,7 @@
     "title": "Find a request",
     "requestNumber": "Request number",
     "dateOfRequest": "Request date",
-    "selectBtn": "Request details"
+    "notFoundException": "Request not found"
   },
   "shared": {
     "button": {

@@ -13,6 +13,9 @@ import {
   Button as CloseBtn,
   Icon,
   InputEl,
+  SpinnerCenterBox,
+  Spinner,
+  NotFound,
 } from "shared";
 
 import {
@@ -41,17 +44,28 @@ import {
 
 export const FindRequest: React.FC = () => {
   const [navigate] = useAppNavigate();
-  const { register, handleSubmit } = useForm<IRequestFilter>({
+  const { register, handleSubmit, reset } = useForm<IRequestFilter>({
     defaultValues: {
-      name: undefined,
+      patientName: undefined,
       cardNumber: undefined,
       requestNumber: undefined,
       requestDate: undefined,
     },
   });
-  const { requestList, handleFilterRequests } = useFilterRequest();
+  const {
+    requestList,
+    setRequestList,
+    handleFilterRequests,
+    isLoading,
+    isError,
+  } = useFilterRequest();
   const { chooseRequest } = useChooseRequest();
   const { t } = useTranslation();
+
+  const handleResetForm = () => {
+    reset();
+    setRequestList([]);
+  };
 
   const handleCloseBtn = () => {
     navigate("/desktop");
@@ -64,6 +78,8 @@ export const FindRequest: React.FC = () => {
 
         <ResetBtn
           id="resetSearchReqBtn"
+          type="button"
+          form="findReqForm"
           style={{
             height: "72px",
             paddingRight: "44px",
@@ -71,6 +87,7 @@ export const FindRequest: React.FC = () => {
             marginRight: "24px",
           }}
           background="transparent"
+          onClick={handleResetForm}
         >
           {t("shared.button.reset")}
         </ResetBtn>
@@ -107,7 +124,7 @@ export const FindRequest: React.FC = () => {
         <Form id="findReqForm" onSubmit={handleSubmit(handleFilterRequests)}>
           <Label>
             <InputEl
-              {...register("name")}
+              {...register("patientName")}
               style={{ width: "100%" }}
               placeholder={t("patient.name")}
             />
@@ -139,41 +156,53 @@ export const FindRequest: React.FC = () => {
           </Label>
         </Form>
 
-        {requestList.length > 0 && (
-          <List>
-            <ListHeader>
-              <HeadName>{t("patient.name")}</HeadName>
-              <HeadCardNumber>{t("patient.cardNumber")}</HeadCardNumber>
-              <HeadRequestNumber>
-                {t("findRequest.requestNumber")}
-              </HeadRequestNumber>
-              <HeadRequestDate>
-                {t("findRequest.dateOfRequest")}
-              </HeadRequestDate>
-              <HeadSelectBtn></HeadSelectBtn>
-            </ListHeader>
+        {isError && <NotFound>Запрос не найден</NotFound>}
 
-            <ListBody>
-              {requestList.map(request => (
-                <ListItem key={request._id}>
-                  <BodyName>{request.name}</BodyName>
-                  <BodyCardNumber>{request.cardNumber}</BodyCardNumber>
-                  <BodyRequestNumber>{request.requestNumber}</BodyRequestNumber>
-                  <BodyRequestDate>
-                    {showBirthDate(request.createdAt.toString())}
-                  </BodyRequestDate>
-                  <BodySelectBtn>
-                    <SelectBtn
-                      id="selectPatLink"
-                      onClick={() => chooseRequest(request._id)}
-                    >
-                      {t("shared.button.select")}
-                    </SelectBtn>
-                  </BodySelectBtn>
-                </ListItem>
-              ))}
-            </ListBody>
-          </List>
+        {isLoading ? (
+          <SpinnerCenterBox>
+            <Spinner size={80} />
+          </SpinnerCenterBox>
+        ) : (
+          <>
+            {requestList.length > 0 && (
+              <List>
+                <ListHeader>
+                  <HeadName>{t("patient.name")}</HeadName>
+                  <HeadCardNumber>{t("patient.cardNumber")}</HeadCardNumber>
+                  <HeadRequestNumber>
+                    {t("findRequest.requestNumber")}
+                  </HeadRequestNumber>
+                  <HeadRequestDate>
+                    {t("findRequest.dateOfRequest")}
+                  </HeadRequestDate>
+                  <HeadSelectBtn></HeadSelectBtn>
+                </ListHeader>
+
+                <ListBody>
+                  {requestList.map(request => (
+                    <ListItem key={request._id}>
+                      <BodyName>{request.patientName}</BodyName>
+                      <BodyCardNumber>{request.cardNumber}</BodyCardNumber>
+                      <BodyRequestNumber>
+                        {request.requestNumber}
+                      </BodyRequestNumber>
+                      <BodyRequestDate>
+                        {showBirthDate(request.createdAt.toString())}
+                      </BodyRequestDate>
+                      <BodySelectBtn>
+                        <SelectBtn
+                          id="selectPatLink"
+                          onClick={() => chooseRequest(request._id)}
+                        >
+                          {t("shared.button.select")}
+                        </SelectBtn>
+                      </BodySelectBtn>
+                    </ListItem>
+                  ))}
+                </ListBody>
+              </List>
+            )}
+          </>
         )}
       </Body>
     </Container>

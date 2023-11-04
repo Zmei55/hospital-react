@@ -58,7 +58,8 @@
   "findRequest": {
     "title": "Найти заявку",
     "requestNumber": "Номер заявки",
-    "dateOfRequest": "Дата заявки"
+    "dateOfRequest": "Дата заявки",
+    "notFoundException": "Запрос не найден"
   },
   "shared": {
     "button": {
