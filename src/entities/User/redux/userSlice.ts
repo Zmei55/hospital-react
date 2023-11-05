@@ -12,6 +12,7 @@ const initialState: IUserState = {
     username: "",
     name: "",
     workplace: "",
+    position: "",
   },
   modalUser: false,
 };

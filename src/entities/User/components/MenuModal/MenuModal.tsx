@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { useToggleMenuModal } from "entities/User";
+import { useGetUserData, useToggleMenuModal } from "entities/User";
 import { useAppSelector, Button as CloseBtn, Icon } from "shared";
 
 import {
@@ -19,7 +19,7 @@ import {
 export const MenuModal: React.FC = () => {
   const { t, i18n } = useTranslation();
   const isLoggedIn = useAppSelector(state => state.auth.isLoggedIn);
-  const user = useAppSelector(state => state.auth.user);
+  const { name, station, jobTitle } = useGetUserData();
   const { toggleMenuModal } = useToggleMenuModal();
 
   const changeLanguage = (language: string) => {
@@ -62,12 +62,17 @@ export const MenuModal: React.FC = () => {
           <UserBlock>
             <UserRow>
               <Key>{t("patient.name")}: </Key>
-              <Value>{user.name}</Value>
+              <Value>{name}</Value>
             </UserRow>
 
             <UserRow>
-              <Key>{t("patient.workplace")}: </Key>
-              <Value>{user.workplace}</Value>
+              <Key>{t("user.department")}: </Key>
+              <Value>{station}</Value>
+            </UserRow>
+
+            <UserRow>
+              <Key>{t("user.position.position")}: </Key>
+              <Value>{jobTitle}</Value>
             </UserRow>
           </UserBlock>
         )}

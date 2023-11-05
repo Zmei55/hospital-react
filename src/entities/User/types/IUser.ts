@@ -3,4 +3,5 @@ export interface IUser {
   name: string;
   username: string;
   workplace: string;
+  position: string;
 }

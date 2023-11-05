@@ -12,6 +12,16 @@
     "passwordInput": "Password",
     "authError": "User data was entered incorrectly"
   },
+  "user": {
+    "station": {
+      "surgery": "Surgery"
+    },
+    "department": "department",
+    "position": {
+      "position": "job title",
+      "nurse": "Nurse"
+    }
+  },
   "desktop": {
     "addRequest": "Create a request",
     "findRequest": "Find a request",
@@ -75,7 +85,7 @@
     },
     "loader": "One moment please..."
   },
-  "UnknownPart": {
+  "unknownPart": {
     "title": "Unknown part",
     "text": "Unfortunately, I do not know how this block works, so please understand and forgive me."
   }

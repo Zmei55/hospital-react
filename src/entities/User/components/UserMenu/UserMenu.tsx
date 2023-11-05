@@ -14,7 +14,7 @@ import { Container, UserBox, Name, Workplace } from "./UserMenu.styled";
 export const UserMenu: React.FC = () => {
   const isLoggedIn = useAppSelector(state => state.auth.isLoggedIn);
   const [logout] = useLogOut();
-  const { name, workplaceToUpper } = useGetUserData();
+  const { name, station, jobTitle } = useGetUserData();
   const showModal = useAppSelector(state => state.user.modalUser);
   const { toggleMenuModal } = useToggleMenuModal();
   const { t } = useTranslation();
@@ -24,7 +24,9 @@ export const UserMenu: React.FC = () => {
       {isLoggedIn && (
         <UserBox>
           <Name>{name}</Name>
-          <Workplace>{`${workplaceToUpper} Station, Krankenschwester`}</Workplace>
+          <Workplace>
+            {`${station} ${t("user.department")}, ${jobTitle}`}
+          </Workplace>
         </UserBox>
       )}
 

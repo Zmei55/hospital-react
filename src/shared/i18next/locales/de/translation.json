@@ -12,6 +12,16 @@
     "passwordInput": "Kennwort",
     "authError": "Benutzerdaten wurden falsch eingegeben"
   },
+  "user": {
+    "station": {
+      "surgery": "Chirurgische"
+    },
+    "department": "Station",
+    "position": {
+      "position": "Berufsbezeichnung",
+      "nurse": "Krankenschwester"
+    }
+  },
   "desktop": {
     "addRequest": "Erstellen Sie einen Antrag",
     "findRequest": "Finden Sie einen Antrag",
@@ -75,7 +85,7 @@
     },
     "loader": "Einen Moment Geduld bitte..."
   },
-  "UnknownPart": {
+  "unknownPart": {
     "title": "Unbekanntes Teil",
     "text": "Leider weiß ich nicht, wie dieser Block funktioniert, daher bitte ich mich zu verstehen und zu verzeihen."
   }
