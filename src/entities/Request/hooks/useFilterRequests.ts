@@ -22,6 +22,7 @@ export const useFilterRequest = () => {
 
   return {
     requestList,
+    setRequestList,
     handleFilterRequests,
     isLoading,
     isError,

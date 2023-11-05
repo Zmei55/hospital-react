@@ -11,12 +11,13 @@ export const useHandleLaborChange = () => {
 
   const uniqueObjectByServiceId = (
     array: IDetail[],
-    checkedValue: string,
-    mutabeleValue: string
+    checkedValue: string | number,
+    mutabeleValue: string | number
   ) => {
     let newArray = array.slice();
+
     for (let i = 0; i < newArray.length; i++) {
-      if (newArray[i].serviceId.includes(checkedValue)) {
+      if (newArray[i].serviceId === checkedValue) {
         newArray[i] = { ...newArray[i], laborId: mutabeleValue };
         return setDetailsState(newArray);
       }
@@ -30,7 +31,7 @@ export const useHandleLaborChange = () => {
   const handleLaborChange: React.ChangeEventHandler<HTMLInputElement> = ({
     target: { name, value },
   }: {
-    target: { name: string; value: string };
+    target: { name: string | number; value: string | number };
   }) => {
     if (detailsState.length === 0) {
       setDetailsState([{ serviceId: name, laborId: value }]);

@@ -1,5 +1,5 @@
 export interface ILabor {
-  _id: string;
+  _id: string | number;
   name: string;
   isActive: boolean;
   address?: {

@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { useNewRequest } from "entities/Desktop";
+import { useNewRequest, useFindRequest } from "entities/Desktop";
 import { useAppNavigate, Icon } from "shared";
 
 import {
@@ -14,6 +14,7 @@ import {
 export const Desktop: React.FC = () => {
   const [navigate] = useAppNavigate();
   const { handleNewRequest } = useNewRequest();
+  const { handleFindRequest } = useFindRequest();
   const { t } = useTranslation();
 
   return (
@@ -25,7 +26,7 @@ export const Desktop: React.FC = () => {
         </IconContainer>
       </LargeBtn>
 
-      <MediumBtn id="findRequestBtn" onClick={() => navigate("/find-request")}>
+      <MediumBtn id="findRequestBtn" onClick={handleFindRequest}>
         <IconContainer>
           <Icon icon="find-document" color="blue" size={140} />
           <IconTitle>{t("desktop.findRequest")}</IconTitle>

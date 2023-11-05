@@ -112,6 +112,7 @@ export const LangSelect = styled.select`
   height: 36px;
   padding-right: ${props => props.theme.spacing(2)};
   padding-left: ${props => props.theme.spacing(2)};
+  border: 1px solid #000000;
   outline: none;
 `;
 
@@ -126,8 +127,12 @@ export const UserBlock = styled.div`
 `;
 
 export const UserRow = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   :not(:last-child) {
-    margin-bottom: ${props => props.theme.spacing(2)};
+    margin-bottom: ${props => props.theme.spacing(5)};
   }
 `;
 

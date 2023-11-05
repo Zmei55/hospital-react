@@ -26,7 +26,7 @@ const servicesSlice = createSlice({
     addServices(state, action: PayloadAction<IService[]>) {
       state.services = action.payload;
     },
-    deleteService(state, action: PayloadAction<string>) {
+    deleteService(state, action: PayloadAction<string | number>) {
       state.services = state.services.filter(
         service => service._id !== action.payload
       );
@@ -37,7 +37,7 @@ const servicesSlice = createSlice({
     addSelectedServices(state, action: PayloadAction<IService>) {
       state.selectedServices.push(action.payload);
     },
-    deleteSelectedService(state, action: PayloadAction<string>) {
+    deleteSelectedService(state, action: PayloadAction<string | number>) {
       state.selectedServices = state.selectedServices.filter(
         service => service._id !== action.payload
       );
@@ -57,7 +57,7 @@ const servicesSlice = createSlice({
     addDetails(state, action: PayloadAction<IDetail[]>) {
       state.details = action.payload;
     },
-    deleteDetail(state, action: PayloadAction<string>) {
+    deleteDetail(state, action: PayloadAction<string | number>) {
       state.details = state.details.filter(
         detail => detail.serviceId !== action.payload
       );

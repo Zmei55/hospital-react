@@ -2,10 +2,8 @@ import { api } from "app/redux";
 import { IUser } from "entities/User";
 
 interface ILoginResponse {
-  data: {
-    user: IUser;
-    token: string;
-  };
+  user: IUser;
+  token: string;
 }
 
 const authApi = api.injectEndpoints({

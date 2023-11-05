@@ -1,14 +1,36 @@
-import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useAppSelector } from "shared";
 
 export const useGetUserData = () => {
-  const [workplaceToUpper, setWorkplaceToUpper] = useState("");
-  const { name, workplace } = useAppSelector(state => state.auth.user);
+  const { t } = useTranslation();
+  const { name, workplace, position } = useAppSelector(
+    state => state.auth.user
+  );
 
-  if (workplace && workplaceToUpper === "") {
-    const fullWorkplace = workplace[0].toUpperCase() + workplace.slice(1);
-    setWorkplaceToUpper(fullWorkplace);
+  let station: string = "";
+  let jobTitle: string = "";
+
+  if (workplace) {
+    switch (workplace.split("__")[0]) {
+      case "SURGERY":
+        station = t("user.station.surgery");
+        break;
+
+      default:
+        break;
+    }
   }
 
-  return { name, workplaceToUpper };
+  if (position) {
+    switch (position) {
+      case "Krankenschwester" || "Nurse" || "Медицинская сестра":
+        jobTitle = t("user.position.nurse");
+        break;
+
+      default:
+        break;
+    }
+  }
+
+  return { name, station, jobTitle };
 };

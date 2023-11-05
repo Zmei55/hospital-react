@@ -10,7 +10,7 @@ export const UnknownPart: React.FC = () => {
   return (
     <Container>
       <Header>
-        <Title>{t("UnknownPart.title")}</Title>
+        <Title>{t("unknownPart.title")}</Title>
 
         <CloseBtn
           id="closeNeuRequestBtn"
@@ -26,7 +26,7 @@ export const UnknownPart: React.FC = () => {
       </Header>
 
       <Body>
-        <Text>{t("UnknownPart.text")}</Text>
+        <Text>{t("unknownPart.text")}</Text>
       </Body>
     </Container>
   );

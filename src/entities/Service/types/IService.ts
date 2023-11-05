@@ -1,5 +1,5 @@
 export interface IService {
-  _id: string;
+  _id: string | number;
   name: string;
   code: string;
 }

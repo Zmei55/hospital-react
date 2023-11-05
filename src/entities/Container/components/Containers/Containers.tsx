@@ -65,7 +65,7 @@ export const Containers: React.FC = () => {
           </ModalHeader>
 
           <ModalBody>
-            <ModalText>{t("UnknownPart.text")}</ModalText>
+            <ModalText>{t("unknownPart.text")}</ModalText>
           </ModalBody>
         </Modal>
       )}

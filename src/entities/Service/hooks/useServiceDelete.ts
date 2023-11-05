@@ -10,7 +10,7 @@ import { useAppDispatch } from "shared";
 export const useServiceDelete = () => {
   const dispatch = useAppDispatch();
 
-  const removeService = (id: string) => {
+  const removeService = (id: string | number) => {
     dispatch(deleteService(id));
     dispatch(deleteSelectedService(id));
     dispatch(deleteDetail(id));

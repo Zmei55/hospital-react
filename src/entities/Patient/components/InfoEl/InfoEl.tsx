@@ -9,6 +9,7 @@ import {
   Button as InfoBtn,
   Button as ClearBtn,
   Icon,
+  useSexTranslation,
 } from "shared";
 
 import {
@@ -28,6 +29,7 @@ export const InfoEl: React.FC<IInfo> = () => {
   const { clearPatient } = useClearPatient();
   const { isInfoActive, handleInfoActive } = useHandleInfoActive();
   const { t } = useTranslation();
+  const { sexTranslation } = useSexTranslation();
   const {
     dateOfBirth,
     gender,
@@ -83,7 +85,7 @@ export const InfoEl: React.FC<IInfo> = () => {
 
         <InfoBox>
           <InfoHeader>{t("patient.sex")}</InfoHeader>
-          <InfoBody>{gender}</InfoBody>
+          <InfoBody>{sexTranslation(gender)}</InfoBody>
         </InfoBox>
 
         <InfoBox>

@@ -1,6 +1,6 @@
 export interface IDetail {
-  _id?: string;
-  serviceId: string;
-  laborId: string;
+  _id?: string | number;
+  serviceId: string | number;
+  laborId: string | number;
   completed?: boolean;
 }

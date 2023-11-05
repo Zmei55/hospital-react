@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { IUser } from "entities/User";
 
 interface IUserState {
@@ -12,6 +12,7 @@ const initialState: IUserState = {
     name: "",
     username: "",
     workplace: "",
+    position: "",
   },
   token: "",
   isLoggedIn: false,

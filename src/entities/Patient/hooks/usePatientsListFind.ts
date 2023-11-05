@@ -14,13 +14,8 @@ export const usePatientsListFind = () => {
   const handlePatientsListFind: SubmitHandler<
     ISearchPatientState
   > = async data => {
-    console.log("usePatientsListFind ~ data:", data);
     try {
       const patientsListResponse = await fetchPatientsList(data).unwrap();
-      console.log(
-        "usePatientsListFind ~ patientsListResponse:",
-        patientsListResponse
-      );
       setPatientList(patientsListResponse);
     } catch (error) {
       console.log("ERROR patientsListFormSubmit");

@@ -388,9 +388,3 @@ export const SelectBtn = styled.button`
     color: ${props => props.theme.colors.blue.pressed};
   }
 `;
-
-export const NotFoundText = styled.p`
-  text-align: center;
-  font-size: 28px;
-  line-height: 1.14;
-`;
