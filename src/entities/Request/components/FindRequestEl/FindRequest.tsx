@@ -71,6 +71,8 @@ export const FindRequest: React.FC = () => {
     navigate("/desktop");
   };
 
+  const today = new Date().toISOString().split("T")[0];
+
   return (
     <Container>
       <Header>
@@ -149,6 +151,7 @@ export const FindRequest: React.FC = () => {
           <Label>
             <InputEl
               type="date"
+              max={today}
               {...register("requestDate")}
               style={{ width: "100%" }}
               placeholder={t("findRequest.dateOfRequest")}
