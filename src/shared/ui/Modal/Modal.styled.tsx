@@ -21,8 +21,8 @@ export const Backdrop = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: rgba(230, 230, 230, 0.7);
   backdrop-filter: blur(3px);
   animation: ${openingBackdrop} 250ms cubic-bezier(0.25, 0.1, 0.25, 1);
