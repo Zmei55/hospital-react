@@ -10,50 +10,38 @@ export const Container = styled.div`
 
   @media screen and (max-width: 959px) {
     width: 508px;
-    height: 246px;
-
-    padding-top: 28px;
-    padding-bottom: 28px;
+    padding-top: ${props => props.theme.spacing(7)};
+    padding-bottom: ${props => props.theme.spacing(7)};
+    margin-top: max(
+      calc((100vh - 522px) / 2),
+      ${props => props.theme.spacing(5)}
+    );
+    margin-bottom: max(
+      calc((100vh - 522px) / 2),
+      ${props => props.theme.spacing(5)}
+    );
   }
 
-  @media screen and (min-width: 960px) {
-    width: 608px;
-    height: 408px;
-    padding-top: 28px;
-    padding-bottom: 28px;
-  }
-
-  @media screen and (max-width: 1279px) {
-    overflow: auto;
-    scroll-behavior: smooth;
-
-    ::-webkit-scrollbar {
-      width: ${props => props.theme.spacing(2)};
-      background-color: transparent;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      border-radius: 25px;
-      background-color: ${props => props.theme.colors.grey.default};
-
-      :active {
-        background-color: ${props => props.theme.colors.grey.pressed};
-      }
-    }
+  @media screen and (min-width: 960px) and (max-width: 1279px) {
+    margin-top: max(
+      calc((100vh - 530px) / 2),
+      ${props => props.theme.spacing(5)}
+    );
+    margin-bottom: max(
+      calc((100vh - 530px) / 2),
+      ${props => props.theme.spacing(5)}
+    );
   }
 
   @media screen and (min-width: 1280px) {
     width: 608px;
-    height: 508px;
-    padding-top: 46px;
-    padding-bottom: 46px;
+    padding-top: ${props => props.theme.spacing(11.5)};
+    padding-bottom: ${props => props.theme.spacing(11.5)};
   }
 
   @media screen and (min-width: 1600px) {
-    width: 608px;
-    height: 608px;
-    padding-top: 96px;
-    padding-bottom: 96px;
+    padding-top: ${props => props.theme.spacing(24)};
+    padding-bottom: ${props => props.theme.spacing(24)};
   }
 `;
 
@@ -99,11 +87,7 @@ export const InputsContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media screen and (max-width: 959px) {
-    margin-bottom: ${props => props.theme.spacing(4)};
-  }
-
-  @media screen and (min-width: 960px) {
+  @media screen and (max-width: 1279px) {
     margin-bottom: ${props => props.theme.spacing(8)};
   }
 

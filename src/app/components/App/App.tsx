@@ -11,13 +11,13 @@ const AuthPage = loadable(() => import("pages/AuthView"), {
 const DesktopPage = loadable(() => import("pages/DesktopView"), {
   fallback: <Loading />,
 });
-const RequestView = loadable(() => import("pages/RequestView"), {
+const RequestPage = loadable(() => import("pages/RequestView"), {
   fallback: <Loading />,
 });
-const FindRequestView = loadable(() => import("pages/FindRequestView"), {
+const FindRequestPage = loadable(() => import("pages/FindRequestView"), {
   fallback: <Loading />,
 });
-const UnknownPartView = loadable(() => import("pages/UnknownPartView"), {
+const UnknownPartPage = loadable(() => import("pages/UnknownPartView"), {
   fallback: <Loading />,
 });
 const NotFoundPage = loadable(() => import("pages/NotFoundView"), {
@@ -49,7 +49,7 @@ export const App: React.FC = () => {
             path="request"
             element={
               <PrivateRoute redirectTo="/">
-                <RequestView />
+                <RequestPage />
               </PrivateRoute>
             }
           />
@@ -57,7 +57,7 @@ export const App: React.FC = () => {
             path="find-request"
             element={
               <PrivateRoute redirectTo="/">
-                <FindRequestView />
+                <FindRequestPage />
               </PrivateRoute>
             }
           />
@@ -65,7 +65,7 @@ export const App: React.FC = () => {
             path="unknown-part"
             element={
               <PrivateRoute redirectTo="/">
-                <UnknownPartView />
+                <UnknownPartPage />
               </PrivateRoute>
             }
           />

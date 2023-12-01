@@ -42,33 +42,16 @@ export const Title = styled.h3`
 `;
 
 export const Body = styled.div`
-  overflow: auto;
-  scroll-behavior: smooth;
-
-  ::-webkit-scrollbar {
-    width: ${props => props.theme.spacing(2)};
-    background-color: transparent;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    border-radius: 25px;
-    background-color: ${props => props.theme.colors.grey.default};
-
-    :active {
-      background-color: ${props => props.theme.colors.grey.pressed};
-    }
-  }
+  margin-bottom: ${props => props.theme.spacing(12)};
 
   @media screen and (max-width: 959px) {
     width: 628px;
-    height: 234px;
     padding-right: ${props => props.theme.spacing(3)};
     padding-left: ${props => props.theme.spacing(3)};
   }
 
   @media screen and (min-width: 960px) {
     width: 828px;
-    height: 398px;
     padding-right: ${props => props.theme.spacing(4)};
     padding-left: ${props => props.theme.spacing(4)};
   }

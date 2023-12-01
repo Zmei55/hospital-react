@@ -6,6 +6,23 @@ export const Container = styled.div`
   width: 100%;
 
   gap: ${props => props.theme.spacing(4)};
+
+  /* @media screen and (max-width: 1599px) {
+    padding-top: ${props => props.theme.spacing(5)};
+    padding-right: ${props => props.theme.spacing(5)};
+    padding-bottom: ${props => props.theme.spacing(5)};
+    padding-left: ${props => props.theme.spacing(5)};
+  } */
+
+  /* @media screen and (min-width: 1600px) {
+    padding-right: ${props => props.theme.spacing(7)};
+    padding-left: ${props => props.theme.spacing(7)};
+  } */
+
+  /* @media screen and (min-width: 1920px) {
+    padding-right: ${props => props.theme.spacing(8)};
+    padding-left: ${props => props.theme.spacing(8)};
+  } */
 `;
 
 const Button = styled.button`
@@ -16,8 +33,12 @@ const Button = styled.button`
   border-radius: ${props => props.theme.borderRadius};
   border-color: transparent;
 
-  @media screen and (max-width: 1279px) {
+  @media screen and (max-width: 959px) {
     height: 196px;
+  }
+
+  @media screen and (min-width: 960px) and (max-width: 1279px) {
+    height: max(calc(100vh - 138px) / 2, 196px);
   }
 
   @media screen and (min-width: 1280px) {
@@ -44,9 +65,6 @@ export const MediumBtn = styled(Button)`
 
   @media screen and (min-width: 960px) {
     flex-grow: 4;
-  }
-
-  @media screen and (min-width: 1280px) {
   }
 `;
 
