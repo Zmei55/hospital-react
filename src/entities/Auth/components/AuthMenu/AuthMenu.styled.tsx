@@ -9,9 +9,6 @@ export const Container = styled.div`
   box-shadow: 0px 8px 16px rgba(17, 17, 17, 0.06);
 
   @media screen and (max-width: 959px) {
-    width: 508px;
-    padding-top: ${props => props.theme.spacing(7)};
-    padding-bottom: ${props => props.theme.spacing(7)};
     margin-top: max(
       calc((100vh - 522px) / 2),
       ${props => props.theme.spacing(5)}
@@ -31,6 +28,12 @@ export const Container = styled.div`
       calc((100vh - 530px) / 2),
       ${props => props.theme.spacing(5)}
     );
+  }
+
+  @media screen and (max-width: 1279px) {
+    width: 508px;
+    padding-top: ${props => props.theme.spacing(7)};
+    padding-bottom: ${props => props.theme.spacing(7)};
   }
 
   @media screen and (min-width: 1280px) {
