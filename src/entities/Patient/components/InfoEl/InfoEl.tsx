@@ -42,7 +42,7 @@ export const InfoEl: React.FC<IInfo> = () => {
 
   return (
     <>
-      <NameBlock>
+      <NameBlock className="patient-info-name-block">
         <InfoBtn
           id="morePatInfoBtn"
           style={{
@@ -77,7 +77,7 @@ export const InfoEl: React.FC<IInfo> = () => {
         </ClearBtn>
       </NameBlock>
 
-      <BasicInformationBox>
+      <BasicInformationBox className="patient-info-primary-block">
         <InfoBox>
           <InfoHeader>{t("patient.dateOfBirth")}</InfoHeader>
           <InfoBody>{dateOfBirth}</InfoBody>
@@ -105,7 +105,7 @@ export const InfoEl: React.FC<IInfo> = () => {
       </BasicInformationBox>
 
       {isInfoActive && (
-        <BackgroundInformationBox>
+        <BackgroundInformationBox className="patient-info-secondary-block">
           <InfoBox>
             <InfoHeader>{t("patient.identityDocument")}</InfoHeader>
             <InfoBody>{identityDocument}</InfoBody>

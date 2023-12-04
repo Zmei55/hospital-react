@@ -50,14 +50,6 @@ export const ModalTitle = styled.h3`
 `;
 
 export const ModalBody = styled.div`
-  @media screen and (max-width: 959px) {
-    max-height: 298px;
-  }
-
-  @media screen and (min-width: 960px) and (max-width: 1279px) {
-    max-height: 302px;
-  }
-
   @media screen and (max-width: 1279px) {
     padding-right: ${props => props.theme.spacing(3)};
     padding-left: ${props => props.theme.spacing(3)};
@@ -66,9 +58,12 @@ export const ModalBody = styled.div`
 
   @media screen and (min-width: 1280px) and (max-width: 1599px) {
     min-height: 318px;
-    max-height: 546px;
     padding-right: ${props => props.theme.spacing(4)};
     padding-left: ${props => props.theme.spacing(4)};
+  }
+
+  @media screen and (max-width: 1599px) {
+    max-height: calc(100vh - 118px);
   }
 
   @media screen and (max-width: 1599px) {
@@ -168,27 +163,6 @@ export const Input = styled(InputEl)`
 `;
 
 export const FilteredList = styled.ul`
-  overflow: auto;
-  scroll-behavior: smooth;
-
-  ::-webkit-scrollbar {
-    width: ${props => props.theme.spacing(2)};
-    background-color: transparent;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    height: 100px;
-    border-radius: 25px;
-    background-color: ${props => props.theme.colors.grey.default};
-
-    :active {
-      background-color: ${props => props.theme.colors.grey.pressed};
-    }
-  }
-  @media screen and (max-width: 1599px) {
-    max-height: 400px;
-  }
-
   @media screen and (max-width: 1599px) {
     margin-bottom: ${props => props.theme.spacing(2)};
   }
@@ -196,14 +170,28 @@ export const FilteredList = styled.ul`
   @media screen and (min-width: 1600px) {
     height: 618px;
     padding-right: ${props => props.theme.spacing(2)};
+
+    overflow: auto;
+    scroll-behavior: smooth;
+
+    ::-webkit-scrollbar {
+      width: ${props => props.theme.spacing(2)};
+      background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      height: 100px;
+      border-radius: 25px;
+      background-color: ${props => props.theme.colors.grey.default};
+
+      :active {
+        background-color: ${props => props.theme.colors.grey.pressed};
+      }
+    }
   }
 `;
 
 export const FilteredItem = styled.li`
-  display: flex;
-  display: flex;
-  justify-content: space-between;
-
   display: flex;
   justify-content: space-between;
 

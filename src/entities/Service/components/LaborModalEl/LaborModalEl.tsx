@@ -39,8 +39,10 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
   return (
     <>
       <Modal onClose={() => toggleLaborModal()}>
-        <Header>
-          <HeaderTitle>{t("service.implementer")}</HeaderTitle>
+        <Header className="modal-labors-header">
+          <HeaderTitle className="modal-labors-header-title">
+            {t("service.implementer")}
+          </HeaderTitle>
 
           <CloseBtn
             id="closeModalSerBtn"
@@ -55,9 +57,9 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
           </CloseBtn>
         </Header>
 
-        <Form onSubmit={saveDetails} id="labors">
-          <Table>
-            <THead>
+        <Form className="modal-labors-form" onSubmit={saveDetails} id="labors">
+          <Table className="modal-labors-table">
+            <THead className="modal-labors-table-head">
               <THService>{t("service.service")}</THService>
               {labors &&
                 labors.map(labor => (
@@ -65,7 +67,7 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
                 ))}
             </THead>
 
-            <TBody>
+            <TBody className="modal-labors-table-body">
               {services.map(service => (
                 <TRBody key={service._id}>
                   <ServiceBox>

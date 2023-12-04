@@ -24,8 +24,8 @@ export const Modal = ({ children, onClose }: IModal) => {
   };
 
   return createPortal(
-    <Backdrop onClick={handleBackdropClick}>
-      <Content>{children}</Content>
+    <Backdrop className="backdrop" onClick={handleBackdropClick}>
+      <Content className="modal">{children}</Content>
     </Backdrop>,
     modalRoot
   );

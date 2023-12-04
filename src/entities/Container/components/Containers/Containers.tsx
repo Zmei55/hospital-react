@@ -27,7 +27,7 @@ export const Containers: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <Container>
+    <Container className="containers-container">
       <Title>{t("container.title")}</Title>
       <ModalBtn
         type="button"

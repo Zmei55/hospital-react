@@ -17,8 +17,8 @@ export const HeaderEl: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <Header>
-      <HeaderTitle>
+    <Header className="new-request-header">
+      <HeaderTitle className="new-request-header-title">
         {t("newRequest.title")} <RequestNumber>№{requestNumber}</RequestNumber>
       </HeaderTitle>
 

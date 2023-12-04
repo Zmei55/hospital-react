@@ -35,29 +35,11 @@ export const HeaderTitle = styled.h3``;
 
 export const Form = styled.form`
   width: 100%;
-
-  @media screen and (max-width: 959px) {
-    height: calc(100vh - 116px);
-    max-height: 278px;
-  }
-
-  @media screen and (min-width: 960px) {
-    height: calc(100vh - 152px);
-    max-height: 402px;
-  }
-
-  @media screen and (min-width: 1280px) {
-    height: calc(100vh - 152px);
-    max-height: 508px;
-  }
-
-  @media screen and (min-width: 1600px) {
-    max-height: 568px;
-  }
 `;
 
 export const Table = styled.div`
   width: 100%;
+  margin-bottom: ${props => props.theme.spacing(6)};
 `;
 
 export const THead = styled.div`
@@ -112,17 +94,19 @@ export const TBody = styled.ul`
   }
 
   @media screen and (max-width: 959px) {
-    height: 120px;
+    max-height: calc(100vh - 286px);
+    min-height: 120px;
     margin-bottom: ${props => props.theme.spacing(4)};
   }
 
   @media screen and (min-width: 960px) {
-    height: 238px;
+    max-height: calc(100vh - 306px);
+    min-height: 120px;
     margin-bottom: ${props => props.theme.spacing(5)};
   }
 
   @media screen and (min-width: 1280px) {
-    height: 340px;
+    max-height: calc(100vh - 302px);
     margin-bottom: ${props => props.theme.spacing(6)};
   }
 

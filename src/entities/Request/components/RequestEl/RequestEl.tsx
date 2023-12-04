@@ -7,13 +7,13 @@ import { Container, Body, Box } from "./RequestEl.styled";
 
 export const Request: React.FC = () => {
   return (
-    <Container>
+    <Container className="new-request">
       <HeaderEl />
 
-      <Body>
+      <Body className="new-request-body">
         <PatientEl />
 
-        <Box>
+        <Box className="new-request-secondary-container">
           <ServicesEl />
 
           <Containers />

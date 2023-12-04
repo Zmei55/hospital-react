@@ -18,7 +18,7 @@ export const TitleBoxEl: React.FC<ITitleBox> = () => {
   const { t } = useTranslation();
 
   return (
-    <Container>
+    <Container className="services-header">
       <Title>{t("service.title")}</Title>
 
       {services.length > 0 && (

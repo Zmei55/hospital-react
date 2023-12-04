@@ -28,8 +28,8 @@ export const MenuModal: React.FC = () => {
 
   return (
     <>
-      <Header>
-        <Title>{t("layout.menuTitle")}</Title>
+      <Header className="user-menu-header">
+        <Title className="header-title">{t("layout.menuTitle")}</Title>
 
         <CloseBtn
           id="closeSearchPatBtn"
@@ -44,8 +44,8 @@ export const MenuModal: React.FC = () => {
         </CloseBtn>
       </Header>
 
-      <Body>
-        <OptionalBlock>
+      <Body className="user-menu-body">
+        <OptionalBlock className="language-menu">
           <LangTitle>{t("layout.language")}:</LangTitle>
           <LangSelect
             id="lang"
@@ -59,18 +59,18 @@ export const MenuModal: React.FC = () => {
         </OptionalBlock>
 
         {isLoggedIn && (
-          <UserBlock>
-            <UserRow>
+          <UserBlock className="user-info">
+            <UserRow className="user-name">
               <Key>{t("patient.name")}: </Key>
               <Value>{name}</Value>
             </UserRow>
 
-            <UserRow>
+            <UserRow className="user-department">
               <Key>{t("user.department")}: </Key>
               <Value>{station}</Value>
             </UserRow>
 
-            <UserRow>
+            <UserRow className="user-position">
               <Key>{t("user.position.position")}: </Key>
               <Value>{jobTitle}</Value>
             </UserRow>

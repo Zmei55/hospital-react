@@ -18,7 +18,7 @@ export const Desktop: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <Container>
+    <Container className="desktop">
       <LargeBtn id="newRequestBtn" onClick={handleNewRequest}>
         <IconContainer>
           <Icon icon="create-document" color="blue" size={140} />

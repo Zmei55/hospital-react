@@ -73,7 +73,7 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
 
   return (
     <Modal onClose={() => toggleServicesModal()}>
-      <ModalHeader>
+      <ModalHeader className="modal-services-header">
         <ModalTitle>{t("service.modalTitle")}</ModalTitle>
 
         <CloseBtn
@@ -89,9 +89,12 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
         </CloseBtn>
       </ModalHeader>
 
-      <ModalBody>
-        <Filter>
-          <Form onSubmit={handleSubmit(handleServicesForm)}>
+      <ModalBody className="modal-services-body">
+        <Filter className="modal-services-filter">
+          <Form
+            className="modal-services-filter-form"
+            onSubmit={handleSubmit(handleServicesForm)}
+          >
             <Input
               {...register("filter")}
               placeholder={t("service.filterPlaceholder")}
@@ -114,7 +117,7 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
             </FindBtn>
           </Form>
 
-          <FilteredList>
+          <FilteredList className="modal-services-filter-list">
             {filteredServicesList.map(service => (
               <FilteredItem key={service._id}>
                 <FilteredNameBox>
@@ -142,12 +145,12 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
           </FilteredList>
         </Filter>
 
-        <SelectedServicesBox>
-          <SelectedServicesTitle>
+        <SelectedServicesBox className="modal-services-selected">
+          <SelectedServicesTitle className="modal-services-selected-title">
             {t("service.servicesSelected")}
           </SelectedServicesTitle>
 
-          <SelectedServicesList>
+          <SelectedServicesList className="modal-services-selected-list">
             {selectedServicesList.map(service => (
               <SelectedServicesItem key={service.code}>
                 <DeleteBtn
@@ -172,36 +175,36 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
               </SelectedServicesItem>
             ))}
           </SelectedServicesList>
-
-          <ButtonsBox>
-            <ResetBtn
-              id="resetSelectedSerBtn"
-              background="grey"
-              style={{
-                width: "208px",
-                height: "72px",
-                marginRight: "24px",
-              }}
-              onClick={clearSelectedList}
-              disabled={selectedServicesList.length === 0}
-            >
-              {t("shared.button.abort")}
-            </ResetBtn>
-
-            <SaveBtn
-              id="saveSelectedSerBtn"
-              background="blue"
-              style={{
-                width: "318px",
-                height: "72px",
-              }}
-              onClick={saveSelectedList}
-              disabled={selectedServicesList.length === 0}
-            >
-              {t("shared.button.saveAndCancel")}
-            </SaveBtn>
-          </ButtonsBox>
         </SelectedServicesBox>
+
+        <ButtonsBox className="modal-services-buttons">
+          <ResetBtn
+            id="resetSelectedSerBtn"
+            background="grey"
+            style={{
+              width: "208px",
+              height: "72px",
+              marginRight: "24px",
+            }}
+            onClick={clearSelectedList}
+            disabled={selectedServicesList.length === 0}
+          >
+            {t("shared.button.abort")}
+          </ResetBtn>
+
+          <SaveBtn
+            id="saveSelectedSerBtn"
+            background="blue"
+            style={{
+              width: "318px",
+              height: "72px",
+            }}
+            onClick={saveSelectedList}
+            disabled={selectedServicesList.length === 0}
+          >
+            {t("shared.button.saveAndCancel")}
+          </SaveBtn>
+        </ButtonsBox>
       </ModalBody>
     </Modal>
   );

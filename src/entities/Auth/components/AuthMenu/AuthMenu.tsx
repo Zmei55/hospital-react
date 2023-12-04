@@ -41,14 +41,14 @@ export const AuthMenu: React.FC = () => {
     dirtyFields.username === undefined || dirtyFields.password === undefined;
 
   return (
-    <Container>
-      <Form onSubmit={handleSubmit(handleSignInSubmit)}>
-        <Title>{t("auth.title")}</Title>
+    <Container className="auth-container">
+      <Form className="auth-form" onSubmit={handleSubmit(handleSignInSubmit)}>
+        <Title className="auth-title">{t("auth.title")}</Title>
 
-        <SubTitle>{t("auth.text")}</SubTitle>
+        <SubTitle className="auth-subtitle">{t("auth.text")}</SubTitle>
 
-        <InputsContainer>
-          <Label>
+        <InputsContainer className="auth-inputs-container">
+          <Label className="auth-username-label">
             <InputEl
               {...register("username", {
                 required: "You did not enter a username",
@@ -57,13 +57,14 @@ export const AuthMenu: React.FC = () => {
                   message: "Minimum 3 characters",
                 },
               })}
+              className="auth-username-input"
               style={{ width: "368px" }}
               placeholder={t("auth.loginInput")}
               required
             />
           </Label>
 
-          <Label>
+          <Label className="auth-password-label">
             <InputEl
               type="password"
               {...register("password", {
@@ -73,6 +74,7 @@ export const AuthMenu: React.FC = () => {
                   message: "Minimum 6 characters",
                 },
               })}
+              className="auth-password-input"
               style={{ width: "368px" }}
               placeholder={t("auth.passwordInput")}
               required

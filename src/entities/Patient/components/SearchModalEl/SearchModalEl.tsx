@@ -71,9 +71,11 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
   };
 
   return (
-    <ModalContainer>
-      <ModalHeader>
-        <ModalTitle>{t("patient.title")}</ModalTitle>
+    <ModalContainer className="patient-search">
+      <ModalHeader className="patient-search-header">
+        <ModalTitle className="patient-search-title">
+          {t("patient.title")}
+        </ModalTitle>
 
         <ResetBtn
           id="resetSearchPatBtn"
@@ -117,9 +119,10 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
         </CloseBtn>
       </ModalHeader>
 
-      <ModalBody>
+      <ModalBody className="patient-search-body">
         <Form
           id="findPatientList"
+          className="patient-search-form"
           onSubmit={handleSubmit(handlePatientsListFind)}
         >
           <Label>
