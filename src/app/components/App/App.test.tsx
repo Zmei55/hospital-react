@@ -9,6 +9,6 @@ describe("App component", () => {
         <App />
       </AllTheProviders>
     );
-    expect(screen.getByTestId("app-container")).toBeInTheDocument();
+    expect(screen.getByTestId("app")).toBeInTheDocument();
   });
 });
