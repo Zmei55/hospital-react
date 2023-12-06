@@ -3,6 +3,7 @@ import { useGetUserData, useToggleMenuModal } from "entities/User";
 import { useAppSelector, Button as CloseBtn, Icon } from "shared";
 
 import {
+  Container,
   Header,
   Title,
   Body,
@@ -27,12 +28,12 @@ export const MenuModal: React.FC = () => {
   };
 
   return (
-    <>
-      <Header className="user-menu-header">
-        <Title className="header-title">{t("layout.menuTitle")}</Title>
+    <Container data-testid="user-menu-modal">
+      <Header data-testid="user-menu-header">
+        <Title>{t("layout.menuTitle")}</Title>
 
         <CloseBtn
-          id="closeSearchPatBtn"
+          data-testid="closeSearchPatBtn"
           background="red"
           style={{
             width: "72px",
@@ -44,8 +45,8 @@ export const MenuModal: React.FC = () => {
         </CloseBtn>
       </Header>
 
-      <Body className="user-menu-body">
-        <OptionalBlock className="language-menu">
+      <Body data-testid="user-menu-body">
+        <OptionalBlock data-testid="language-menu">
           <LangTitle>{t("layout.language")}:</LangTitle>
           <LangSelect
             id="lang"
@@ -59,24 +60,24 @@ export const MenuModal: React.FC = () => {
         </OptionalBlock>
 
         {isLoggedIn && (
-          <UserBlock className="user-info">
-            <UserRow className="user-name">
+          <UserBlock data-testid="user-info">
+            <UserRow data-testid="user-name">
               <Key>{t("patient.name")}: </Key>
               <Value>{name}</Value>
             </UserRow>
 
-            <UserRow className="user-department">
+            <UserRow data-testid="user-department">
               <Key>{t("user.department")}: </Key>
               <Value>{station}</Value>
             </UserRow>
 
-            <UserRow className="user-position">
+            <UserRow data-testid="user-position">
               <Key>{t("user.position.position")}: </Key>
               <Value>{jobTitle}</Value>
             </UserRow>
           </UserBlock>
         )}
       </Body>
-    </>
+    </Container>
   );
 };
