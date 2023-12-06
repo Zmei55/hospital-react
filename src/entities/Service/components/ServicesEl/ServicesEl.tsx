@@ -7,7 +7,7 @@ export const ServicesEl: React.FC = () => {
   const services = useAppSelector(state => state.services.services);
 
   return (
-    <Container className="services-container">
+    <Container data-testid="services-container">
       <TitleBoxEl />
 
       {services.length > 0 ? <InfoEl /> : <SearchEl />}

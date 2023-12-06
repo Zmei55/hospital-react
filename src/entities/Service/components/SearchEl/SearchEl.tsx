@@ -15,7 +15,7 @@ export const SearchEl: React.FC<ISearch> = () => {
   return (
     <>
       <ModalBtn
-        id="modalSerBtn"
+        data-testid="add-services-btn"
         type="button"
         onClick={() => toggleServicesModal()}
         disabled={patient._id === ""}
