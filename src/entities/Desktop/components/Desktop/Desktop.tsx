@@ -18,15 +18,15 @@ export const Desktop: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <Container className="desktop">
-      <LargeBtn id="newRequestBtn" onClick={handleNewRequest}>
+    <Container data-testid="desktop-page">
+      <LargeBtn data-testid="newRequestBtn" onClick={handleNewRequest}>
         <IconContainer>
           <Icon icon="create-document" color="blue" size={140} />
           <IconTitle>{t("desktop.addRequest")}</IconTitle>
         </IconContainer>
       </LargeBtn>
 
-      <MediumBtn id="findRequestBtn" onClick={handleFindRequest}>
+      <MediumBtn data-testid="findRequestBtn" onClick={handleFindRequest}>
         <IconContainer>
           <Icon icon="find-document" color="blue" size={140} />
           <IconTitle>{t("desktop.findRequest")}</IconTitle>
@@ -34,7 +34,7 @@ export const Desktop: React.FC = () => {
       </MediumBtn>
 
       <MediumBtn
-        id="findContainersBtn"
+        data-testid="findContainersBtn"
         onClick={() => navigate("/unknown-part")}
       >
         <IconContainer>
@@ -43,7 +43,10 @@ export const Desktop: React.FC = () => {
         </IconContainer>
       </MediumBtn>
 
-      <SmallBtn id="documentsBtn" onClick={() => navigate("/unknown-part")}>
+      <SmallBtn
+        data-testid="documentsBtn"
+        onClick={() => navigate("/unknown-part")}
+      >
         <IconContainer>
           <Icon icon="documents" color="blue" size={140} />
           <IconTitle>{t("desktop.documents")}</IconTitle>
