@@ -27,9 +27,10 @@ export const Containers: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <Container className="containers-container">
+    <Container data-testid="containers-container">
       <Title>{t("container.title")}</Title>
       <ModalBtn
+        data-testid="add-containers-btn"
         type="button"
         disabled={detailsList.length === 0}
         onClick={toggleContainersModal}
@@ -47,11 +48,14 @@ export const Containers: React.FC = () => {
       </ModalBtn>
 
       {showContainersModal && (
-        <Modal onClose={() => toggleContainersModal()}>
+        <Modal
+          data-testid="add-containers-modal"
+          onClose={() => toggleContainersModal()}
+        >
           <ModalHeader>
             <ModalTitle>{t("container.containerBtnIsActive")}</ModalTitle>
             <CloseBtn
-              id="closeModalSerBtn"
+              data-testid="close-modal-containers-btn"
               background="red"
               style={{
                 width: "72px",
