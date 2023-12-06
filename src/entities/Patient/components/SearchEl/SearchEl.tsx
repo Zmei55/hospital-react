@@ -12,7 +12,7 @@ export const SearchEl: React.FC = () => {
   return (
     <Container>
       <ModalBtn
-        id="modalFindPatBtn"
+        data-testid="find-patient-btn"
         type="button"
         onClick={togglePatientsModal}
         aria-label="find patient"
@@ -22,7 +22,7 @@ export const SearchEl: React.FC = () => {
       </ModalBtn>
 
       {showModal && (
-        <Modal onClose={togglePatientsModal}>
+        <Modal data-testid="find-patient-modal" onClose={togglePatientsModal}>
           <SearchModalEl />
         </Modal>
       )}
