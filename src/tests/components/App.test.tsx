@@ -1,14 +1,11 @@
 import { render, screen } from "@testing-library/react";
-import { App } from "./App";
-import { AllTheProviders } from "shared/test-utils";
+import { App } from "app/components/App";
+import { allTheProviders } from "tests/utils";
 
 describe("App component", () => {
   it("App renders", () => {
-    render(
-      <AllTheProviders route="">
-        <App />
-      </AllTheProviders>
-    );
+    render(allTheProviders(<App />, ""));
+
     expect(screen.getByTestId("app")).toBeInTheDocument();
   });
 });
