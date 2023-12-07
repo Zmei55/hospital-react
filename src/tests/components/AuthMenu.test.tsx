@@ -26,12 +26,12 @@ describe("AuthMenu component", () => {
     const signInBtn = screen.getByTestId("signInBtn"); // кнопка входа
     expect(signInBtn).toBeInTheDocument(); // подтвердили наличие кнопки входа
 
-    userEvent.type(screen.getByTestId("auth-username-input"), "test"); // написали в инпут "qwe"
-    expect(screen.getByTestId("auth-username-input")).toHaveValue("test"); // подтвердили значение инпут "qwe"
-    userEvent.type(screen.getByTestId("auth-password-input"), "test123");
+    await userEvent.type(screen.getByPlaceholderText("Username"), "test"); // написали в инпут "test"
+    expect(screen.getByPlaceholderText("Username")).toHaveValue("test"); // подтвердили значение инпут "test"
+    await userEvent.type(screen.getByTestId("auth-password-input"), "test123");
     expect(screen.getByTestId("auth-password-input")).toHaveValue("test123");
 
-    // userEvent.click(signInBtn);
-    // await expect(screen.getByTestId("desktop-page")).toBeInTheDocument();
+    // await userEvent.click(signInBtn);
+    // expect(screen.getByTestId("desktop-page")).toBeInTheDocument();
   });
 });

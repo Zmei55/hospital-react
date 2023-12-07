@@ -7,13 +7,13 @@ import { Header, Body } from "./Layout.styled";
 export const Layout: React.FC = () => {
   return (
     <>
-      <Header>
+      <Header data-testid="header">
         <WorkingPlace />
 
         <UserMenu />
       </Header>
 
-      <Body>
+      <Body data-testid="main">
         <Outlet />
       </Body>
 

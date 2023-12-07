@@ -26,7 +26,7 @@ describe("NewRequest component", () => {
     render(allTheProviders(<Request />, "/request"));
 
     expect(screen.getByTestId("new-request-body")).toBeInTheDocument();
-    expect(screen.getByTestId("find-patient-btn")).toBeInTheDocument();
+    expect(screen.getByTestId("patient-find-btn")).toBeInTheDocument();
     expect(screen.getByText(/select a patient/i)).toBeInTheDocument();
 
     expect(
