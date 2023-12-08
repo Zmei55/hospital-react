@@ -1,6 +1,6 @@
 import { IUserMocks } from "tests/types";
 
-export const user: IUserMocks = {
+export const userMocks: IUserMocks = {
   _id: 1,
   username: "test",
   password: "test123",

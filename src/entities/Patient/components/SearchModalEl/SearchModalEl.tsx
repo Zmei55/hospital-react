@@ -94,7 +94,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
         <FindBtn
           data-testid="find-search-patient-btn"
           type="submit"
-          form="findPatientList"
+          form="patient-search-form"
           style={{
             height: "72px",
             paddingRight: "44px",
@@ -122,6 +122,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
       <ModalBody data-testid="patient-search-body">
         <Form
           data-testid="patient-search-form"
+          id="patient-search-form"
           onSubmit={handleSubmit(handlePatientsListFind)}
         >
           <Label>

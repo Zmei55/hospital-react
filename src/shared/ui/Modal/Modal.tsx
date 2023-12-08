@@ -1,10 +1,12 @@
 import { createPortal } from "react-dom";
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import { useKeyDown } from "shared";
 
 import { Backdrop, Content } from "./Modal.styled";
 
-const modalRoot = document.querySelector("#modal-root") as HTMLElement;
+const modalRoot = document.createElement("div");
+modalRoot.setAttribute("id", "modal-root");
+document.body.appendChild(modalRoot);
 
 interface IModal {
   children: ReactNode;
@@ -12,6 +14,18 @@ interface IModal {
 }
 
 export const Modal = ({ children, onClose }: IModal) => {
+  const el = document.createElement("div");
+
+  useEffect(() => {
+    modalRoot.appendChild(el);
+    return () => {
+      const clear = async () => {
+        await modalRoot.removeChild(el);
+      };
+      clear();
+    };
+  });
+
   useKeyDown("Escape", onClose);
 
   const handleBackdropClick: React.MouseEventHandler<
@@ -24,9 +38,12 @@ export const Modal = ({ children, onClose }: IModal) => {
   };
 
   return createPortal(
-    <Backdrop className="backdrop" onClick={handleBackdropClick}>
-      <Content className="modal">{children}</Content>
+    <Backdrop data-testid="backdrop" onClick={handleBackdropClick}>
+      <Content data-testid="modal-content" onClick={e => e.stopPropagation()}>
+        {children}
+      </Content>
     </Backdrop>,
-    modalRoot
+    el
+    // modalRoot
   );
 };

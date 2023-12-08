@@ -83,14 +83,14 @@ export const AuthMenu: React.FC = () => {
         </InputsContainer>
 
         <SignInBtn
-          data-testid="signInBtn"
+          data-testid="sign-in-btn"
           type="submit"
           style={{ width: "368px", height: "72px" }}
           background="blue"
           disabled={isEmptyLoginForm}
         >
           {isLoading ? (
-            <Spinner />
+            <Spinner data-testid="spinner" />
           ) : (
             <>
               {t("shared.button.signIn")}

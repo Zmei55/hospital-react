@@ -7,5 +7,6 @@ describe("App component", () => {
     render(allTheProviders(<App />, ""));
 
     expect(screen.getByTestId("app")).toBeInTheDocument();
+    // expect(screen.getByTestId("app")).toMatchSnapshot();
   });
 });
