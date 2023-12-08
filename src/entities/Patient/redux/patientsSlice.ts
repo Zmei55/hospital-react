@@ -19,9 +19,9 @@ const initialState: IPatientsState = {
     identityDocument: "",
     address: {
       street: "",
-      houseNumber: "",
+      houseNumber: 0,
       city: "",
-      postcode: "",
+      postcode: 0,
     },
   },
   isActiveInfo: false,

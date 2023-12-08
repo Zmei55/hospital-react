@@ -11,8 +11,8 @@ export const initialPatient: IPatient = {
   identityDocument: "",
   address: {
     street: "",
-    houseNumber: "",
+    houseNumber: 0,
     city: "",
-    postcode: "",
+    postcode: 0,
   },
 };
