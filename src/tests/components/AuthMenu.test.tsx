@@ -18,11 +18,12 @@ describe("AuthMenu component", () => {
       errorModalClose: jest.fn(),
     });
 
-    render(allTheProviders(<AuthMenu />, "/"));
+    const { container } = render(allTheProviders(<AuthMenu />, "/"));
 
     expect(screen.getByTestId("auth-page")).toBeInTheDocument();
     expect(screen.getByText(/authorization/i)).toBeInTheDocument();
     expect(screen.getByText(/enter login and password/i)).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
   });
 
   it("inputs renders", () => {
@@ -78,10 +79,11 @@ describe("AuthMenu component", () => {
       errorModalClose: jest.fn(),
     });
 
-    render(allTheProviders(<AuthMenu />, "/"));
+    const { container } = render(allTheProviders(<AuthMenu />, "/"));
 
     expect(screen.getByTestId("backdrop")).toBeInTheDocument();
     expect(screen.getByTestId("modal-content")).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
   });
 
   it("Login button spinner renders", () => {
