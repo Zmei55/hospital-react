@@ -1,12 +1,14 @@
 export interface IUserMocks {
-  _id: string | number;
-  username: string;
-  password: string;
-  name: string;
-  workplace: string;
-  position: string;
-  role: string;
-  isNotLocked: boolean;
+  user: {
+    _id: string | number;
+    username: string;
+    password: string;
+    name: string;
+    workplace: string;
+    position: string;
+    role: string;
+    isNotLocked: boolean;
+    createdAt: string;
+  };
   token: string;
-  createdAt: string;
 }
