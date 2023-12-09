@@ -21,7 +21,7 @@ export const TitleBoxEl: React.FC<ITitleBox> = () => {
     <Container className="services-header">
       <Title>{t("service.title")}</Title>
 
-      {services && (
+      {services && services.length > 0 && (
         <>
           <AddBtn
             id="addToSelectedSerBtn"

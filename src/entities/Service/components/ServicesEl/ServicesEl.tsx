@@ -10,7 +10,7 @@ export const ServicesEl: React.FC = () => {
     <Container data-testid="services-container">
       <TitleBoxEl />
 
-      {services ? <InfoEl /> : <SearchEl />}
+      {services && services.length > 0 ? <InfoEl /> : <SearchEl />}
     </Container>
   );
 };
