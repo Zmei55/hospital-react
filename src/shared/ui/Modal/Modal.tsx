@@ -1,12 +1,10 @@
 import { createPortal } from "react-dom";
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { useKeyDown } from "shared";
 
 import { Backdrop, Content } from "./Modal.styled";
 
-const modalRoot = document.createElement("div");
-modalRoot.setAttribute("id", "modal-root");
-document.body.appendChild(modalRoot);
+const root = document.getElementsByTagName("body")[0];
 
 interface IModal {
   children: ReactNode;
@@ -14,17 +12,15 @@ interface IModal {
 }
 
 export const Modal = ({ children, onClose }: IModal) => {
-  const el = document.createElement("div");
+  const [modalRoot] = useState(document.createElement("div"));
 
   useEffect(() => {
-    modalRoot.appendChild(el);
+    root.appendChild(modalRoot);
+
     return () => {
-      const clear = async () => {
-        await modalRoot.removeChild(el);
-      };
-      clear();
+      root.removeChild(modalRoot);
     };
-  });
+  }, [modalRoot]);
 
   useKeyDown("Escape", onClose);
 
@@ -43,7 +39,6 @@ export const Modal = ({ children, onClose }: IModal) => {
         {children}
       </Content>
     </Backdrop>,
-    el
-    // modalRoot
+    modalRoot
   );
 };
