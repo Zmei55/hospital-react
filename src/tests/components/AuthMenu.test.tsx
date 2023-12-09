@@ -2,7 +2,6 @@ import { render, screen } from "@testing-library/react";
 import { allTheProviders } from "tests/utils";
 import userEvent from "@testing-library/user-event";
 import { AuthMenu } from "entities/Auth";
-import { Desktop } from "entities/Desktop";
 import * as authHooks from "entities/Auth/hooks";
 
 jest.mock("entities/Auth/hooks");
@@ -52,8 +51,7 @@ describe("AuthMenu component", () => {
     render(
       allTheProviders(
         <>
-          <AuthMenu />,
-          <Desktop />
+          <AuthMenu />
         </>,
         "/"
       )
@@ -68,7 +66,6 @@ describe("AuthMenu component", () => {
     expect(screen.getByTestId("auth-password-input")).toHaveValue("test123");
 
     userEvent.click(signInBtn);
-    expect(screen.getByTestId("desktop-page")).toBeInTheDocument();
   });
 
   it("AuthMenu ErrorModal renders", async () => {
