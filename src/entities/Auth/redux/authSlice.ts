@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IUser } from "entities/User";
 
 interface IUserState {
@@ -22,7 +22,10 @@ const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    loginSuccess: (state, action) => {
+    loginSuccess: (
+      state,
+      action: PayloadAction<{ user: IUser; token: string }>
+    ) => {
       state.user = action.payload.user;
       state.token = action.payload.token;
       state.isLoggedIn = true;
@@ -32,7 +35,7 @@ const authSlice = createSlice({
       state.token = "";
       state.isLoggedIn = false;
     },
-    refreshUser: (state, action) => {
+    refreshUser: (state, action: PayloadAction<{ user: IUser }>) => {
       state.user = action.payload.user;
       state.isLoggedIn = true;
     },
