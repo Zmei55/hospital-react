@@ -14,9 +14,13 @@ export const useSelectedServiceListSave = () => {
   const { toggleServicesModal } = useToggleServicesModal();
 
   const saveSelectedList = () => {
-    dispatch(addServices(selectedServiceList));
-    fetchLaborList();
-    toggleServicesModal();
+    if (selectedServiceList) {
+      dispatch(addServices(selectedServiceList));
+      fetchLaborList();
+      toggleServicesModal();
+    } else {
+      return null;
+    }
   };
 
   return { saveSelectedList };

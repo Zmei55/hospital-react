@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import {
   useTogglePatientsModal,
-  usePatientsListFind,
+  usePatientListFind,
   useChoosePatient,
   ISearchPatientState,
 } from "entities/Patient";
@@ -45,11 +45,11 @@ interface ISearchModalForm {}
 export const SearchModalEl: React.FC<ISearchModalForm> = () => {
   const {
     patientList,
-    handlePatientsListFind,
+    handlePatientListFind,
     isLoading,
     isError,
     resetPatients,
-  } = usePatientsListFind();
+  } = usePatientListFind();
   const { register, handleSubmit } = useForm<ISearchPatientState>({
     defaultValues: {
       name: undefined,
@@ -123,7 +123,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
         <Form
           data-testid="patient-search-form"
           id="patient-search-form"
-          onSubmit={handleSubmit(handlePatientsListFind)}
+          onSubmit={handleSubmit(handlePatientListFind)}
         >
           <Label>
             <InputEl
@@ -155,52 +155,50 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
           </Label>
         </Form>
 
-        {isLoading ? (
+        {isLoading && (
           <SpinnerCenterBox>
             <Spinner size={80} />
           </SpinnerCenterBox>
-        ) : (
-          <>
-            {patientList.length > 0 && (
-              <List data-testid="patient-search-list">
-                <ListHeader data-testid="patient-search-list-header">
-                  <HeadName>{t("patient.name")}</HeadName>
-                  <HeadBirthDay>{t("patient.dateOfBirth")}</HeadBirthDay>
-                  <HeadCardNumber>{t("patient.cardNumber")}</HeadCardNumber>
-                  <HeadSelectBtn></HeadSelectBtn>
-                </ListHeader>
+        )}
 
-                <ListBody data-testid="patient-search-list-body">
-                  {patientList.map(patient => (
-                    <ListItem
-                      key={patient._id}
-                      data-testid="patient-search-listitem"
+        {!isLoading && patientList && (
+          <List data-testid="patient-search-list">
+            <ListHeader data-testid="patient-search-list-header">
+              <HeadName>{t("patient.name")}</HeadName>
+              <HeadBirthDay>{t("patient.dateOfBirth")}</HeadBirthDay>
+              <HeadCardNumber>{t("patient.cardNumber")}</HeadCardNumber>
+              <HeadSelectBtn></HeadSelectBtn>
+            </ListHeader>
+
+            <ListBody data-testid="patient-search-list-body">
+              {patientList.map(patient => (
+                <ListItem
+                  key={patient._id}
+                  data-testid="patient-search-listitem"
+                >
+                  <BodyName>{patient.name}</BodyName>
+                  <BodyBirthDay>
+                    {showBirthDate(patient.birthDate)}
+                  </BodyBirthDay>
+                  <BodyCardNumber>{patient.cardNumber}</BodyCardNumber>
+                  <BodySelectBtn>
+                    <SelectBtn
+                      id="selectPatLink"
+                      onClick={() => choosePatient(patient._id)}
                     >
-                      <BodyName>{patient.name}</BodyName>
-                      <BodyBirthDay>
-                        {showBirthDate(patient.birthDate)}
-                      </BodyBirthDay>
-                      <BodyCardNumber>{patient.cardNumber}</BodyCardNumber>
-                      <BodySelectBtn>
-                        <SelectBtn
-                          id="selectPatLink"
-                          onClick={() => choosePatient(patient._id)}
-                        >
-                          {t("shared.button.select")}
-                        </SelectBtn>
-                      </BodySelectBtn>
-                    </ListItem>
-                  ))}
-                </ListBody>
-              </List>
-            )}
+                      {t("shared.button.select")}
+                    </SelectBtn>
+                  </BodySelectBtn>
+                </ListItem>
+              ))}
+            </ListBody>
+          </List>
+        )}
 
-            {isError && (
-              <NotFound data-testid="patient-search-not-found">
-                {t("patient.NotFoundPatientText")}
-              </NotFound>
-            )}
-          </>
+        {!isLoading && isError && (
+          <NotFound data-testid="patient-search-not-found">
+            {t("patient.NotFoundPatientText")}
+          </NotFound>
         )}
       </ModalBody>
     </ModalContainer>

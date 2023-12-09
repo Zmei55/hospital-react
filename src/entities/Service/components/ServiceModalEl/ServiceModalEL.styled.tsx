@@ -252,6 +252,13 @@ export const AddServiceBtnTitle = styled.span`
   }
 `;
 
+export const SecondaryBlock = styled.div`
+  @media screen and (min-width: 1600px) {
+    display: flex;
+    flex-direction: column;
+  }
+`;
+
 export const SelectedServicesBox = styled.div`
   @media screen and (min-width: 1600px) {
     width: 604px;

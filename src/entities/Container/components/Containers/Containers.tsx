@@ -32,17 +32,17 @@ export const Containers: React.FC = () => {
       <ModalBtn
         data-testid="add-containers-btn"
         type="button"
-        disabled={detailsList.length === 0}
+        disabled={!detailsList}
         onClick={toggleContainersModal}
       >
         <Icon icon="test-tube" size={48} />
-        {servicesList.length === 0 && detailsList.length === 0 && (
+        {!servicesList && !detailsList && (
           <ButtonTitle>{t("container.containerBtnIsDisabled_V1")}</ButtonTitle>
         )}
-        {servicesList.length !== 0 && detailsList.length === 0 && (
+        {servicesList && !detailsList && (
           <ButtonTitle>{t("container.containerBtnIsDisabled_V2")}</ButtonTitle>
         )}
-        {servicesList.length !== 0 && detailsList.length !== 0 && (
+        {servicesList && detailsList && (
           <ButtonTitle>{t("container.containerBtnIsActive")}</ButtonTitle>
         )}
       </ModalBtn>

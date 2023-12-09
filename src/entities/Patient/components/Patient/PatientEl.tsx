@@ -8,7 +8,7 @@ export function PatientEl() {
 
   return (
     <Container data-testid="patient-container">
-      {patient._id === "" ? <SearchEl /> : <InfoEl />}
+      {!patient ? <SearchEl /> : <InfoEl />}
     </Container>
   );
 }

@@ -28,7 +28,7 @@ export const useHandleServicesForm = () => {
       console.log("ERROR servicesListFilter");
     }
 
-    dispatch(addServices(selectedServices));
+    if (selectedServices) dispatch(addServices(selectedServices));
   };
 
   return { handleServicesForm, filteredServicesList, isLoading, isError };

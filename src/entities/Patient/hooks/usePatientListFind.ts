@@ -6,29 +6,29 @@ import {
   IPatient,
 } from "entities/Patient";
 
-export const usePatientsListFind = () => {
-  const [patientList, setPatientList] = useState<IPatient[]>([]);
-  const [fetchPatientsList, { isLoading, isError }] =
+export const usePatientListFind = () => {
+  const [patientList, setPatientList] = useState<IPatient[] | null>(null);
+  const [fetchPatientList, { isLoading, isError }] =
     useFetchPatientByFilterMutation();
 
-  const handlePatientsListFind: SubmitHandler<
+  const handlePatientListFind: SubmitHandler<
     ISearchPatientState
   > = async data => {
     try {
-      const patientsListResponse = await fetchPatientsList(data).unwrap();
-      setPatientList(patientsListResponse);
+      const patientListResponse = await fetchPatientList(data).unwrap();
+      setPatientList(patientListResponse);
     } catch (error) {
-      console.log("ERROR patientsListFormSubmit");
+      console.log("ERROR patientListFormSubmit");
     }
   };
 
   const resetPatients = () => {
-    setPatientList([]);
+    setPatientList(null);
   };
 
   return {
     patientList,
-    handlePatientsListFind,
+    handlePatientListFind,
     isLoading,
     isError,
     resetPatients,

@@ -3,11 +3,12 @@ import { IDetail } from "entities/Service";
 export const isCheckedDetail = (
   serviceId: string | number,
   laborId: string | number,
-  detailsState: IDetail[]
+  detailsState: IDetail[] | null
 ) => {
-  for (const detail of detailsState) {
-    if (detail.serviceId === serviceId && detail.laborId === laborId) {
-      return true;
+  if (detailsState)
+    for (const detail of detailsState) {
+      if (detail.serviceId === serviceId && detail.laborId === laborId) {
+        return true;
+      }
     }
-  }
 };

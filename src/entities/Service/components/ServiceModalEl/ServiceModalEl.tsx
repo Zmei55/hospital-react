@@ -40,6 +40,7 @@ import {
   FilteredCodeService,
   FilteredNameService,
   AddServiceBtnTitle,
+  SecondaryBlock,
   SelectedServicesList,
   SelectedServicesItem,
   SelectedServicesNameBox,
@@ -145,66 +146,74 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
           </FilteredList>
         </Filter>
 
-        <SelectedServicesBox className="modal-services-selected">
-          <SelectedServicesTitle className="modal-services-selected-title">
-            {t("service.servicesSelected")}
-          </SelectedServicesTitle>
+        <SecondaryBlock>
+          <SelectedServicesBox className="modal-services-selected">
+            <SelectedServicesTitle className="modal-services-selected-title">
+              {t("service.servicesSelected")}
+            </SelectedServicesTitle>
 
-          <SelectedServicesList className="modal-services-selected-list">
-            {selectedServicesList.map(service => (
-              <SelectedServicesItem key={service.code}>
-                <DeleteBtn
-                  id="delSelectedSerBtn"
-                  background="transparent"
-                  style={{
-                    width: "56px",
-                    height: "56px",
-                    border: "none",
-                    marginRight: "24px",
-                  }}
-                  onClick={() => removeSelectedService(service._id)}
-                >
-                  <IconTrash icon="trash" size={48} color="red" />
-                </DeleteBtn>
+            {selectedServicesList && (
+              <SelectedServicesList className="modal-services-selected-list">
+                {selectedServicesList.map(service => (
+                  <SelectedServicesItem key={service.code}>
+                    <DeleteBtn
+                      id="delSelectedSerBtn"
+                      background="transparent"
+                      style={{
+                        width: "56px",
+                        height: "56px",
+                        border: "none",
+                        marginRight: "24px",
+                      }}
+                      onClick={() => removeSelectedService(service._id)}
+                    >
+                      <IconTrash icon="trash" size={48} color="red" />
+                    </DeleteBtn>
 
-                <SelectedServicesNameBox>
-                  <SelectedServicesCode>{service.code}</SelectedServicesCode>
+                    <SelectedServicesNameBox>
+                      <SelectedServicesCode>
+                        {service.code}
+                      </SelectedServicesCode>
 
-                  <SelectedServicesName>{service.name}</SelectedServicesName>
-                </SelectedServicesNameBox>
-              </SelectedServicesItem>
-            ))}
-          </SelectedServicesList>
-        </SelectedServicesBox>
+                      <SelectedServicesName>
+                        {service.name}
+                      </SelectedServicesName>
+                    </SelectedServicesNameBox>
+                  </SelectedServicesItem>
+                ))}
+              </SelectedServicesList>
+            )}
+          </SelectedServicesBox>
 
-        <ButtonsBox className="modal-services-buttons">
-          <ResetBtn
-            id="resetSelectedSerBtn"
-            background="grey"
-            style={{
-              width: "208px",
-              height: "72px",
-              marginRight: "24px",
-            }}
-            onClick={clearSelectedList}
-            disabled={selectedServicesList.length === 0}
-          >
-            {t("shared.button.abort")}
-          </ResetBtn>
+          <ButtonsBox className="modal-services-buttons">
+            <ResetBtn
+              id="resetSelectedSerBtn"
+              background="grey"
+              style={{
+                width: "208px",
+                height: "72px",
+                marginRight: "24px",
+              }}
+              onClick={clearSelectedList}
+              disabled={!selectedServicesList}
+            >
+              {t("shared.button.abort")}
+            </ResetBtn>
 
-          <SaveBtn
-            id="saveSelectedSerBtn"
-            background="blue"
-            style={{
-              width: "318px",
-              height: "72px",
-            }}
-            onClick={saveSelectedList}
-            disabled={selectedServicesList.length === 0}
-          >
-            {t("shared.button.saveAndCancel")}
-          </SaveBtn>
-        </ButtonsBox>
+            <SaveBtn
+              id="saveSelectedSerBtn"
+              background="blue"
+              style={{
+                width: "318px",
+                height: "72px",
+              }}
+              onClick={saveSelectedList}
+              disabled={!selectedServicesList}
+            >
+              {t("shared.button.saveAndCancel")}
+            </SaveBtn>
+          </ButtonsBox>
+        </SecondaryBlock>
       </ModalBody>
     </Modal>
   );
