@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Desktop component Desktop renders 1`] = `
+<div>
+  <div
+    class="css-5n3p1z"
+    data-testid="desktop-page"
+  >
+    <button
+      class="css-wqedcp"
+      data-testid="new-request-btn"
+    >
+      <div
+        class="css-dv5uw6"
+      >
+        <svg
+          class="css-v61enk"
+          fill="blue"
+          height="140"
+          width="140"
+        >
+          <use
+            href="svgSprite.svg#create-document"
+          />
+        </svg>
+        <span
+          class="css-9j55n3"
+        >
+          Create a request
+        </span>
+      </div>
+    </button>
+    <button
+      class="css-8ra3jc"
+      data-testid="find-request-btn"
+    >
+      <div
+        class="css-dv5uw6"
+      >
+        <svg
+          class="css-v61enk"
+          fill="blue"
+          height="140"
+          width="140"
+        >
+          <use
+            href="svgSprite.svg#find-document"
+          />
+        </svg>
+        <span
+          class="css-9j55n3"
+        >
+          Find a request
+        </span>
+      </div>
+    </button>
+    <button
+      class="css-8ra3jc"
+      data-testid="find-containers-btn"
+    >
+      <div
+        class="css-dv5uw6"
+      >
+        <svg
+          class="css-v61enk"
+          fill="blue"
+          height="140"
+          width="140"
+        >
+          <use
+            href="svgSprite.svg#find-test-tube"
+          />
+        </svg>
+        <span
+          class="css-9j55n3"
+        >
+          Find a container
+        </span>
+      </div>
+    </button>
+    <button
+      class="css-1l4ikde"
+      data-testid="documents-btn"
+    >
+      <div
+        class="css-dv5uw6"
+      >
+        <svg
+          class="css-v61enk"
+          fill="blue"
+          height="140"
+          width="140"
+        >
+          <use
+            href="svgSprite.svg#documents"
+          />
+        </svg>
+        <span
+          class="css-9j55n3"
+        >
+          Documents
+        </span>
+      </div>
+    </button>
+  </div>
+</div>
+`;

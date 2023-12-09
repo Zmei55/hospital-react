@@ -19,14 +19,14 @@ export const Desktop: React.FC = () => {
 
   return (
     <Container data-testid="desktop-page">
-      <LargeBtn data-testid="newRequestBtn" onClick={handleNewRequest}>
+      <LargeBtn data-testid="new-request-btn" onClick={handleNewRequest}>
         <IconContainer>
           <Icon icon="create-document" color="blue" size={140} />
           <IconTitle>{t("desktop.addRequest")}</IconTitle>
         </IconContainer>
       </LargeBtn>
 
-      <MediumBtn data-testid="findRequestBtn" onClick={handleFindRequest}>
+      <MediumBtn data-testid="find-request-btn" onClick={handleFindRequest}>
         <IconContainer>
           <Icon icon="find-document" color="blue" size={140} />
           <IconTitle>{t("desktop.findRequest")}</IconTitle>
@@ -34,7 +34,7 @@ export const Desktop: React.FC = () => {
       </MediumBtn>
 
       <MediumBtn
-        data-testid="findContainersBtn"
+        data-testid="find-containers-btn"
         onClick={() => navigate("/unknown-part")}
       >
         <IconContainer>
@@ -44,7 +44,7 @@ export const Desktop: React.FC = () => {
       </MediumBtn>
 
       <SmallBtn
-        data-testid="documentsBtn"
+        data-testid="documents-btn"
         onClick={() => navigate("/unknown-part")}
       >
         <IconContainer>
