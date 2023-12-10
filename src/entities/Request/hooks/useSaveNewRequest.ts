@@ -5,7 +5,7 @@ import { useClearPatient } from "entities/Patient";
 import { useAppSelector, useAppNavigate } from "shared";
 
 export const useSaveNewRequest = () => {
-  const [navigate] = useAppNavigate();
+  const { handleNavigate } = useAppNavigate();
   const [saveRequest, { isLoading }] = useSaveRequestMutation();
   const { clearPatient } = useClearPatient();
   const requestNumber = useAppSelector(state => state.request.requestNumber);
@@ -24,7 +24,7 @@ export const useSaveNewRequest = () => {
         });
         toast.success("Antrag gespeichert!");
         clearPatient();
-        navigate("/desktop");
+        handleNavigate("/desktop");
       } catch (error) {
         toast.error(
           "Etwas ist schief gelaufen! Der Antrag wurde nicht gespeichert."

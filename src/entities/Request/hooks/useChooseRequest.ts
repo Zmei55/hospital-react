@@ -15,7 +15,7 @@ import { useAppDispatch, useAppNavigate } from "shared";
 
 export const useChooseRequest = () => {
   const dispatch = useAppDispatch();
-  const [navigate] = useAppNavigate();
+  const { handleNavigate } = useAppNavigate();
   const [fetchRequest] = useLazyFetchRequestsByIdQuery();
   const { choosePatient } = useChoosePatient();
   const { getServiceList } = useGetServiceListById();
@@ -34,7 +34,7 @@ export const useChooseRequest = () => {
       dispatch(addDetails(requestResponse.requestDetails));
       await fetchLaborList();
 
-      navigate("/request");
+      handleNavigate("/request");
     } catch (error) {
       console.log("ERROR chooseRequest");
     }

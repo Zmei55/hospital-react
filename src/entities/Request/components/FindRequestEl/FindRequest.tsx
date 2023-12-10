@@ -43,7 +43,7 @@ import {
 } from "./FindRequest.styled";
 
 export const FindRequest: React.FC = () => {
-  const [navigate] = useAppNavigate();
+  const { handleNavigate } = useAppNavigate();
   const { register, handleSubmit, reset } = useForm<IRequestFilter>({
     defaultValues: {
       patientName: undefined,
@@ -68,7 +68,7 @@ export const FindRequest: React.FC = () => {
   };
 
   const handleCloseBtn = () => {
-    navigate("/desktop");
+    handleNavigate("/desktop");
   };
 
   return (

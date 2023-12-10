@@ -12,7 +12,7 @@ import {
 } from "./Desktop.styled";
 
 export const Desktop: React.FC = () => {
-  const [navigate] = useAppNavigate();
+  const { handleNavigate } = useAppNavigate();
   const { handleNewRequest } = useNewRequest();
   const { handleFindRequest } = useFindRequest();
   const { t } = useTranslation();
@@ -35,7 +35,7 @@ export const Desktop: React.FC = () => {
 
       <MediumBtn
         data-testid="find-containers-btn"
-        onClick={() => navigate("/unknown-part")}
+        onClick={() => handleNavigate("/unknown-part")}
       >
         <IconContainer>
           <Icon icon="find-test-tube" color="blue" size={140} />
@@ -45,7 +45,7 @@ export const Desktop: React.FC = () => {
 
       <SmallBtn
         data-testid="documents-btn"
-        onClick={() => navigate("/unknown-part")}
+        onClick={() => handleNavigate("/unknown-part")}
       >
         <IconContainer>
           <Icon icon="documents" color="blue" size={140} />
