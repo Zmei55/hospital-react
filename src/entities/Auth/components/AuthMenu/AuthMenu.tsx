@@ -17,6 +17,7 @@ import {
   Form,
   InputsContainer,
   Label,
+  InputError,
   ErrorTitle,
 } from "./AuthMenu.styled";
 import React from "react";
@@ -29,7 +30,8 @@ export const AuthMenu: React.FC = () => {
   const {
     register,
     handleSubmit,
-    formState: { dirtyFields },
+    getValues,
+    formState: { dirtyFields, errors },
   } = useForm<ISingInState>({
     defaultValues: {
       username: "",
@@ -56,12 +58,16 @@ export const AuthMenu: React.FC = () => {
                   value: 3,
                   message: "Minimum 3 characters",
                 },
+                value: getValues().username,
               })}
               data-testid="auth-username-input"
               style={{ width: "368px" }}
               placeholder={t("auth.loginInput")}
               required
             />
+            {errors.username && (
+              <InputError>{errors.username.message}</InputError>
+            )}
           </Label>
 
           <Label data-testid="auth-password-label">
@@ -73,12 +79,16 @@ export const AuthMenu: React.FC = () => {
                   value: 6,
                   message: "Minimum 6 characters",
                 },
+                value: getValues().password,
               })}
               data-testid="auth-password-input"
               style={{ width: "368px" }}
               placeholder={t("auth.passwordInput")}
               required
             />
+            {errors.password && (
+              <InputError>{errors.password.message}</InputError>
+            )}
           </Label>
         </InputsContainer>
 

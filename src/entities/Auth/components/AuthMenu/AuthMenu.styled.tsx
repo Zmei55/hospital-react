@@ -100,9 +100,18 @@ export const InputsContainer = styled.div`
 `;
 
 export const Label = styled.label`
+  position: relative;
+
   :not(:last-child) {
     margin-bottom: ${props => props.theme.spacing(4)};
   }
+`;
+
+export const InputError = styled.div`
+  position: absolute;
+  top: 100%;
+
+  color: red;
 `;
 
 export const ErrorTitle = styled.p`
