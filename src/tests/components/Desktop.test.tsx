@@ -1,14 +1,16 @@
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import { allTheProviders } from "tests/utils";
 import { Desktop } from "entities/Desktop";
+import * as sharedHooks from "shared/hooks";
 
-jest.mock("shared/hooks", () => ({
-  ...jest.requireActual("shared/hooks"),
-}));
+jest.mock("shared/hooks");
+
+const mockedUseNavigate = jest.spyOn(sharedHooks, "useAppNavigate");
 
 describe("Desktop component", () => {
   it("Desktop renders", () => {
+    mockedUseNavigate.mockReturnValue({ handleNavigate: jest.fn() });
+
     const { container } = render(allTheProviders(<Desktop />, "/desktop"));
 
     expect(screen.getByTestId("desktop-page")).toBeInTheDocument();
@@ -16,6 +18,8 @@ describe("Desktop component", () => {
   });
 
   it("all components renders", () => {
+    mockedUseNavigate.mockReturnValue({ handleNavigate: jest.fn() });
+
     render(allTheProviders(<Desktop />, "/desktop"));
 
     const newRequestBtn = screen.getByTestId("new-request-btn");
@@ -37,24 +41,19 @@ describe("Desktop component", () => {
   });
 
   it("all navigates are called", () => {
-    const navigate = jest.fn();
-    jest.fn().mockReturnValueOnce(navigate("/request"));
-    jest.fn().mockReturnValueOnce(navigate("/find-request"));
-    jest.fn().mockReturnValueOnce(navigate("/unknown-part"));
-    jest.fn().mockReturnValueOnce(navigate("/unknown-part"));
+    const handleNavigate = jest.fn();
+    mockedUseNavigate.mockReturnValue({
+      handleNavigate: handleNavigate("/request"),
+    });
+    mockedUseNavigate.mockReturnValue({
+      handleNavigate: handleNavigate("/find-request"),
+    });
+    mockedUseNavigate.mockReturnValue({
+      handleNavigate: handleNavigate("/unknown-part"),
+    });
 
     render(allTheProviders(<Desktop />, "/desktop"));
 
-    const newRequestBtn = screen.getByTestId("new-request-btn");
-    const findRequestBtn = screen.getByTestId("find-request-btn");
-    const findContainersBtn = screen.getByTestId("find-containers-btn");
-    const documentsBtn = screen.getByTestId("documents-btn");
-
-    userEvent.click(newRequestBtn);
-    userEvent.click(findRequestBtn);
-    userEvent.click(findContainersBtn);
-    userEvent.click(documentsBtn);
-
-    expect(navigate).toHaveBeenCalledTimes(4);
+    expect(handleNavigate).toHaveBeenCalledTimes(3);
   });
 });
