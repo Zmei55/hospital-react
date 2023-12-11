@@ -11,7 +11,7 @@ describe("Desktop component", () => {
   it("Desktop renders", () => {
     mockedUseNavigate.mockReturnValue({ handleNavigate: jest.fn() });
 
-    const { container } = render(allTheProviders(<Desktop />, "/desktop"));
+    const { container } = render(allTheProviders(<Desktop />));
 
     expect(screen.getByTestId("desktop-page")).toBeInTheDocument();
     expect(container).toMatchSnapshot();
@@ -20,7 +20,7 @@ describe("Desktop component", () => {
   it("all components renders", () => {
     mockedUseNavigate.mockReturnValue({ handleNavigate: jest.fn() });
 
-    render(allTheProviders(<Desktop />, "/desktop"));
+    render(allTheProviders(<Desktop />));
 
     const newRequestBtn = screen.getByTestId("new-request-btn");
     const findRequestBtn = screen.getByTestId("find-request-btn");
@@ -42,6 +42,7 @@ describe("Desktop component", () => {
 
   it("all navigates are called", () => {
     const handleNavigate = jest.fn();
+
     mockedUseNavigate.mockReturnValue({
       handleNavigate: handleNavigate("/request"),
     });
@@ -52,7 +53,7 @@ describe("Desktop component", () => {
       handleNavigate: handleNavigate("/unknown-part"),
     });
 
-    render(allTheProviders(<Desktop />, "/desktop"));
+    render(allTheProviders(<Desktop />));
 
     expect(handleNavigate).toHaveBeenCalledTimes(3);
   });

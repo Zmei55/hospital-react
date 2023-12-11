@@ -4,7 +4,7 @@ import { allTheProviders } from "tests/utils";
 
 describe("App component", () => {
   it("App renders", () => {
-    render(allTheProviders(<App />, ""));
+    render(allTheProviders(<App />));
 
     expect(screen.getByTestId("app")).toBeInTheDocument();
     // expect(screen.getByTestId("app")).toMatchSnapshot();

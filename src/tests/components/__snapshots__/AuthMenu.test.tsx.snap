@@ -27,7 +27,7 @@ exports[`AuthMenu component AuthMenu ErrorModal renders 1`] = `
         data-testid="auth-inputs-container"
       >
         <label
-          class="css-1oha7z1"
+          class="css-wgbngt"
           data-testid="auth-username-label"
         >
           <input
@@ -40,7 +40,7 @@ exports[`AuthMenu component AuthMenu ErrorModal renders 1`] = `
           />
         </label>
         <label
-          class="css-1oha7z1"
+          class="css-wgbngt"
           data-testid="auth-password-label"
         >
           <input
@@ -105,7 +105,7 @@ exports[`AuthMenu component AuthMenu renders 1`] = `
         data-testid="auth-inputs-container"
       >
         <label
-          class="css-1oha7z1"
+          class="css-wgbngt"
           data-testid="auth-username-label"
         >
           <input
@@ -118,7 +118,7 @@ exports[`AuthMenu component AuthMenu renders 1`] = `
           />
         </label>
         <label
-          class="css-1oha7z1"
+          class="css-wgbngt"
           data-testid="auth-password-label"
         >
           <input

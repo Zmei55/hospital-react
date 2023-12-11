@@ -17,7 +17,7 @@ describe("AuthMenu component", () => {
       errorModalClose: jest.fn(),
     });
 
-    const { container } = render(allTheProviders(<AuthMenu />, "/"));
+    const { container } = render(allTheProviders(<AuthMenu />));
 
     expect(screen.getByTestId("auth-page")).toBeInTheDocument();
     expect(screen.getByText(/authorization/i)).toBeInTheDocument();
@@ -33,7 +33,7 @@ describe("AuthMenu component", () => {
       errorModalClose: jest.fn(),
     });
 
-    render(allTheProviders(<AuthMenu />, "/"));
+    render(allTheProviders(<AuthMenu />));
 
     expect(screen.getByRole("textbox")).toBeInTheDocument(); // нашли инпут по роли
     expect(screen.getByPlaceholderText("Username")).toBeInTheDocument(); // нашли инпут с Placeholder "Username"
@@ -48,14 +48,7 @@ describe("AuthMenu component", () => {
       errorModalClose: jest.fn(),
     });
 
-    render(
-      allTheProviders(
-        <>
-          <AuthMenu />
-        </>,
-        "/"
-      )
-    );
+    render(allTheProviders(<AuthMenu />));
 
     const signInBtn = screen.getByTestId("sign-in-btn"); // кнопка входа
     expect(signInBtn).toBeInTheDocument(); // подтвердили наличие кнопки входа
@@ -76,7 +69,7 @@ describe("AuthMenu component", () => {
       errorModalClose: jest.fn(),
     });
 
-    const { container } = render(allTheProviders(<AuthMenu />, "/"));
+    const { container } = render(allTheProviders(<AuthMenu />));
 
     expect(screen.getByTestId("backdrop")).toBeInTheDocument();
     expect(screen.getByTestId("modal-content")).toBeInTheDocument();
@@ -91,7 +84,7 @@ describe("AuthMenu component", () => {
       errorModalClose: jest.fn(),
     });
 
-    render(allTheProviders(<AuthMenu />, "/"));
+    render(allTheProviders(<AuthMenu />));
 
     expect(screen.getByTestId("spinner")).toBeInTheDocument();
   });

@@ -7,9 +7,9 @@ import { MemoryRouter } from "react-router-dom";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "app/constants";
 
-export const allTheProviders = (element: ReactNode, route: string) => {
+export const allTheProviders = (element: ReactNode) => {
   return (
-    <MemoryRouter initialEntries={[route]}>
+    <MemoryRouter>
       <Provider store={store}>
         <I18nextProvider i18n={i18n} defaultNS={"translation"}>
           <ThemeProvider theme={theme}>{element}</ThemeProvider>

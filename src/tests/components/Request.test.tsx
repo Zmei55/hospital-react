@@ -4,13 +4,13 @@ import { Request } from "entities/Request";
 
 describe("NewRequest component", () => {
   it("NewRequest renders", () => {
-    render(allTheProviders(<Request />, "/request"));
+    render(allTheProviders(<Request />));
 
     expect(screen.getByTestId("new-request")).toBeInTheDocument();
   });
 
   it("NewRequest header renders", () => {
-    render(allTheProviders(<Request />, "/request"));
+    render(allTheProviders(<Request />));
 
     const newRequestHeader = screen.getByTestId("new-request-header");
     const saveRequestBtn = screen.getByTestId("save-new-request-btn");
@@ -23,7 +23,7 @@ describe("NewRequest component", () => {
   });
 
   it("NewRequest body renders", () => {
-    render(allTheProviders(<Request />, "/request"));
+    render(allTheProviders(<Request />));
 
     expect(screen.getByTestId("new-request-body")).toBeInTheDocument();
     expect(screen.getByTestId("patient-find-btn")).toBeInTheDocument();
