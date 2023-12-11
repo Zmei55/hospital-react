@@ -31,7 +31,7 @@ describe("Patient component", () => {
   });
 });
 
-describe("Patient find component", () => {
+describe("Patient Search component", () => {
   it("Patient find renders", () => {
     mockedUseToggle.mockReturnValue({ togglePatientsModal: jest.fn() });
 
@@ -40,7 +40,7 @@ describe("Patient find component", () => {
     expect(screen.getByTestId("patient-find-container")).toBeInTheDocument();
   });
 
-  it("Patient find button renders", () => {
+  it("Patient Search button renders", () => {
     mockedUseToggle.mockReturnValue({ togglePatientsModal: jest.fn() });
 
     render(allTheProviders(<PatientEl />));
@@ -51,8 +51,8 @@ describe("Patient find component", () => {
   });
 });
 
-describe("Patient find-modal component", () => {
-  it("Patient find-modal not renders", () => {
+describe("Patient Search-modal component", () => {
+  it("Patient Search-modal not renders", () => {
     const stateSelectors = {
       patients: {
         patient: null,
@@ -77,7 +77,7 @@ describe("Patient find-modal component", () => {
     expect(container).toMatchSnapshot();
   });
 
-  it("Patient find-modal renders", () => {
+  it("Patient Search-modal renders", () => {
     const stateSelectors = {
       patients: {
         patient: null,
@@ -119,7 +119,7 @@ describe("Patient find-modal component", () => {
     expect(container).toMatchSnapshot();
   });
 
-  it("Patient list find", async () => {
+  it("Patient Search-list find", async () => {
     const handlePatientList = jest.fn();
     const stateSelectors = {
       patients: {
