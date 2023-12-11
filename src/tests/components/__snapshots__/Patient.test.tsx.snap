@@ -1,5 +1,182 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Patient Info component Patient Info renders - full 1`] = `
+<div>
+  <div
+    class="css-1daa38u"
+    data-testid="patient-container"
+  >
+    <div
+      class="css-1273oja"
+      data-testid="patient-info-name-block"
+    >
+      <button
+        class="css-ch4pr2"
+        data-testid="more-patient-info-btn"
+        name="InfoButton"
+        style="width: 48px; height: 48px; margin-right: 24px;"
+      >
+        <svg
+          class="css-6vupcz"
+          fill="grey"
+          height="24"
+          width="24"
+        >
+          <use
+            href="svgSprite.svg#caret-double-up-bold"
+          />
+        </svg>
+      </button>
+      <h3
+        class="css-l2t4tz"
+        data-testid="patient-info-name"
+      >
+        Emma Muster
+      </h3>
+      <button
+        class="css-ch4pr2"
+        data-testid="clear-patient-info"
+        name="ClearButton"
+        style="width: 48px; height: 48px;"
+      >
+        <svg
+          class="css-nhqhda"
+          fill="red"
+          height="24"
+          width="24"
+        >
+          <use
+            href="svgSprite.svg#cross-bold"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      class="css-h1pud"
+      data-testid="patient-info-primary-block"
+    >
+      <div
+        class="css-1heo10q"
+        data-testid="patient-info-primary-infobox-birthday"
+      >
+        <h4
+          class="css-in1lmv"
+        >
+          Date of birth
+        </h4>
+        <span
+          class="css-p6kx9h"
+        >
+          26
+  .12
+  .1968
+        </span>
+      </div>
+      <div
+        class="css-1heo10q"
+        data-testid="patient-info-primary-infobox-gender"
+      >
+        <h4
+          class="css-in1lmv"
+        >
+          Sex
+        </h4>
+        <span
+          class="css-p6kx9h"
+        >
+          Female
+        </span>
+      </div>
+      <div
+        class="css-1heo10q"
+        data-testid="patient-info-primary-infobox-card-number"
+      >
+        <h4
+          class="css-in1lmv"
+        >
+          Card number
+        </h4>
+        <span
+          class="css-p6kx9h"
+        >
+          123456789
+        </span>
+      </div>
+      <div
+        class="css-1heo10q"
+        data-testid="patient-info-primary-infobox-phone"
+      >
+        <h4
+          class="css-in1lmv"
+        >
+          Phone number
+        </h4>
+        <span
+          class="css-p6kx9h"
+        >
+          +491234567890
+        </span>
+      </div>
+      <div
+        class="css-1heo10q"
+        data-testid="patient-info-primary-infobox-email"
+      >
+        <h4
+          class="css-in1lmv"
+        >
+          E-mail
+        </h4>
+        <span
+          class="css-p6kx9h"
+        >
+          emma-muster@mail.com
+        </span>
+      </div>
+    </div>
+    <div
+      class="css-1832p0z"
+      data-testid="patient-info-secondary-block"
+    >
+      <div
+        class="css-1heo10q"
+        data-testid="patient-info-secondary-infobox-identity-document"
+      >
+        <h4
+          class="css-in1lmv"
+        >
+          Identity document
+        </h4>
+        <span
+          class="css-p6kx9h"
+        >
+          ausweis
+        </span>
+      </div>
+      <div
+        class="css-1heo10q"
+        data-testid="patient-info-secondary-infobox-residence-address"
+      >
+        <h4
+          class="css-in1lmv"
+        >
+          Residence address
+        </h4>
+        <span
+          class="css-p6kx9h"
+        >
+          
+            Emmentaler Straße, 
+            45, 
+            12345, 
+            Berlin
+            
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Patient component Patient container renders 1`] = `
 <div>
   <div
