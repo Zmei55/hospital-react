@@ -1,6 +1,6 @@
 import { IService } from "entities/Service";
 
-export const serviceListMocks: IService = {
+export const serviceMocks: IService = {
   _id: 1,
   createdAt: "2023-05-20T20:49:23.784+00:00",
   name: "Immunglobulin A (IgA)",
