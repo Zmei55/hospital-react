@@ -2,3 +2,8 @@ export * from "./userMocks";
 export * from "./patientMocks";
 export * from "./patientListMocks";
 export * from "./addressMocks";
+export * from "./serviceMocks";
+export * from "./serviceListMocks";
+export * from "./selectedServiceListMocks";
+export * from "./laborListMocks";
+export * from "./detailListMocks";
