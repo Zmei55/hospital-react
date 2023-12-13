@@ -52,8 +52,10 @@ export const Containers: React.FC = () => {
           data-testid="add-containers-modal"
           onClose={() => toggleContainersModal()}
         >
-          <ModalHeader>
-            <ModalTitle>{t("container.containerBtnIsActive")}</ModalTitle>
+          <ModalHeader data-testid="containers-modal-header">
+            <ModalTitle data-testid="containers-modal-header-title">
+              {t("container.containerBtnIsActive")}
+            </ModalTitle>
             <CloseBtn
               data-testid="close-modal-containers-btn"
               background="red"
@@ -68,8 +70,10 @@ export const Containers: React.FC = () => {
             </CloseBtn>
           </ModalHeader>
 
-          <ModalBody>
-            <ModalText>{t("unknownPart.text")}</ModalText>
+          <ModalBody data-testid="containers-modal-body">
+            <ModalText data-testid="containers-modal-text">
+              {t("unknownPart.text")}
+            </ModalText>
           </ModalBody>
         </Modal>
       )}
