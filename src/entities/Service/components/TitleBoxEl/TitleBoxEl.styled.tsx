@@ -19,3 +19,5 @@ export const Title = styled.h3`
 
   margin-right: auto;
 `;
+
+export const ButtonsBox = styled.div``;

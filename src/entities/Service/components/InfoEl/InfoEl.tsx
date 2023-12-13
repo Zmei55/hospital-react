@@ -20,11 +20,11 @@ export const InfoEl: React.FC = () => {
   return (
     <>
       {servicesList && (
-        <List>
+        <List data-testid="services-info-list">
           {servicesList.map(service => (
-            <Item key={service._id}>
+            <Item key={service._id} data-testid="services-info-listitem">
               <DeleteBtn
-                id="delSerInfoBtn"
+                data-testid="delete-service-info-btn"
                 background="transparent"
                 style={{
                   width: "52px",
@@ -37,9 +37,11 @@ export const InfoEl: React.FC = () => {
                 <Icon icon="trash" size={48} color="red" />
               </DeleteBtn>
 
-              <ServiceNameBox>
-                <ServiceNameHeader>
-                  <Code>{service.code}</Code>
+              <ServiceNameBox data-testid="services-info-box">
+                <ServiceNameHeader data-testid="services-info-box-header">
+                  <Code data-testid="services-info-box-service-code">
+                    {service.code}
+                  </Code>
 
                   {detailsList && laborList && (
                     <>
@@ -49,7 +51,10 @@ export const InfoEl: React.FC = () => {
                           laborList.map(
                             labor =>
                               labor._id.toString() === detail.laborId && (
-                                <LaborName key={labor._id}>
+                                <LaborName
+                                  key={labor._id}
+                                  data-testid="services-info-box-labor-name"
+                                >
                                   {labor.name}
                                 </LaborName>
                               )
@@ -59,7 +64,9 @@ export const InfoEl: React.FC = () => {
                   )}
                 </ServiceNameHeader>
 
-                <ServiceName>{service.name}</ServiceName>
+                <ServiceName data-testid="services-info-box-service-name">
+                  {service.name}
+                </ServiceName>
               </ServiceNameBox>
             </Item>
           ))}

@@ -74,11 +74,11 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
 
   return (
     <Modal onClose={() => toggleServicesModal()}>
-      <ModalHeader className="modal-services-header">
+      <ModalHeader data-testid="services-modal-header">
         <ModalTitle>{t("service.modalTitle")}</ModalTitle>
 
         <CloseBtn
-          id="closeModalSerBtn"
+          data-testid="close-modal-services-btn"
           background="red"
           style={{
             width: "72px",
@@ -90,21 +90,22 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
         </CloseBtn>
       </ModalHeader>
 
-      <ModalBody className="modal-services-body">
-        <Filter className="modal-services-filter">
+      <ModalBody data-testid="services-modal-body">
+        <Filter data-testid="services-modal-filter">
           <Form
-            className="modal-services-filter-form"
+            data-testid="services-modal-filter-form"
             onSubmit={handleSubmit(handleServicesForm)}
           >
             <Input
               {...register("filter")}
+              data-testid="services-modal-filter-input"
               placeholder={t("service.filterPlaceholder")}
               autoFocus
               required
             />
 
             <FindBtn
-              id="findSearchPatBtn"
+              data-testid="find-service-btn"
               type="submit"
               background="blue"
               style={{
@@ -114,50 +115,68 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
               }}
               disabled={!dirtyFields.filter}
             >
-              {isLoading ? <Spinner /> : <span>{t("shared.button.find")}</span>}
+              {isLoading ? (
+                <Spinner data-testid="spinner" />
+              ) : (
+                <span data-testid="find-service-btn-text">
+                  {t("shared.button.find")}
+                </span>
+              )}
             </FindBtn>
           </Form>
 
-          <FilteredList className="modal-services-filter-list">
-            {filteredServicesList.map(service => (
-              <FilteredItem key={service._id}>
-                <FilteredNameBox>
-                  <FilteredCodeService>{service.code}</FilteredCodeService>
-                  <FilteredNameService>{service.name}</FilteredNameService>
-                </FilteredNameBox>
-
-                <AddServiceBtn
-                  id="addSerBtn"
-                  background="transparent"
-                  style={{
-                    height: "88px",
-                    paddingRight: "44px",
-                    paddingLeft: "44px",
-                  }}
-                  onClick={() => addService(service)}
+          {filteredServicesList && (
+            <FilteredList data-testid="services-modal-filter-list">
+              {filteredServicesList.map(service => (
+                <FilteredItem
+                  data-testid="services-modal-filter-listitem"
+                  key={service._id}
                 >
-                  <IconPlus icon="plus-bold" size={24} color="blue" />
-                  <AddServiceBtnTitle>
-                    {t("shared.button.add")}
-                  </AddServiceBtnTitle>
-                </AddServiceBtn>
-              </FilteredItem>
-            ))}
-          </FilteredList>
+                  <FilteredNameBox data-testid="services-modal-filter-name-box">
+                    <FilteredCodeService data-testid="services-modal-filter-code">
+                      {service.code}
+                    </FilteredCodeService>
+                    <FilteredNameService data-testid="services-modal-filter-name">
+                      {service.name}
+                    </FilteredNameService>
+                  </FilteredNameBox>
+
+                  <AddServiceBtn
+                    data-testid="add-service-btn"
+                    background="transparent"
+                    style={{
+                      height: "88px",
+                      paddingRight: "44px",
+                      paddingLeft: "44px",
+                    }}
+                    onClick={() => addService(service)}
+                  >
+                    <IconPlus icon="plus-bold" size={24} color="blue" />
+                    <AddServiceBtnTitle>
+                      {t("shared.button.add")}
+                    </AddServiceBtnTitle>
+                  </AddServiceBtn>
+                </FilteredItem>
+              ))}
+            </FilteredList>
+          )}
         </Filter>
 
         <SecondaryBlock>
-          <SelectedServicesBox className="modal-services-selected">
-            <SelectedServicesTitle className="modal-services-selected-title">
+          <SelectedServicesBox data-testid="services-modal-selected">
+            <SelectedServicesTitle data-testid="services-modal-selected-title">
               {t("service.servicesSelected")}
             </SelectedServicesTitle>
 
             {selectedServicesList && (
-              <SelectedServicesList className="modal-services-selected-list">
+              <SelectedServicesList data-testid="services-modal-selected-list">
                 {selectedServicesList.map(service => (
-                  <SelectedServicesItem key={service.code}>
+                  <SelectedServicesItem
+                    data-testid="services-modal-selected-listitem"
+                    key={service.code}
+                  >
                     <DeleteBtn
-                      id="delSelectedSerBtn"
+                      data-testid="delete-selected-service-btn"
                       background="transparent"
                       style={{
                         width: "56px",
@@ -170,12 +189,12 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
                       <IconTrash icon="trash" size={48} color="red" />
                     </DeleteBtn>
 
-                    <SelectedServicesNameBox>
-                      <SelectedServicesCode>
+                    <SelectedServicesNameBox data-testid="services-modal-selected-name-box">
+                      <SelectedServicesCode data-testid="services-modal-selected-code">
                         {service.code}
                       </SelectedServicesCode>
 
-                      <SelectedServicesName>
+                      <SelectedServicesName data-testid="services-modal-selected-name">
                         {service.name}
                       </SelectedServicesName>
                     </SelectedServicesNameBox>
@@ -185,9 +204,9 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
             )}
           </SelectedServicesBox>
 
-          <ButtonsBox className="modal-services-buttons">
+          <ButtonsBox data-testid="services-modal-buttons">
             <ResetBtn
-              id="resetSelectedSerBtn"
+              data-testid="reset-selected-services-btn"
               background="grey"
               style={{
                 width: "208px",
@@ -201,7 +220,7 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
             </ResetBtn>
 
             <SaveBtn
-              id="saveSelectedSerBtn"
+              data-testid="save-selected-services-btn"
               background="blue"
               style={{
                 width: "318px",
