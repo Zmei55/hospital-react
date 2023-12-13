@@ -1,5 +1,5 @@
-# /.husky
-.vscode/
+/.husky
+/.vscode
 
 # Logs
 logs
