@@ -16,7 +16,7 @@ exports[`Services Search component Services Info component Services Labor-modal 
         Services
       </h3>
       <div
-        class="css-0"
+        class="css-ov1ktg"
         data-testid="services-header-buttons-box"
       >
         <button
@@ -146,7 +146,7 @@ exports[`Services Search component Services Labor-modal component Services Labor
         Services
       </h3>
       <div
-        class="css-0"
+        class="css-ov1ktg"
         data-testid="services-header-buttons-box"
       >
         <button
