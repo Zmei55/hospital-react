@@ -3,9 +3,11 @@
     "ausweis",
     "einen",
     "esnext",
+    "Invitro",
     "testid",
     "traumatologisch",
-    "traumatologische"
+    "traumatologische",
+    "xdescribe"
   ],
   "jest.jestCommandLine": "npm test --",
   "jest.rootPath": "src"

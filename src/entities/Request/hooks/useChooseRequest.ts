@@ -21,7 +21,7 @@ export const useChooseRequest = () => {
   const { getServiceList } = useGetServiceListById();
   const { fetchLaborList } = useGetLaborsList();
 
-  const chooseRequest = async (id: string) => {
+  const chooseRequest = async (id: string | number) => {
     try {
       const requestResponse = await fetchRequest(id).unwrap();
       dispatch(addRequestId(requestResponse._id));

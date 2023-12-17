@@ -9,7 +9,9 @@ import {
 export const useFilterRequest = () => {
   const [fetchRequestList, { isLoading, isError }] =
     useFetchRequestsByFilterMutation();
-  const [requestList, setRequestList] = useState<IRequestResponse[]>([]);
+  const [requestList, setRequestList] = useState<IRequestResponse[] | null>(
+    null
+  );
 
   const handleFilterRequests: SubmitHandler<IRequestFilter> = async data => {
     try {
