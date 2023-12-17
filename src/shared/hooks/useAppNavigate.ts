@@ -7,5 +7,5 @@ export const useAppNavigate = () => {
     navigate(`${endpoint}`);
   };
 
-  return [handleNavigate];
+  return { handleNavigate };
 };

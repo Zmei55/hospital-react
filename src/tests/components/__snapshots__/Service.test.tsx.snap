@@ -1,0 +1,382 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Services Search component Services Info component Services Labor-modal renders 1`] = `
+<div>
+  <div
+    class="css-185l0bc"
+    data-testid="services-container"
+  >
+    <div
+      class="css-133fwc"
+      data-testid="services-header"
+    >
+      <h3
+        class="css-1dq3gat"
+      >
+        Services
+      </h3>
+      <div
+        class="css-ov1ktg"
+        data-testid="services-header-buttons-box"
+      >
+        <button
+          class="css-bewdgy"
+          data-testid="add-to-selected-service-btn"
+          style="height: 48px; padding-right: 24px; padding-left: 24px; margin-right: 24px;"
+        >
+          Add
+        </button>
+        <button
+          class="css-bewdgy"
+          data-testid="select-labor"
+          style="height: 48px; padding-right: 24px; padding-left: 24px;"
+        >
+          Choice of the lab
+        </button>
+      </div>
+    </div>
+    <ul
+      class="css-1edcxm"
+      data-testid="services-info-list"
+    >
+      <li
+        class="css-e10vzf"
+        data-testid="services-info-listitem"
+      >
+        <button
+          class="css-ch4pr2"
+          data-testid="delete-service-info-btn"
+          style="width: 52px; height: 52px; margin-right: 24px;"
+        >
+          <svg
+            class="css-nhqhda"
+            fill="red"
+            height="48"
+            width="48"
+          >
+            <use
+              href="svgSprite.svg#trash"
+            />
+          </svg>
+        </button>
+        <div
+          class="css-8tpwv0"
+          data-testid="services-info-box"
+        >
+          <div
+            class="css-g11d5q"
+            data-testid="services-info-box-header"
+          >
+            <span
+              class="css-1ixeebt"
+              data-testid="services-info-box-service-code"
+            >
+              L18.36.00.0.005
+            </span>
+          </div>
+          <span
+            class="css-xb338v"
+            data-testid="services-info-box-service-name"
+          >
+            Enzyme
+          </span>
+        </div>
+      </li>
+      <li
+        class="css-e10vzf"
+        data-testid="services-info-listitem"
+      >
+        <button
+          class="css-ch4pr2"
+          data-testid="delete-service-info-btn"
+          style="width: 52px; height: 52px; margin-right: 24px;"
+        >
+          <svg
+            class="css-nhqhda"
+            fill="red"
+            height="48"
+            width="48"
+          >
+            <use
+              href="svgSprite.svg#trash"
+            />
+          </svg>
+        </button>
+        <div
+          class="css-8tpwv0"
+          data-testid="services-info-box"
+        >
+          <div
+            class="css-g11d5q"
+            data-testid="services-info-box-header"
+          >
+            <span
+              class="css-1ixeebt"
+              data-testid="services-info-box-service-code"
+            >
+              L18.36.00.0.006
+            </span>
+          </div>
+          <span
+            class="css-xb338v"
+            data-testid="services-info-box-service-name"
+          >
+            Gerinnung
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Services Search component Services Labor-modal component Services Labor-modal renders 1`] = `
+<div>
+  <div
+    class="css-185l0bc"
+    data-testid="services-container"
+  >
+    <div
+      class="css-133fwc"
+      data-testid="services-header"
+    >
+      <h3
+        class="css-1dq3gat"
+      >
+        Services
+      </h3>
+      <div
+        class="css-ov1ktg"
+        data-testid="services-header-buttons-box"
+      >
+        <button
+          class="css-bewdgy"
+          data-testid="add-to-selected-service-btn"
+          style="height: 48px; padding-right: 24px; padding-left: 24px; margin-right: 24px;"
+        >
+          Add
+        </button>
+        <button
+          class="css-bewdgy"
+          data-testid="select-labor"
+          style="height: 48px; padding-right: 24px; padding-left: 24px;"
+        >
+          Choice of the lab
+        </button>
+      </div>
+    </div>
+    <ul
+      class="css-1edcxm"
+      data-testid="services-info-list"
+    >
+      <li
+        class="css-e10vzf"
+        data-testid="services-info-listitem"
+      >
+        <button
+          class="css-ch4pr2"
+          data-testid="delete-service-info-btn"
+          style="width: 52px; height: 52px; margin-right: 24px;"
+        >
+          <svg
+            class="css-nhqhda"
+            fill="red"
+            height="48"
+            width="48"
+          >
+            <use
+              href="svgSprite.svg#trash"
+            />
+          </svg>
+        </button>
+        <div
+          class="css-8tpwv0"
+          data-testid="services-info-box"
+        >
+          <div
+            class="css-g11d5q"
+            data-testid="services-info-box-header"
+          >
+            <span
+              class="css-1ixeebt"
+              data-testid="services-info-box-service-code"
+            >
+              L18.36.00.0.005
+            </span>
+          </div>
+          <span
+            class="css-xb338v"
+            data-testid="services-info-box-service-name"
+          >
+            Enzyme
+          </span>
+        </div>
+      </li>
+      <li
+        class="css-e10vzf"
+        data-testid="services-info-listitem"
+      >
+        <button
+          class="css-ch4pr2"
+          data-testid="delete-service-info-btn"
+          style="width: 52px; height: 52px; margin-right: 24px;"
+        >
+          <svg
+            class="css-nhqhda"
+            fill="red"
+            height="48"
+            width="48"
+          >
+            <use
+              href="svgSprite.svg#trash"
+            />
+          </svg>
+        </button>
+        <div
+          class="css-8tpwv0"
+          data-testid="services-info-box"
+        >
+          <div
+            class="css-g11d5q"
+            data-testid="services-info-box-header"
+          >
+            <span
+              class="css-1ixeebt"
+              data-testid="services-info-box-service-code"
+            >
+              L18.36.00.0.006
+            </span>
+          </div>
+          <span
+            class="css-xb338v"
+            data-testid="services-info-box-service-name"
+          >
+            Gerinnung
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Services Search component Services Search renders (without header-buttons-box) 1`] = `
+<div>
+  <div
+    class="css-185l0bc"
+    data-testid="services-container"
+  >
+    <div
+      class="css-133fwc"
+      data-testid="services-header"
+    >
+      <h3
+        class="css-1dq3gat"
+      >
+        Services
+      </h3>
+    </div>
+    <button
+      class="css-na7bfu"
+      data-testid="add-services-btn"
+      disabled=""
+      type="button"
+    >
+      <svg
+        class="css-smt8v5"
+        height="48"
+        width="48"
+      >
+        <use
+          href="svgSprite.svg#list-plus"
+        />
+      </svg>
+      <span
+        class="css-m693jn"
+      >
+        Services can be added after selecting a patient
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Services Search component Services Search-modal component Services Search-modal renders with filtered list 1`] = `
+<div>
+  <div
+    class="css-185l0bc"
+    data-testid="services-container"
+  >
+    <div
+      class="css-133fwc"
+      data-testid="services-header"
+    >
+      <h3
+        class="css-1dq3gat"
+      >
+        Services
+      </h3>
+    </div>
+    <button
+      class="css-na7bfu"
+      data-testid="add-services-btn"
+      type="button"
+    >
+      <svg
+        class="css-smt8v5"
+        height="48"
+        width="48"
+      >
+        <use
+          href="svgSprite.svg#list-plus"
+        />
+      </svg>
+      <span
+        class="css-m693jn"
+      >
+        Add services
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Services Search component Services Search-modal component Services Search-modal renders with selected list 1`] = `
+<div>
+  <div
+    class="css-185l0bc"
+    data-testid="services-container"
+  >
+    <div
+      class="css-133fwc"
+      data-testid="services-header"
+    >
+      <h3
+        class="css-1dq3gat"
+      >
+        Services
+      </h3>
+    </div>
+    <button
+      class="css-na7bfu"
+      data-testid="add-services-btn"
+      type="button"
+    >
+      <svg
+        class="css-smt8v5"
+        height="48"
+        width="48"
+      >
+        <use
+          href="svgSprite.svg#list-plus"
+        />
+      </svg>
+      <span
+        class="css-m693jn"
+      >
+        Add services
+      </span>
+    </button>
+  </div>
+</div>
+`;

@@ -2,19 +2,19 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ILabor, IService, IDetail } from "entities/Service";
 
 interface IServicesState {
-  services: IService[];
-  labors: ILabor[];
-  details: IDetail[];
-  selectedServices: IService[];
+  services: IService[] | null;
+  labors: ILabor[] | null;
+  details: IDetail[] | null;
+  selectedServices: IService[] | null;
   modalService: boolean;
   modalLabor: boolean;
 }
 
 const initialState: IServicesState = {
-  services: [],
-  labors: [],
-  details: [],
-  selectedServices: [],
+  services: null,
+  labors: null,
+  details: null,
+  selectedServices: null,
   modalService: false,
   modalLabor: false,
 };
@@ -27,20 +27,26 @@ const servicesSlice = createSlice({
       state.services = action.payload;
     },
     deleteService(state, action: PayloadAction<string | number>) {
-      state.services = state.services.filter(
-        service => service._id !== action.payload
-      );
+      if (state.services)
+        state.services = state.services.filter(
+          service => service._id !== action.payload
+        );
     },
     resetServices(state) {
       state.services = initialState.services;
     },
     addSelectedServices(state, action: PayloadAction<IService>) {
-      state.selectedServices.push(action.payload);
+      if (state.selectedServices) state.selectedServices.push(action.payload);
+      if (!state.selectedServices) {
+        state.selectedServices = [];
+        state.selectedServices.push(action.payload);
+      }
     },
     deleteSelectedService(state, action: PayloadAction<string | number>) {
-      state.selectedServices = state.selectedServices.filter(
-        service => service._id !== action.payload
-      );
+      if (state.selectedServices)
+        state.selectedServices = state.selectedServices.filter(
+          service => service._id !== action.payload
+        );
     },
     resetSelectedServices(state) {
       state.selectedServices = initialState.selectedServices;
@@ -58,9 +64,10 @@ const servicesSlice = createSlice({
       state.details = action.payload;
     },
     deleteDetail(state, action: PayloadAction<string | number>) {
-      state.details = state.details.filter(
-        detail => detail.serviceId !== action.payload
-      );
+      if (state.details)
+        state.details = state.details.filter(
+          detail => detail.serviceId !== action.payload
+        );
     },
     resetDetails(state) {
       state.details = initialState.details;

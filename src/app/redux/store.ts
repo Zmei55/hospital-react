@@ -35,14 +35,11 @@ export const store = configureStore({
     patients: patientsReducer,
     services: servicesReducer,
   },
-  middleware: getDefaultMiddleware => [
-    ...getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
-    }),
-    api.middleware,
-  ],
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+    serializableCheck: {
+      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+    },
+  }).prepend(api.middleware),
   devTools: process.env.NODE_ENV !== "production",
 });
 

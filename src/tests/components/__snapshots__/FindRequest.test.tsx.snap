@@ -1,0 +1,270 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FindRequest component FindRequest requestList renders 1`] = `
+<div>
+  <div
+    class="css-1hul4ku"
+    data-testid="find-request-container"
+  >
+    <div
+      class="css-1lduqby"
+      data-testid="find-request-header"
+    >
+      <h3
+        class="css-w70xkr"
+        data-testid="find-request-header-title"
+      >
+        Find a request
+      </h3>
+      <button
+        class="css-ch4pr2"
+        data-testid="reset-find-request-btn"
+        form="findReqForm"
+        style="height: 72px; padding-right: 44px; padding-left: 44px; margin-right: 24px;"
+        type="button"
+      >
+        Reset
+      </button>
+      <button
+        class="css-mbrcjd"
+        data-testid="find-find-request-btn"
+        form="find-request-form"
+        style="height: 72px; padding-right: 44px; padding-left: 44px; margin-right: 24px;"
+        type="submit"
+      >
+        Find
+      </button>
+      <button
+        class="css-14jjab4"
+        data-testid="close-find-request-btn"
+        style="width: 72px; height: 72px;"
+      >
+        <svg
+          class="css-bvj43j"
+          fill="white"
+          height="48"
+          width="48"
+        >
+          <use
+            href="svgSprite.svg#cross"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      class="css-r5mrjc"
+      data-testid="find-request-body"
+    >
+      <form
+        class="css-156aa7i"
+        data-testid="find-request-form"
+        id="find-request-form"
+      >
+        <label
+          class="css-gz4v1g"
+        >
+          <input
+            class="css-1ry88mf"
+            data-testid="find-request-body-name-input"
+            name="patientName"
+            placeholder="First name and last name"
+            style="width: 100%;"
+          />
+        </label>
+        <label
+          class="css-gz4v1g"
+        >
+          <input
+            class="css-1ry88mf"
+            data-testid="find-request-body-card-number-input"
+            name="cardNumber"
+            placeholder="Card number"
+            style="width: 100%;"
+          />
+        </label>
+        <label
+          class="css-gz4v1g"
+        >
+          <input
+            class="css-1ry88mf"
+            data-testid="find-request-body-request-number-input"
+            name="requestNumber"
+            placeholder="Request number"
+            style="width: 100%;"
+          />
+        </label>
+        <label
+          class="css-gz4v1g"
+        >
+          <input
+            class="css-1ry88mf"
+            data-testid="find-request-body-request-date-input"
+            name="requestDate"
+            placeholder="Request date"
+            style="width: 100%;"
+            type="date"
+          />
+        </label>
+      </form>
+      <div
+        class="css-1locwai"
+        data-testid="find-request-list"
+      >
+        <div
+          class="css-1coqfd9"
+          data-testid="find-request-list-header"
+        >
+          <div
+            class="css-9dis78"
+          >
+            First name and last name
+          </div>
+          <div
+            class="css-1uhsm05"
+          >
+            Card number
+          </div>
+          <div
+            class="css-1uhsm05"
+          >
+            Request number
+          </div>
+          <div
+            class="css-16sqn77"
+          >
+            Request date
+          </div>
+          <div
+            class="css-1q4b8hs"
+          />
+        </div>
+        <ul
+          class="css-yquj6e"
+          data-testid="find-request-list-body"
+        >
+          <li
+            class="css-hwfa6i"
+            data-testid="find-request-listitem"
+          >
+            <p
+              class="css-jc3204"
+              data-testid="find-request-listitem-name"
+            >
+              Emma Weber
+            </p>
+            <p
+              class="css-1sh92no"
+              data-testid="find-request-listitem-card-number"
+            >
+              123456789
+            </p>
+            <p
+              class="css-1sh92no"
+              data-testid="find-request-listitem-request-number"
+            >
+              1
+            </p>
+            <p
+              class="css-xjyctd"
+              data-testid="find-request-listitem-request-date"
+            >
+              Thu Jun 08
+            </p>
+            <p
+              class="css-17ol73b"
+              data-testid="find-request-listitem-select-btn"
+            >
+              <button
+                class="css-1x5y6pv"
+                data-testid="select-found-request"
+              >
+                Select
+              </button>
+            </p>
+          </li>
+          <li
+            class="css-hwfa6i"
+            data-testid="find-request-listitem"
+          >
+            <p
+              class="css-jc3204"
+              data-testid="find-request-listitem-name"
+            >
+              Emma Weber
+            </p>
+            <p
+              class="css-1sh92no"
+              data-testid="find-request-listitem-card-number"
+            >
+              123456789
+            </p>
+            <p
+              class="css-1sh92no"
+              data-testid="find-request-listitem-request-number"
+            >
+              2
+            </p>
+            <p
+              class="css-xjyctd"
+              data-testid="find-request-listitem-request-date"
+            >
+              Thu Jun 08
+            </p>
+            <p
+              class="css-17ol73b"
+              data-testid="find-request-listitem-select-btn"
+            >
+              <button
+                class="css-1x5y6pv"
+                data-testid="select-found-request"
+              >
+                Select
+              </button>
+            </p>
+          </li>
+          <li
+            class="css-hwfa6i"
+            data-testid="find-request-listitem"
+          >
+            <p
+              class="css-jc3204"
+              data-testid="find-request-listitem-name"
+            >
+              Emma Weber
+            </p>
+            <p
+              class="css-1sh92no"
+              data-testid="find-request-listitem-card-number"
+            >
+              123456789
+            </p>
+            <p
+              class="css-1sh92no"
+              data-testid="find-request-listitem-request-number"
+            >
+              7
+            </p>
+            <p
+              class="css-xjyctd"
+              data-testid="find-request-listitem-request-date"
+            >
+              Mon Jun 12
+            </p>
+            <p
+              class="css-17ol73b"
+              data-testid="find-request-listitem-select-btn"
+            >
+              <button
+                class="css-1x5y6pv"
+                data-testid="select-found-request"
+              >
+                Select
+              </button>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;

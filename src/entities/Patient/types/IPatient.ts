@@ -1,16 +1,13 @@
+import { IAddress } from "./IAddress";
+
 export interface IPatient {
   _id: string | number;
   name: string;
   birthDate: string;
   cardNumber: number;
-  gender: string;
+  gender: "FEMALE" | "MALE" | "DIVERSE" | "";
   phoneNumber: string;
   email: string;
   identityDocument: string;
-  address: {
-    street: string;
-    houseNumber: string;
-    city: string;
-    postcode: string;
-  };
+  address: IAddress;
 }

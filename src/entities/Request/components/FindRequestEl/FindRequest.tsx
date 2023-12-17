@@ -43,7 +43,7 @@ import {
 } from "./FindRequest.styled";
 
 export const FindRequest: React.FC = () => {
-  const [navigate] = useAppNavigate();
+  const { handleNavigate } = useAppNavigate();
   const { register, handleSubmit, reset } = useForm<IRequestFilter>({
     defaultValues: {
       patientName: undefined,
@@ -68,16 +68,18 @@ export const FindRequest: React.FC = () => {
   };
 
   const handleCloseBtn = () => {
-    navigate("/desktop");
+    handleNavigate("/desktop");
   };
 
   return (
-    <Container>
-      <Header>
-        <Title>{t("findRequest.title")}</Title>
+    <Container data-testid="find-request-container">
+      <Header data-testid="find-request-header">
+        <Title data-testid="find-request-header-title">
+          {t("findRequest.title")}
+        </Title>
 
         <ResetBtn
-          id="resetSearchReqBtn"
+          data-testid="reset-find-request-btn"
           type="button"
           form="findReqForm"
           style={{
@@ -93,9 +95,9 @@ export const FindRequest: React.FC = () => {
         </ResetBtn>
 
         <FindBtn
-          id="findReqBtn"
+          data-testid="find-find-request-btn"
           type="submit"
-          form="findReqForm"
+          form="find-request-form"
           style={{
             height: "72px",
             paddingRight: "44px",
@@ -108,7 +110,7 @@ export const FindRequest: React.FC = () => {
         </FindBtn>
 
         <CloseBtn
-          id="closeReqBtn"
+          data-testid="close-find-request-btn"
           background="red"
           style={{
             width: "72px",
@@ -120,11 +122,16 @@ export const FindRequest: React.FC = () => {
         </CloseBtn>
       </Header>
 
-      <Body>
-        <Form id="findReqForm" onSubmit={handleSubmit(handleFilterRequests)}>
+      <Body data-testid="find-request-body">
+        <Form
+          id="find-request-form"
+          data-testid="find-request-form"
+          onSubmit={handleSubmit(handleFilterRequests)}
+        >
           <Label>
             <InputEl
               {...register("patientName")}
+              data-testid="find-request-body-name-input"
               style={{ width: "100%" }}
               placeholder={t("patient.name")}
             />
@@ -133,6 +140,7 @@ export const FindRequest: React.FC = () => {
           <Label>
             <InputEl
               {...register("cardNumber")}
+              data-testid="find-request-body-card-number-input"
               style={{ width: "100%" }}
               placeholder={t("patient.cardNumber")}
             />
@@ -141,6 +149,7 @@ export const FindRequest: React.FC = () => {
           <Label>
             <InputEl
               {...register("requestNumber")}
+              data-testid="find-request-body-request-number-input"
               style={{ width: "100%" }}
               placeholder={t("findRequest.requestNumber")}
             />
@@ -150,23 +159,26 @@ export const FindRequest: React.FC = () => {
             <InputEl
               type="date"
               {...register("requestDate")}
+              data-testid="find-request-body-request-date-input"
               style={{ width: "100%" }}
               placeholder={t("findRequest.dateOfRequest")}
             />
           </Label>
         </Form>
 
-        {isError && <NotFound>Запрос не найден</NotFound>}
+        {isError && (
+          <NotFound data-testid="find-request-error">Запрос не найден</NotFound>
+        )}
 
         {isLoading ? (
-          <SpinnerCenterBox>
-            <Spinner size={80} />
+          <SpinnerCenterBox data-testid="spinner-box">
+            <Spinner size={80} data-testid="spinner" />
           </SpinnerCenterBox>
         ) : (
           <>
-            {requestList.length > 0 && (
-              <List>
-                <ListHeader>
+            {requestList && (
+              <List data-testid="find-request-list">
+                <ListHeader data-testid="find-request-list-header">
                   <HeadName>{t("patient.name")}</HeadName>
                   <HeadCardNumber>{t("patient.cardNumber")}</HeadCardNumber>
                   <HeadRequestNumber>
@@ -178,20 +190,27 @@ export const FindRequest: React.FC = () => {
                   <HeadSelectBtn></HeadSelectBtn>
                 </ListHeader>
 
-                <ListBody>
+                <ListBody data-testid="find-request-list-body">
                   {requestList.map(request => (
-                    <ListItem key={request._id}>
-                      <BodyName>{request.patientName}</BodyName>
-                      <BodyCardNumber>{request.cardNumber}</BodyCardNumber>
-                      <BodyRequestNumber>
+                    <ListItem
+                      key={request._id}
+                      data-testid="find-request-listitem"
+                    >
+                      <BodyName data-testid="find-request-listitem-name">
+                        {request.patientName}
+                      </BodyName>
+                      <BodyCardNumber data-testid="find-request-listitem-card-number">
+                        {request.cardNumber}
+                      </BodyCardNumber>
+                      <BodyRequestNumber data-testid="find-request-listitem-request-number">
                         {request.requestNumber}
                       </BodyRequestNumber>
-                      <BodyRequestDate>
+                      <BodyRequestDate data-testid="find-request-listitem-request-date">
                         {showBirthDate(request.createdAt.toString())}
                       </BodyRequestDate>
-                      <BodySelectBtn>
+                      <BodySelectBtn data-testid="find-request-listitem-select-btn">
                         <SelectBtn
-                          id="selectPatLink"
+                          data-testid="select-found-request"
                           onClick={() => chooseRequest(request._id)}
                         >
                           {t("shared.button.select")}

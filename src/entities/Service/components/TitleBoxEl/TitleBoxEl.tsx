@@ -7,7 +7,7 @@ import {
 } from "entities/Service";
 import { useAppSelector, Button as AddBtn, Button as LaborBtn } from "shared";
 
-import { Container, Title } from "./TitleBoxEl.styled";
+import { Container, Title, ButtonsBox } from "./TitleBoxEl.styled";
 
 interface ITitleBox {}
 
@@ -18,13 +18,13 @@ export const TitleBoxEl: React.FC<ITitleBox> = () => {
   const { t } = useTranslation();
 
   return (
-    <Container className="services-header">
+    <Container data-testid="services-header">
       <Title>{t("service.title")}</Title>
 
-      {services.length > 0 && (
-        <>
+      {services && services.length > 0 && (
+        <ButtonsBox data-testid="services-header-buttons-box">
           <AddBtn
-            id="addToSelectedSerBtn"
+            data-testid="add-to-selected-service-btn"
             background="grey"
             style={{
               height: "48px",
@@ -38,7 +38,7 @@ export const TitleBoxEl: React.FC<ITitleBox> = () => {
           </AddBtn>
 
           <LaborBtn
-            id="selectLabor"
+            data-testid="select-labor"
             background="grey"
             style={{
               height: "48px",
@@ -49,7 +49,7 @@ export const TitleBoxEl: React.FC<ITitleBox> = () => {
           >
             {t("service.implementer")}
           </LaborBtn>
-        </>
+        </ButtonsBox>
       )}
 
       {showServiceModal && <ServiceModalEl />}

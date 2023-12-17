@@ -4,13 +4,13 @@ import { IDetail } from "entities/Service";
 interface IRequestSlice {
   requestId: string | number | null;
   requestNumber: number | null;
-  requestDetails: IDetail[];
+  requestDetails: IDetail[] | null;
 }
 
 const initialState: IRequestSlice = {
   requestId: null,
   requestNumber: null,
-  requestDetails: [],
+  requestDetails: null,
 };
 
 const requestSlice = createSlice({

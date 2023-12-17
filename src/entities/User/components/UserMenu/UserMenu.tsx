@@ -20,9 +20,9 @@ export const UserMenu: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <Container>
+    <Container data-testid="user-container">
       {isLoggedIn && (
-        <UserBox>
+        <UserBox data-testid="username-container">
           <Name>{name}</Name>
           <Workplace>
             {`${station} ${t("user.department")}, ${jobTitle}`}
@@ -31,7 +31,7 @@ export const UserMenu: React.FC = () => {
       )}
 
       <MenuBtn
-        id="appMenuBtn"
+        data-testid="appMenuBtn"
         style={{
           width: "72px",
           height: "72px",
@@ -44,7 +44,7 @@ export const UserMenu: React.FC = () => {
 
       {isLoggedIn && (
         <LogoutBtn
-          id="logoutBtn"
+          data-testid="logoutBtn"
           background="transparent"
           style={{
             height: "72px",

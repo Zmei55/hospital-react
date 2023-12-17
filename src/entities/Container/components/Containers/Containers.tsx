@@ -27,31 +27,37 @@ export const Containers: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <Container className="containers-container">
+    <Container data-testid="containers-container">
       <Title>{t("container.title")}</Title>
       <ModalBtn
+        data-testid="add-containers-btn"
         type="button"
-        disabled={detailsList.length === 0}
+        disabled={!detailsList}
         onClick={toggleContainersModal}
       >
         <Icon icon="test-tube" size={48} />
-        {servicesList.length === 0 && detailsList.length === 0 && (
+        {!servicesList && !detailsList && (
           <ButtonTitle>{t("container.containerBtnIsDisabled_V1")}</ButtonTitle>
         )}
-        {servicesList.length !== 0 && detailsList.length === 0 && (
+        {servicesList && !detailsList && (
           <ButtonTitle>{t("container.containerBtnIsDisabled_V2")}</ButtonTitle>
         )}
-        {servicesList.length !== 0 && detailsList.length !== 0 && (
+        {servicesList && detailsList && (
           <ButtonTitle>{t("container.containerBtnIsActive")}</ButtonTitle>
         )}
       </ModalBtn>
 
       {showContainersModal && (
-        <Modal onClose={() => toggleContainersModal()}>
-          <ModalHeader>
-            <ModalTitle>{t("container.containerBtnIsActive")}</ModalTitle>
+        <Modal
+          data-testid="add-containers-modal"
+          onClose={() => toggleContainersModal()}
+        >
+          <ModalHeader data-testid="containers-modal-header">
+            <ModalTitle data-testid="containers-modal-header-title">
+              {t("container.containerBtnIsActive")}
+            </ModalTitle>
             <CloseBtn
-              id="closeModalSerBtn"
+              data-testid="close-modal-containers-btn"
               background="red"
               style={{
                 width: "72px",
@@ -64,8 +70,10 @@ export const Containers: React.FC = () => {
             </CloseBtn>
           </ModalHeader>
 
-          <ModalBody>
-            <ModalText>{t("unknownPart.text")}</ModalText>
+          <ModalBody data-testid="containers-modal-body">
+            <ModalText data-testid="containers-modal-text">
+              {t("unknownPart.text")}
+            </ModalText>
           </ModalBody>
         </Modal>
       )}

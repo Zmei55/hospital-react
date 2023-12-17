@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import {
   useTogglePatientsModal,
-  usePatientsListFind,
+  usePatientListFind,
   useChoosePatient,
   ISearchPatientState,
 } from "entities/Patient";
@@ -45,11 +45,11 @@ interface ISearchModalForm {}
 export const SearchModalEl: React.FC<ISearchModalForm> = () => {
   const {
     patientList,
-    handlePatientsListFind,
+    handlePatientListFind,
     isLoading,
     isError,
     resetPatients,
-  } = usePatientsListFind();
+  } = usePatientListFind();
   const { register, handleSubmit } = useForm<ISearchPatientState>({
     defaultValues: {
       name: undefined,
@@ -71,14 +71,14 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
   };
 
   return (
-    <ModalContainer className="patient-search">
-      <ModalHeader className="patient-search-header">
-        <ModalTitle className="patient-search-title">
+    <ModalContainer data-testid="patient-search">
+      <ModalHeader data-testid="patient-search-header">
+        <ModalTitle data-testid="patient-search-title">
           {t("patient.title")}
         </ModalTitle>
 
         <ResetBtn
-          id="resetSearchPatBtn"
+          data-testid="reset-search-patient-btn"
           style={{
             height: "72px",
             paddingRight: "44px",
@@ -92,9 +92,9 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
         </ResetBtn>
 
         <FindBtn
-          id="findSearchPatBtn"
+          data-testid="find-search-patient-btn"
           type="submit"
-          form="findPatientList"
+          form="patient-search-form"
           style={{
             height: "72px",
             paddingRight: "44px",
@@ -107,7 +107,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
         </FindBtn>
 
         <CloseBtn
-          id="closeSearchPatBtn"
+          data-testid="close-search-patient-btn"
           background="red"
           style={{
             width: "72px",
@@ -119,15 +119,16 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
         </CloseBtn>
       </ModalHeader>
 
-      <ModalBody className="patient-search-body">
+      <ModalBody data-testid="patient-search-body">
         <Form
-          id="findPatientList"
-          className="patient-search-form"
-          onSubmit={handleSubmit(handlePatientsListFind)}
+          data-testid="patient-search-form"
+          id="patient-search-form"
+          onSubmit={handleSubmit(handlePatientListFind)}
         >
           <Label>
             <InputEl
               {...register("name")}
+              data-testid="patient-search-name-input"
               autoFocus
               style={{ width: "100%" }}
               placeholder={t("patient.name")}
@@ -138,6 +139,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
             <InputEl
               type="date"
               {...register("birthDate")}
+              data-testid="patient-search-birthday-input"
               style={{ width: "100%" }}
               placeholder={t("patient.dateOfBirth")}
             />
@@ -146,51 +148,57 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
           <Label>
             <InputEl
               {...register("cardNumber")}
+              data-testid="patient-search-card-number-input"
               style={{ width: "100%" }}
               placeholder={t("patient.cardNumber")}
             />
           </Label>
         </Form>
 
-        {isLoading ? (
+        {isLoading && (
           <SpinnerCenterBox>
             <Spinner size={80} />
           </SpinnerCenterBox>
-        ) : (
-          <>
-            {patientList.length > 0 && (
-              <List>
-                <ListHeader>
-                  <HeadName>{t("patient.name")}</HeadName>
-                  <HeadBirthDay>{t("patient.dateOfBirth")}</HeadBirthDay>
-                  <HeadCardNumber>{t("patient.cardNumber")}</HeadCardNumber>
-                  <HeadSelectBtn></HeadSelectBtn>
-                </ListHeader>
+        )}
 
-                <ListBody>
-                  {patientList.map(patient => (
-                    <ListItem key={patient._id}>
-                      <BodyName>{patient.name}</BodyName>
-                      <BodyBirthDay>
-                        {showBirthDate(patient.birthDate)}
-                      </BodyBirthDay>
-                      <BodyCardNumber>{patient.cardNumber}</BodyCardNumber>
-                      <BodySelectBtn>
-                        <SelectBtn
-                          id="selectPatLink"
-                          onClick={() => choosePatient(patient._id)}
-                        >
-                          {t("shared.button.select")}
-                        </SelectBtn>
-                      </BodySelectBtn>
-                    </ListItem>
-                  ))}
-                </ListBody>
-              </List>
-            )}
+        {!isLoading && patientList && (
+          <List data-testid="patient-search-list">
+            <ListHeader data-testid="patient-search-list-header">
+              <HeadName>{t("patient.name")}</HeadName>
+              <HeadBirthDay>{t("patient.dateOfBirth")}</HeadBirthDay>
+              <HeadCardNumber>{t("patient.cardNumber")}</HeadCardNumber>
+              <HeadSelectBtn></HeadSelectBtn>
+            </ListHeader>
 
-            {isError && <NotFound>{t("patient.NotFoundPatientText")}</NotFound>}
-          </>
+            <ListBody data-testid="patient-search-list-body">
+              {patientList.map(patient => (
+                <ListItem
+                  key={patient._id}
+                  data-testid="patient-search-listitem"
+                >
+                  <BodyName>{patient.name}</BodyName>
+                  <BodyBirthDay>
+                    {showBirthDate(patient.birthDate)}
+                  </BodyBirthDay>
+                  <BodyCardNumber>{patient.cardNumber}</BodyCardNumber>
+                  <BodySelectBtn>
+                    <SelectBtn
+                      id="selectPatLink"
+                      onClick={() => choosePatient(patient._id)}
+                    >
+                      {t("shared.button.select")}
+                    </SelectBtn>
+                  </BodySelectBtn>
+                </ListItem>
+              ))}
+            </ListBody>
+          </List>
+        )}
+
+        {!isLoading && isError && (
+          <NotFound data-testid="patient-search-not-found">
+            {t("patient.NotFoundPatientText")}
+          </NotFound>
         )}
       </ModalBody>
     </ModalContainer>

@@ -10,9 +10,9 @@ import { useAppDispatch, useAppSelector } from "shared";
 
 export const useHandleServicesForm = () => {
   const dispatch = useAppDispatch();
-  const [filteredServicesList, setFilteredServicesList] = useState<IService[]>(
-    []
-  );
+  const [filteredServicesList, setFilteredServicesList] = useState<
+    IService[] | null
+  >(null);
   const selectedServices = useAppSelector(
     state => state.services.selectedServices
   );
@@ -28,7 +28,7 @@ export const useHandleServicesForm = () => {
       console.log("ERROR servicesListFilter");
     }
 
-    dispatch(addServices(selectedServices));
+    if (selectedServices) dispatch(addServices(selectedServices));
   };
 
   return { handleServicesForm, filteredServicesList, isLoading, isError };

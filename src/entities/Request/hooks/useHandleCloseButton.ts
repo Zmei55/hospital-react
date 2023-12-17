@@ -2,12 +2,12 @@ import { useClearPatient } from "entities/Patient";
 import { useAppNavigate } from "shared";
 
 export const useHandleCloseButton = () => {
-  const [navigate] = useAppNavigate();
+  const { handleNavigate } = useAppNavigate();
   const { clearPatient } = useClearPatient();
 
   const handleCloseBtn = () => {
     clearPatient();
-    navigate("/desktop");
+    handleNavigate("/desktop");
   };
 
   return { handleCloseBtn };

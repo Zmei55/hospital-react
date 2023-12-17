@@ -26,7 +26,7 @@ const NotFoundPage = loadable(() => import("pages/NotFoundView"), {
 
 export const App: React.FC = () => {
   return (
-    <Container className="app">
+    <Container data-testid="app">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route

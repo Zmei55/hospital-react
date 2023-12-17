@@ -17,6 +17,7 @@ import {
   Form,
   InputsContainer,
   Label,
+  InputError,
   ErrorTitle,
 } from "./AuthMenu.styled";
 import React from "react";
@@ -29,7 +30,8 @@ export const AuthMenu: React.FC = () => {
   const {
     register,
     handleSubmit,
-    formState: { dirtyFields },
+    getValues,
+    formState: { dirtyFields, errors },
   } = useForm<ISingInState>({
     defaultValues: {
       username: "",
@@ -41,14 +43,14 @@ export const AuthMenu: React.FC = () => {
     dirtyFields.username === undefined || dirtyFields.password === undefined;
 
   return (
-    <Container className="auth-container">
-      <Form className="auth-form" onSubmit={handleSubmit(handleSignInSubmit)}>
-        <Title className="auth-title">{t("auth.title")}</Title>
+    <Container data-testid="auth-page">
+      <Form data-testid="auth-form" onSubmit={handleSubmit(handleSignInSubmit)}>
+        <Title data-testid="auth-title">{t("auth.title")}</Title>
 
-        <SubTitle className="auth-subtitle">{t("auth.text")}</SubTitle>
+        <SubTitle data-testid="auth-subtitle">{t("auth.text")}</SubTitle>
 
-        <InputsContainer className="auth-inputs-container">
-          <Label className="auth-username-label">
+        <InputsContainer data-testid="auth-inputs-container">
+          <Label data-testid="auth-username-label">
             <InputEl
               {...register("username", {
                 required: "You did not enter a username",
@@ -56,15 +58,19 @@ export const AuthMenu: React.FC = () => {
                   value: 3,
                   message: "Minimum 3 characters",
                 },
+                value: getValues().username,
               })}
-              className="auth-username-input"
+              data-testid="auth-username-input"
               style={{ width: "368px" }}
               placeholder={t("auth.loginInput")}
               required
             />
+            {errors.username && (
+              <InputError>{errors.username.message}</InputError>
+            )}
           </Label>
 
-          <Label className="auth-password-label">
+          <Label data-testid="auth-password-label">
             <InputEl
               type="password"
               {...register("password", {
@@ -73,24 +79,28 @@ export const AuthMenu: React.FC = () => {
                   value: 6,
                   message: "Minimum 6 characters",
                 },
+                value: getValues().password,
               })}
-              className="auth-password-input"
+              data-testid="auth-password-input"
               style={{ width: "368px" }}
               placeholder={t("auth.passwordInput")}
               required
             />
+            {errors.password && (
+              <InputError>{errors.password.message}</InputError>
+            )}
           </Label>
         </InputsContainer>
 
         <SignInBtn
-          id="signInBtn"
+          data-testid="sign-in-btn"
           type="submit"
           style={{ width: "368px", height: "72px" }}
           background="blue"
           disabled={isEmptyLoginForm}
         >
           {isLoading ? (
-            <Spinner />
+            <Spinner data-testid="spinner" />
           ) : (
             <>
               {t("shared.button.signIn")}
@@ -101,10 +111,10 @@ export const AuthMenu: React.FC = () => {
       </Form>
 
       {isError && (
-        <Modal onClose={errorModalClose}>
+        <Modal data-testid="login-error-modal" onClose={errorModalClose}>
           <ErrorTitle>{t("auth.authError")}</ErrorTitle>
           <AcceptBtn
-            id="errorLoginBtn"
+            data-testid="errorLoginBtn"
             background="blue"
             style={{
               height: "72px",

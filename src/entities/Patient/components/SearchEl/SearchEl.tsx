@@ -10,19 +10,19 @@ export const SearchEl: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <Container>
+    <Container data-testid="patient-find-container">
       <ModalBtn
-        id="modalFindPatBtn"
+        data-testid="patient-find-btn"
         type="button"
         onClick={togglePatientsModal}
         aria-label="find patient"
       >
-        <Icon icon="user-plus" size={48} />
+        <Icon data-testid="icon" icon="user-plus" size={48} />
         {t("patient.selectPatientBtn")}
       </ModalBtn>
 
       {showModal && (
-        <Modal onClose={togglePatientsModal}>
+        <Modal data-testid="patient-find-modal" onClose={togglePatientsModal}>
           <SearchModalEl />
         </Modal>
       )}

@@ -252,11 +252,21 @@ export const AddServiceBtnTitle = styled.span`
   }
 `;
 
+export const SecondaryBlock = styled.div`
+  @media screen and (min-width: 1600px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border-left: ${props => props.theme.border};
+  }
+`;
+
 export const SelectedServicesBox = styled.div`
   @media screen and (min-width: 1600px) {
     width: 604px;
     padding-left: 50px;
-    border-left: ${props => props.theme.border};
+    /* border-left: ${props => props.theme.border}; */
   }
 `;
 
@@ -350,5 +360,6 @@ export const ButtonsBox = styled.div`
 
   @media screen and (min-width: 1600px) {
     display: flex;
+    justify-content: center;
   }
 `;

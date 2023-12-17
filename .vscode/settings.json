@@ -1,3 +1,14 @@
 {
-  "cSpell.words": ["einen", "esnext", "traumatologisch", "traumatologische"]
+  "cSpell.words": [
+    "ausweis",
+    "einen",
+    "esnext",
+    "Invitro",
+    "testid",
+    "traumatologisch",
+    "traumatologische",
+    "xdescribe"
+  ],
+  "jest.jestCommandLine": "npm test --",
+  "jest.rootPath": "src"
 }

@@ -4,7 +4,7 @@ import { useAppNavigate, Button as CloseBtn, Icon } from "shared";
 import { Container, Header, Title, Body, Text } from "./UnknownPart.styled";
 
 export const UnknownPart: React.FC = () => {
-  const [navigate] = useAppNavigate();
+  const { handleNavigate } = useAppNavigate();
   const { t } = useTranslation();
 
   return (
@@ -19,7 +19,7 @@ export const UnknownPart: React.FC = () => {
             width: "72px",
             height: "72px",
           }}
-          onClick={() => navigate("/desktop")}
+          onClick={() => handleNavigate("/desktop")}
         >
           <Icon icon="cross" size={48} color="white" />
         </CloseBtn>

@@ -1,0 +1,495 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Patient Info component Patient Info renders - full 1`] = `
+<div>
+  <div
+    class="css-1daa38u"
+    data-testid="patient-container"
+  >
+    <div
+      class="css-1273oja"
+      data-testid="patient-info-name-block"
+    >
+      <button
+        class="css-ch4pr2"
+        data-testid="more-patient-info-btn"
+        name="InfoButton"
+        style="width: 48px; height: 48px; margin-right: 24px;"
+      >
+        <svg
+          class="css-6vupcz"
+          fill="grey"
+          height="24"
+          width="24"
+        >
+          <use
+            href="svgSprite.svg#caret-double-up-bold"
+          />
+        </svg>
+      </button>
+      <h3
+        class="css-l2t4tz"
+        data-testid="patient-info-name"
+      >
+        Emma Muster
+      </h3>
+      <button
+        class="css-ch4pr2"
+        data-testid="clear-patient-info"
+        name="ClearButton"
+        style="width: 48px; height: 48px;"
+      >
+        <svg
+          class="css-nhqhda"
+          fill="red"
+          height="24"
+          width="24"
+        >
+          <use
+            href="svgSprite.svg#cross-bold"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      class="css-h1pud"
+      data-testid="patient-info-primary-block"
+    >
+      <div
+        class="css-1heo10q"
+        data-testid="patient-info-primary-infobox-birthday"
+      >
+        <h4
+          class="css-in1lmv"
+        >
+          Date of birth
+        </h4>
+        <span
+          class="css-p6kx9h"
+        >
+          26
+  .12
+  .1968
+        </span>
+      </div>
+      <div
+        class="css-1heo10q"
+        data-testid="patient-info-primary-infobox-gender"
+      >
+        <h4
+          class="css-in1lmv"
+        >
+          Sex
+        </h4>
+        <span
+          class="css-p6kx9h"
+        >
+          Female
+        </span>
+      </div>
+      <div
+        class="css-1heo10q"
+        data-testid="patient-info-primary-infobox-card-number"
+      >
+        <h4
+          class="css-in1lmv"
+        >
+          Card number
+        </h4>
+        <span
+          class="css-p6kx9h"
+        >
+          123456789
+        </span>
+      </div>
+      <div
+        class="css-1heo10q"
+        data-testid="patient-info-primary-infobox-phone"
+      >
+        <h4
+          class="css-in1lmv"
+        >
+          Phone number
+        </h4>
+        <span
+          class="css-p6kx9h"
+        >
+          +491234567890
+        </span>
+      </div>
+      <div
+        class="css-1heo10q"
+        data-testid="patient-info-primary-infobox-email"
+      >
+        <h4
+          class="css-in1lmv"
+        >
+          E-mail
+        </h4>
+        <span
+          class="css-p6kx9h"
+        >
+          emma-muster@mail.com
+        </span>
+      </div>
+    </div>
+    <div
+      class="css-1832p0z"
+      data-testid="patient-info-secondary-block"
+    >
+      <div
+        class="css-1heo10q"
+        data-testid="patient-info-secondary-infobox-identity-document"
+      >
+        <h4
+          class="css-in1lmv"
+        >
+          Identity document
+        </h4>
+        <span
+          class="css-p6kx9h"
+        >
+          ausweis
+        </span>
+      </div>
+      <div
+        class="css-1heo10q"
+        data-testid="patient-info-secondary-infobox-residence-address"
+      >
+        <h4
+          class="css-in1lmv"
+        >
+          Residence address
+        </h4>
+        <span
+          class="css-p6kx9h"
+        >
+          
+            Emmentaler Straße, 
+            45, 
+            12345, 
+            Berlin
+            
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Patient Search-modal component Patient Search-list find 1`] = `
+<div>
+  <div
+    class="css-0"
+    data-testid="patient-search"
+  >
+    <div
+      class="css-1f0t3a4"
+      data-testid="patient-search-header"
+    >
+      <h3
+        class="css-w70xkr"
+        data-testid="patient-search-title"
+      >
+        Select a patient
+      </h3>
+      <button
+        class="css-ch4pr2"
+        data-testid="reset-search-patient-btn"
+        style="height: 72px; padding-right: 44px; padding-left: 44px; margin-right: 24px;"
+      >
+        Reset
+      </button>
+      <button
+        class="css-mbrcjd"
+        data-testid="find-search-patient-btn"
+        form="patient-search-form"
+        style="height: 72px; padding-right: 44px; padding-left: 44px; margin-right: 24px;"
+        type="submit"
+      >
+        Find
+      </button>
+      <button
+        class="css-14jjab4"
+        data-testid="close-search-patient-btn"
+        style="width: 72px; height: 72px;"
+      >
+        <svg
+          class="css-bvj43j"
+          fill="white"
+          height="48"
+          width="48"
+        >
+          <use
+            href="svgSprite.svg#cross"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      class="css-leyee6"
+      data-testid="patient-search-body"
+    >
+      <form
+        class="css-1g5v37m"
+        data-testid="patient-search-form"
+        id="patient-search-form"
+      >
+        <label
+          class="css-15io445"
+        >
+          <input
+            class="css-1ry88mf"
+            data-testid="patient-search-name-input"
+            name="name"
+            placeholder="First name and last name"
+            style="width: 100%;"
+          />
+        </label>
+        <label
+          class="css-15io445"
+        >
+          <input
+            class="css-1ry88mf"
+            data-testid="patient-search-birthday-input"
+            name="birthDate"
+            placeholder="Date of birth"
+            style="width: 100%;"
+            type="date"
+          />
+        </label>
+        <label
+          class="css-15io445"
+        >
+          <input
+            class="css-1ry88mf"
+            data-testid="patient-search-card-number-input"
+            name="cardNumber"
+            placeholder="Card number"
+            style="width: 100%;"
+          />
+        </label>
+      </form>
+      <div
+        class="css-16zoccl"
+        data-testid="patient-search-list"
+      >
+        <ul
+          class="css-135ntzi"
+          data-testid="patient-search-list-header"
+        >
+          <li
+            class="css-84kxrg"
+          >
+            First name and last name
+          </li>
+          <li
+            class="css-1tbnjeu"
+          >
+            Date of birth
+          </li>
+          <li
+            class="css-145tdht"
+          >
+            Card number
+          </li>
+          <li
+            class="css-p9hawa"
+          />
+        </ul>
+        <ul
+          class="css-1gihon0"
+          data-testid="patient-search-list-body"
+        >
+          <li
+            class="css-hwfa6i"
+            data-testid="patient-search-listitem"
+          >
+            <p
+              class="css-1s2goei"
+            >
+              Emma Muster
+            </p>
+            <p
+              class="css-13b8pju"
+            >
+              26.12.1968
+            </p>
+            <p
+              class="css-1nc3dvv"
+            >
+              123456789
+            </p>
+            <p
+              class="css-9xxeqo"
+            >
+              <button
+                class="css-rpav3i"
+                id="selectPatLink"
+              >
+                Select
+              </button>
+            </p>
+          </li>
+          <li
+            class="css-hwfa6i"
+            data-testid="patient-search-listitem"
+          >
+            <p
+              class="css-1s2goei"
+            >
+              Ben Muster
+            </p>
+            <p
+              class="css-13b8pju"
+            >
+              06.03.1970
+            </p>
+            <p
+              class="css-1nc3dvv"
+            >
+              234567891
+            </p>
+            <p
+              class="css-9xxeqo"
+            >
+              <button
+                class="css-rpav3i"
+                id="selectPatLink"
+              >
+                Select
+              </button>
+            </p>
+          </li>
+          <li
+            class="css-hwfa6i"
+            data-testid="patient-search-listitem"
+          >
+            <p
+              class="css-1s2goei"
+            >
+              Bob Muster
+            </p>
+            <p
+              class="css-13b8pju"
+            >
+              14.07.1973
+            </p>
+            <p
+              class="css-1nc3dvv"
+            >
+              345678912
+            </p>
+            <p
+              class="css-9xxeqo"
+            >
+              <button
+                class="css-rpav3i"
+                id="selectPatLink"
+              >
+                Select
+              </button>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Patient Search-modal component Patient Search-modal not renders 1`] = `
+<div>
+  <div
+    class="css-1daa38u"
+    data-testid="patient-container"
+  >
+    <div
+      class="css-m3tvaf"
+      data-testid="patient-find-container"
+    >
+      <button
+        aria-label="find patient"
+        class="css-ge3v8l"
+        data-testid="patient-find-btn"
+        type="button"
+      >
+        <svg
+          class="css-smt8v5"
+          height="48"
+          width="48"
+        >
+          <use
+            href="svgSprite.svg#user-plus"
+          />
+        </svg>
+        Select a patient
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Patient Search-modal component Patient Search-modal renders 1`] = `
+<div>
+  <div
+    class="css-1daa38u"
+    data-testid="patient-container"
+  >
+    <div
+      class="css-m3tvaf"
+      data-testid="patient-find-container"
+    >
+      <button
+        aria-label="find patient"
+        class="css-ge3v8l"
+        data-testid="patient-find-btn"
+        type="button"
+      >
+        <svg
+          class="css-smt8v5"
+          height="48"
+          width="48"
+        >
+          <use
+            href="svgSprite.svg#user-plus"
+          />
+        </svg>
+        Select a patient
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Patient component Patient container renders 1`] = `
+<div>
+  <div
+    class="css-1daa38u"
+    data-testid="patient-container"
+  >
+    <div
+      class="css-m3tvaf"
+      data-testid="patient-find-container"
+    >
+      <button
+        aria-label="find patient"
+        class="css-ge3v8l"
+        data-testid="patient-find-btn"
+        type="button"
+      >
+        <svg
+          class="css-smt8v5"
+          height="48"
+          width="48"
+        >
+          <use
+            href="svgSprite.svg#user-plus"
+          />
+        </svg>
+        Select a patient
+      </button>
+    </div>
+  </div>
+</div>
+`;

@@ -17,13 +17,13 @@ export const HeaderEl: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <Header className="new-request-header">
-      <HeaderTitle className="new-request-header-title">
+    <Header data-testid="new-request-header">
+      <HeaderTitle>
         {t("newRequest.title")} <RequestNumber>№{requestNumber}</RequestNumber>
       </HeaderTitle>
 
       <SaveBtn
-        id="saveNeuRequestBtn"
+        data-testid="save-new-request-btn"
         background="blue"
         style={{
           width: "210px",
@@ -37,7 +37,7 @@ export const HeaderEl: React.FC = () => {
       </SaveBtn>
 
       <CloseBtn
-        id="closeNeuRequestBtn"
+        data-testid="close-new-request-btn"
         background="red"
         style={{
           width: "72px",

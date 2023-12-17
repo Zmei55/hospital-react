@@ -6,7 +6,7 @@ import { useAppSelector, useAppDispatch } from "shared";
 export const useHandleLaborChange = () => {
   const dispatch = useAppDispatch();
   const details = useAppSelector(state => state.services.details);
-  const [detailsState, setDetailsState] = useState<IDetail[]>(details);
+  const [detailsState, setDetailsState] = useState<IDetail[] | null>(details);
   const { toggleLaborModal } = useToggleLaborModal();
 
   const uniqueObjectByServiceId = (
@@ -33,10 +33,10 @@ export const useHandleLaborChange = () => {
   }: {
     target: { name: string | number; value: string | number };
   }) => {
-    if (detailsState.length === 0) {
+    if (!detailsState) {
       setDetailsState([{ serviceId: name, laborId: value }]);
     }
-    if (detailsState.length > 0) {
+    if (detailsState) {
       uniqueObjectByServiceId(detailsState, name, value);
     }
   };
@@ -44,9 +44,13 @@ export const useHandleLaborChange = () => {
   const saveDetails = (event: React.SyntheticEvent) => {
     event.preventDefault();
 
-    dispatch(addDetails(detailsState));
-    dispatch(addRequestDetails(detailsState));
-    toggleLaborModal();
+    if (detailsState) {
+      dispatch(addDetails(detailsState));
+      dispatch(addRequestDetails(detailsState));
+      toggleLaborModal();
+    } else {
+      return null;
+    }
   };
 
   return { handleLaborChange, saveDetails, detailsState };

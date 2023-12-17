@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AuthMenu component AuthMenu ErrorModal renders 1`] = `
+<div>
+  <div
+    class="css-1asre80"
+    data-testid="auth-page"
+  >
+    <form
+      class="css-1oskuwq"
+      data-testid="auth-form"
+    >
+      <h2
+        class="css-vb98sm"
+        data-testid="auth-title"
+      >
+        Authorization
+      </h2>
+      <h3
+        class="css-ja89o5"
+        data-testid="auth-subtitle"
+      >
+        Enter login and password
+      </h3>
+      <div
+        class="css-1nbhxtp"
+        data-testid="auth-inputs-container"
+      >
+        <label
+          class="css-wgbngt"
+          data-testid="auth-username-label"
+        >
+          <input
+            class="css-1ry88mf"
+            data-testid="auth-username-input"
+            name="username"
+            placeholder="Username"
+            required=""
+            style="width: 368px;"
+          />
+        </label>
+        <label
+          class="css-wgbngt"
+          data-testid="auth-password-label"
+        >
+          <input
+            class="css-1ry88mf"
+            data-testid="auth-password-input"
+            name="password"
+            placeholder="Password"
+            required=""
+            style="width: 368px;"
+            type="password"
+          />
+        </label>
+      </div>
+      <button
+        class="css-mbrcjd"
+        data-testid="sign-in-btn"
+        disabled=""
+        style="width: 368px; height: 72px;"
+        type="submit"
+      >
+        Login
+        <svg
+          class="css-bvj43j"
+          fill="white"
+          height="24"
+          width="24"
+        >
+          <use
+            href="svgSprite.svg#caret-right-bold"
+          />
+        </svg>
+      </button>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`AuthMenu component AuthMenu renders 1`] = `
+<div>
+  <div
+    class="css-1asre80"
+    data-testid="auth-page"
+  >
+    <form
+      class="css-1oskuwq"
+      data-testid="auth-form"
+    >
+      <h2
+        class="css-vb98sm"
+        data-testid="auth-title"
+      >
+        Authorization
+      </h2>
+      <h3
+        class="css-ja89o5"
+        data-testid="auth-subtitle"
+      >
+        Enter login and password
+      </h3>
+      <div
+        class="css-1nbhxtp"
+        data-testid="auth-inputs-container"
+      >
+        <label
+          class="css-wgbngt"
+          data-testid="auth-username-label"
+        >
+          <input
+            class="css-1ry88mf"
+            data-testid="auth-username-input"
+            name="username"
+            placeholder="Username"
+            required=""
+            style="width: 368px;"
+          />
+        </label>
+        <label
+          class="css-wgbngt"
+          data-testid="auth-password-label"
+        >
+          <input
+            class="css-1ry88mf"
+            data-testid="auth-password-input"
+            name="password"
+            placeholder="Password"
+            required=""
+            style="width: 368px;"
+            type="password"
+          />
+        </label>
+      </div>
+      <button
+        class="css-mbrcjd"
+        data-testid="sign-in-btn"
+        disabled=""
+        style="width: 368px; height: 72px;"
+        type="submit"
+      >
+        Login
+        <svg
+          class="css-bvj43j"
+          fill="white"
+          height="24"
+          width="24"
+        >
+          <use
+            href="svgSprite.svg#caret-right-bold"
+          />
+        </svg>
+      </button>
+    </form>
+  </div>
+</div>
+`;

@@ -15,13 +15,13 @@ export const SearchEl: React.FC<ISearch> = () => {
   return (
     <>
       <ModalBtn
-        id="modalSerBtn"
+        data-testid="add-services-btn"
         type="button"
         onClick={() => toggleServicesModal()}
-        disabled={patient._id === ""}
+        disabled={!patient}
       >
         <Icon icon="list-plus" size={48} />
-        {patient._id === "" ? (
+        {!patient ? (
           <ModalBtnTitle>{t("service.servicesBtnIsDisabled")}</ModalBtnTitle>
         ) : (
           <ModalBtnTitle>{t("service.servicesBtnIsActive")}</ModalBtnTitle>

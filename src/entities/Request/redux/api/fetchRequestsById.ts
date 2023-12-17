@@ -3,7 +3,7 @@ import { IRequestResponse } from "entities/Request";
 
 export const requestsByIdApi = api.injectEndpoints({
   endpoints: builder => ({
-    fetchRequestsById: builder.query<IRequestResponse, string>({
+    fetchRequestsById: builder.query<IRequestResponse, string | number>({
       query: id => ({
         url: `api/requests/${id}`,
         method: "GET",

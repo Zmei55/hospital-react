@@ -3,13 +3,13 @@ import {
   useLazyFetchPatientByIdQuery,
   addPatient,
   fetchPatientsModal,
-  usePatientsListFind,
+  usePatientListFind,
 } from "entities/Patient";
 
 export const useChoosePatient = () => {
   const dispatch = useAppDispatch();
   const [fetchPatient] = useLazyFetchPatientByIdQuery();
-  const { resetPatients } = usePatientsListFind();
+  const { resetPatients } = usePatientListFind();
 
   const choosePatient = async (id: string | number) => {
     const patientResponse = await fetchPatient(id).unwrap();

@@ -1,6 +1,7 @@
-import React, { Suspense } from "react";
+import { StrictMode, Suspense } from "react";
 import ReactDOM from "react-dom/client";
-import "./shared/i18next/i18n";
+import { I18nextProvider } from "react-i18next";
+import i18n from "shared/i18next/i18n";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "app/redux/store";
@@ -11,17 +12,19 @@ import { App } from "./app";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
+  <StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter basename="/hospital_react_ts">
-          <Suspense fallback={<div>...loading</div>}>
-            <ThemeProvider theme={theme}>
-              <App />
-            </ThemeProvider>
-          </Suspense>
+          <I18nextProvider i18n={i18n} defaultNS={"translation"}>
+            <Suspense fallback={<div>...loading</div>}>
+              <ThemeProvider theme={theme}>
+                <App />
+              </ThemeProvider>
+            </Suspense>
+          </I18nextProvider>
         </BrowserRouter>
       </PersistGate>
     </Provider>
-  </React.StrictMode>
+  </StrictMode>
 );

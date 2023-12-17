@@ -10,10 +10,23 @@ export const useServiceAdd = () => {
   );
 
   const addService = (service: IService) => {
-    if (selectedServices.map(item => item._id).indexOf(service._id) === -1) {
+    if (!selectedServices) {
       dispatch(addSelectedServices(service));
       toast.success("Dienst hinzugefügt!");
-    } else {
+    }
+
+    if (
+      selectedServices &&
+      selectedServices.map(item => item._id).indexOf(service._id) === -1
+    ) {
+      dispatch(addSelectedServices(service));
+      toast.success("Dienst hinzugefügt!");
+    }
+
+    if (
+      selectedServices &&
+      selectedServices.map(item => item._id).indexOf(service._id) !== -1
+    ) {
       toast.error("Der Dienst wurde bereits ausgewählt!");
     }
   };
