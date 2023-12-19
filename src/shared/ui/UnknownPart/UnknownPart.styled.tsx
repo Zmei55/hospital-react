@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { TitleMediumStyle } from "shared/ui/Styles/TitleStyles.styled";
+import { TextSmallStyle } from "shared/ui/Styles/TextStyles.styled";
 
 export const Container = styled.div`
   width: 100%;
@@ -53,7 +54,6 @@ export const Body = styled.div`
   }
 `;
 
-export const Text = styled.span`
-  font-weight: 500;
+export const Text = styled(TextSmallStyle)`
   text-align: center;
 `;

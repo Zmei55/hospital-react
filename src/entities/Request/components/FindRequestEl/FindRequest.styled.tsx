@@ -11,6 +11,7 @@ export const Container = styled.div`
 
 export const Header = styled.div`
   display: flex;
+  /* justify-content: space-around; */
   align-items: center;
 
   width: 100%;
@@ -35,6 +36,8 @@ export const Header = styled.div`
 `;
 
 export const Title = styled(TitleMediumStyle)`
+  margin-right: auto;
+
   @media screen and (max-width: 959px) {
     width: 80px;
   }

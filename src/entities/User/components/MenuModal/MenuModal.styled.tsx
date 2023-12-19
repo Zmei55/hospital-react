@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { TitleMediumStyle } from "shared/ui/Styles/TitleStyles.styled";
+import { TextNormalStyle } from "shared/ui/Styles/TextStyles.styled";
 
 export const Container = styled.div``;
 
@@ -118,16 +119,10 @@ export const UserRow = styled.div`
   }
 `;
 
-export const Key = styled.span`
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 1.2;
+export const Key = styled(TextNormalStyle)`
   color: ${props => props.theme.colors.text.label};
 `;
 
-export const Value = styled.span`
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 1.13;
+export const Value = styled(TitleMediumStyle)`
   color: ${props => props.theme.colors.text.default};
 `;

@@ -3,6 +3,7 @@ import {
   TitleMediumStyle,
   SubTitleStyle,
 } from "shared/ui/Styles/TitleStyles.styled";
+import { TextSmallStyle } from "shared/ui/Styles/TextStyles.styled";
 
 export const Container = styled.div`
   margin-right: auto;
@@ -110,8 +111,7 @@ export const InputError = styled.div`
   color: red;
 `;
 
-export const ErrorTitle = styled.p`
-  font-weight: 500;
+export const ErrorTitle = styled(TextSmallStyle)`
   text-align: center;
 
   margin-left: ${props => props.theme.spacing(6)};

@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { TitleMediumStyle } from "shared/ui/Styles/TitleStyles.styled";
+import { TextNormalStyle } from "shared/ui/Styles/TextStyles.styled";
 
 export const NameBlock = styled.div`
   display: flex;
@@ -64,8 +65,10 @@ export const BackgroundInformationBox = styled.div`
 `;
 
 export const InfoBox = styled.div`
+  display: flex;
+  flex-direction: column;
+
   @media screen and (max-width: 1279px) {
-    display: flex;
     align-items: center;
 
     :not(:last-of-type) {
@@ -74,10 +77,7 @@ export const InfoBox = styled.div`
   }
 `;
 
-export const InfoHeader = styled.h4`
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 1.2;
+export const InfoHeader = styled(TextNormalStyle)`
   color: ${props => props.theme.colors.text.label};
 
   @media screen and (max-width: 1279px) {

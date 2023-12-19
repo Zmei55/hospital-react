@@ -1,4 +1,8 @@
 import styled from "@emotion/styled";
+import {
+  TextBigStyle,
+  TextMediumStyle,
+} from "shared/ui/Styles/TextStyles.styled";
 
 export const Container = styled.div`
   display: flex;
@@ -38,11 +42,7 @@ export const UserBox = styled.div`
   }
 `;
 
-export const Name = styled.span`
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 1.13;
-
+export const Name = styled(TextBigStyle)`
   @media screen and (min-width: 1280px) and (max-width: 1599px) {
     width: 320px;
     white-space: nowrap;
@@ -51,11 +51,7 @@ export const Name = styled.span`
   }
 `;
 
-export const Workplace = styled.span`
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
-
+export const Workplace = styled(TextMediumStyle)`
   @media screen and (min-width: 1280px) and (max-width: 1599px) {
     width: 320px;
     white-space: nowrap;
