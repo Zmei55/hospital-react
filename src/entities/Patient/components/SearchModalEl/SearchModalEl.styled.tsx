@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { TitleMediumStyle } from "shared/ui/Styles/TitleStyles.styled";
 
 export const ModalContainer = styled.div``;
 
@@ -32,11 +33,7 @@ export const ModalHeader = styled.div`
   }
 `;
 
-export const ModalTitle = styled.h3`
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 1.13;
-
+export const ModalTitle = styled(TitleMediumStyle)`
   margin-right: auto;
 
   @media screen and (max-width: 959px) {

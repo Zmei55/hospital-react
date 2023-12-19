@@ -1,11 +1,7 @@
 import styled from "@emotion/styled";
+import { TitleBigStyle } from "shared/ui/Styles/TitleStyles.styled";
 
-export const HeaderTitle = styled.h1`
-  font-weight: 600;
-  font-size: 36px;
-  line-height: 1.12;
-  letter-spacing: 1px;
-
+export const HeaderTitle = styled(TitleBigStyle)`
   @media screen and (max-width: 639px) {
     position: absolute;
     width: 1px;

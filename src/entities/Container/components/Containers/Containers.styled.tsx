@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { TitleMediumStyle } from "shared/ui/Styles/TitleStyles.styled";
 
 export const Container = styled.div`
   display: flex;
@@ -14,10 +15,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Title = styled.h3`
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 1.13;
+export const Title = styled(TitleMediumStyle)`
   color: ${props => props.theme.colors.text.default};
 
   margin-bottom: ${props => props.theme.spacing(6)};
@@ -90,11 +88,7 @@ export const ModalHeader = styled.div`
   border-bottom: ${props => props.theme.border};
 `;
 
-export const ModalTitle = styled.h3`
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 1.13;
-`;
+export const ModalTitle = styled(TitleMediumStyle)``;
 
 export const ModalBody = styled.div`
   display: flex;

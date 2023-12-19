@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { TitleSmallStyle } from "shared/ui/Styles/TitleStyles.styled";
 
 export const LoadContainer = styled.div`
   display: flex;
@@ -9,8 +10,4 @@ export const LoadContainer = styled.div`
   height: 100%;
 `;
 
-export const Title = styled.h3`
-  font-weight: 500;
-  font-size: 36px;
-  line-height: 1.12;
-`;
+export const Title = styled(TitleSmallStyle)``;

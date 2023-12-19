@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { TitleMediumStyle } from "shared/ui/Styles/TitleStyles.styled";
 
 export const Container = styled.div`
   background-color: ${props => props.theme.colors.white};
@@ -33,13 +34,7 @@ export const Header = styled.div`
   }
 `;
 
-export const Title = styled.h3`
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 1.13;
-
-  margin-right: auto;
-
+export const Title = styled(TitleMediumStyle)`
   @media screen and (max-width: 959px) {
     width: 80px;
   }

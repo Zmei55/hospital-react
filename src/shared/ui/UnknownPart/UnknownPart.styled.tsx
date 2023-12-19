@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { TitleMediumStyle } from "shared/ui/Styles/TitleStyles.styled";
 
 export const Container = styled.div`
   width: 100%;
@@ -19,10 +20,7 @@ export const Header = styled.div`
   border-bottom: ${props => props.theme.border};
 `;
 
-export const Title = styled.h2`
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 1.13;
+export const Title = styled(TitleMediumStyle)`
   color: ${props => props.theme.colors.text.default};
 `;
 

@@ -10,6 +10,9 @@ export const Container = styled.div`
 `;
 
 export const UserBox = styled.div`
+  display: flex;
+  flex-direction: column;
+
   height: 72px;
 
   @media screen and (max-width: 1279px) {
@@ -35,7 +38,7 @@ export const UserBox = styled.div`
   }
 `;
 
-export const Name = styled.div`
+export const Name = styled.span`
   font-weight: 500;
   font-size: 32px;
   line-height: 1.13;
@@ -48,7 +51,7 @@ export const Name = styled.div`
   }
 `;
 
-export const Workplace = styled.div`
+export const Workplace = styled.span`
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;

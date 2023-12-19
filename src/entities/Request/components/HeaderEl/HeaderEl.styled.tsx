@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { TitleMediumStyle } from "shared/ui/Styles/TitleStyles.styled";
 
 export const Header = styled.div`
   display: flex;
@@ -25,10 +26,7 @@ export const RequestNumber = styled.span`
   color: ${props => props.theme.colors.blue.default};
 `;
 
-export const HeaderTitle = styled.h2`
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 1.13;
+export const HeaderTitle = styled(TitleMediumStyle)`
   color: ${props => props.theme.colors.text.default};
 
   margin-right: auto;

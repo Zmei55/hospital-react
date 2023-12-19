@@ -1,4 +1,8 @@
 import styled from "@emotion/styled";
+import {
+  TitleMediumStyle,
+  SubTitleStyle,
+} from "shared/ui/Styles/TitleStyles.styled";
 
 export const Container = styled.div`
   margin-right: auto;
@@ -54,11 +58,7 @@ export const Form = styled.form`
   align-items: center;
 `;
 
-export const Title = styled.h2`
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 1.125;
-
+export const Title = styled(TitleMediumStyle)`
   @media screen and (max-width: 1279px) {
     margin-bottom: ${props => props.theme.spacing(2)};
   }
@@ -68,11 +68,7 @@ export const Title = styled.h2`
   }
 `;
 
-export const SubTitle = styled.h3`
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 1.17;
-
+export const SubTitle = styled(SubTitleStyle)`
   @media screen and (max-width: 959px) {
     margin-bottom: ${props => props.theme.spacing(2)};
   }
