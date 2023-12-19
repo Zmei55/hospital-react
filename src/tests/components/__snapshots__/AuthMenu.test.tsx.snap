@@ -11,17 +11,17 @@ exports[`AuthMenu component AuthMenu ErrorModal renders 1`] = `
       data-testid="auth-form"
     >
       <h2
-        class="css-vb98sm"
+        class="css-870qgu"
         data-testid="auth-title"
       >
         Authorization
       </h2>
-      <h3
+      <h4
         class="css-ja89o5"
         data-testid="auth-subtitle"
       >
         Enter login and password
-      </h3>
+      </h4>
       <div
         class="css-1nbhxtp"
         data-testid="auth-inputs-container"
@@ -89,17 +89,17 @@ exports[`AuthMenu component AuthMenu renders 1`] = `
       data-testid="auth-form"
     >
       <h2
-        class="css-vb98sm"
+        class="css-870qgu"
         data-testid="auth-title"
       >
         Authorization
       </h2>
-      <h3
+      <h4
         class="css-ja89o5"
         data-testid="auth-subtitle"
       >
         Enter login and password
-      </h3>
+      </h4>
       <div
         class="css-1nbhxtp"
         data-testid="auth-inputs-container"

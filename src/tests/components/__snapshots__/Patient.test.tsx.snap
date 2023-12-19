@@ -27,12 +27,12 @@ exports[`Patient Info component Patient Info renders - full 1`] = `
           />
         </svg>
       </button>
-      <h3
-        class="css-l2t4tz"
+      <h2
+        class="css-1xh5jy9"
         data-testid="patient-info-name"
       >
         Emma Muster
-      </h3>
+      </h2>
       <button
         class="css-ch4pr2"
         data-testid="clear-patient-info"
@@ -56,14 +56,14 @@ exports[`Patient Info component Patient Info renders - full 1`] = `
       data-testid="patient-info-primary-block"
     >
       <div
-        class="css-1heo10q"
+        class="css-4xbszx"
         data-testid="patient-info-primary-infobox-birthday"
       >
-        <h4
-          class="css-in1lmv"
+        <span
+          class="css-jrfass"
         >
           Date of birth
-        </h4>
+        </span>
         <span
           class="css-p6kx9h"
         >
@@ -73,14 +73,14 @@ exports[`Patient Info component Patient Info renders - full 1`] = `
         </span>
       </div>
       <div
-        class="css-1heo10q"
+        class="css-4xbszx"
         data-testid="patient-info-primary-infobox-gender"
       >
-        <h4
-          class="css-in1lmv"
+        <span
+          class="css-jrfass"
         >
           Sex
-        </h4>
+        </span>
         <span
           class="css-p6kx9h"
         >
@@ -88,14 +88,14 @@ exports[`Patient Info component Patient Info renders - full 1`] = `
         </span>
       </div>
       <div
-        class="css-1heo10q"
+        class="css-4xbszx"
         data-testid="patient-info-primary-infobox-card-number"
       >
-        <h4
-          class="css-in1lmv"
+        <span
+          class="css-jrfass"
         >
           Card number
-        </h4>
+        </span>
         <span
           class="css-p6kx9h"
         >
@@ -103,14 +103,14 @@ exports[`Patient Info component Patient Info renders - full 1`] = `
         </span>
       </div>
       <div
-        class="css-1heo10q"
+        class="css-4xbszx"
         data-testid="patient-info-primary-infobox-phone"
       >
-        <h4
-          class="css-in1lmv"
+        <span
+          class="css-jrfass"
         >
           Phone number
-        </h4>
+        </span>
         <span
           class="css-p6kx9h"
         >
@@ -118,14 +118,14 @@ exports[`Patient Info component Patient Info renders - full 1`] = `
         </span>
       </div>
       <div
-        class="css-1heo10q"
+        class="css-4xbszx"
         data-testid="patient-info-primary-infobox-email"
       >
-        <h4
-          class="css-in1lmv"
+        <span
+          class="css-jrfass"
         >
           E-mail
-        </h4>
+        </span>
         <span
           class="css-p6kx9h"
         >
@@ -138,14 +138,14 @@ exports[`Patient Info component Patient Info renders - full 1`] = `
       data-testid="patient-info-secondary-block"
     >
       <div
-        class="css-1heo10q"
+        class="css-4xbszx"
         data-testid="patient-info-secondary-infobox-identity-document"
       >
-        <h4
-          class="css-in1lmv"
+        <span
+          class="css-jrfass"
         >
           Identity document
-        </h4>
+        </span>
         <span
           class="css-p6kx9h"
         >
@@ -153,14 +153,14 @@ exports[`Patient Info component Patient Info renders - full 1`] = `
         </span>
       </div>
       <div
-        class="css-1heo10q"
+        class="css-4xbszx"
         data-testid="patient-info-secondary-infobox-residence-address"
       >
-        <h4
-          class="css-in1lmv"
+        <span
+          class="css-jrfass"
         >
           Residence address
-        </h4>
+        </span>
         <span
           class="css-p6kx9h"
         >
@@ -187,12 +187,12 @@ exports[`Patient Search-modal component Patient Search-list find 1`] = `
       class="css-1f0t3a4"
       data-testid="patient-search-header"
     >
-      <h3
+      <h2
         class="css-w70xkr"
         data-testid="patient-search-title"
       >
         Select a patient
-      </h3>
+      </h2>
       <button
         class="css-ch4pr2"
         data-testid="reset-search-patient-btn"

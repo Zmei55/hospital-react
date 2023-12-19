@@ -10,11 +10,11 @@ exports[`Services Search component Services Info component Services Labor-modal 
       class="css-133fwc"
       data-testid="services-header"
     >
-      <h3
-        class="css-1dq3gat"
+      <h2
+        class="css-1wru4hq"
       >
         Services
-      </h3>
+      </h2>
       <div
         class="css-ov1ktg"
         data-testid="services-header-buttons-box"
@@ -140,11 +140,11 @@ exports[`Services Search component Services Labor-modal component Services Labor
       class="css-133fwc"
       data-testid="services-header"
     >
-      <h3
-        class="css-1dq3gat"
+      <h2
+        class="css-1wru4hq"
       >
         Services
-      </h3>
+      </h2>
       <div
         class="css-ov1ktg"
         data-testid="services-header-buttons-box"
@@ -270,11 +270,11 @@ exports[`Services Search component Services Search renders (without header-butto
       class="css-133fwc"
       data-testid="services-header"
     >
-      <h3
-        class="css-1dq3gat"
+      <h2
+        class="css-1wru4hq"
       >
         Services
-      </h3>
+      </h2>
     </div>
     <button
       class="css-na7bfu"
@@ -311,11 +311,11 @@ exports[`Services Search component Services Search-modal component Services Sear
       class="css-133fwc"
       data-testid="services-header"
     >
-      <h3
-        class="css-1dq3gat"
+      <h2
+        class="css-1wru4hq"
       >
         Services
-      </h3>
+      </h2>
     </div>
     <button
       class="css-na7bfu"
@@ -351,11 +351,11 @@ exports[`Services Search component Services Search-modal component Services Sear
       class="css-133fwc"
       data-testid="services-header"
     >
-      <h3
-        class="css-1dq3gat"
+      <h2
+        class="css-1wru4hq"
       >
         Services
-      </h3>
+      </h2>
     </div>
     <button
       class="css-na7bfu"

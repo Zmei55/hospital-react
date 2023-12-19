@@ -7,15 +7,15 @@ exports[`FindRequest component FindRequest requestList renders 1`] = `
     data-testid="find-request-container"
   >
     <div
-      class="css-1lduqby"
+      class="css-ixaifj"
       data-testid="find-request-header"
     >
-      <h3
+      <h2
         class="css-w70xkr"
         data-testid="find-request-header-title"
       >
         Find a request
-      </h3>
+      </h2>
       <button
         class="css-ch4pr2"
         data-testid="reset-find-request-btn"
