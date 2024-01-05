@@ -65,7 +65,7 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
           >
             <Table data-testid="labors-modal-table">
               <THead data-testid="labors-modal-table-head">
-                <THService>{t("service.service")}</THService>
+                <THService>{t("service.service.service")}</THService>
                 {labors &&
                   labors.map(labor => (
                     <THLabor

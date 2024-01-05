@@ -13,13 +13,20 @@
     "authError": "Пользовательские данные были введены неверно"
   },
   "user": {
-    "station": {
-      "surgery": "Хирургическое"
+    "department": {
+      "department": "отделение",
+      "department_ADMINISTRATION": "Администрация",
+      "department_SURGERY": "Хирургическое"
     },
-    "department": "отделение",
+    "workplace": {
+      "workplace": "",
+      "workplace_ADMIN": "ADMIN",
+      "workplace_TREATMENT_ROOM": "Процедурный кабинет"
+    },
     "position": {
       "position": "должность",
-      "nurse": "Медицинская сестра"
+      "position_ADMIN": "ADMIN",
+      "position_NURSE": "Медицинская сестра"
     }
   },
   "desktop": {
@@ -31,14 +38,15 @@
   "patient": {
     "selectPatientBtn": "Выбрать пациента",
     "title": "Выбор пациента",
-    "name": "Фамилия Имя Отчество",
     "workplace": "Стационар",
     "dateOfBirth": "Дата рождения",
     "cardNumber": "Номер карты",
-    "sex": "Пол",
-    "MALE": "Мужской",
-    "FEMALE": "Женский",
-    "DIVERSE": "'Другой'",
+    "gender": {
+      "gender": "пол",
+      "gender_MALE": "мужской",
+      "gender_FEMALE": "женский",
+      "gender_DIVERSE": "другое"
+    },
     "medicalCard": "Медицинская карта",
     "phone": "Номер телефона",
     "email": "Электронная почта",
@@ -48,19 +56,21 @@
   },
   "service": {
     "title": "Услуги",
-    "service": "Услуга",
-    "servicesBtnIsActive": "Добавить услуги",
-    "servicesBtnIsDisabled": "Услуги могут быть добавлены после выбора пациента",
+    "service": {
+      "service": "Услуга",
+      "service_BtnIsActive": "Добавить услуги",
+      "service_BtnIsDisabled": "Услуги могут быть добавлены после выбора пациента"
+    },
     "implementer": "Выбрать исполнителя",
     "modalTitle": "Добавление услуги",
     "filterPlaceholder": "Код услуги, название услуги",
     "servicesSelected": "Выбранные услуги"
   },
   "container": {
-    "title": "Контейнеры",
-    "containerBtnIsActive": "Рассчитать контейнеры",
-    "containerBtnIsDisabled_V1": "Рассчитать контейнеры можно после добавления услуг и выбора лаборатории",
-    "containerBtnIsDisabled_V2": "Рассчитать контейнеры можно после выбора лаборатории"
+    "container": "Контейнеры",
+    "container_BtnIsActive": "Рассчитать контейнеры",
+    "container_BtnIsDisabled_V1": "Рассчитать контейнеры можно после добавления услуг и выбора лаборатории",
+    "container_BtnIsDisabled_V2": "Рассчитать контейнеры можно после выбора лаборатории"
   },
   "newRequest": {
     "title": "Новая заявка"
@@ -72,6 +82,7 @@
     "notFoundException": "Запрос с такими данными не найден"
   },
   "shared": {
+    "name": "Фамилия Имя Отчество",
     "button": {
       "signIn": "Войти",
       "signOut": "Выйти",

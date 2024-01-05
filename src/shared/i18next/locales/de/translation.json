@@ -13,13 +13,20 @@
     "authError": "Benutzerdaten wurden falsch eingegeben"
   },
   "user": {
-    "station": {
-      "surgery": "Chirurgische"
+    "department": {
+      "department": "Abteilung",
+      "department_ADMINISTRATION": "Verwaltung",
+      "department_SURGERY": "Chirurgische"
     },
-    "department": "Station",
+    "workplace": {
+      "workplace": "",
+      "workplace_ADMIN": "ADMIN",
+      "workplace_TREATMENT_ROOM": "Behandlungsraum"
+    },
     "position": {
       "position": "Berufsbezeichnung",
-      "nurse": "Krankenschwester"
+      "position_ADMIN": "ADMIN",
+      "position_NURSE": "Krankenschwester"
     }
   },
   "desktop": {
@@ -31,14 +38,14 @@
   "patient": {
     "selectPatientBtn": "Wählen Sie einen Patient aus",
     "title": "Wählen Sie einen Patient aus",
-    "name": "Vorname und Nachname",
-    "workplace": "Abteilung",
     "dateOfBirth": "Geburtsdatum",
     "cardNumber": "Kennnummer",
-    "sex": "Geschlecht",
-    "MALE": "Maennlich",
-    "FEMALE": "Weiblich",
-    "DIVERSE": "Divers",
+    "gender": {
+      "gender": "Geschlecht",
+      "gender_MALE": "Maennlich",
+      "gender_FEMALE": "Weiblich",
+      "gender_DIVERSE": "Divers"
+    },
     "medicalCard": "Medizinische Karte",
     "phone": "Telefonnummer",
     "email": "E-mail",
@@ -48,19 +55,21 @@
   },
   "service": {
     "title": "Services",
-    "service": "Service",
-    "servicesBtnIsActive": "Fügen Sie Dienste hinzu",
-    "servicesBtnIsDisabled": "Dienste können nach Auswahl eines Patienten hinzugefügt werden",
+    "service": {
+      "service": "Service",
+      "service_BtnIsActive": "Fügen Sie Dienste hinzu",
+      "service_BtnIsDisabled": "Dienste können nach Auswahl eines Patienten hinzugefügt werden"
+    },
     "implementer": "Wahl des Labors",
     "modalTitle": "Dienst hinzufügen",
     "filterPlaceholder": "Dienstleistungscode, Dienstleistungsname",
     "servicesSelected": "Ausgewählte Dienste"
   },
   "container": {
-    "title": "Behälter",
-    "containerBtnIsActive": "Sie können Behälter berechnen",
-    "containerBtnIsDisabled_V1": "Sie können Behälter berechnen, nachdem Sie Dienste hinzugefügt und eine Labore ausgewählt haben",
-    "containerBtnIsDisabled_V2": "Sie können Behälter berechnen, nachdem Sie eine Labore ausgewählt haben"
+    "container": "Behälter",
+    "container_BtnIsActive": "Sie können Behälter berechnen",
+    "container_BtnIsDisabled_V1": "Sie können Behälter berechnen, nachdem Sie Dienste hinzugefügt und eine Labore ausgewählt haben",
+    "container_BtnIsDisabled_V2": "Sie können Behälter berechnen, nachdem Sie eine Labore ausgewählt haben"
   },
   "newRequest": {
     "title": "Neuer Antrag"
@@ -72,6 +81,7 @@
     "notFoundException": "Antrag mit solchen Daten wurde nicht gefunden"
   },
   "shared": {
+    "name": "Vorname und Nachname",
     "button": {
       "signIn": "Einloggen",
       "signOut": "Abmelden",

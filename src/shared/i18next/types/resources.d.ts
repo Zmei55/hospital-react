@@ -14,13 +14,20 @@ interface Resources {
       authError: string;
     };
     user: {
-      department: string;
-      station: {
-        surgery: string;
+      department: {
+        department: string;
+        department_ADMINISTRATION: string;
+        department_SURGERY: string;
+      };
+      workplace: {
+        workplace: string;
+        workplace_ADMIN: string;
+        workplace_TREATMENT_ROOM: string;
       };
       position: {
         position: string;
-        nurse: string;
+        position_ADMIN: string;
+        position_NURSE: string;
       };
     };
     desktop: {
@@ -32,14 +39,14 @@ interface Resources {
     patient: {
       selectPatientBtn: string;
       title: string;
-      name: string;
-      workplace: string;
       dateOfBirth: string;
       cardNumber: string;
-      sex: string;
-      MALE: string;
-      FEMALE: string;
-      DIVERSE: string;
+      gender: {
+        gender: string;
+        gender_MALE: string;
+        gender_FEMALE: string;
+        gender_DIVERSE: string;
+      };
       medicalCard: string;
       phone: string;
       email: string;
@@ -49,19 +56,21 @@ interface Resources {
     };
     service: {
       title: string;
-      service: string;
-      servicesBtnIsActive: string;
-      servicesBtnIsDisabled: string;
+      service: {
+        service: string;
+        service_BtnIsActive: string;
+        service_BtnIsDisabled: string;
+      };
       implementer: string;
       modalTitle: string;
       filterPlaceholder: string;
       servicesSelected: string;
     };
     container: {
-      title: string;
-      containerBtnIsActive: string;
-      containerBtnIsDisabled_V1: string;
-      containerBtnIsDisabled_V2: string;
+      container: string;
+      container_BtnIsActive: string;
+      container_BtnIsDisabled_V1: string;
+      container_BtnIsDisabled_V2: string;
     };
     newRequest: {
       title: string;
@@ -73,6 +82,7 @@ interface Resources {
       notFoundException: string;
     };
     shared: {
+      name: string;
       button: {
         signIn: string;
         signOut: string;

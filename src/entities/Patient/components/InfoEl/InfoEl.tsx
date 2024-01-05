@@ -9,7 +9,6 @@ import {
   Button as InfoBtn,
   Button as ClearBtn,
   Icon,
-  useSexTranslation,
 } from "shared";
 
 import {
@@ -29,7 +28,6 @@ export const InfoEl: React.FC<IInfo> = () => {
   const { clearPatient } = useClearPatient();
   const { isInfoActive, handleInfoActive } = useHandleInfoActive();
   const { t } = useTranslation();
-  const { sexTranslation } = useSexTranslation();
   let info = null;
 
   if (patient) info = patientInfo(patient);
@@ -95,8 +93,10 @@ export const InfoEl: React.FC<IInfo> = () => {
             </InfoBox>
 
             <InfoBox data-testid="patient-info-primary-infobox-gender">
-              <InfoHeader>{t("patient.sex")}</InfoHeader>
-              <InfoBody>{sexTranslation(info.gender)}</InfoBody>
+              <InfoHeader>{t("patient.gender.gender")}</InfoHeader>
+              <InfoBody>
+                {t("patient.gender.gender", { context: `${info.gender}` })}
+              </InfoBody>
             </InfoBox>
 
             <InfoBox data-testid="patient-info-primary-infobox-card-number">

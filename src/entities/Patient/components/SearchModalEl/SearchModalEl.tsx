@@ -131,7 +131,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
               data-testid="patient-search-name-input"
               autoFocus
               style={{ width: "100%" }}
-              placeholder={t("patient.name")}
+              placeholder={t("shared.name")}
             />
           </Label>
 
@@ -164,7 +164,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
         {!isLoading && patientList && (
           <List data-testid="patient-search-list">
             <ListHeader data-testid="patient-search-list-header">
-              <HeadName>{t("patient.name")}</HeadName>
+              <HeadName>{t("shared.name")}</HeadName>
               <HeadBirthDay>{t("patient.dateOfBirth")}</HeadBirthDay>
               <HeadCardNumber>{t("patient.cardNumber")}</HeadCardNumber>
               <HeadSelectBtn></HeadSelectBtn>

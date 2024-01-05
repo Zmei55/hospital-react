@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { useLogOut } from "entities/Auth";
-import { useGetUserData, useToggleMenuModal, MenuModal } from "entities/User";
+import { useToggleMenuModal, MenuModal } from "entities/User";
 import {
   useAppSelector,
   Button as MenuBtn,
@@ -12,9 +12,11 @@ import {
 import { Container, UserBox, Name, Workplace } from "./UserMenu.styled";
 
 export const UserMenu: React.FC = () => {
+  const { name, workplace, position } = useAppSelector(
+    state => state.auth.user
+  );
   const isLoggedIn = useAppSelector(state => state.auth.isLoggedIn);
   const [logout] = useLogOut();
-  const { name, station, jobTitle } = useGetUserData();
   const showModal = useAppSelector(state => state.user.modalUser);
   const { toggleMenuModal } = useToggleMenuModal();
   const { t } = useTranslation();
@@ -25,7 +27,9 @@ export const UserMenu: React.FC = () => {
         <UserBox data-testid="username-container">
           <Name>{name}</Name>
           <Workplace>
-            {`${station} ${t("user.department")}, ${jobTitle}`}
+            {`${t("user.department.department", { context: `${workplace}` })}`}
+            {` ${t("user.department.department")}, `}
+            {t("user.position.position", { context: `${position}` })}
           </Workplace>
         </UserBox>
       )}

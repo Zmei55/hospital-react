@@ -133,7 +133,7 @@ export const FindRequest: React.FC = () => {
               {...register("patientName")}
               data-testid="find-request-body-name-input"
               style={{ width: "100%" }}
-              placeholder={t("patient.name")}
+              placeholder={t("shared.name")}
             />
           </Label>
 
@@ -179,7 +179,7 @@ export const FindRequest: React.FC = () => {
             {requestList && (
               <List data-testid="find-request-list">
                 <ListHeader data-testid="find-request-list-header">
-                  <HeadName>{t("patient.name")}</HeadName>
+                  <HeadName>{t("shared.name")}</HeadName>
                   <HeadCardNumber>{t("patient.cardNumber")}</HeadCardNumber>
                   <HeadRequestNumber>
                     {t("findRequest.requestNumber")}

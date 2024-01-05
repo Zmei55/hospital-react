@@ -13,13 +13,20 @@
     "authError": "User data was entered incorrectly"
   },
   "user": {
-    "station": {
-      "surgery": "Surgery"
+    "department": {
+      "department": "department",
+      "department_ADMINISTRATION": "Administration",
+      "department_SURGERY": "Surgery"
     },
-    "department": "department",
+    "workplace": {
+      "workplace": "",
+      "workplace_ADMIN": "ADMIN",
+      "workplace_TREATMENT_ROOM": "Treatment room"
+    },
     "position": {
-      "position": "job title",
-      "nurse": "Nurse"
+      "position": "position",
+      "position_ADMIN": "Admin",
+      "position_NURSE": "Nurse"
     }
   },
   "desktop": {
@@ -31,14 +38,15 @@
   "patient": {
     "selectPatientBtn": "Select a patient",
     "title": "Select a patient",
-    "name": "First name and last name",
     "workplace": "Station",
     "dateOfBirth": "Date of birth",
     "cardNumber": "Card number",
-    "sex": "Sex",
-    "MALE": "Male",
-    "FEMALE": "Female",
-    "DIVERSE": "Diverse",
+    "gender": {
+      "gender": "gender",
+      "gender_MALE": "Male",
+      "gender_FEMALE": "Female",
+      "gender_DIVERSE": "Diverse"
+    },
     "medicalCard": "Medical card",
     "phone": "Phone number",
     "email": "E-mail",
@@ -48,19 +56,21 @@
   },
   "service": {
     "title": "Services",
-    "service": "Service",
-    "servicesBtnIsActive": "Add services",
-    "servicesBtnIsDisabled": "Services can be added after selecting a patient",
+    "service": {
+      "service": "Service",
+      "service_BtnIsActive": "Add services",
+      "service_BtnIsDisabled": "Services can be added after selecting a patient"
+    },
     "implementer": "Choice of the lab",
     "modalTitle": "Add service",
     "filterPlaceholder": "Service code, service name",
     "servicesSelected": "Selected services"
   },
   "container": {
-    "title": "Containers",
-    "containerBtnIsActive": "You can calculate container",
-    "containerBtnIsDisabled_V1": "You can calculate containers after you have added services and selected a labs",
-    "containerBtnIsDisabled_V2": "You can calculate containers after you have selected a labs"
+    "container": "Containers",
+    "container_BtnIsActive": "You can calculate container",
+    "container_BtnIsDisabled_V1": "You can calculate containers after you have added services and selected a labs",
+    "container_BtnIsDisabled_V2": "You can calculate containers after you have selected a labs"
   },
   "newRequest": {
     "title": "New request"
@@ -72,6 +82,7 @@
     "notFoundException": "Request with such data was not found"
   },
   "shared": {
+    "name": "First name and last name",
     "button": {
       "signIn": "Login",
       "signOut": "Logout",
