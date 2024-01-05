@@ -19,7 +19,7 @@ import {
 
 export const MenuModal: React.FC = () => {
   const { t, i18n } = useTranslation();
-  const { name, workplace, position } = useAppSelector(
+  const { name, workplaces, position } = useAppSelector(
     state => state.auth.user
   );
   const isLoggedIn = useAppSelector(state => state.auth.isLoggedIn);
@@ -70,7 +70,18 @@ export const MenuModal: React.FC = () => {
 
             <UserRow data-testid="user-department">
               <Key>{t("user.department.department")}: </Key>
-              <Value>{workplace}</Value>
+              {workplaces ? (
+                <ul>
+                  {workplaces.map(workplace => (
+                    <li>{workplace}</li>
+                  ))}
+                </ul>
+              ) : (
+                t("user.department.department") +
+                " " +
+                t("shared.appointed.appointed_no")
+              )}
+              <Value>{workplaces}</Value>
             </UserRow>
 
             <UserRow data-testid="user-position">

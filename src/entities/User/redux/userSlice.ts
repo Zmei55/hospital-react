@@ -1,18 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IUser } from "entities/User";
+import { TUser, TUserState } from "entities/User";
 
-interface IUserState {
-  user: IUser;
-  modalUser: boolean;
-}
-
-const initialState: IUserState = {
+const initialState: TUserState = {
   user: {
-    _id: "",
-    username: "",
-    name: "",
-    workplace: "",
-    position: "",
+    _id: null,
+    username: null,
+    name: null,
+    department: null,
+    workplaces: null,
+    position: null,
+    roles: null,
   },
   modalUser: false,
 };
@@ -21,7 +18,7 @@ const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    addUser(state, action: PayloadAction<IUser>) {
+    addUser(state, action: PayloadAction<TUser>) {
       state.user = action.payload;
     },
     deleteUser(state) {

@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { useLogIn, ISingInState } from "entities/Auth";
+import { useLogIn } from "entities/Auth";
+import { TUserLoginReq } from "entities/User";
 import {
   Modal,
   InputEl,
@@ -32,7 +33,7 @@ export const AuthMenu: React.FC = () => {
     handleSubmit,
     getValues,
     formState: { dirtyFields, errors },
-  } = useForm<ISingInState>({
+  } = useForm<TUserLoginReq>({
     defaultValues: {
       username: "",
       password: "",

@@ -1,6 +1,7 @@
 import { SubmitHandler } from "react-hook-form";
 import { useAppDispatch } from "shared";
-import { useLogInMutation, loginSuccess, ISingInState } from "entities/Auth";
+import { useLogInMutation, loginSuccess } from "entities/Auth";
+import { TUserLoginReq } from "entities/User";
 
 export const useLogIn = () => {
   const dispatch = useAppDispatch();
@@ -11,7 +12,7 @@ export const useLogIn = () => {
     resetLoginRequest();
   };
 
-  const handleSignInSubmit: SubmitHandler<ISingInState> = async data => {
+  const handleSignInSubmit: SubmitHandler<TUserLoginReq> = async data => {
     const formData = new FormData();
     formData.append("username", data.username);
     formData.append("password", data.password);

@@ -1,21 +1,16 @@
 import { api } from "app/redux";
-import { IUser } from "entities/User";
-
-interface ILoginResponse {
-  user: IUser;
-  token: string;
-}
+import { TUserLoginRes } from "entities/User";
 
 const authApi = api.injectEndpoints({
   endpoints: builder => ({
-    logIn: builder.mutation<ILoginResponse, FormData>({
+    logIn: builder.mutation<TUserLoginRes, FormData>({
       query: user => ({
         url: "/api/auth/login",
         method: "POST",
         body: user,
       }),
       invalidatesTags: ["Auth"],
-      transformResponse: (response: { data: ILoginResponse }) => response.data,
+      transformResponse: (response: { data: TUserLoginRes }) => response.data,
     }),
     logOut: builder.query({
       query: () => ({

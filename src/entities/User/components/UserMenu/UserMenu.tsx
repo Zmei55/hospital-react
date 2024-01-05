@@ -12,9 +12,7 @@ import {
 import { Container, UserBox, Name, Workplace } from "./UserMenu.styled";
 
 export const UserMenu: React.FC = () => {
-  const { name, workplace, position } = useAppSelector(
-    state => state.auth.user
-  );
+  const { name, position } = useAppSelector(state => state.auth.user);
   const isLoggedIn = useAppSelector(state => state.auth.isLoggedIn);
   const [logout] = useLogOut();
   const showModal = useAppSelector(state => state.user.modalUser);
@@ -27,8 +25,6 @@ export const UserMenu: React.FC = () => {
         <UserBox data-testid="username-container">
           <Name>{name}</Name>
           <Workplace>
-            {`${t("user.department.department", { context: `${workplace}` })}`}
-            {` ${t("user.department.department")}, `}
             {t("user.position.position", { context: `${position}` })}
           </Workplace>
         </UserBox>
