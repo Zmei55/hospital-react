@@ -1,4 +1,3 @@
-export * from "./IPatient";
-export * from "./IAddress";
-export * from "./ISearchPatientState";
+export * from "./patientTypes";
+export * from "./addressTypes";
 export * from "./ISearchPatientQuery";

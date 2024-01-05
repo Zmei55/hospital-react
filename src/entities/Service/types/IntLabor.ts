@@ -1,9 +1,9 @@
-import { IAddress } from "entities/Patient";
+import { TAddress } from "entities/Patient";
 
 export interface ILabor {
   _id: string | number;
   name: string;
   isActive: boolean;
   createdAt?: string;
-  address?: IAddress;
+  address?: TAddress;
 }

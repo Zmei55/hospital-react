@@ -4,7 +4,7 @@ import {
   useTogglePatientsModal,
   usePatientListFind,
   useChoosePatient,
-  ISearchPatientState,
+  TPatientFilter,
 } from "entities/Patient";
 import {
   Button as ResetBtn,
@@ -14,8 +14,8 @@ import {
   InputEl,
   SpinnerCenterBox,
   Spinner,
-  showBirthDate,
   NotFound,
+  showDate,
 } from "shared";
 
 import {
@@ -50,7 +50,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
     isError,
     resetPatients,
   } = usePatientListFind();
-  const { register, handleSubmit } = useForm<ISearchPatientState>({
+  const { register, handleSubmit } = useForm<TPatientFilter>({
     defaultValues: {
       name: undefined,
       birthDate: undefined,
@@ -177,9 +177,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
                   data-testid="patient-search-listitem"
                 >
                   <BodyName>{patient.name}</BodyName>
-                  <BodyBirthDay>
-                    {showBirthDate(patient.birthDate)}
-                  </BodyBirthDay>
+                  <BodyBirthDay>{showDate(patient.birthDate)}</BodyBirthDay>
                   <BodyCardNumber>{patient.cardNumber}</BodyCardNumber>
                   <BodySelectBtn>
                     <SelectBtn

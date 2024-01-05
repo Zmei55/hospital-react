@@ -1,29 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IPatient } from "entities/Patient";
+import { TPatient, TPatientsState } from "entities/Patient";
 
-interface IPatientsState {
-  patient: IPatient | null;
-  isActiveInfo: boolean;
-  modalPatient: boolean;
-}
-
-const initialState: IPatientsState = {
-  // patient: {
-  //   _id: "",
-  //   name: "",
-  //   birthDate: "",
-  //   cardNumber: 0,
-  //   gender: "",
-  //   phoneNumber: "",
-  //   email: "",
-  //   identityDocument: "",
-  //   address: {
-  //     street: "",
-  //     houseNumber: 0,
-  //     city: "",
-  //     postcode: 0,
-  //   },
-  // },
+const initialState: TPatientsState = {
   patient: null,
   isActiveInfo: false,
   modalPatient: false,
@@ -33,7 +11,7 @@ const patientsListSlice = createSlice({
   name: "patients",
   initialState,
   reducers: {
-    addPatient(state, action: PayloadAction<IPatient>) {
+    addPatient(state, action: PayloadAction<TPatient>) {
       state.patient = action.payload;
     },
     deletePatient(state) {

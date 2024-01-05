@@ -1,1 +1,1 @@
-export * from "./showBirthDate";
+export * from "./showDate";
