@@ -120,9 +120,11 @@ export const InfoEl: React.FC<IInfo> = () => {
 
               <InfoBox data-testid="patient-info-secondary-infobox-residence-address">
                 <InfoHeader>{t("patient.residenceAddress")}</InfoHeader>
-                <InfoBody>{`
+                {patient.address && (
+                  <InfoBody>{`
                   ${patient.address.street} ${patient.address.houseNumber}, ${patient.address.postcode} ${patient.address.city}
                 `}</InfoBody>
+                )}
               </InfoBox>
             </BackgroundInformationBox>
           )}

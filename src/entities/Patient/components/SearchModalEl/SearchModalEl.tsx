@@ -52,9 +52,9 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
   } = usePatientListFind();
   const { register, handleSubmit } = useForm<TPatientFilter>({
     defaultValues: {
-      name: undefined,
-      birthDate: undefined,
-      cardNumber: undefined,
+      name: null,
+      birthDate: null,
+      cardNumber: null,
     },
   });
   const { choosePatient } = useChoosePatient();

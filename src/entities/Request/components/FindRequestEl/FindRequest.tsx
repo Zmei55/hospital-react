@@ -46,10 +46,10 @@ export const FindRequest: React.FC = () => {
   const { handleNavigate } = useAppNavigate();
   const { register, handleSubmit, reset } = useForm<TRequestFilterReq>({
     defaultValues: {
-      patientName: undefined,
-      cardNumber: undefined,
-      requestNumber: undefined,
-      createdAt: undefined,
+      patientName: null,
+      cardNumber: null,
+      requestNumber: null,
+      createdAt: null,
     },
   });
   const {

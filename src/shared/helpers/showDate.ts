@@ -1,14 +1,24 @@
-export const showDate = (date: Date) => {
-  const newDate = new Date(date);
+import { Conflict } from "http-errors";
 
-  return `
+export const showDate = (date: Date | null) => {
+  if (date) {
+    const newDate = new Date(date);
+
+    return `
   ${newDate.getDate().toString().padStart(2, "0")}
   .${newDate.getMonth().toString().padStart(2, "0")}
   .${newDate.getFullYear()}`;
+  } else {
+    throw new Conflict("Date not received");
+  }
 };
 
-export const showTime = (date: Date) => {
-  const newDate = new Date(date);
+export const showTime = (date: Date | null) => {
+  if (date) {
+    const newDate = new Date(date);
 
-  return `${newDate.getHours()}:${newDate.getMinutes()}`;
+    return `${newDate.getHours()}:${newDate.getMinutes()}`;
+  } else {
+    throw new Conflict("Date not received");
+  }
 };

@@ -25,8 +25,8 @@ export type TUserRegisterReq = Pick<
 > & { workplace: string | null };
 
 export type TUserLoginReq = {
-  username: string;
-  password: string;
+  username: string | null;
+  password: string | null;
 };
 
 export type TUserLoginRes = {

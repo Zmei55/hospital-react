@@ -1,22 +1,22 @@
 import { TDetails } from "./detailsTypes";
 
 type RequestType = {
-  _id: string | number;
+  _id: string | number | null;
   requestNumber: number | null;
   patientId: string | number | null;
   requestDetails: TDetails[] | null;
-  owner: string | number;
-  isCompleted: boolean;
-  createdAt: Date;
-  updatedAt: Date;
+  owner: string | number | null;
+  isCompleted: boolean | null;
+  createdAt: Date | null;
+  updatedAt: Date | null;
 };
 
 export type TRequest = Omit<RequestType, "owner" | "isCompleted" | "updatedAt">;
 
 export type TRequestSlice = Pick<
   RequestType,
-  "requestNumber" | "requestDetails"
-> & { requestId: string | number | null };
+  "_id" | "requestNumber" | "requestDetails"
+>;
 
 export type TRequestFilterReq = Pick<
   RequestType,
@@ -27,9 +27,9 @@ export type TRequestFilterReq = Pick<
 };
 
 export type TRequestFilterRes = Pick<RequestType, "_id" | "createdAt"> & {
-  requestNumber: number;
-  patientId: string | number;
-  patientName: string;
-  cardNumber: number;
-  requestDetails: TDetails[];
+  requestNumber: number | null;
+  patientId: string | number | null;
+  patientName: string | null;
+  cardNumber: number | null;
+  requestDetails: TDetails[] | null;
 };

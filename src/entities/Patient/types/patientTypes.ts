@@ -1,16 +1,16 @@
 import { TAddress } from "entities/Address";
 
 type Patient = {
-  _id: string | number;
-  name: string;
-  birthDate: Date;
-  cardNumber: number;
-  gender: "MALE" | "FEMALE" | "DIVERSE";
+  _id: string | number | null;
+  name: string | null;
+  birthDate: Date | null;
+  cardNumber: number | null;
+  gender: "MALE" | "FEMALE" | "DIVERSE" | null;
   phoneNumber: string | null;
   email: string | null;
   identityDocument: string | null;
-  createdAt: Date;
-  address: TAddress;
+  createdAt: Date | null;
+  address: TAddress | null;
 };
 
 export type TPatient = Omit<Patient, "cratedAt">;
@@ -26,8 +26,4 @@ export type TPatientsState = {
   modalPatient: boolean;
 };
 
-export type TPatientFilter = {
-  name: string;
-  birthDate: Date;
-  cardNumber: number;
-};
+export type TPatientFilter = Pick<Patient, "name" | "birthDate" | "cardNumber">;

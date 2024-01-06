@@ -1,10 +1,10 @@
 type Address = {
-  _id: string | number;
-  street: string;
-  houseNumber: number;
-  city: string;
-  postcode: number;
-  createdAt: Date;
+  _id: string | number | null;
+  street: string | null;
+  houseNumber: number | null;
+  city: string | null;
+  postcode: number | null;
+  createdAt: Date | null;
 };
 
 export type TAddress = Omit<Address, "createdAt">;

@@ -57,7 +57,7 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
     formState: { dirtyFields },
   } = useForm<TServiceFilter>({
     defaultValues: {
-      filter: undefined,
+      filter: null,
     },
   });
   const { handleServicesForm, filteredServicesList, isLoading } =

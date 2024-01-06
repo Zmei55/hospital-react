@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { TRequestSlice, TDetails } from "entities/Request";
 
 const initialState: TRequestSlice = {
-  requestId: null,
+  _id: null,
   requestNumber: null,
   requestDetails: null,
 };
@@ -12,10 +12,10 @@ const requestSlice = createSlice({
   initialState,
   reducers: {
     addRequestId(state, action: PayloadAction<string | number>) {
-      state.requestId = action.payload;
+      state._id = action.payload;
     },
     resetRequestId(state) {
-      state.requestId = initialState.requestId;
+      state._id = initialState._id;
     },
     addRequestDBCount(state, action: PayloadAction<number>) {
       state.requestNumber = action.payload;

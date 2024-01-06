@@ -1,15 +1,15 @@
 type Service = {
   _id: string | number;
-  name: string;
-  code: string;
-  isActive: boolean;
-  createdAt: Date;
+  name: string | null;
+  code: string | null;
+  isActive: boolean | null;
+  createdAt: Date | null;
 };
 
 export type TService = Omit<Service, "isActive" | "createdAt">;
 
 export type TServiceFilter = {
-  filter: string;
+  filter: string | null;
 };
 
 export type TServiceMocks = Service;

@@ -21,20 +21,30 @@ export const useChooseRequest = () => {
   const { getServiceList } = useGetServiceListById();
   const { fetchLaborList } = useGetLaborsList();
 
-  const chooseRequest = async (id: string | number) => {
+  const chooseRequest = async (id: string | number | null) => {
     try {
-      const requestResponse = await fetchRequest(id).unwrap();
-      dispatch(addRequestId(requestResponse._id));
-      dispatch(addRequestDBCount(requestResponse.requestNumber));
-      dispatch(addRequestDetails(requestResponse.requestDetails));
+      let requestResponse = null;
+      let serviceList = null;
 
-      await choosePatient(requestResponse.patientId);
-      const serviceList = await getServiceList(requestResponse.requestDetails);
-      dispatch(addServices(serviceList));
-      dispatch(addDetails(requestResponse.requestDetails));
-      await fetchLaborList();
+      if (id) {
+        requestResponse = await fetchRequest(id).unwrap();
+      }
+      if (requestResponse?._id) dispatch(addRequestId(requestResponse._id));
+      if (requestResponse?.requestNumber)
+        dispatch(addRequestDBCount(requestResponse.requestNumber));
+      if (requestResponse?.requestDetails)
+        dispatch(addRequestDetails(requestResponse.requestDetails));
 
-      handleNavigate("/request");
+      if (requestResponse?.patientId)
+        await choosePatient(requestResponse.patientId);
+      if (requestResponse?.requestDetails)
+        serviceList = await getServiceList(requestResponse.requestDetails);
+      if (serviceList) dispatch(addServices(serviceList));
+      if (requestResponse?.requestDetails)
+        dispatch(addDetails(requestResponse.requestDetails));
+      if (requestResponse?._id) await fetchLaborList();
+
+      if (requestResponse?._id) handleNavigate("/request");
     } catch (error) {
       console.log("ERROR chooseRequest");
     }

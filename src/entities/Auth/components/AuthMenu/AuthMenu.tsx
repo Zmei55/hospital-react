@@ -35,8 +35,8 @@ export const AuthMenu: React.FC = () => {
     formState: { dirtyFields, errors },
   } = useForm<TUserLoginReq>({
     defaultValues: {
-      username: "",
-      password: "",
+      username: null,
+      password: null,
     },
   });
 
