@@ -73,7 +73,7 @@ export const MenuModal: React.FC = () => {
               {workplaces ? (
                 <ul>
                   {workplaces.map(workplace => (
-                    <li>
+                    <li key={workplace}>
                       <Value>
                         {t("user.workplace.workplace", {
                           context: `${workplace}`,
