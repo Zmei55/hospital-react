@@ -73,7 +73,13 @@ export const MenuModal: React.FC = () => {
               {workplaces ? (
                 <ul>
                   {workplaces.map(workplace => (
-                    <li>{workplace}</li>
+                    <li>
+                      <Value>
+                        {t("user.workplace.workplace", {
+                          context: `${workplace}`,
+                        })}
+                      </Value>
+                    </li>
                   ))}
                 </ul>
               ) : (
@@ -81,12 +87,14 @@ export const MenuModal: React.FC = () => {
                 " " +
                 t("shared.appointed.appointed_no")
               )}
-              <Value>{workplaces}</Value>
+              {/* {workplaces} */}
             </UserRow>
 
             <UserRow data-testid="user-position">
               <Key>{t("user.position.position")}: </Key>
-              <Value>{position}</Value>
+              <Value>
+                {t("user.position.position", { context: `${position}` })}
+              </Value>
             </UserRow>
           </UserBlock>
         )}
