@@ -6,9 +6,9 @@ type Patient = {
   birthDate: Date;
   cardNumber: number;
   gender: "MALE" | "FEMALE" | "DIVERSE";
-  phoneNumber: string;
-  email: string;
-  identityDocument: string;
+  phoneNumber: string | null;
+  email: string | null;
+  identityDocument: string | null;
   createdAt: Date;
   address: TAddress;
 };
