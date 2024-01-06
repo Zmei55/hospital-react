@@ -10,3 +10,5 @@ type Details = {
 export type TDetails = Omit<Details, "isCompleted" | "createdAt" | "updatedAt">;
 
 export type TNewDetails = Pick<Details, "serviceId" | "laborId">;
+
+export type TDetailsMocks = Omit<Details, "updatedAt">;
