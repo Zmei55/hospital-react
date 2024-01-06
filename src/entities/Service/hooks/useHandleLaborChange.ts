@@ -1,16 +1,18 @@
 import { useState } from "react";
-import { addDetails, IDetail, useToggleLaborModal } from "entities/Service";
-import { addRequestDetails } from "entities/Request";
+import { addDetails, useToggleLaborModal } from "entities/Service";
+import { TNewDetails } from "entities/Request";
 import { useAppSelector, useAppDispatch } from "shared";
 
 export const useHandleLaborChange = () => {
   const dispatch = useAppDispatch();
   const details = useAppSelector(state => state.services.details);
-  const [detailsState, setDetailsState] = useState<IDetail[] | null>(details);
+  const [detailsState, setDetailsState] = useState<TNewDetails[] | null>(
+    details
+  );
   const { toggleLaborModal } = useToggleLaborModal();
 
   const uniqueObjectByServiceId = (
-    array: IDetail[],
+    array: TNewDetails[],
     checkedValue: string | number,
     mutabeleValue: string | number
   ) => {
@@ -46,7 +48,6 @@ export const useHandleLaborChange = () => {
 
     if (detailsState) {
       dispatch(addDetails(detailsState));
-      dispatch(addRequestDetails(detailsState));
       toggleLaborModal();
     } else {
       return null;

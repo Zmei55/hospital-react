@@ -1,9 +1,9 @@
-import { IDetail } from "entities/Service";
+import { TDetails, TNewDetails } from "entities/Request";
 
 export const isCheckedDetail = (
   serviceId: string | number,
   laborId: string | number,
-  detailsState: IDetail[] | null
+  detailsState: TDetails[] | TNewDetails[] | null
 ) => {
   if (detailsState)
     for (const detail of detailsState) {

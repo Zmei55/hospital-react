@@ -1,10 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ILabor, IService, IDetail } from "entities/Service";
+import { ILabor, IService } from "entities/Service";
+import { TNewDetails } from "entities/Request";
 
 interface IServicesState {
   services: IService[] | null;
   labors: ILabor[] | null;
-  details: IDetail[] | null;
+  details: TNewDetails[] | null;
   selectedServices: IService[] | null;
   modalService: boolean;
   modalLabor: boolean;
@@ -60,7 +61,7 @@ const servicesSlice = createSlice({
     resetLabors(state) {
       state.labors = initialState.labors;
     },
-    addDetails(state, action: PayloadAction<IDetail[]>) {
+    addDetails(state, action: PayloadAction<TNewDetails[]>) {
       state.details = action.payload;
     },
     deleteDetail(state, action: PayloadAction<string | number>) {

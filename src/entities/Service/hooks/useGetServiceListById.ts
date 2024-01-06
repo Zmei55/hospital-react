@@ -1,9 +1,10 @@
-import { useGetServiceById, IDetail, IService } from "entities/Service";
+import { useGetServiceById, IService } from "entities/Service";
+import { TDetails } from "entities/Request";
 
 export const useGetServiceListById = () => {
   const { getServiceById } = useGetServiceById();
 
-  const getServiceList = async (details: IDetail[]) => {
+  const getServiceList = async (details: TDetails[]) => {
     const servicesArray: IService[] = [];
 
     for (const detail of details) {
