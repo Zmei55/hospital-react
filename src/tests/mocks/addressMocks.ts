@@ -1,4 +1,4 @@
-import { TAddress } from "entities/Patient";
+import { TAddress } from "entities/Address";
 
 export const addressMocks: TAddress = {
   _id: 1,

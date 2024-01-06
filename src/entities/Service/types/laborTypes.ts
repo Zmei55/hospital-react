@@ -1,4 +1,4 @@
-import { TAddress } from "entities/Patient";
+import { TAddress } from "entities/Address";
 
 type Labor = {
   _id: string | number;

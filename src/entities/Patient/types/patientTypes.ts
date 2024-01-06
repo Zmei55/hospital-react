@@ -1,4 +1,4 @@
-import { TAddress } from "./addressTypes";
+import { TAddress } from "entities/Address";
 
 type Patient = {
   _id: string | number;
