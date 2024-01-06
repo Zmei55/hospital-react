@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ILabor, IService } from "entities/Service";
+import { TService, TLabor } from "entities/Service";
 import { TNewDetails } from "entities/Request";
 
 interface IServicesState {
-  services: IService[] | null;
-  labors: ILabor[] | null;
+  services: TService[] | null;
+  labors: TLabor[] | null;
   details: TNewDetails[] | null;
-  selectedServices: IService[] | null;
+  selectedServices: TService[] | null;
   modalService: boolean;
   modalLabor: boolean;
 }
@@ -24,7 +24,7 @@ const servicesSlice = createSlice({
   name: "services",
   initialState,
   reducers: {
-    addServices(state, action: PayloadAction<IService[]>) {
+    addServices(state, action: PayloadAction<TService[]>) {
       state.services = action.payload;
     },
     deleteService(state, action: PayloadAction<string | number>) {
@@ -36,7 +36,7 @@ const servicesSlice = createSlice({
     resetServices(state) {
       state.services = initialState.services;
     },
-    addSelectedServices(state, action: PayloadAction<IService>) {
+    addSelectedServices(state, action: PayloadAction<TService>) {
       if (state.selectedServices) state.selectedServices.push(action.payload);
       if (!state.selectedServices) {
         state.selectedServices = [];
@@ -55,7 +55,7 @@ const servicesSlice = createSlice({
     fetchServicesModal(state, action: PayloadAction<boolean>) {
       state.modalService = action.payload;
     },
-    addLabors(state, action: PayloadAction<ILabor[]>) {
+    addLabors(state, action: PayloadAction<TLabor[]>) {
       state.labors = action.payload;
     },
     resetLabors(state) {

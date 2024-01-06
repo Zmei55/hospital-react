@@ -7,7 +7,7 @@ import {
   useSelectedServiceDelete,
   useSelectedServiceListSave,
   useSelectedServiceListClear,
-  IFilter,
+  TServiceFilter,
 } from "entities/Service";
 import {
   Modal,
@@ -55,7 +55,7 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
     register,
     handleSubmit,
     formState: { dirtyFields },
-  } = useForm<IFilter>({
+  } = useForm<TServiceFilter>({
     defaultValues: {
       filter: undefined,
     },

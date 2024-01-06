@@ -1,3 +1,2 @@
-export * from "./IService";
-export * from "./IntLabor";
-export * from "./IFilter";
+export * from "./serviceTypes";
+export * from "./laborTypes";
