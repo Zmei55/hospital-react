@@ -7,8 +7,8 @@ type User = {
   workplaces: ("ADMIN" | "TREATMENT_ROOM")[] | null;
   position: "ADMIN" | "NURSE" | null;
   roles: ("ADMIN" | "USER")[] | null;
-  isNotLocked: boolean | null;
-  createdAt: Date | null;
+  isNotLocked: boolean;
+  createdAt: Date;
   token: string | null;
 };
 
