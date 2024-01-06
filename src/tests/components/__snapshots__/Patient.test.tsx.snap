@@ -67,8 +67,9 @@ exports[`Patient Info component Patient Info renders - full 1`] = `
         <span
           class="css-p6kx9h"
         >
-          26
-  .12
+          
+  26
+  .11
   .1968
         </span>
       </div>
@@ -79,7 +80,7 @@ exports[`Patient Info component Patient Info renders - full 1`] = `
         <span
           class="css-jrfass"
         >
-          Sex
+          gender
         </span>
         <span
           class="css-p6kx9h"
@@ -165,11 +166,8 @@ exports[`Patient Info component Patient Info renders - full 1`] = `
           class="css-p6kx9h"
         >
           
-            Emmentaler Straße, 
-            45, 
-            12345, 
-            Berlin
-            
+                  Emmentaler Straße 45, 12345 Berlin
+                
         </span>
       </div>
     </div>

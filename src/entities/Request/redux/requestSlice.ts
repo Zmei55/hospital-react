@@ -1,13 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IDetail } from "entities/Service";
+import { TRequestSlice, TDetails } from "entities/Request";
 
-interface IRequestSlice {
-  requestId: string | number | null;
-  requestNumber: number | null;
-  requestDetails: IDetail[] | null;
-}
-
-const initialState: IRequestSlice = {
+const initialState: TRequestSlice = {
   requestId: null,
   requestNumber: null,
   requestDetails: null,
@@ -29,7 +23,7 @@ const requestSlice = createSlice({
     resetRequestDBCount(state) {
       state.requestNumber = initialState.requestNumber;
     },
-    addRequestDetails(state, action: PayloadAction<IDetail[]>) {
+    addRequestDetails(state, action: PayloadAction<TDetails[]>) {
       state.requestDetails = action.payload;
     },
     resetRequestDetails(state) {

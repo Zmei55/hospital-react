@@ -3,11 +3,10 @@ import { useTranslation } from "react-i18next";
 import {
   useFilterRequest,
   useChooseRequest,
-  IRequestFilter,
+  TRequestFilterReq,
 } from "entities/Request";
 import {
   useAppNavigate,
-  showBirthDate,
   Button as ResetBtn,
   Button as FindBtn,
   Button as CloseBtn,
@@ -16,6 +15,7 @@ import {
   SpinnerCenterBox,
   Spinner,
   NotFound,
+  showDate,
 } from "shared";
 
 import {
@@ -44,12 +44,12 @@ import {
 
 export const FindRequest: React.FC = () => {
   const { handleNavigate } = useAppNavigate();
-  const { register, handleSubmit, reset } = useForm<IRequestFilter>({
+  const { register, handleSubmit, reset } = useForm<TRequestFilterReq>({
     defaultValues: {
       patientName: undefined,
       cardNumber: undefined,
       requestNumber: undefined,
-      requestDate: undefined,
+      createdAt: undefined,
     },
   });
   const {
@@ -158,7 +158,7 @@ export const FindRequest: React.FC = () => {
           <Label>
             <InputEl
               type="date"
-              {...register("requestDate")}
+              {...register("createdAt")}
               data-testid="find-request-body-request-date-input"
               style={{ width: "100%" }}
               placeholder={t("findRequest.dateOfRequest")}
@@ -206,7 +206,7 @@ export const FindRequest: React.FC = () => {
                         {request.requestNumber}
                       </BodyRequestNumber>
                       <BodyRequestDate data-testid="find-request-listitem-request-date">
-                        {showBirthDate(request.createdAt.toString())}
+                        {showDate(request.createdAt)}
                       </BodyRequestDate>
                       <BodySelectBtn data-testid="find-request-listitem-select-btn">
                         <SelectBtn

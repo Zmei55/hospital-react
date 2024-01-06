@@ -99,7 +99,7 @@ exports[`FindRequest component FindRequest requestList renders 1`] = `
           <input
             class="css-1ry88mf"
             data-testid="find-request-body-request-date-input"
-            name="requestDate"
+            name="createdAt"
             placeholder="Request date"
             style="width: 100%;"
             type="date"
@@ -168,7 +168,10 @@ exports[`FindRequest component FindRequest requestList renders 1`] = `
               class="css-xjyctd"
               data-testid="find-request-listitem-request-date"
             >
-              Thu Jun 08
+              
+  08
+  .05
+  .2023
             </p>
             <p
               class="css-17ol73b"
@@ -208,7 +211,10 @@ exports[`FindRequest component FindRequest requestList renders 1`] = `
               class="css-xjyctd"
               data-testid="find-request-listitem-request-date"
             >
-              Thu Jun 08
+              
+  08
+  .05
+  .2023
             </p>
             <p
               class="css-17ol73b"
@@ -248,7 +254,10 @@ exports[`FindRequest component FindRequest requestList renders 1`] = `
               class="css-xjyctd"
               data-testid="find-request-listitem-request-date"
             >
-              Mon Jun 12
+              
+  12
+  .05
+  .2023
             </p>
             <p
               class="css-17ol73b"
