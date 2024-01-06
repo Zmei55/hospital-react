@@ -83,6 +83,10 @@ interface Resources {
     };
     shared: {
       name: string;
+      appointed: {
+        appointed: string;
+        appointed_no: string;
+      };
       button: {
         signIn: string;
         signOut: string;

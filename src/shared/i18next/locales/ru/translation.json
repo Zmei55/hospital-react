@@ -83,6 +83,10 @@
   },
   "shared": {
     "name": "Фамилия Имя Отчество",
+    "appointed": {
+      "appointed": "назначен",
+      "appointed_no": "не назначен"
+    },
     "button": {
       "signIn": "Войти",
       "signOut": "Выйти",

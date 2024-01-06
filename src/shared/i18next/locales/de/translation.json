@@ -82,6 +82,10 @@
   },
   "shared": {
     "name": "Vorname und Nachname",
+    "appointed": {
+      "appointed": "ernannt",
+      "appointed_no": "nicht ernannt"
+    },
     "button": {
       "signIn": "Einloggen",
       "signOut": "Abmelden",

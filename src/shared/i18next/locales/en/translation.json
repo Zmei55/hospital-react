@@ -83,6 +83,10 @@
   },
   "shared": {
     "name": "First name and last name",
+    "appointed": {
+      "appointed": "appointed",
+      "appointed_no": "no appointed"
+    },
     "button": {
       "signIn": "Login",
       "signOut": "Logout",
