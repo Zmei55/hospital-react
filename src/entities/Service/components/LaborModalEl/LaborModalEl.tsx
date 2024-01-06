@@ -33,6 +33,9 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
   const { handleLaborChange, saveDetails, detailsState } =
     useHandleLaborChange();
   const { t } = useTranslation();
+  const requestDetailsState = useAppSelector(
+    state => state.request.requestDetails
+  );
   const services = useAppSelector(state => state.services.services);
   const labors = useAppSelector(state => state.services.labors);
 
@@ -65,7 +68,7 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
           >
             <Table data-testid="labors-modal-table">
               <THead data-testid="labors-modal-table-head">
-                <THService>{t("service.service")}</THService>
+                <THService>{t("service.service.service")}</THService>
                 {labors &&
                   labors.map(labor => (
                     <THLabor
@@ -104,7 +107,9 @@ export const LaborModalEl: React.FC<ILaborModalEl> = ({ toggleLaborModal }) => {
                               checked={isCheckedDetail(
                                 service._id,
                                 labor._id,
-                                detailsState
+                                requestDetailsState
+                                  ? requestDetailsState
+                                  : detailsState
                               )}
                               required
                             />

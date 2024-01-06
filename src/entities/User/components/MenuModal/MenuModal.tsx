@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { useGetUserData, useToggleMenuModal } from "entities/User";
+import { useToggleMenuModal } from "entities/User";
 import { useAppSelector, Button as CloseBtn, Icon } from "shared";
 
 import {
@@ -19,8 +19,10 @@ import {
 
 export const MenuModal: React.FC = () => {
   const { t, i18n } = useTranslation();
+  const { name, workplaces, position } = useAppSelector(
+    state => state.auth.user
+  );
   const isLoggedIn = useAppSelector(state => state.auth.isLoggedIn);
-  const { name, station, jobTitle } = useGetUserData();
   const { toggleMenuModal } = useToggleMenuModal();
 
   const changeLanguage = (language: string) => {
@@ -62,18 +64,37 @@ export const MenuModal: React.FC = () => {
         {isLoggedIn && (
           <UserBlock data-testid="user-info">
             <UserRow data-testid="user-name">
-              <Key>{t("patient.name")}: </Key>
+              <Key>{t("shared.name")}: </Key>
               <Value>{name}</Value>
             </UserRow>
 
             <UserRow data-testid="user-department">
-              <Key>{t("user.department")}: </Key>
-              <Value>{station}</Value>
+              <Key>{t("user.department.department")}: </Key>
+              {workplaces ? (
+                <ul>
+                  {workplaces.map(workplace => (
+                    <li key={workplace}>
+                      <Value>
+                        {t("user.workplace.workplace", {
+                          context: `${workplace}`,
+                        })}
+                      </Value>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                t("user.department.department") +
+                " " +
+                t("shared.appointed.appointed_no")
+              )}
+              {/* {workplaces} */}
             </UserRow>
 
             <UserRow data-testid="user-position">
               <Key>{t("user.position.position")}: </Key>
-              <Value>{jobTitle}</Value>
+              <Value>
+                {t("user.position.position", { context: `${position}` })}
+              </Value>
             </UserRow>
           </UserBlock>
         )}

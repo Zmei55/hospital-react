@@ -3,8 +3,9 @@ import { setupListeners } from "@reduxjs/toolkit/query";
 import authReducer from "entities/Auth/redux/authSlice";
 import userReducer from "entities/User/redux/userSlice";
 import requestReducer from "entities/Request/redux/requestSlice";
-import patientsReducer from "entities/Patient/redux/patientsSlice";
-import servicesReducer from "entities/Service/redux/servicesSlice";
+import patientReducer from "entities/Patient/redux/patientsSlice";
+import serviceReducer from "entities/Service/redux/servicesSlice";
+import addressReducer from "entities/Address/redux/addressesSlice";
 import { api } from "./api";
 import {
   persistReducer,
@@ -32,14 +33,16 @@ export const store = configureStore({
     auth: persistedAuthReducer,
     user: userReducer,
     request: requestReducer,
-    patients: patientsReducer,
-    services: servicesReducer,
+    patients: patientReducer,
+    services: serviceReducer,
+    addresses: addressReducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-    serializableCheck: {
-      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-    },
-  }).prepend(api.middleware),
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }).prepend(api.middleware),
   devTools: process.env.NODE_ENV !== "production",
 });
 

@@ -1,16 +1,16 @@
 import { api } from "app/redux";
-import { IPatient, ISearchPatientState } from "entities/Patient";
+import { TPatient, TPatientFilter } from "entities/Patient";
 
 export const patientsByFilterApi = api.injectEndpoints({
   endpoints: builder => ({
-    fetchPatientByFilter: builder.mutation<IPatient[], ISearchPatientState>({
+    fetchPatientByFilter: builder.mutation<TPatient[], TPatientFilter>({
       query: filter => ({
         url: "/api/patients/",
         method: "POST",
         body: filter,
       }),
       invalidatesTags: ["Patients"],
-      transformResponse: (response: { data: IPatient[] }) => response.data,
+      transformResponse: (response: { data: TPatient[] }) => response.data,
     }),
   }),
 });

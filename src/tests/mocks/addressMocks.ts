@@ -1,6 +1,6 @@
-import { IAddress } from "entities/Patient";
+import { TAddress } from "entities/Address";
 
-export const addressMocks: IAddress = {
+export const addressMocks: TAddress = {
   _id: 1,
   street: "Emmentaler Straße",
   houseNumber: 45,

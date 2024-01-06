@@ -1,15 +1,15 @@
 import { api } from "app/redux";
-import { IPatient } from "entities/Patient";
+import { TPatient } from "entities/Patient";
 
 export const patientsByIdApi = api.injectEndpoints({
   endpoints: builder => ({
-    fetchPatientById: builder.query<IPatient, string | number>({
+    fetchPatientById: builder.query<TPatient, string | number>({
       query: _id => ({
         url: `/api/patients/${_id}`,
         method: "GET",
       }),
       providesTags: ["Patients"],
-      transformResponse: (response: { data: IPatient }) => response.data,
+      transformResponse: (response: { data: TPatient }) => response.data,
     }),
   }),
 });

@@ -1,25 +1,25 @@
 import { useState } from "react";
 import { SubmitHandler } from "react-hook-form";
 import {
-  useFetchServicesByNameMutation,
+  useFetchServicesByFilterMutation,
   addServices,
-  IFilter,
-  IService,
+  TServiceFilter,
+  TService,
 } from "entities/Service";
 import { useAppDispatch, useAppSelector } from "shared";
 
 export const useHandleServicesForm = () => {
   const dispatch = useAppDispatch();
   const [filteredServicesList, setFilteredServicesList] = useState<
-    IService[] | null
+    TService[] | null
   >(null);
   const selectedServices = useAppSelector(
     state => state.services.selectedServices
   );
   const [fetchServicesList, { isLoading, isError }] =
-    useFetchServicesByNameMutation();
+    useFetchServicesByFilterMutation();
 
-  const handleServicesForm: SubmitHandler<IFilter> = async data => {
+  const handleServicesForm: SubmitHandler<TServiceFilter> = async data => {
     try {
       const filteredResponse = await fetchServicesList(data).unwrap();
       if (filteredResponse.length > 0)

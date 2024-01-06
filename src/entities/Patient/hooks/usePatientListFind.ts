@@ -2,18 +2,16 @@ import { useState } from "react";
 import { SubmitHandler } from "react-hook-form";
 import {
   useFetchPatientByFilterMutation,
-  ISearchPatientState,
-  IPatient,
+  TPatient,
+  TPatientFilter,
 } from "entities/Patient";
 
 export const usePatientListFind = () => {
-  const [patientList, setPatientList] = useState<IPatient[] | null>(null);
+  const [patientList, setPatientList] = useState<TPatient[] | null>(null);
   const [fetchPatientList, { isLoading, isError }] =
     useFetchPatientByFilterMutation();
 
-  const handlePatientListFind: SubmitHandler<
-    ISearchPatientState
-  > = async data => {
+  const handlePatientListFind: SubmitHandler<TPatientFilter> = async data => {
     try {
       const patientListResponse = await fetchPatientList(data).unwrap();
       setPatientList(patientListResponse);

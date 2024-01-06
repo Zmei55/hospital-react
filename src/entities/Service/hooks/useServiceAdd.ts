@@ -1,6 +1,6 @@
 import { toast } from "react-hot-toast";
 
-import { addSelectedServices, IService } from "entities/Service";
+import { addSelectedServices, TService } from "entities/Service";
 import { useAppSelector, useAppDispatch } from "shared";
 
 export const useServiceAdd = () => {
@@ -9,7 +9,7 @@ export const useServiceAdd = () => {
     state => state.services.selectedServices
   );
 
-  const addService = (service: IService) => {
+  const addService = (service: TService) => {
     if (!selectedServices) {
       dispatch(addSelectedServices(service));
       toast.success("Dienst hinzugefügt!");

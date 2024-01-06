@@ -1,15 +1,15 @@
 import { api } from "app/redux";
-import { IRequestResponse } from "entities/Request";
+import { TRequestFilterRes } from "entities/Request";
 
 export const requestsByIdApi = api.injectEndpoints({
   endpoints: builder => ({
-    fetchRequestsById: builder.query<IRequestResponse, string | number>({
+    fetchRequestsById: builder.query<TRequestFilterRes, string | number>({
       query: id => ({
         url: `api/requests/${id}`,
         method: "GET",
       }),
       providesTags: ["Request"],
-      transformResponse: (response: { data: IRequestResponse }) =>
+      transformResponse: (response: { data: TRequestFilterRes }) =>
         response.data,
     }),
   }),

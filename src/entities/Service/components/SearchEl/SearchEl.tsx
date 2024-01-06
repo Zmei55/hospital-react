@@ -22,9 +22,13 @@ export const SearchEl: React.FC<ISearch> = () => {
       >
         <Icon icon="list-plus" size={48} />
         {!patient ? (
-          <ModalBtnTitle>{t("service.servicesBtnIsDisabled")}</ModalBtnTitle>
+          <ModalBtnTitle>
+            {t("service.service.service", { context: "BtnIsDisabled" })}
+          </ModalBtnTitle>
         ) : (
-          <ModalBtnTitle>{t("service.servicesBtnIsActive")}</ModalBtnTitle>
+          <ModalBtnTitle>
+            {t("service.service.service", { context: "BtnIsActive" })}
+          </ModalBtnTitle>
         )}
       </ModalBtn>
 

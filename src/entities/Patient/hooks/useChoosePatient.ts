@@ -11,11 +11,13 @@ export const useChoosePatient = () => {
   const [fetchPatient] = useLazyFetchPatientByIdQuery();
   const { resetPatients } = usePatientListFind();
 
-  const choosePatient = async (id: string | number) => {
-    const patientResponse = await fetchPatient(id).unwrap();
-    dispatch(addPatient(patientResponse));
-    resetPatients();
-    dispatch(fetchPatientsModal(false));
+  const choosePatient = async (id: string | number | null) => {
+    if (id) {
+      const patientResponse = await fetchPatient(id).unwrap();
+      dispatch(addPatient(patientResponse));
+      resetPatients();
+      dispatch(fetchPatientsModal(false));
+    }
   };
 
   return { choosePatient };

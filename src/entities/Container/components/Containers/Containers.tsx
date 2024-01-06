@@ -28,7 +28,7 @@ export const Containers: React.FC = () => {
 
   return (
     <Container data-testid="containers-container">
-      <Title>{t("container.title")}</Title>
+      <Title>{t("container.container")}</Title>
       <ModalBtn
         data-testid="add-containers-btn"
         type="button"
@@ -37,13 +37,19 @@ export const Containers: React.FC = () => {
       >
         <Icon icon="test-tube" size={48} />
         {!servicesList && !detailsList && (
-          <ButtonTitle>{t("container.containerBtnIsDisabled_V1")}</ButtonTitle>
+          <ButtonTitle>
+            {t("container.container", { context: "BtnIsDisabled_V1" })}
+          </ButtonTitle>
         )}
         {servicesList && !detailsList && (
-          <ButtonTitle>{t("container.containerBtnIsDisabled_V2")}</ButtonTitle>
+          <ButtonTitle>
+            {t("container.container", { context: "BtnIsDisabled_V2" })}
+          </ButtonTitle>
         )}
         {servicesList && detailsList && (
-          <ButtonTitle>{t("container.containerBtnIsActive")}</ButtonTitle>
+          <ButtonTitle>
+            {t("container.container", { context: "BtnIsActive" })}
+          </ButtonTitle>
         )}
       </ModalBtn>
 
@@ -54,7 +60,7 @@ export const Containers: React.FC = () => {
         >
           <ModalHeader data-testid="containers-modal-header">
             <ModalTitle data-testid="containers-modal-header-title">
-              {t("container.containerBtnIsActive")}
+              {t("container.container", { context: "BtnIsActive" })}
             </ModalTitle>
             <CloseBtn
               data-testid="close-modal-containers-btn"

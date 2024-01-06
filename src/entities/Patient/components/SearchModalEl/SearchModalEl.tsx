@@ -4,7 +4,7 @@ import {
   useTogglePatientsModal,
   usePatientListFind,
   useChoosePatient,
-  ISearchPatientState,
+  TPatientFilter,
 } from "entities/Patient";
 import {
   Button as ResetBtn,
@@ -14,8 +14,8 @@ import {
   InputEl,
   SpinnerCenterBox,
   Spinner,
-  showBirthDate,
   NotFound,
+  showDate,
 } from "shared";
 
 import {
@@ -50,11 +50,11 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
     isError,
     resetPatients,
   } = usePatientListFind();
-  const { register, handleSubmit } = useForm<ISearchPatientState>({
+  const { register, handleSubmit } = useForm<TPatientFilter>({
     defaultValues: {
-      name: undefined,
-      birthDate: undefined,
-      cardNumber: undefined,
+      name: null,
+      birthDate: null,
+      cardNumber: null,
     },
   });
   const { choosePatient } = useChoosePatient();
@@ -131,7 +131,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
               data-testid="patient-search-name-input"
               autoFocus
               style={{ width: "100%" }}
-              placeholder={t("patient.name")}
+              placeholder={t("shared.name")}
             />
           </Label>
 
@@ -164,7 +164,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
         {!isLoading && patientList && (
           <List data-testid="patient-search-list">
             <ListHeader data-testid="patient-search-list-header">
-              <HeadName>{t("patient.name")}</HeadName>
+              <HeadName>{t("shared.name")}</HeadName>
               <HeadBirthDay>{t("patient.dateOfBirth")}</HeadBirthDay>
               <HeadCardNumber>{t("patient.cardNumber")}</HeadCardNumber>
               <HeadSelectBtn></HeadSelectBtn>
@@ -177,9 +177,7 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
                   data-testid="patient-search-listitem"
                 >
                   <BodyName>{patient.name}</BodyName>
-                  <BodyBirthDay>
-                    {showBirthDate(patient.birthDate)}
-                  </BodyBirthDay>
+                  <BodyBirthDay>{showDate(patient.birthDate)}</BodyBirthDay>
                   <BodyCardNumber>{patient.cardNumber}</BodyCardNumber>
                   <BodySelectBtn>
                     <SelectBtn

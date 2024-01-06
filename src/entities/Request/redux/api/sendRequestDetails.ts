@@ -1,9 +1,9 @@
 import { api } from "app/redux";
-import { IDetail } from "entities/Service";
+import { TNewDetails } from "entities/Request";
 
 const requestDetailsApi = api.injectEndpoints({
   endpoints: builder => ({
-    sendRequestDetail: builder.mutation<string, IDetail>({
+    sendRequestDetail: builder.mutation<string, TNewDetails>({
       query: requestDetail => ({
         url: "/api/request-details/add",
         method: "POST",

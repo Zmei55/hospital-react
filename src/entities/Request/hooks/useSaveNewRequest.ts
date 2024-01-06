@@ -10,17 +10,17 @@ export const useSaveNewRequest = () => {
   const { clearPatient } = useClearPatient();
   const requestNumber = useAppSelector(state => state.request.requestNumber);
   const patient = useAppSelector(state => state.patients.patient);
-  const requestDetails = useAppSelector(state => state.request.requestDetails);
+  const newRequestDetails = useAppSelector(state => state.services.details);
 
-  const saveReqBtnDisabled = !requestNumber || !patient || !requestDetails;
+  const saveReqBtnDisabled = !requestNumber || !patient || !newRequestDetails;
 
   const saveNewRequest = async () => {
-    if (requestNumber && patient && requestDetails) {
+    if (requestNumber && patient && newRequestDetails) {
       try {
         await saveRequest({
           requestNumber,
           patientId: patient._id,
-          requestDetails,
+          newRequestDetails,
         });
         toast.success("Antrag gespeichert!");
         clearPatient();
