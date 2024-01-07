@@ -1,12 +1,12 @@
 import {
-  useFetchRequestCountMutation,
+  useLazyFetchRequestCountQuery,
   addRequestDBCount,
 } from "entities/Request";
 import { useAppDispatch } from "shared";
 
 export const useRequestsCount = () => {
   const dispatch = useAppDispatch();
-  const [requestsCount] = useFetchRequestCountMutation();
+  const [requestsCount] = useLazyFetchRequestCountQuery();
 
   const getRequestsCount = async () => {
     try {
