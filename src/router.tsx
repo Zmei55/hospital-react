@@ -1,25 +1,27 @@
 import { createBrowserRouter } from "react-router-dom";
 import loadable from "@loadable/component";
 
-import LayoutPage from "pages/LayoutPage";
-import PublicPage from "pages/PublicPage";
-import PrivatePage from "pages/PrivatePage";
-import AuthPage from "pages/AuthPage";
+import Layout from "app/components/Layout";
+import PublicRoute from "app/components/Routes/PublicRoute";
+import PrivateRoute from "app/components/Routes/PrivateRoute";
+import Auth from "entities/Auth/components/AuthMenu";
 import { Loading } from "shared";
 
-const DesktopPage = loadable(() => import("pages/DesktopPage"), {
+const Desktop = loadable(() => import("entities/Desktop/components/Desktop"), {
   fallback: <Loading />,
 });
-const RequestPage = loadable(() => import("pages/RequestPage"), {
+const Request = loadable(
+  () => import("entities/Request/components/RequestEl"),
+  { fallback: <Loading /> }
+);
+const FindRequest = loadable(
+  () => import("entities/Request/components/FindRequestEl"),
+  { fallback: <Loading /> }
+);
+const UnknownPart = loadable(() => import("shared/ui/UnknownPart"), {
   fallback: <Loading />,
 });
-const FindRequestPage = loadable(() => import("pages/FindRequestPage"), {
-  fallback: <Loading />,
-});
-const UnknownPartPage = loadable(() => import("pages/UnknownPartPage"), {
-  fallback: <Loading />,
-});
-const NotFoundPage = loadable(() => import("pages/NotFoundPage"), {
+const NotFound = loadable(() => import("shared/ui/NotFound"), {
   fallback: <Loading />,
 });
 
@@ -27,36 +29,36 @@ export const router = createBrowserRouter(
   [
     {
       path: "/",
-      element: <LayoutPage />,
-      errorElement: <NotFoundPage />,
+      element: <Layout />,
+      errorElement: <NotFound text="404 Page not found" />,
       children: [
         {
-          element: <PublicPage />,
+          element: <PublicRoute restricted redirectTo="/desktop" />,
           children: [
             {
               index: true,
-              element: <AuthPage />,
+              element: <Auth />,
             },
           ],
         },
         {
-          element: <PrivatePage />,
+          element: <PrivateRoute redirectTo="/" />,
           children: [
             {
               path: "desktop",
-              element: <DesktopPage />,
+              element: <Desktop />,
               children: [
                 {
                   path: "request",
-                  element: <RequestPage />,
+                  element: <Request />,
                 },
                 {
                   path: "find-request",
-                  element: <FindRequestPage />,
+                  element: <FindRequest />,
                 },
                 {
                   path: "unknown-part",
-                  element: <UnknownPartPage />,
+                  element: <UnknownPart />,
                 },
               ],
             },

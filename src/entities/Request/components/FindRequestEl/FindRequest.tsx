@@ -167,7 +167,7 @@ export const FindRequest: React.FC = () => {
         </Form>
 
         {isError && (
-          <NotFound data-testid="find-request-error">Запрос не найден</NotFound>
+          <NotFound data-testid="find-request-error" text="Запрос не найден" />
         )}
 
         {isLoading ? (

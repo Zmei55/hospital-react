@@ -1,11 +1,9 @@
-import { ReactNode } from "react";
-
 import { NotFoundText } from "./NotFound.styled";
 
 interface INotFound {
-  children: ReactNode;
+  text: string;
 }
 
-export const NotFound: React.FC<INotFound> = ({ children }) => {
-  return <NotFoundText>{children}</NotFoundText>;
+export const NotFound: React.FC<INotFound> = ({ text }) => {
+  return <NotFoundText>{text}</NotFoundText>;
 };

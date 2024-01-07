@@ -194,9 +194,10 @@ export const SearchModalEl: React.FC<ISearchModalForm> = () => {
         )}
 
         {!isLoading && isError && (
-          <NotFound data-testid="patient-search-not-found">
-            {t("patient.NotFoundPatientText")}
-          </NotFound>
+          <NotFound
+            data-testid="patient-search-not-found"
+            text={t("patient.NotFoundPatientText")}
+          />
         )}
       </ModalBody>
     </ModalContainer>

@@ -1,7 +1,7 @@
 import { useLocation, Outlet } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useRequestsCount } from "entities/Request";
-import { Icon } from "shared";
+import { useAppSelector, Icon } from "shared";
 
 import {
   Container,
@@ -16,6 +16,7 @@ export const Desktop: React.FC = () => {
   const { pathname } = useLocation();
   const { t } = useTranslation();
   const { getRequestsCount } = useRequestsCount();
+  // const user = useAppSelector(state => state.auth.user);
 
   // getRequestsCount();
 
@@ -23,6 +24,15 @@ export const Desktop: React.FC = () => {
     <Container data-testid="desktop-page">
       {pathname === "/desktop" ? (
         <>
+          {/* {user.roles && user.roles.includes("ADMIN") && <h1>ADMIN</h1>}
+          {user.roles && user.roles.includes("USER") && (
+            <>
+              {user.workplaces &&
+                user.workplaces.includes("TREATMENT_ROOM") && (
+                  <h1>USER + TREATMENT_ROOM</h1>
+                )}
+            </>
+          )} */}
           <LargeBtn
             to="request"
             data-testid="new-request-btn"
