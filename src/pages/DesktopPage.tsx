@@ -1,7 +1,7 @@
 import { Desktop } from "entities/Desktop";
 
-const DesktopView: React.FC = () => {
+const DesktopPage: React.FC = () => {
   return <Desktop />;
 };
 
-export default DesktopView;
+export default DesktopPage;

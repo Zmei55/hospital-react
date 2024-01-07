@@ -1,7 +1,7 @@
 import { FindRequest } from "entities/Request";
 
-const FindRequestView: React.FC = () => {
+const FindRequestPage: React.FC = () => {
   return <FindRequest />;
 };
 
-export default FindRequestView;
+export default FindRequestPage;

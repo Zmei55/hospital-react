@@ -1,7 +1,7 @@
 import { Request } from "entities/Request";
 
-const RequestView: React.FC = () => {
+const RequestPage: React.FC = () => {
   return <Request />;
 };
 
-export default RequestView;
+export default RequestPage;

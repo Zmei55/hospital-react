@@ -1,7 +1,7 @@
 import { AuthMenu } from "entities/Auth";
 
-const AuthView: React.FC = () => {
+const AuthPage: React.FC = () => {
   return <AuthMenu />;
 };
 
-export default AuthView;
+export default AuthPage;
