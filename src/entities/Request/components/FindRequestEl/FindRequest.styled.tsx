@@ -67,6 +67,7 @@ export const Body = styled.div`
   }
 
   @media screen and (max-width: 1279px) {
+    height: calc(100vh - 254px);
     overflow: auto;
     scroll-behavior: smooth;
 

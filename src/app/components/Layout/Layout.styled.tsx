@@ -7,7 +7,7 @@ export const Header = styled.header`
 
   width: 100%;
 
-  background-color: #fff;
+  background-color: ${props => props.theme.colors.white};
 
   @media screen and (max-width: 1279px) {
     height: 80px;
