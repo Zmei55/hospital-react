@@ -28,6 +28,7 @@ export const router = createBrowserRouter(
     {
       path: "/",
       element: <LayoutPage />,
+      errorElement: <NotFoundPage />,
       children: [
         {
           element: <PublicPage />,
@@ -44,24 +45,22 @@ export const router = createBrowserRouter(
             {
               path: "desktop",
               element: <DesktopPage />,
-            },
-            {
-              path: "request",
-              element: <RequestPage />,
-            },
-            {
-              path: "find-request",
-              element: <FindRequestPage />,
-            },
-            {
-              path: "unknown-part",
-              element: <UnknownPartPage />,
+              children: [
+                {
+                  path: "request",
+                  element: <RequestPage />,
+                },
+                {
+                  path: "find-request",
+                  element: <FindRequestPage />,
+                },
+                {
+                  path: "unknown-part",
+                  element: <UnknownPartPage />,
+                },
+              ],
             },
           ],
-        },
-        {
-          path: "*",
-          element: <NotFoundPage />,
         },
       ],
     },
