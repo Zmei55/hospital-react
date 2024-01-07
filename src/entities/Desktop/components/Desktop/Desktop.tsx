@@ -1,6 +1,7 @@
+import { useLocation, Outlet } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useNewRequest, useFindRequest } from "entities/Desktop";
-import { useAppNavigate, Icon } from "shared";
+import { useRequestsCount } from "entities/Request";
+import { Icon } from "shared";
 
 import {
   Container,
@@ -12,46 +13,61 @@ import {
 } from "./Desktop.styled";
 
 export const Desktop: React.FC = () => {
-  const { handleNavigate } = useAppNavigate();
-  const { handleNewRequest } = useNewRequest();
-  const { handleFindRequest } = useFindRequest();
+  const { pathname } = useLocation();
   const { t } = useTranslation();
+  const { getRequestsCount } = useRequestsCount();
+
+  // getRequestsCount();
 
   return (
     <Container data-testid="desktop-page">
-      <LargeBtn data-testid="new-request-btn" onClick={handleNewRequest}>
-        <IconContainer>
-          <Icon icon="create-document" color="blue" size={140} />
-          <IconTitle>{t("desktop.addRequest")}</IconTitle>
-        </IconContainer>
-      </LargeBtn>
+      {pathname === "/desktop" ? (
+        <>
+          <LargeBtn
+            to="request"
+            data-testid="new-request-btn"
+            onClick={getRequestsCount}
+          >
+            <IconContainer>
+              <Icon icon="create-document" color="blue" size={140} />
+              <IconTitle>{t("desktop.addRequest")}</IconTitle>
+            </IconContainer>
+          </LargeBtn>
 
-      <MediumBtn data-testid="find-request-btn" onClick={handleFindRequest}>
-        <IconContainer>
-          <Icon icon="find-document" color="blue" size={140} />
-          <IconTitle>{t("desktop.findRequest")}</IconTitle>
-        </IconContainer>
-      </MediumBtn>
+          <MediumBtn to="find-request" data-testid="find-request-btn">
+            <IconContainer>
+              <Icon icon="find-document" color="blue" size={140} />
+              <IconTitle>{t("desktop.findRequest")}</IconTitle>
+            </IconContainer>
+          </MediumBtn>
 
-      <MediumBtn
-        data-testid="find-containers-btn"
-        onClick={() => handleNavigate("/unknown-part")}
-      >
-        <IconContainer>
-          <Icon icon="find-test-tube" color="blue" size={140} />
-          <IconTitle>{t("desktop.findContainer")}</IconTitle>
-        </IconContainer>
-      </MediumBtn>
+          <MediumBtn
+            to="unknown-part"
+            data-testid="find-containers-btn"
+            // onClick={() => handleNavigate("/unknown-part")}
+          >
+            <IconContainer>
+              <Icon icon="find-test-tube" color="blue" size={140} />
+              <IconTitle>{t("desktop.findContainer")}</IconTitle>
+            </IconContainer>
+          </MediumBtn>
 
-      <SmallBtn
-        data-testid="documents-btn"
-        onClick={() => handleNavigate("/unknown-part")}
-      >
-        <IconContainer>
-          <Icon icon="documents" color="blue" size={140} />
-          <IconTitle>{t("desktop.documents")}</IconTitle>
-        </IconContainer>
-      </SmallBtn>
+          <SmallBtn
+            to="unknown-part"
+            data-testid="documents-btn"
+            // onClick={() => handleNavigate("/unknown-part")}
+          >
+            <IconContainer>
+              <Icon icon="documents" color="blue" size={140} />
+              <IconTitle>{t("desktop.documents")}</IconTitle>
+            </IconContainer>
+          </SmallBtn>
+        </>
+      ) : (
+        <Outlet />
+      )}
+      {/* <LargeBtn data-testid="new-request-btn" onClick={handleNewRequest}> */}
+      {/* <MediumBtn data-testid="find-request-btn" onClick={handleFindRequest}> */}
     </Container>
   );
 };

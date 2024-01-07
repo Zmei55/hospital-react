@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   display: flex;
@@ -8,7 +9,7 @@ export const Container = styled.div`
   gap: ${props => props.theme.spacing(4)};
 `;
 
-const Button = styled.button`
+const Button = styled(Link)`
   position: relative;
 
   background-color: ${props => props.theme.colors.white};
