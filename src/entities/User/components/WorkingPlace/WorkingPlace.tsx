@@ -1,9 +1,9 @@
-import { useTranslation } from "react-i18next";
+import { useAppSelector } from "shared";
 
 import { HeaderTitle } from "./WorkingPlace.styled";
 
 export const WorkingPlace: React.FC = () => {
-  const { t } = useTranslation();
+  const appTitle = useAppSelector(state => state.app.appTitle);
 
-  return <HeaderTitle>{t("layout.title")}</HeaderTitle>;
+  return <HeaderTitle>{appTitle}</HeaderTitle>;
 };

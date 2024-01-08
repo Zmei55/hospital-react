@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { TAppState } from "app";
 
 const initialState: TAppState = {
-  appTitle: "Hospital",
+  appTitle: null,
 };
 
 const appSlice = createSlice({
@@ -12,12 +12,9 @@ const appSlice = createSlice({
     addAppTitle(state, action: PayloadAction<string>) {
       state.appTitle = action.payload;
     },
-    resetAppTitle(state) {
-      state.appTitle = initialState.appTitle;
-    },
   },
 });
 
-export const { addAppTitle, resetAppTitle } = appSlice.actions;
+export const { addAppTitle } = appSlice.actions;
 
 export default appSlice.reducer;

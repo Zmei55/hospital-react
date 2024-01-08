@@ -1,6 +1,10 @@
 {
   "layout": {
-    "title": "АРМ «Treatment Room»",
+    "title": {
+      "title": "Hospital",
+      "title_ADMIN": "Administration",
+      "title_TREATMENT_ROOM": "АРМ «Treatment Room»"
+    },
     "menuTitle": "User menu",
     "language": "Language",
     "selectLanguage": "Select language"

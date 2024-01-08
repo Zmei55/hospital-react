@@ -1,7 +1,11 @@
 interface Resources {
   translation: {
     layout: {
-      title: string;
+      title: {
+        title: string;
+        title_ADMIN: string;
+        title_TREATMENT_ROOM: string;
+      };
       menuTitle: string;
       language: string;
       selectLanguage: string;

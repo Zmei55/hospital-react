@@ -1,10 +1,18 @@
+import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { WorkingPlace, UserMenu } from "entities/User";
+import { useAppTitle } from "app";
 
 import { Header, Body } from "./Layout.styled";
 
 export const Layout: React.FC = () => {
+  const { handleAppTitle } = useAppTitle();
+
+  useEffect(() => {
+    handleAppTitle(null);
+  }, [handleAppTitle]);
+
   return (
     <>
       <Header data-testid="header">
