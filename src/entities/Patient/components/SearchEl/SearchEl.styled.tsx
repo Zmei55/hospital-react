@@ -26,7 +26,7 @@ export const ModalBtn = styled.button`
   fill: ${props => props.theme.colors.blue.default};
 
   border: 2px solid ${props => props.theme.colors.blue.default};
-  box-shadow: 0px 8px 16px rgba(17, 17, 17, 0.06);
+  box-shadow: ${props => props.theme.boxShadow};
   border-radius: ${props => props.theme.borderRadius};
   width: 100%;
   height: 228px;

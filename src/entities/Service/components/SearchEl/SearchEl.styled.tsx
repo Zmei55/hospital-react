@@ -6,11 +6,11 @@ export const ModalBtn = styled.button`
   justify-content: center;
   align-items: center;
 
-  color: #115ffd;
-  fill: #115ffd;
+  color: ${props => props.theme.colors.blue.default};
+  fill: ${props => props.theme.colors.blue.default};
 
-  border: 2px solid #115ffd;
-  box-shadow: 0px 8px 16px rgba(17, 17, 17, 0.06);
+  border: 2px solid ${props => props.theme.colors.blue.default};
+  box-shadow: ${props => props.theme.boxShadow};
   border-radius: ${props => props.theme.borderRadius};
   background-color: transparent;
   outline: none;
