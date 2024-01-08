@@ -15,6 +15,14 @@ export const api = createApi({
       return headers;
     },
   }),
-  tagTypes: ["Auth", "Request", "Patients", "Services", "Labors", "Addresses"],
+  tagTypes: [
+    "App",
+    "Auth",
+    "Request",
+    "Patients",
+    "Services",
+    "Labors",
+    "Addresses",
+  ],
   endpoints: () => ({}),
 });

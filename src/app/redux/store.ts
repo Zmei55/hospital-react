@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
+import appReducer from "app/redux/appSlice";
 import authReducer from "entities/Auth/redux/authSlice";
 import userReducer from "entities/User/redux/userSlice";
 import requestReducer from "entities/Request/redux/requestSlice";
@@ -30,6 +31,7 @@ const persistedAuthReducer = persistReducer(authPersistConfig, authReducer);
 export const store = configureStore({
   reducer: {
     [api.reducerPath]: api.reducer,
+    app: appReducer,
     auth: persistedAuthReducer,
     user: userReducer,
     request: requestReducer,
