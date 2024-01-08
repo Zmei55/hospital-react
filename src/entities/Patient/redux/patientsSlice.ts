@@ -7,7 +7,7 @@ const initialState: TPatientsState = {
   modalPatient: false,
 };
 
-const patientsListSlice = createSlice({
+const patientSlice = createSlice({
   name: "patients",
   initialState,
   reducers: {
@@ -31,6 +31,6 @@ export const {
   deletePatient,
   fetchIsActiveInfo,
   fetchPatientsModal,
-} = patientsListSlice.actions;
+} = patientSlice.actions;
 
-export default patientsListSlice.reducer;
+export default patientSlice.reducer;
