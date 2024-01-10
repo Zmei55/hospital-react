@@ -18,7 +18,7 @@ const Button = styled.button`
 `;
 
 export const BlueBtn = styled(Button)`
-  color: ${props => props.theme.colors.text.white};
+  color: ${props => props.theme.colors.white};
 
   background-color: ${props => props.theme.colors.blue.default};
   border-color: transparent;
@@ -39,7 +39,7 @@ export const BlueBtn = styled(Button)`
 `;
 
 export const RedBtn = styled(Button)`
-  color: ${props => props.theme.colors.text.white};
+  color: ${props => props.theme.colors.white};
 
   background-color: ${props => props.theme.colors.red.default};
   border-color: transparent;
@@ -59,7 +59,7 @@ export const RedBtn = styled(Button)`
 `;
 
 export const GreenBtn = styled(Button)`
-  color: ${props => props.theme.colors.text.white};
+  color: ${props => props.theme.colors.white};
 
   background-color: ${props => props.theme.colors.green.default};
   border-color: transparent;
