@@ -1,6 +1,13 @@
 import styled from "@emotion/styled";
 import { TitleBigStyle } from "shared/ui/Styles/TitleStyles.styled";
 
+export const Container = styled.div`
+  display: flex;
+  align-items: center;
+
+  margin-right: auto;
+`;
+
 export const HeaderTitle = styled(TitleBigStyle)`
   @media screen and (max-width: 639px) {
     position: absolute;
