@@ -9,7 +9,6 @@ declare module "@emotion/react" {
         body: string;
         label: string;
         placeholder: string;
-        white: string;
       };
       blue: {
         pressed: string;
