@@ -38,6 +38,7 @@ export const Header = styled.header`
 
 export const Body = styled.main`
   display: flex;
+  justify-content: center;
   align-items: center;
   width: 100%;
 
