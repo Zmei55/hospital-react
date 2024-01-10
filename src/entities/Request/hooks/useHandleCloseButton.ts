@@ -7,7 +7,7 @@ export const useHandleCloseButton = () => {
 
   const handleCloseBtn = () => {
     clearPatient();
-    handleNavigate("/desktop");
+    handleNavigate("/dashboard/treatment-room");
   };
 
   return { handleCloseBtn };

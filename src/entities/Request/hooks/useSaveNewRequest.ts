@@ -24,7 +24,7 @@ export const useSaveNewRequest = () => {
         });
         toast.success("Antrag gespeichert!");
         clearPatient();
-        handleNavigate("/desktop");
+        handleNavigate("/dashboard/treatment-room");
       } catch (error) {
         toast.error(
           "Etwas ist schief gelaufen! Der Antrag wurde nicht gespeichert."

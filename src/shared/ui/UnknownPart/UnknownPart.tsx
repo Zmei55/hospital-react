@@ -10,7 +10,7 @@ export const UnknownPart: React.FC = () => {
   return (
     <Container>
       <Header>
-        <Title>{t("unknownPart.title")}</Title>
+        <Title>{t("newBlock.title")}</Title>
 
         <CloseBtn
           id="closeNeuRequestBtn"
@@ -19,14 +19,14 @@ export const UnknownPart: React.FC = () => {
             width: "72px",
             height: "72px",
           }}
-          onClick={() => handleNavigate("/desktop")}
+          onClick={() => handleNavigate("/dashboard")}
         >
           <Icon icon="cross" size={48} color="white" />
         </CloseBtn>
       </Header>
 
       <Body>
-        <Text>{t("unknownPart.text")}</Text>
+        <Text>{t("newBlock.text")}</Text>
       </Body>
     </Container>
   );

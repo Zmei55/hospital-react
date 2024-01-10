@@ -68,7 +68,7 @@ export const FindRequest: React.FC = () => {
   };
 
   const handleCloseBtn = () => {
-    handleNavigate("/desktop");
+    handleNavigate("/dashboard/treatment-room");
   };
 
   return (
