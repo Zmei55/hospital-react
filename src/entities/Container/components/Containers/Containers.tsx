@@ -3,7 +3,7 @@ import { useToggleContainersModal } from "entities/Container";
 import {
   useAppSelector,
   Modal,
-  Icon,
+  MenuButton,
   Button as CloseBtn,
   Icon as CrossIcon,
 } from "shared";
@@ -11,8 +11,6 @@ import {
 import {
   Container,
   Title,
-  ModalBtn,
-  ButtonTitle,
   ModalHeader,
   ModalTitle,
   ModalBody,
@@ -20,8 +18,8 @@ import {
 } from "./Containers.styled";
 
 export const Containers: React.FC = () => {
-  const servicesList = useAppSelector(state => state.services.services);
-  const detailsList = useAppSelector(state => state.services.details);
+  const services = useAppSelector(state => state.services.services);
+  const details = useAppSelector(state => state.services.details);
   const { showContainersModal, toggleContainersModal } =
     useToggleContainersModal();
   const { t } = useTranslation();
@@ -29,29 +27,21 @@ export const Containers: React.FC = () => {
   return (
     <Container data-testid="containers-container">
       <Title>{t("container.container")}</Title>
-      <ModalBtn
-        data-testid="add-containers-btn"
+
+      <MenuButton
         type="button"
-        disabled={!detailsList}
+        text={
+          !services
+            ? t("container.container", { context: "BtnIsDisabled_V1" })
+            : !details
+            ? t("container.container", { context: "BtnIsDisabled_V2" })
+            : t("container.container", { context: "BtnIsActive" })
+        }
+        icon="test-tube"
         onClick={toggleContainersModal}
-      >
-        <Icon icon="test-tube" size={48} />
-        {!servicesList && !detailsList && (
-          <ButtonTitle>
-            {t("container.container", { context: "BtnIsDisabled_V1" })}
-          </ButtonTitle>
-        )}
-        {servicesList && !detailsList && (
-          <ButtonTitle>
-            {t("container.container", { context: "BtnIsDisabled_V2" })}
-          </ButtonTitle>
-        )}
-        {servicesList && detailsList && (
-          <ButtonTitle>
-            {t("container.container", { context: "BtnIsActive" })}
-          </ButtonTitle>
-        )}
-      </ModalBtn>
+        disabled={!details}
+        style={{ height: "100%" }}
+      />
 
       {showContainersModal && (
         <Modal
