@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import {
-  useToggleServicesModal,
   useHandleServicesForm,
   useServiceAdd,
   useSelectedServiceDelete,
@@ -48,9 +47,13 @@ import {
   SelectedServicesName,
 } from "./ServiceModalEL.styled";
 
-interface IServiceModal {}
+interface IServiceModal {
+  toggleServicesModal: () => void;
+}
 
-export const ServiceModalEl: React.FC<IServiceModal> = () => {
+export const ServiceModalEl: React.FC<IServiceModal> = ({
+  toggleServicesModal,
+}) => {
   const {
     register,
     handleSubmit,
@@ -69,7 +72,6 @@ export const ServiceModalEl: React.FC<IServiceModal> = () => {
   const { removeSelectedService } = useSelectedServiceDelete();
   const { saveSelectedList } = useSelectedServiceListSave();
   const { clearSelectedList } = useSelectedServiceListClear();
-  const { toggleServicesModal } = useToggleServicesModal();
   const { t } = useTranslation();
 
   return (
