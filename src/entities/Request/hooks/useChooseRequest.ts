@@ -44,7 +44,8 @@ export const useChooseRequest = () => {
         dispatch(addDetails(requestResponse.requestDetails));
       if (requestResponse?._id) await fetchLaborList();
 
-      if (requestResponse?._id) handleNavigate("/request");
+      if (requestResponse?._id)
+        handleNavigate("/dashboard/treatment-room/request");
     } catch (error) {
       console.log("ERROR chooseRequest");
     }

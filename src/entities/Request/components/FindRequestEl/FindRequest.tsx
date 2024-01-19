@@ -139,7 +139,8 @@ export const FindRequest: React.FC = () => {
 
           <Label>
             <InputEl
-              {...register("cardNumber")}
+              type="number"
+              {...register("cardNumber", { valueAsNumber: true })}
               data-testid="find-request-body-card-number-input"
               style={{ width: "100%" }}
               placeholder={t("patient.cardNumber")}
@@ -148,7 +149,8 @@ export const FindRequest: React.FC = () => {
 
           <Label>
             <InputEl
-              {...register("requestNumber")}
+              type="number"
+              {...register("requestNumber", { valueAsNumber: true })}
               data-testid="find-request-body-request-number-input"
               style={{ width: "100%" }}
               placeholder={t("findRequest.requestNumber")}

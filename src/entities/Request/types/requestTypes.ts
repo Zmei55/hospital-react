@@ -1,4 +1,4 @@
-import { TDetails } from "./detailsTypes";
+import { TDetails, TNewDetails } from "./detailsTypes";
 
 type RequestType = {
   _id: string | number | null;
@@ -32,4 +32,8 @@ export type TRequestFilterRes = Pick<RequestType, "_id" | "createdAt"> & {
   patientName: string | null;
   cardNumber: number | null;
   requestDetails: TDetails[] | null;
+};
+
+export type TRequestSave = Pick<RequestType, "requestNumber" | "patientId"> & {
+  newRequestDetails: TNewDetails[];
 };
