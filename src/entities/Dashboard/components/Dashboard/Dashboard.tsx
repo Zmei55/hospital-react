@@ -1,11 +1,7 @@
 import { useLocation, Outlet } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useAppTitle } from "app";
-import {
-  useAppSelector,
-  ButtonLink as BigBtn,
-  ButtonLink as MediumBtn,
-} from "shared";
+import { useAppSelector, BigLinkButton, MediumLinkButton } from "shared";
 
 import { Container } from "./Dashboard.styled";
 
@@ -20,22 +16,20 @@ export const Dashboard: React.FC = () => {
       {pathname === "/dashboard" ? (
         <>
           {roles && roles.includes("ADMIN") && (
-            <BigBtn
+            <BigLinkButton
               type="button"
               text={t("dashboard.admin")}
               to="admin"
-              size="BIG"
               icon="identification-badge"
               data-testid="dashboard-admin-btn"
             />
           )}
           {roles && (
             <>
-              <MediumBtn
+              <MediumLinkButton
                 type="button"
                 text={t("dashboard.treatmentRoom")}
                 to="treatment-room"
-                size="MEDIUM"
                 icon="test-tube"
                 disabled={
                   !roles.includes("ADMIN") &&
@@ -44,11 +38,10 @@ export const Dashboard: React.FC = () => {
                 data-testid="dashboard-treatment-room-btn"
                 onClick={() => handleAppTitle("TREATMENT_ROOM")}
               />
-              <MediumBtn
+              <MediumLinkButton
                 type="button"
                 text={t("dashboard.reception")}
                 to="treatment-room"
-                size="MEDIUM"
                 icon="clipboard-text"
                 disabled={!roles.includes("ADMIN")}
                 data-testid="dashboard-treatment-room-btn"
