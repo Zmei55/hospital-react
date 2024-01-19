@@ -2,6 +2,7 @@ export * from "./Modal";
 export * from "./Input";
 export * from "./Icon";
 export * from "./Button";
+export * from "./ButtonLink";
 export * from "./Spinner";
 export * from "./Loading";
 export * from "./NotFound";
