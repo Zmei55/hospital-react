@@ -21,4 +21,11 @@ export const Input = styled.input`
   :hover {
     border-color: ${props => props.theme.colors.blue.default};
   }
+
+  // number - no arrows
+  ::-webkit-outer-spin-button,
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 `;
