@@ -7,9 +7,14 @@ import PrivateRoute from "app/components/Routes/PrivateRoute";
 import Auth from "entities/Auth/components/AuthMenu";
 import { Loading } from "shared";
 
-const Desktop = loadable(() => import("entities/Desktop/components/Desktop"), {
-  fallback: <Loading />,
-});
+const Dashboard = loadable(
+  () => import("entities/Dashboard/components/Dashboard"),
+  { fallback: <Loading /> }
+);
+const TreatmentRoom = loadable(
+  () => import("entities/TreatmentRoom/components/TreatmentRoom"),
+  { fallback: <Loading /> }
+);
 const Request = loadable(
   () => import("entities/Request/components/RequestEl"),
   { fallback: <Loading /> }
@@ -33,7 +38,7 @@ export const router = createBrowserRouter(
       errorElement: <NotFound text="404 Page not found" />,
       children: [
         {
-          element: <PublicRoute restricted redirectTo="/desktop" />,
+          element: <PublicRoute restricted redirectTo="/dashboard" />,
           children: [
             {
               index: true,
@@ -45,20 +50,26 @@ export const router = createBrowserRouter(
           element: <PrivateRoute redirectTo="/" />,
           children: [
             {
-              path: "desktop",
-              element: <Desktop />,
+              path: "dashboard",
+              element: <Dashboard />,
               children: [
                 {
-                  path: "request",
-                  element: <Request />,
-                },
-                {
-                  path: "find-request",
-                  element: <FindRequest />,
-                },
-                {
-                  path: "unknown-part",
-                  element: <UnknownPart />,
+                  path: "treatment-room",
+                  element: <TreatmentRoom />,
+                  children: [
+                    {
+                      path: "request",
+                      element: <Request />,
+                    },
+                    {
+                      path: "find-request",
+                      element: <FindRequest />,
+                    },
+                    {
+                      path: "unknown-part",
+                      element: <UnknownPart />,
+                    },
+                  ],
                 },
               ],
             },
