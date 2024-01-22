@@ -33,7 +33,12 @@
       "position_NURSE": "Nurse"
     }
   },
-  "desktop": {
+  "dashboard": {
+    "admin": "Administration",
+    "treatmentRoom": "Treatment room",
+    "reception": "Reception"
+  },
+  "treatmentRoom": {
     "addRequest": "Create a request",
     "findRequest": "Find a request",
     "findContainer": "Find a container",
@@ -100,12 +105,20 @@
       "select": "Select",
       "reset": "Reset",
       "abort": "Abort",
-      "saveAndCancel": "Save and close"
+      "saveAndCancel": "Save and close",
+      "back": "Back"
     },
     "loader": "One moment please..."
   },
   "unknownPart": {
     "title": "Unknown part",
     "text": "Unfortunately, I do not know how this block works, so please understand and forgive me."
+  },
+  "newBlock": {
+    "title": "In developing",
+    "text": "We are still in the process of developing this block. Hope for your understanding."
+  },
+  "messages": {
+    "inputNumber": "Please enter a number"
   }
 }

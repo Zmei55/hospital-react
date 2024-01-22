@@ -34,7 +34,12 @@ interface Resources {
         position_NURSE: string;
       };
     };
-    desktop: {
+    dashboard: {
+      admin: string;
+      treatmentRoom: string;
+      reception: string;
+    };
+    treatmentRoom: {
       addRequest: string;
       findRequest: string;
       findContainer: string;
@@ -101,12 +106,20 @@ interface Resources {
         reset: string;
         abort: string;
         saveAndCancel: string;
+        back: string;
       };
       loader: string;
     };
     unknownPart: {
       title: string;
       text: string;
+    };
+    newBlock: {
+      title: string;
+      text: string;
+    };
+    messages: {
+      inputNumber: string;
     };
   };
 }

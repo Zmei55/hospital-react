@@ -33,7 +33,12 @@
       "position_NURSE": "Krankenschwester"
     }
   },
-  "desktop": {
+  "dashboard": {
+    "admin": "Administration",
+    "treatmentRoom": "Behandlungsraum",
+    "reception": "Anmelderaum"
+  },
+  "treatmentRoom": {
     "addRequest": "Erstellen Sie einen Antrag",
     "findRequest": "Finden Sie einen Antrag",
     "findContainer": "Finden Sie eine Behälter",
@@ -99,12 +104,20 @@
       "select": "Wählen",
       "reset": "Rücksetzen",
       "abort": "Abbruch",
-      "saveAndCancel": "Speichern und schließen"
+      "saveAndCancel": "Speichern und schließen",
+      "back": "Zurück"
     },
     "loader": "Einen Moment Geduld bitte..."
   },
   "unknownPart": {
     "title": "Unbekanntes Teil",
     "text": "Leider weiß ich nicht, wie dieser Block funktioniert, daher bitte ich mich zu verstehen und zu verzeihen."
+  },
+  "newBlock": {
+    "title": "In Entwicklung",
+    "text": "Wir sind noch dabei, diesen Block zu entwickeln. Hoffe auf ihr Verständnis."
+  },
+  "messages": {
+    "inputNumber": "Bitte geben Sie eine Zahl ein"
   }
 }
